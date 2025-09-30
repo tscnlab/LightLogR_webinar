@@ -1,0 +1,18 @@
+---
+title: "Quarto Website Template"
+bibliography: references.bib
+format:
+  html:
+    toc: true
+    toc-location: left
+    lightbox: true
+
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{r}
+1 + 1
+```

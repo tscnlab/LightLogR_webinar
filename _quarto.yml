@@ -1,0 +1,44 @@
+project:
+  type: website
+
+website:
+  title: "Quarto Website Template"
+#  site-url: put site url here
+  repo-url: https://github.com/tscnlab/QuartoWebsite
+#  repo-url: put repo url here and delete previous line
+#  issue-url: put issue subpage here
+  repo-actions: [edit, issue]
+  page-navigation: true
+  bread-crumbs: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: "About"
+        href: about.qmd
+      - text: "License"
+        href: license.md
+      - text: "Contributing"
+        href: contributing.qmd
+    right:
+      - icon: github
+        href: https://github.com/tscnlab/QuartoWebsite
+#        href: put repo url here and delete previous line
+        aria-label: Quarto GitHub
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+execute:
+  freeze: auto
+
+  
+date: last-modified
+
+language:
+  title-block-published: "Last modified:"
