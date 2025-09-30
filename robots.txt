@@ -1,1 +1,1 @@
-Sitemap: https://tscnlab.github.io/QuartoWebsite/sitemap.xml
+Sitemap: https://tscnlab.github.io/LightLogR_webinar/sitemap.xml
