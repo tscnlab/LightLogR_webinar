@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tscnlab.github.io/LightLogR_webinar/about.html</loc>
-    <lastmod>2025-09-30T13:40:40.943Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tscnlab.github.io/LightLogR_webinar/index.html</loc>
-    <lastmod>2025-09-30T13:40:40.944Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tscnlab.github.io/LightLogR_webinar/contributing.html</loc>
-    <lastmod>2025-09-30T13:40:40.944Z</lastmod>
+    <loc>https://tscnlab.github.io/LightLogR_webinar/beginner.html</loc>
+    <lastmod>2025-10-05T17:13:32.589Z</lastmod>
   </url>
   <url>
     <loc>https://tscnlab.github.io/LightLogR_webinar/license.html</loc>
-    <lastmod>2025-09-30T13:40:40.944Z</lastmod>
+    <lastmod>2025-10-05T17:13:32.955Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tscnlab.github.io/LightLogR_webinar/index.html</loc>
+    <lastmod>2025-10-05T17:13:32.955Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tscnlab.github.io/LightLogR_webinar/beginner-live.html</loc>
+    <lastmod>2025-10-05T17:13:32.589Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tscnlab.github.io/LightLogR_webinar/about.html</loc>
+    <lastmod>2025-10-05T17:13:32.497Z</lastmod>
   </url>
 </urlset>
