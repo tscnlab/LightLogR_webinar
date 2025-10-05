@@ -17,7 +17,7 @@ resources:
   - data
   - scripts
 webr:
-  render-df: gt-interactive
+  # render-df: gt-interactive
   packages:
     - LightLogR
     - tidyverse
@@ -43,7 +43,24 @@ This document is intended for researchers with no prior experience using `LightL
 
 ## How this page works
 
-This document runs a self‑contained version of R **completely in your browser**[^2]. No setup or installation is required. You can execute the same [script](beginner.qmd) in a traditional R environment, but this browser‑based approach has several advantages:
+This document runs a self‑contained version of R **completely in your browser**[^2]. No setup or installation is required. 
+
+Try it for yourself by making a quick visualization of a sample dataset that comes preloaded with the package. It contains six days of data from a participant, with concurrent measurements of environmental light exposure at the university rooftop. You can play with the arguments to see how it changes the output. As soon as as *webR* has finished loading in the background, the **Run Code** button on code cells will become available.
+
+```{webr}
+#| fig-height: 3
+#| fig-width: 10
+sample.data.environment |> #sample data
+  gg_days(geom = "ribbon", 
+          aes_fill = Id, 
+          alpha = 0.6, 
+          facetting = FALSE
+          ) |> 
+  gg_photoperiod(c(47.1, 9)) +
+  coord_cartesian(expand = FALSE)
+```
+
+You can execute the same [script](beginner.qmd) in a traditional R environment, but this browser‑based approach has several advantages:
 
 - You can get started in seconds, avoiding configuration differences across machines and getting to the interesting part quickly.
 - Unlike a static tutorial, you can modify code to test the effects of different arguments and functions and receive immediate feedback.
@@ -113,21 +130,7 @@ theme_set(
 )
 ```
 
-That is all we need to get started. Let's make a quick visualization of a sample dataset that comes preloaded with the package. It contains six days of data from a participant, with concurrent measurements of environmental light exposure at the university rooftop. You can play with the arguments to see how it changes the output.
-
-```{webr}
-#| fig-height: 3
-#| fig-width: 10
-sample.data.environment |> #sample data
-  gg_days(geom = "ribbon", 
-          aes_fill = Id, 
-          alpha = 0.6, 
-          facetting = FALSE
-          ) |> 
-  gg_photoperiod(c(47.1, 9)) +
-  coord_cartesian(expand = FALSE)
-```
-
+That is all we need to get started.
 
 ## Import
 
@@ -798,10 +801,8 @@ dataset |>
   group_by(photoperiod.state, photoperiod.state.count, .add = TRUE) |> 
   #calculate the brightest hour in each day and each night:
   summarize(
-    bright_dark_period(MEDI, Datetime, timespan = "1 hour", as.df = TRUE),
+    duration_above_threshold(MEDI, Datetime, threshold = 250, as.df = TRUE),
     .groups = "drop_last") |> 
-  #select (bright_dark_period calulates four metrics: start, end, middle, mean)
-  select(Id, photoperiod.state, brightest_1h_mean) |>
   #condense the instances to a single summary
   summarize_numeric(prefix = "")
 ```
@@ -878,21 +879,14 @@ For the zero‑inflated log approach, transform before averaging and (if desired
 
 ```{webr}
 dataset |> 
-  filter(Id == "216") |> 
-  add_Date_col(group.by = TRUE) |> 
   summarize(
     #without transformation:
-    bright_dark_period(MEDI, Datetime, as.df = TRUE),
+    untransformed = mean(MEDI),
     #with transformation:
-    bright_dark_period(
-      log_zero_inflated(MEDI),
-      timespan = "9.99 hours", #needs to be different from 10 or it overwrites
-      Datetime, as.df = TRUE),
+    transformed = mean(log_zero_inflated(MEDI)),
     .groups = "drop_last"
             ) |> 
-  select(Id, Date, brightest_10h_mean, brightest_9.99h_mean) |> 
-  mutate(brightest_9.99h_mean = exp_zero_inflated(brightest_9.99h_mean)) |> 
-  rename(brightest_10h_zero_infl_mean = brightest_9.99h_mean)
+  mutate(backtransformed = exp_zero_inflated(transformed))
 ```
 
 ## Summaries
