@@ -1,0 +1,1019 @@
+---
+title: "Open and reproducible analysis of light exposure and visual experience data (Beginner)"
+author: 
+  - name: "Johannes Zauner"
+    affiliation: "Technical University of Munich & Max Planck Institute for Biological Cybernetics, Germany"
+    orcid: "0000-0003-2171-4566"
+lightbox: true
+code-tools: true
+code-link: true
+date: last-modified
+---
+
+![](assets/Beginner_Heading.png)
+
+## Preface
+
+Wearables are increasingly used in research because they combine personalized, high‑temporal‑resolution measurements with outcomes related to well‑being and health. In sleep research, wrist‑worn actimetry is long established. As circadian factors gain prominence across disciplines, interest in personal light exposure has grown, spurring a variety of new devices, form factors, and sensor technologies. This trend also brings many researchers into settings where data from wearables must be ingested, processed, and analyzed. Beyond circadian science, measurements of light and optical radiation are central to UV‑related research and to questions of ocular health and development.
+
+`LightLogR` is designed to facilitate the principled import, processing, and visualization of such wearable‑derived data. This document offers an accessible entry point to `LightLogR` via a self‑contained analysis script that you can modify to familiarize yourself with the package. Full documentation of `LightLogR`’s features is available on the [documentation page](https://tscnlab.github.io/LightLogR/), including numerous tutorials.
+
+This document is intended for researchers with no prior experience using `LightLogR`, and assumes general familiarity with the R statistical software, ideally in a data‑science context[^1].
+
+[^1]: If you are new to the R language or want a great introduction to R for data science, we can recommend the free online book [R for Data Science (second edition)](https://r4ds.hadley.nz) by Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund.
+
+## How this page works
+
+This document contains the script for the online course series as a [Quarto](www.quarto.org) script, which can be executed on a local installation of R. Please ensure that all libraries are installed prior to running the script.
+
+If you want to try out `LightLogR` without installing R or the package, try the [script version running webR](beginner-live.qmd), for a autonymous but slightly reduced version.
+
+## Installation
+
+`LightLogR` is hosted on [CRAN](https://cran.r-project.org/package=LightLogR), which means it can easily be installed from any R console through the following command:
+
+```{r}
+#| eval: false
+install.packages("LightLogR")
+```
+
+After installation, it becomes available for the current session by loading the package. We also require a number of packages. Most are automatically downloaded with `LightLogR`, but need to be loaded separately. Some might have to be installed separately on your local machine.
+
+```{r}
+#| output: false
+library(LightLogR) #load the package
+library(tidyverse) #a package for tidy data science
+library(gt) #a package for great tables
+#the following packages are needed for preview functions:
+library(cowplot)
+library(legendry)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(sf)
+library(patchwork)
+library(rlang)
+library(glue)
+library(gtExtras)
+
+#the next two scripts will be integrated into the next release of LightLogR
+#but have to be loaded separately for now (≤0.9.3)
+source("scripts/overview_plot.R")
+source("scripts/summary_table.R")
+
+# Set a global theme for the background
+theme_set(
+    theme(
+      panel.background = element_rect(fill = "white", color = NA)
+    )
+)
+
+```
+
+That is all we need to get started. Let's make a quick visualization of a sample dataset that comes preloaded with the package. It contains six days of data from a participant, with concurrent measurements of environmental light exposure at the university rooftop. You can play with the arguments to see how it changes the output.
+
+```{r}
+#| fig-height: 3
+#| fig-width: 10
+sample.data.environment |> #sample data
+  gg_days(geom = "ribbon", 
+          aes_fill = Id, 
+          alpha = 0.6, 
+          facetting = FALSE
+          ) |> 
+  gg_photoperiod(c(47.1, 9)) +
+  coord_cartesian(expand = FALSE)
+```
+
+
+## Import
+
+### File formats
+
+To work with `LightLogR`, we need some data from wearables. To the side are screenshots from three example formats to highlight the structure and differences. You can enlarge by clicking at them.
+
+::: {.column-margin}
+![ActLumus file structure](assets/File_Actlumus.png)
+
+![Speccy file structure](assets/File_Speccy.png)
+
+![nanoLambda file structure](assets/File_nanoLambda.png)
+:::
+
+### Importing a file
+
+These files must be loaded into the active session in a *tidy* format—each variable in its own column and each observation in its own row. `LightLogR`’s device‑specific `import` functions take care of this transformation. Each function requires:
+
+- filenames and paths to the wearable export files
+- the time zone in which the data were collected
+- (optional) participant identifiers
+
+We begin with a dataset bundled with the package, recorded with the `ActLumus` device. The data were collected in *Tübingen, Germany*, so the correct time zone is `Europe/Berlin`.
+
+```{r}
+#accessing the filepath of the package to reach the sample dataset:
+filename <- 
+  system.file("extdata/205_actlumus_Log_1020_20230904101707532.txt.zip", 
+              package = "LightLogR")
+```
+
+
+```{r}
+#| fig-height: 2
+#| fig-width: 5
+dataset <- import$ActLumus(filename, tz = "Europe/Berlin", manual.id = "P1")
+```
+
+The import function also provides rich summary information about the dataset—such as the time span covered, sampling intervals, and an overview plot. Most import settings are configurable. To learn more, consult the function documentation online or via `?import`. For a quick visual overview of the data across days, draw a timeline with `gg_days()`.
+
+```{r}
+#| fig-height: 3
+#| fig-width: 12
+dataset |> gg_days()
+```
+
+We will go into much more detail about visualizations in the sections below.
+
+### Importing from a different device
+
+Each device exports data in its own format, necessitating device‑specific handling. `LightLogR` includes import wrapper functions for many devices. You can retrieve the list supported by your installed version with the following function:
+
+```{r}
+supported_devices()
+```
+
+We will now import from two other devices to showcase the differences.
+
+#### Speccy
+
+```{r}
+#| fig-height: 2
+#| fig-width: 5
+filename <- "data/Speccy.csv"
+dataset <- import$Speccy(filename, tz = "Europe/Berlin", manual.id = "P1")
+```
+
+```{r}
+#| fig-height: 3
+#| fig-width: 5
+dataset |> gg_days()
+```
+
+#### nanoLambda
+
+```{r}
+#| fig-height: 2
+#| fig-width: 5
+filename <- "data/nanoLambda.csv"
+dataset <- import$nanoLambda(filename, tz = "Europe/Berlin", manual.id = "P1")
+```
+
+If we try to visualize this dataset as we have done above, we get an error.
+
+```{r}
+#| fig-height: 3
+#| fig-width: 5
+#| eval: false
+dataset |> gg_day()
+```
+
+This is because many `LightLogR` functions default to the melanopic EDI variable[^3]. However, the nanoLambda export does not include this variable. Therefore, we must explicitly specify which variable to display. Let’s inspect the available variables:
+
+[^3] melanopic equivalent daylight-illuminance, CIE S026:2018 
+
+```{r}
+dataset |> names()
+```
+
+You can choose any numeric variable; here, we’ll use `Melanopic_Lux`, which is similar—though not identical—to melanopic EDI. To identify which argument to adjust, consult the function documentation:
+
+```{r}
+#| eval: false
+?gg_day()
+```
+
+Use the `y.axis` argument to select the variable. Also update the axis title via `y.axis.label`; otherwise the default label will refer to melanopic EDI.
+
+Because this dataset spans only a short interval of about 9 minutes, we’ll visualize it with `gg_day()`, which uses clock time on the x‑axis. There are a few other differences to `gg_days()`, which we will see in the sections below.
+
+```{r}
+#| fig-height: 3
+#| fig-width: 6
+dataset |> gg_day(y.axis = Melanopic_Lux, y.axis.label = "melanopic illuminance")
+```
+
+In summary, importing from different devices is typically as simple as specifying the device name. Some devices require additional arguments; consult the `?import` help for details.
+
+### Importing more than one file
+
+In typical studies, you’ll work with multiple participants, and importing each file individually is cumbersome. `LightLogR` supports batch imports; simply pass multiple files to the import function. In this tutorial, we’ll use three files from three participants, all drawn from the open‑access personal light‑exposure dataset by [Guidolin et al. 2025](https://github.com/MeLiDosProject/GuidolinEtAl_Dataset_2025)[^4]. All data were collected with the `ActLumus` device type.
+
+[^4]: Guidolin, C., Zauner, J., & Spitschan, M., (2025). Personal light exposure dataset for Tuebingen, Germany (Version 1.0.0) [Data set]. URL: https://github.com/MeLiDosProject/GuidolinEtAl_Dataset_2025. DOI: doi.org/10.5281/zenodo.16895188
+
+When importing multiple files, keep the following in mind:
+
+- All files must originate from the same device type, share the same export structure, and use the same time‑zone specification. If they differ, import them separately.
+- Be deliberate about participant‑ID assignment. The `manual.id` argument used above would assign the same ID to all imported data in a batch. If a file contains a column specifying the `Id`, you can point to that column; more often, the identifier is encoded in the filename. If you omit ID arguments, the filename is used as `Id` by default. Because filenames are often verbose, you will typically extract only the participant code. In our three example files, the relevant IDs are `216`, `218`, and `219`.
+
+```{r}
+filenames <- list.files("data", pattern = "actlumus", full.names = TRUE)
+filenames
+```
+
+If filenames follow a consistent pattern, you can instruct the import function to extract only the participant code from each name. In our case, the first three digits encode the ID. We can specify this with a regular expression: `^(\d{3})`. This pattern matches the first three digits at the start of the filename and captures them (`^` = start of string, `\d` = digit, `{3}` = exactly three, `(`& `)` = encloses the part of the pattern we actually want). If you’re not familiar with regular expressions, they can look like a jumble of ASCII characters, but they succinctly express patterns. Large language models are quite good at proposing regexes and explaining their components, so consider prompting one when you need a new pattern. With that, we can import our files.
+
+```{r}
+#| fig-height: 3
+#| fig-width: 5
+pattern <- "^(\\d{3})"
+dataset <- import$ActLumus(filenames, tz = "Europe/Berlin", auto.id = pattern)
+```
+
+The overview plot is now more informative: it shows how the datasets align across time and highlights extended gaps due to missing data. We will return to the terminology of `implicit missingness` shortly.
+
+```{r}
+#| fig-height: 6
+#| fig-width: 12
+dataset |> gg_days()
+```
+
+Direct plotting highlights the extended gaps in the recordings. We’ll apply a package function that removes days with insufficient coverage to address this. For now, we can ignore the details: any participant‑day with more than 80% missing data will be excluded.
+
+```{r}
+#| fig-height: 6
+#| fig-width: 12
+
+dataset_red <-
+  dataset |>
+  remove_partial_data(
+    Variable.colname = MEDI,
+    threshold.missing = 0.8,
+    by.date = TRUE,
+    handle.gaps = TRUE
+  )
+
+dataset_red |> gg_days()
+```
+
+That concludes the import section of the tutorial; next, we turn to visualization functions. For simplicitly, we will only carry a small selection of variables forward. That increases the calculation speed of many functions. Feel free to choose a different set of variables.
+
+```{r}
+dataset <- dataset |> select(Id, Datetime, PIM, MEDI)
+```
+
+### How to find the correct time zone name?
+
+A final note on imports: the function accepts only valid [IANA time‑zone](https://www.iana.org/time-zones) identifiers. You can retrieve the full list (with exact spellings) using:
+
+```{r}
+OlsonNames() |> sample(5)
+```
+
+## Basic Visualizations
+
+Visualization is central to exploratory data analysis and to communicating results in publications and presentations. `LightLogR` provides a suite of plotting functions built on `ggplot2` and the *Grammar of Graphics*. As a result, the plots are composable, flexible, and straightforward to modify.
+
+### `gg_days()`
+
+`gg_days()` displays a timeline per each `Id`. It constrains the x‑axis to complete days and, by default, uses a line geometry. The function works best for up to a handful of Id's and 1-2 weeks of data at most.
+
+```{r}
+#| fig-height: 6
+#| fig-width: 12
+dataset_red |> gg_days(aes_col = Id) #try interactive = TRUE
+```
+
+### `gg_day()`
+
+`gg_day()` complements `gg_days()` by focusing on individual calendar days. By default, it places all observations from a selected day into a single panel, regardless of source. This layout is configurable. For readability, `gg_day()` works best with ~1–4 days of data (at most about a week) to keep plot height manageable.
+
+```{r}
+#| fig-height: 10
+#| fig-width: 8
+dataset_red |> 
+  gg_day(aes_col = Id, 
+         format.day = "%A", # switch from dates to week-days
+         size = 0.5, # reduce point size
+         x.axis.breaks = hms::hms(hours = c(0, 12))) + #12-hour grid 
+  guides(color = "none") + # remove color legend
+  facet_grid(rows = vars(Day.data), cols = vars(Id), switch = "y") # Id x Day
+```
+
+### `gg_overview()`
+
+`gg_overview()` is invoked automatically by the import function but can also be called independently and customized. By default, each `Id` appears as a separate row on the y‑axis. For longitudinal datasets with large gaps between recordings, you can group observations (e.g., by a `session` variable) to distinguish distinct measurement periods (see margin figure). The function works nice for many participants and long collection periods, by setting their recording periods in relation. By default, it will also show times of implicitly missing data.
+
+::: {.column-margin}
+![Grouping the data by `Id` and measurement `session` provides easy overviews for longitudinal datasets](assets/Overview.png)
+:::
+
+```{r}
+#| fig-height: 3
+#| fig-width: 5
+dataset |> 
+  gg_overview(col = Id) + 
+  ggsci::scale_color_jco() #nice color palette
+```
+
+### `gg_heatmap()`
+
+`gg_heatmap()` renders one calendar day per row within each data‑collection period. It is well‑suited to long monitoring spans and scales effectively to many participants. To highlight patterns that cross midnight, it supports a `doubleplot` option that displays a duplicate of the day, or the next day with an offset.
+
+```{r}
+#| fig-height: 3
+#| fig-width: 10
+#| warning: false
+dataset_red |> gg_heatmap()
+```
+
+```{r}
+#| fig-height: 3
+#| fig-width: 10
+#| warning: false
+# Looking at 5-minute bins of data
+dataset_red |> gg_heatmap(unit = "5 mins")
+```
+
+```{r}
+#| fig-height: 3
+#| fig-width: 10
+#| warning: false
+#showing data as doubleplots. Time breaks have to be reduced for legibility
+dataset_red |> 
+  gg_heatmap(doubleplot = "next", 
+             time.breaks = c(0, 12, 24, 36, 48)*3600
+             )
+```
+
+```{r}
+#| fig-height: 3
+#| fig-width: 10
+#| warning: false
+# Actogram-style heatmap (<10 lx mel EDI in this case)
+dataset_red |> 
+  gg_heatmap(MEDI < 10,
+             doubleplot = "next", 
+             time.breaks = c(0, 12, 24, 36, 48)*3600,
+             fill.limits = c(0, NA), 
+             fill.remove = TRUE, 
+             fill.title = "<10lx mel EDI"
+             ) +
+  scale_fill_manual(values = c("TRUE" = "black", "FALSE" = "#00000000"))
+```
+
+### What about non-light variables?
+
+`LightLogR` is optimized for wearable light sensors and selects sensible defaults: for example, melanopic EDI (when available) and settings suited to typical light‑exposure distributions. Nevertheless, the functions are measurement‑agnostic and can be applied to non‑light variables. Consult the function documentation to see which arguments to adjust for your variable of interest. For example, here we plot an activity variable:
+
+```{r}
+#| fig-height: 6
+#| fig-width: 12
+dataset_red |> 
+  gg_days(
+    y.axis = PIM, #variable PIM
+    y.scale = "identity", #set a linear scale
+    y.axis.breaks = waiver(), #choose standard axis breaks according to values
+    y.axis.label = "Proportional integration mode (PIM)"
+  ) +
+  coord_cartesian(ylim = c(0, 5000))
+```
+
+
+## Validation
+
+Currently, `LightLogR`’s validation aims to ensure a regular, uninterrupted time series for each participant. Additional features are planned.
+
+The figures at the side summarize the gap terminology used in `LightLogR` and illustrate how `gap_handler()` fills implicit missing data.
+
+::: {.column-margin}
+![Terminology of gaps in `LightLogR`](assets/gap_terminology.png)
+
+![`gap_handler()` identifies the time series’ `dominant epoch` (the most common sampling interval) and fills `NA` entries between the first and last observation. By default, no observations are dropped, so irregular samples are preserved.](assets/gap_handler.png)
+:::
+
+To quickly assess whether a dataset contains (implicit) gaps or irregular sampling, use the following diagnostic helpers:
+
+```{r}
+dataset |> has_gaps()
+dataset |> has_irregulars()
+```
+
+We can then quickly visualize where these issues occur within the affected days.
+
+```{r}
+#| fig-height: 12
+#| fig-width: 5
+#| warning: false
+dataset |> gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)
+```
+
+This function can be slow when a dataset contains many gaps or irregular samples. If needed, pre‑filter the data or adjust the function’s arguments.
+
+In our example, we identify eight participant‑days with gaps:
+
+- **Three straightforward cases:** data collection ends around noon on Monday, leaving the remainder of the day missing. By default, the function evaluates complete calendar days (this is configurable). These days only require converting implicit gaps into explicit missing values.
+- **Two pre‑trial snippets:** brief measurements occur on the Friday or Monday preceding the trial—likely test recordings. These days are outside the study window and should be removed entirely.
+- **Three early irregularities:** irregular sampling appears shortly after data collection starts. This most likely reflects a test recording immediately before the device was handed to the participant. Trimming this initial segment eliminates the irregularity and the rest of the day can be changed to explicit missingness.
+
+### Preparing the dataset
+
+There are several ways to address these issues. We will showcase three in the next sections.
+
+#### 1. Set the maximum length of the dataset.
+
+If the study follows a fixed‑length protocol, you can enforce a maximum observation window (e.g., 7 days) by trimming from the beginning so that each participant’s series has the same duration. This approach preserves participant‑specific end times, which must meaningfully reflect protocol completion; otherwise, you risk cutting away valid data.
+
+```{r}
+#| fig-height: 8
+#| fig-width: 5
+#| warning: false
+dataset |> 
+filter(
+  Datetime > (max(Datetime) - days(7))
+  ) |> 
+  gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)
+```
+
+The remaining gaps are simple start‑ and end‑day truncations.
+
+#### 2. Remove the first values from the dataset
+
+You can remove a fixed number of observations from the beginning of each participant’s series. This approach is helpful when the exact total measurement duration is not critical—for example, to discard brief pre‑trial test recordings or initial device‑stabilization periods.
+
+```{r}
+#| fig-height: 12
+#| fig-width: 5
+#| warning: false
+dataset |> 
+  slice_tail(n = -(3*60*6)) |> 
+  gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)
+```
+
+The results are similarly effective.
+
+#### 3. Trim with a list
+
+The most robust way to enforce sensible measurement windows is to supply a table of trial `start` and `end` timestamps (per participant) and filter the time series accordingly. In this tutorial we create that table *on the fly*; in practice, it is typically stored in a CSV or Excel file. The `add_states()` function provides an effective interface between the two datasets: it aligns by identifier and time, adds state information (e.g., “in‑trial”), and enables precise trimming. Ensure that the identifying variables (e.g., `Id`) are named identically across files.
+
+```{r}
+#create a dataframe of trial times
+trial_times <-
+  data.frame(
+    Id = c("216", "218", "219"),
+    start = c(
+      "02.10.2023  12:30:00",
+      "16.10.2023  12:00:00",
+      "16.10.2023  12:00:00"
+    ),
+    end = c(
+      "09.10.2023  12:30:00",
+      "23.10.2023  12:00:00",
+      "23.10.2023  12:00:00"
+    ),
+    trial = TRUE
+  ) |>
+  mutate(across(
+    c(start, end),
+    \(x) parse_date_time(x, order = "%d%m%y %H%M%S", tz = "Europe/Berlin")
+  )) |>
+  group_by(Id)
+```
+
+```{r}
+#| fig-height: 12
+#| fig-width: 5
+#| warning: false
+# filter dataset by trial time
+dataset <-
+  dataset |>
+  add_states(trial_times) |>
+  dplyr::filter(trial) |>
+  select(-trial)
+
+dataset |> 
+  gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)
+
+```
+
+### `gap_table()`
+
+We can summarize each dataset’s regularity and missingness in a table. Note that this function may be slow when many gaps are present.
+
+```{r}
+dataset |> gap_table() |> cols_hide(contains("_n"))
+```
+
+### `gap_handler()`
+
+Approximately 13% of the missing data are *implicit*—they arise from truncated start and end days. It is good practice to make these gaps explicit. Use `gap_handler(full.days = TRUE)` to fill implicit gaps to full‑day regularity. Then verify the result with `gap_table()`, the diagnostic helpers, and a follow‑up visualization:
+
+```{r}
+dataset <- dataset |> gap_handler(full.days = TRUE)
+dataset |> gap_table() |> cols_hide(contains("_n"))
+```
+
+```{r}
+dataset |> has_gaps()
+dataset |> has_irregulars()
+```
+
+```{r}
+#| fig-height: 6
+#| fig-width: 12
+#| warning: false
+dataset |> gg_days(aes_col = Id)
+```
+
+### `remove_partial_data()`
+
+It is often necessary to set missingness thresholds at different levels (hour, day, participant). Typical questions include:
+
+- How much data may be missing within an hour before that hour is excluded?
+- How much data may be missing from a day before that day is excluded?
+- How much data may be missing for a participant before excluding them from further analyses?
+
+`remove_partial_data()` addresses these questions. It evaluates each group (by default, `Id`) and quantifies missingness either as an absolute duration or a relative proportion. Groups that exceed the specified threshold are discarded. A useful option is `by.date`, which performs the thresholding per calendar day (for removal) while leaving the output grouping unchanged. Note that missingness is determined by the amount of data points in each group, relative to NA values.
+
+For this tutorial, we will remove any day with more than one hour of missing data—this effectively drops both partial Mondays:
+
+
+```{r}
+#| fig-height: 6
+#| fig-width: 12
+#| warning: false
+dataset <- 
+  dataset |> 
+  remove_partial_data(Variable.colname = MEDI, 
+                      threshold.missing = "1 hour",
+                      by.date = TRUE)
+
+dataset |> gg_days(aes_col = Id)
+```
+
+::: {.callout-note}
+
+**Why did we just spend all this time handling gaps and irregularities on the Mondays only to remove them afterward?**
+
+Not all datasets are this straightforward. Deciding whether a day should be included in the analysis should come **after** ensuring the data are aligned to a regular, uninterrupted time series. Regularization makes diagnostics meaningful and prevents threshold rules from behaving unpredictably.
+
+Moreover, there are different frameworks for grouping personal light‑exposure data. In this tutorial we focus on calendar dates and 24‑hour days. Other frameworks group differently. For example, anchoring to sleep–wake cycles—under which both Mondays might still contain useful nocturnal data. Harmonizing first ensures those alternatives remain viable even if calendar‑day summaries are later excluded.
+
+:::
+
+## Metrics
+
+Metrics form the second major pillar of `LightLogR`, alongside visualization. The literature contains many light‑exposure metrics; `LightLogR` implements a broad set of them behind a uniform, well‑documented interface. The currently available metrics are:
+
+| Metric Family                        | Submetrics | Note                 | Documentation                                                                                     |
+|------------------|----------------|-----------------|---------------------|
+| Barroso                              | 7                 |                      | `barroso_lighting_metrics()`                                                                      |
+| Bright-dark period                   | 4x2               | bright / dark        | `bright_dark_period()`                                                                            |
+| Centroid of light exposure           | 1                 |                      | `centroidLE()`                                                                                    |
+| Dose                                 | 1                 |                      | `dose()`                                                                               |
+| Disparity index                      | 1                 |                      | `disparity_index()`                                                                               |
+| Duration above threshold             | 3                 | above, below, within | `duration_above_threshold()`                                                                      |
+| Exponential moving average (EMA)     | 1                 |                      | `exponential_moving_average()`                                                                    |
+| Frequency crossing threshold         | 1                 |                      | `frequency_crossing_threshold()`                                                                  |
+| Intradaily Variance (IV)             | 1                 |                      | `intradaily_variability()`                                                                        |
+| Interdaily Stability (IS)            | 1                 |                      | `interdaily_stability()`                                                                          |
+| Midpoint CE (Cumulative Exposure)    | 1                 |                      | `midpointCE()`                                                                                    |
+| nvRC (Non-visual circadian response) | 4                 |                      | `nvRC()`, `nvRC_circadianDisturbance()`, `nvRC_circadianBias()`, `nvRC_relativeAmplitudeError()` |
+| nvRD (Non-visual direct response)    | 2                 |                      | `nvRD()`, `nvRD_cumulative_response()`                                                           |
+| Period above threshold               | 3                 | above, below, within | `period_above_threshold()`                                                                        |
+| Pulses above threshold               | 7x3               | above, below, within | `pulses_above_threshold()`                                                                        |
+| Threshold for duration               | 2                 | above, below         | `threshold_for_duration()`                                                                        |
+| Timing above threshold               | 3                 | above, below, within | `timing_above_threshold()`                                                                        |
+| **Total:**                           |                   |                      |                                                                                                   |
+| **17 families**                      | **62 metrics**    |                      |                                                                                                   |
+
+::: {.callout-tip}
+
+LightLogR supports a wide range of metrics across different metric families. You can find the full documentation of metrics functions in the [reference section](https://tscnlab.github.io/LightLogR/reference/index.html#metrics). There is also an overview article on how to use [Metrics](https://tscnlab.github.io/LightLogR/articles/Metrics.html).
+
+If you would like to use a metric you don't find represented in LightLogR, please contact the developers. The easiest and most trackable way to get in contact is by opening a new issue on our [Github repository](https://github.com/tscnlab/LightLogR/issues).
+
+:::
+
+### Principles
+
+Each metric function operates on vectors. Although the main argument is often named `Light.vector`, the name is conventional - the function will accept any variable you supply. All metric functions are thoroughly documented, with references to their intended use and interpretation.
+
+While we don’t generally recommend it, you can pass a raw vector directly to a metric function. For example, to compute *Time above 250 lx melanopic EDI*, you could run:
+
+```{r}
+duration_above_threshold(
+  Light.vector = dataset$MEDI,
+  Time.vector = dataset$Datetime,
+  threshold = 250
+)
+```
+
+However, that single result is not very informative - it aggregates across all participants and all days. To recover the total recorded duration, recompute the complementary metric: *Time below 250 lx melanopic EDI*. This should approximate the full two weeks and four days of data when evaluated over the whole dataset:
+
+```{r}
+duration_above_threshold(
+  Light.vector = dataset$MEDI,
+  Time.vector = dataset$Datetime,
+  threshold = 250,
+  comparison = "below"
+)
+```
+
+The problem is amplified for metrics defined at the day scale (or shorter). For example, the *brightest 10 hours* (**M10**) is computed within each 24‑hour day using a consecutive 10‑hour window—so applying it to a pooled, cross‑day vector is almost meaningless:
+
+```{r}
+bright_dark_period(
+  Light.vector = dataset$MEDI,
+  Time.vector = dataset$Datetime,
+  as.df = TRUE
+) |> 
+  gt() |> tab_header("M10")
+```
+
+The resulting value - although computationally valid - is substantively meaningless: it selects the single brightest 10‑hour window **across all participants**, rather than computing M10 *per participant per day*. In addition, two time series (218 & 219) overlap in time, which violates the assumption of a single, regularly spaced series and can produce errors. Hence the `Warning: Time.vector is not regularly spaced. Calculated results may be incorrect!` 
+
+Accordingly, metric functions should be applied within tidy groups (e.g., by `Id` and by calendar `Date`), not to a pooled vector. You can achieve this with explicit for‑loops or, preferably, a tidy approach using `dplyr` (e.g., `group_by()`/`summarise()` or `nest()`/`map()`). We recommend the latter.
+
+### Use of `summarize()`
+
+Wrap the metric inside a dplyr `summarise()`/`summarize()` call, supply the **grouped** dataset, and set `as.df = TRUE`. This yields a tidy, one‑row‑per‑group result (e.g., per `Id`). For example, computing **interdaily stability (IS)**:
+
+```{r}
+dataset |> 
+  summarize(
+    interdaily_stability(
+      Light.vector = MEDI,
+      Datetime.vector = Datetime,
+      as.df = TRUE
+    )
+  )
+```
+
+To compute multiple metrics at once, include additional expressions inside the `summarize()` call. For instance, add **Time above 250 lx melanopic EDI** alongside IS:
+
+```{r}
+dataset |> 
+  summarize(
+     duration_above_threshold(
+      Light.vector = MEDI,
+      Time.vector = Datetime,
+      threshold = 250,
+      as.df = TRUE
+    ),
+    interdaily_stability(
+      Light.vector = MEDI,
+      Datetime.vector = Datetime,
+      as.df = TRUE
+    )
+  )
+```
+
+For finer granularity, add additional grouping variables before summarizing—for example, group by calendar `Date` to compute metrics per participant–day:
+
+```{r}
+TAT250 <- 
+dataset |> 
+  add_Date_col(group.by = TRUE, as.wday = TRUE) |> #add a Date column + group
+    summarize(
+     duration_above_threshold(
+      Light.vector = MEDI,
+      Time.vector = Datetime,
+      threshold = 250,
+      as.df = TRUE
+    ),
+    .groups = "drop_last"
+  )
+
+TAT250 |> gt()
+```
+
+We can further condense this:
+
+```{r}
+TAT250 |> 
+  summarize_numeric() |> 
+  gt()
+```
+
+That’s all you need to get started with metric calculation in `LightLogR`. While advanced metrics involve additional considerations, this tidy grouped workflow will take you a long way.
+
+## Photoperiod
+
+Photoperiod is a key covariate in many analyses of personal light exposure. `LightLogR` includes utilities to derive photoperiod information with minimal effort. All you need are geographic coordinates in decimal degrees (latitude, longitude); functions will align photoperiod features to your time series. Provide coordinates in standard decimal format (e.g., `48.52, 9.06`):
+
+```{r}
+#specifying coordinates (latitude/longitude)
+coordinates <- c(48.521637, 9.057645)
+
+#extracting photoperiod information
+dataset |> extract_photoperiod(coordinates)
+```
+
+
+```{r}
+#adding photoperiod information
+dataset <- 
+  dataset |> 
+  add_photoperiod(coordinates)
+
+dataset |> head()
+```
+
+### Photoperiod in visualizations
+
+```{r}
+#| fig-height: 6
+#| fig-width: 12
+#if photoperiod information was already added to the data
+#nothing has to be specified
+dataset |> gg_days() |> gg_photoperiod()
+```
+
+```{r}
+#| fig-height: 6
+#| fig-width: 12
+#if no photoperiod information is available in the data, coordinates have to
+#be specified
+dataset_red |> gg_days() |> gg_photoperiod(coordinates)
+```
+
+### Data
+
+Photoperiod features make it easy to split data into day and night states—for example, to compute metrics by phase. The `number_states()` function places a counter each time the state changes, effectively numbering successive day and night episodes. Grouping by these counters then allows you to calculate metrics for individual days and nights:
+
+```{r}
+dataset |> 
+  #create numbered days and nights:
+  number_states(photoperiod.state) |> 
+  #group by Id, day and nights, and also the numbers:
+  group_by(photoperiod.state, photoperiod.state.count, .add = TRUE) |> 
+  #calculate the brightest hour in each day and each night:
+  summarize(
+    bright_dark_period(MEDI, Datetime, timespan = "1 hour", as.df = TRUE),
+    .groups = "drop_last") |> 
+  #select (bright_dark_period calulates four metrics: start, end, middle, mean)
+  select(Id, photoperiod.state, brightest_1h_mean) |>
+  #condense the instances to a single summary
+  summarize_numeric(prefix = "") |> 
+  #show as table
+  gt() |> fmt_number()
+```
+
+This yields the average brightest 1‑hour period for each participant, separately for day and night. Notably, the participant with the highest daytime brightness also shows the lowest nighttime brightness, and vice versa.
+
+## Distribution of light exposure
+
+Personal light‑exposure data exhibit a characteristic distribution (see figure): they are strongly right‑skewed—approximately log‑normal—and contain many zeros (i.e., zero‑inflation).
+
+::: {.column-margin}
+![Distribution of light exposure in the environment and for a participant, both at night and day](assets/Distribution.png)
+:::
+
+Consequently, the arithmetic mean is not a representative summary for these data. We can visualize this by placing common location metrics on the distribution.
+
+```{r}
+dataset |> 
+  ungroup() |> 
+  summarize(
+    mean = mean(MEDI),
+    median = median(MEDI),
+    geo_mean = exp(mean(log(MEDI[MEDI > 0]), na.rm = TRUE))
+  ) |> 
+  gt()
+```
+
+```{r}
+dataset |> 
+  aggregate_Datetime("5 min") |> 
+  ggplot(aes(x=MEDI, y = after_stat(ncount))) +
+  geom_histogram(binwidth = 0.2) +
+  scale_x_continuous(trans = "symlog", 
+                     breaks = c(0, 10^(0:5)), 
+                     labels= expression(0,10^0,10^1, 10^2, 10^3, 10^4, 10^5)
+                     ) +
+  geom_vline(xintercept = c(282, 9, 33), col = "red") +
+  theme_minimal() +
+  # facet_wrap(~Id) +
+  labs(x = "Melanopic illuminance (lx, mel EDI)", y = "Scaled counts (max = 1)")
+```
+
+To better characterize zero‑inflated, right‑skewed light data, use `log_zero_inflated()`. The function adds a small constant (ε) to every observation **before taking logs**, making the transform well‑defined at zero. Choose ε based on the device’s measurement resolution/accuracy; for wearables spanning roughly 1–10^5 lx, we recommend ε = 0.1 lx. The inverse, `exp_zero_inflated()`, returns values to the original scale by exponentiating and then subtracting the same ε. The default basis for these functions is 10.
+
+```{r}
+dataset |> 
+  ungroup() |> 
+  summarize(
+    mean = mean(MEDI),
+    median = median(MEDI),
+    geo_mean =  exp(mean(log(MEDI[MEDI > 0]), na.rm = TRUE)),
+    log_zero_inflated_mean = 
+      MEDI |> log_zero_inflated() |> mean() |> exp_zero_inflated()
+  ) |> 
+  gt()
+
+```
+
+```{r}
+dataset |> 
+  aggregate_Datetime("5 min") |> 
+  ggplot(aes(x=MEDI, y = after_stat(ncount))) +
+  geom_histogram(binwidth = 0.2) +
+  scale_x_continuous(trans = "symlog", 
+                     breaks = c(0, 10^(0:5)), 
+                     labels= expression(0,10^0,10^1, 10^2, 10^3, 10^4, 10^5)
+                     ) +
+  geom_vline(xintercept = c(282, 9, 33, 7), col = "red") +
+  theme_minimal() +
+  # facet_wrap(~Id) +
+  labs(x = "Melanopic illuminance (lx, mel EDI)", y = "Scaled counts (max = 1)")
+```
+
+### Log zero-inflated with metrics
+
+When computing averaging metrics, apply the transformation **explicitly** to the variable you pass to the metric. This ensures the statistic is computed on the intended scale and makes your code easy to audit later. 
+
+For the zero‑inflated log approach, transform before averaging and (if desired) back‑transform for reporting:
+
+```{r}
+dataset |> 
+  filter(Id == "216") |> 
+  add_Date_col(group.by = TRUE) |> 
+  summarize(
+    #without transformation:
+    bright_dark_period(MEDI, Datetime, as.df = TRUE),
+    #with transformation:
+    bright_dark_period(
+      log_zero_inflated(MEDI),
+      timespan = "9.99 hours", #needs to be different from 10 or it overwrites
+      Datetime, as.df = TRUE),
+    .groups = "drop_last"
+            ) |> 
+  select(Id, Date, brightest_10h_mean, brightest_9.99h_mean) |> 
+  mutate(brightest_9.99h_mean = exp_zero_inflated(brightest_9.99h_mean)) |> 
+  rename(brightest_10h_zero_infl_mean = brightest_9.99h_mean) |> 
+  gt() |> 
+  fmt_number()
+```
+
+## Summaries
+
+Summary helpers provide fast, dataset‑wide overviews. Existing examples include `gap_table()` (tabular diagnostics) and `gg_overview()` (visual timeline). In the next release, two higher‑level tools are planned: `grand_overview()` (a dataset‑level summary plot) and `light_summary_table()` (a table of key exposure metrics). These are not available in `LightLogR 0.9.3` but are slated for an upcoming release and are shown in the next two sections as *sneak previews*. In keeping with `LightLogR`’s design, they will have straightforward interfaces and play well with grouped/tidy workflows.
+
+### Summary plot
+
+```{r}
+#| warning: false
+#| message: false
+#| fig-height: 8
+#| fig-width: 12
+dataset |> 
+  grand_overview(coordinates, #provide the coordinates
+                 "Tübingen", #provide a site name
+                 "Germany", #provide a country name
+                 "#DDCC77", #provide a color for the dataset
+                 photoperiod_sequence = 1 #specify the photoperiod resolution
+                 )
+# ggsave("assets/grand_overview.png", width = 17, height = 10, scale = 2, units = "cm")
+```
+
+### Summary table
+
+```{r}
+summary_table <- 
+dataset |> 
+light_summary_table(
+  coordinates, #provide coordinates
+  "Tuebingen", #provide a site name
+  "Germany", #provide a country name
+  "#DDCC77", #provide a color for histograms
+  histograms = TRUE #show histograms
+)
+summary_table 
+# summary_table |> gtsave("assets/table_summary.png", vwidth = 820)
+```
+
+## Processing & states
+
+`LightLogR` contains many functions to manipulate, expand, or condense datasets. We will highlight the most important ones.
+
+### `aggregate_Datetime()`
+
+`aggregate_Datetime()` is a general‑purpose resampling utility that bins observations into fixed‑duration intervals and computes a summary statistic per bin. It is intentionally opinionated, providing sensible defaults (e.g., mean for numeric columns and mode for character/factor columns), but all summaries are configurable and additional metrics can be requested. Use it as a lightweight formatter to change the effective measurement interval after the fact (e.g., re‑epoching from 10 s to 1 min).
+
+```{r}
+#| fig-height: 6
+#| fig-width: 12
+  dataset |> 
+  aggregate_Datetime("1 hour") |> #try to set different units: "15 mins", "2 hours",...
+  gg_days(aes_col = Id)
+```
+
+### `aggregate_Date()`
+
+`aggregate_Date()` is a companion function that collapses each group into a single 24‑hour profile, optionally re‑epoching the data in the process. It is well‑suited to very large datasets when you need an overview of the *average day*. It applies the same summarization rules as `aggregate_Datetime()` and is equally configurable to your requirements:
+
+```{r}
+#| fig-height: 6
+#| fig-width: 8
+dataset |> 
+  aggregate_Date(unit = "5 minutes") |> 
+  gg_days(aes_col = Id)
+```
+
+### `gg_doubleplot()`
+
+`aggregate_Date()` pairs well with `gg_doubleplot()`, which duplicates each day with an offset to reveal patterns that span midnight. While it can be applied to any dataset, use it on only a handful of days at a time to keep plots readable. If the dataset it is called on contains more than one day `gg_doubleplot()` defaults to displaying the next day instead of duplicating the same day.
+
+```{r}
+#| fig-height: 6
+#| fig-width: 8
+dataset |> 
+  aggregate_Date(unit = "30 minutes") |> 
+  gg_doubleplot(aes_col = Id, aes_fill = Id)
+```
+
+```{r}
+#| fig-height: 6
+#| fig-width: 12
+# it is recommended to add photoperiod information after aggregating to the Date
+# level and prior to the doubleplot for best results.
+dataset |> 
+  aggregate_Date(unit = "30 minutes") |> 
+  add_photoperiod(coordinates, overwrite = TRUE) |>
+  gg_doubleplot(aes_fill = Id) |>
+  gg_photoperiod()
+```
+
+
+### Beyond inital variables
+
+Both `aggregate_Datetime()` and `aggregate_Date()` allow for the calculation of additional metrics within their respective bins. One use case is to gauge the spread of the data within certain times. A simple approach is to plot the minimum and maximum value of a dataset that was condensed to a single day.
+
+```{r}
+#| fig-height: 6
+#| fig-width: 8
+dataset |> 
+  aggregate_Date(unit = "30 minutes",
+                 lower = min(MEDI), #create new variables...
+                 upper = max(MEDI)  #...as many as needed
+                 ) |> 
+  gg_doubleplot(geom = "blank") + # use gg_doubleplot only as a canvas
+  geom_ribbon(aes(ymin = lower, ymax = upper, fill = Id), alpha = 0.5) +
+  geom_line()
+```
+
+### States
+
+States, in the context of LightLogR, means any non-numeric variable. Those can be part of the dataset, be calculated from the dataset (e.g., mel EDI >= 250 lx), or added from an external source. We showcase some capabilities by dividing the dataset into sections by the Brown et al. (2022) recommendations for healthy lighting, using the `Brown_cut()` function.
+
+```{r}
+dataset_1day <- 
+dataset |> 
+  Brown_cut() |> #creating a column with the cuts
+  aggregate_Date(unit = "30 minutes", 
+                 numeric.handler = median #note that we switched from mean to median
+                 ) |> 
+  mutate(state = state |> fct_relevel("≥250lx", "≤10lx", "≤1lx")) #order the levels
+```
+
+#### `gg_state()`
+
+`gg_state()` augments an existing plot by adding background rectangles that mark state intervals. When multiple states are present, map them to distinct fills (or colors) to improve readability.
+
+```{r}
+#| fig-height: 6
+#| fig-width: 8
+#| warning: false
+dataset_1day |> 
+  gg_doubleplot(col = "black", alpha = 1, geom = "line") |>
+  gg_state(State.colname = state, aes_fill = state) +
+  labs(fill = "Brown levels")
+```
+
+### `durations()`
+
+If you need a numeric summary of states, `durations()` computes the total time spent in each state per grouping (e.g., by `Id`, by day). With a small reshaping step, you can produce a tidy table showing the average duration each participant spends in each state:
+
+```{r}
+dataset_1day |> 
+  group_by(state, .add = TRUE) |> #adding Brown states to the grouping
+  durations(MEDI) |> #calculating durations
+  ungroup() |>  #remove all grouping
+  mutate(state = fct_na_value_to_level(state, "10-250lx")) |> #name NA level
+  pivot_wider(id_cols = Id, names_from = state, values_from = duration) |> #reshape
+  gt()
+```
+
+### `extract_states()` & `summarize_numeric()`
+
+If your interest in states centers on *individual occurrences* - for example, how often a state occurred, how long each episode persisted, or when episodes began - use the following tools. `extract_states()` returns an occurrence‑level table (one row per episode) with start/end times and durations; `summarize_numeric()` then aggregates those episodes into concise metrics (e.g., counts, total duration, mean/median episode length) by the grouping you specify.
+
+```{r}
+dataset_1day |> 
+  extract_states(state) |> 
+  summarize_numeric() |> 
+  gt()
+```
+
+## It's a wrap
+
+This concludes the first part of the `LightLogR` tutorial. We hope it has given you a nice introduction to the package and convinced you to try it out with your own data and in your local installation. For more on `LightLogR`, we recommend the [documentation page](https://tscnlab.github.io/LightLogR/). If you want to stay up to date with the development of the package, you can sign up to our [LightLogR mailing list](https://lists.lrz.de/mailman/listinfo/lightlogr-users).

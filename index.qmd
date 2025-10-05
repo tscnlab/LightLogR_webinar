@@ -1,18 +1,34 @@
 ---
-title: "Quarto Website Template"
 bibliography: references.bib
-format:
-  html:
-    toc: true
-    toc-location: left
-    lightbox: true
-
+toc: false
+title-block-style: none
 ---
+:::{.column-screen}
+![](assets/LLR_Tutorial_Banner.png){width="100%"}
+:::
 
-This is a Quarto website.
+# Welcome to the LightLogR Course Series
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Build open, reproducible analyses of wearable light exposure and visual experience data in R. Choose the track that fits your background and goals, then follow along with live, hands‑on examples.
 
-```{r}
-1 + 1
-```
+## Choose your track
+
+[Beginner Track](beginner.qmd){.btn .btn-primary}
+[Advanced Track (to come)](){.btn .btn-secondary}
+
+## What you’ll do
+
+- Walk through the LightLogR workflow: import → (pre-)processing → metrics → visualisation.
+- Sense‑check data quickly with tidy, reproducible steps and overview plots.
+- Handle common issues (gaps, irregular sampling, zero inflation) with principled defaults.
+- Add photoperiod information and derive interpretable summaries.
+
+For more information on the two tracks, have a look at the [course flyer](assets/Online_course_series_2025-26.pdf)
+
+::: {.callout-note}
+**Prerequisites**
+
+- **Beginner:** Basic familiarity with R; no prior LightLogR experience required.
+- **Advanced:** Comfortable with tidy workflows **and** either completion of the beginner track or equivalent LightLogR experience.
+:::
+

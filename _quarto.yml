@@ -1,31 +1,42 @@
 project:
   type: website
-
+  output-dir: docs
+  
 website:
-  title: "Quarto Website Template"
-#  site-url: put site url here
-  repo-url: https://github.com/tscnlab/QuartoWebsite
-#  repo-url: put repo url here and delete previous line
-#  issue-url: put issue subpage here
+  title: "LightLogR Webinar"
+  repo-url: https://github.com/tscnlab/LightLogR_webinar
+  issue-url: https://github.com/tscnlab/LightLogR_webinar/issues
   repo-actions: [edit, issue]
   page-navigation: true
   bread-crumbs: true
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - text: "About"
+      - text: Home
+        href: index.qmd
+      - text: "Course flyer"
+        href: assets/Online_course_series_2025-26.pdf
+        target: "_blank"
+      - text: "Register"
+        href: https://tum-conf.zoom.us/webinar/register/WN_xGoHi1i_Sz2flC6-qGcLoQ#/registration
+        target: "_blank"
+      - text: Beginner
+        menu:
+        - text: Beginner (live)
+          href: beginner-live.qmd
+        - text: Beginner (static)
+          href: beginner.qmd
+      - text: Advanced
+        menu:
+        - text: To come soon
+      - text: "About / Funding"
         href: about.qmd
       - text: "License"
-        href: license.md
-      - text: "Contributing"
-        href: contributing.qmd
+        href: license.qmd
     right:
       - icon: github
-        href: https://github.com/tscnlab/QuartoWebsite
-#        href: put repo url here and delete previous line
+        href: https://github.com/tscnlab/LightLogR_webinar
         aria-label: Quarto GitHub
-
+        
 format:
   html:
     theme:
@@ -36,9 +47,6 @@ format:
 
 execute:
   freeze: auto
-
-  
-date: last-modified
 
 language:
   title-block-published: "Last modified:"

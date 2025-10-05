@@ -1,5 +1,15 @@
 ---
-title: "About"
+title: "About / Funding"
 ---
 
-About this site
+This online course was developed by the [Translational Sensory & Circadian Neuroscience Unit](https://www.tscnlab.org).
+
+## Funding
+
+LightLogR's development is supported by the following projects and funders:
+
+![](assets/Acknowledgement badge.jpg)
+
+![](assets/logo_glee-2.png){width="50%"}
+
+![](assets/Wellcome_Trust_logo.svg.png){width="25%"}

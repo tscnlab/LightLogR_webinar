@@ -1,5 +1,0 @@
----
-title: "Contributing"
----
-
-Describe how people can contribute to this project
