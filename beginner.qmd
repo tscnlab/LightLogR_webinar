@@ -192,7 +192,7 @@ This is because many `LightLogR` functions default to the melanopic EDI variable
 dataset |> names()
 ```
 
-You can choose any numeric variable; here, we’ll use `Melanopic_Lux`, which is similar—though not identical—to melanopic EDI. To identify which argument to adjust, consult the function documentation:
+You can choose any numeric variable; here, we’ll use `Melanopic_Lux`, which is similar—though not identical—to melanopic EDI. To identify which argument to adjust, consult the [function documentation](https://tscnlab.github.io/LightLogR/reference/gg_day.html):
 
 ```{r}
 #| eval: false
