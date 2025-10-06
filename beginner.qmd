@@ -24,9 +24,16 @@ This document is intended for researchers with no prior experience using `LightL
 
 ## How this page works
 
-This document contains the script for the online course series as a [Quarto](www.quarto.org) script, which can be executed on a local installation of R. Please ensure that all libraries are installed prior to running the script.
+This document contains the script for the online course series as a [Quarto](https://quarto.org) script, which can be executed on a local installation of R. Please ensure that all libraries are installed prior to running the script.
 
-If you want to try out `LightLogR` without installing R or the package, try the [script version running webR](beginner-live.qmd), for a autonymous but slightly reduced version.
+If you want to test `LightLogR` without installing R or the package, try the [script version running webR](beginner-live.qmd), for a autonymous but slightly reduced version.
+
+To run this script, we recommend cloning or downloading the [GitHub repository](https://github.com/tscnlab/LightLogR_webinar) ([link to Zip-file](https://github.com/tscnlab/LightLogR_webinar/archive/refs/heads/main.zip)) and running `beginner.qmd`. Alternatively, you can download the [main script](https://raw.githubusercontent.com/tscnlab/LightLogR_webinar/refs/heads/main/beginner.qmd), the [preview functions](https://github.com/tscnlab/LightLogR_webinar/tree/main/scripts), and the [data](https://github.com/tscnlab/LightLogR_webinar/tree/main/data) separately - though this is more laborious and error‑prone. In both cases, you’ll need to install the required packages. A quick way is to run:
+
+```{r}
+#| eval: false
+renv::restore()
+```
 
 ## Installation
 
@@ -54,6 +61,7 @@ library(patchwork)
 library(rlang)
 library(glue)
 library(gtExtras)
+library(svglite)
 
 #the next two scripts will be integrated into the next release of LightLogR
 #but have to be loaded separately for now (≤0.9.3)

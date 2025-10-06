@@ -13,12 +13,19 @@ Build open, reproducible analyses of wearable light exposure and visual experien
 
 ## Choose your track
 
-[Beginner Track](beginner.qmd){.btn .btn-primary}
-[Advanced Track (to come)](){.btn .btn-secondary}
+*Live* tutorials run a self‑contained version of R in your browser - no setup required - with only minor functional limitations. *Static* tutorials provide the complete script exactly as you would run it in a local R installation.
+
+[Beginner (live)](beginner-live.qmd){.btn .btn-primary}
+[Beginner (static)](beginner.qmd){.btn .btn-secondary}
+
+**To come soon:**
+
+[Advanced (live)]{.btn .btn-primary}
+[Advanced (static)]{.btn .btn-secondary}
 
 ## What you’ll do
 
-- Walk through the LightLogR workflow: import → (pre-)processing → metrics → visualisation.
+- Walk through the LightLogR workflow: import → (pre-)processing → visualisation → metrics.
 - Sense‑check data quickly with tidy, reproducible steps and overview plots.
 - Handle common issues (gaps, irregular sampling, zero inflation) with principled defaults.
 - Add photoperiod information and derive interpretable summaries.
@@ -32,3 +39,8 @@ For more information on the two tracks, have a look at the [course flyer](assets
 - **Advanced:** Comfortable with tidy workflows **and** either completion of the beginner track or equivalent LightLogR experience.
 :::
 
+## How do I get started?
+
+The tutorials are open to give them a go at any time. Try the *live* tutorials to forego any setup, or download the scripts from the *static* tutorials alongside the data from the [GitHub repository](https://github.com/tscnlab/LightLogR_webinar) for the full experience.
+
+We are also offering free, regular webinars on the topic of *Open and reproducible analysis of light exposure and visual experience data* using `LightLogR. Have a look at the [course flyer](assets/Online_course_series_2025-26.pdf) and [register here](https://tum-conf.zoom.us/webinar/register/WN_xGoHi1i_Sz2flC6-qGcLoQ#/registration).

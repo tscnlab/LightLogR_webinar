@@ -225,7 +225,7 @@ dataset |> gg_day()
 
 This is because many `LightLogR` functions default to the melanopic EDI variable[^3]. However, the nanoLambda export does not include this variable. Therefore, we must explicitly specify which variable to display. Let’s inspect the available variables:
 
-[^3] melanopic equivalent daylight-illuminance, CIE S026:2018 
+[^3]: melanopic equivalent daylight-illuminance, CIE S026:2018 
 
 ```{webr}
 dataset |> names()
@@ -422,6 +422,9 @@ dataset_red |>
   coord_cartesian(ylim = c(0, 5000))
 ```
 
+While beyond the scope of this tutorial, there are many research disciplines that work with **visual experience** data, which covers many different domains: *Light*, *Spectrum*, *Distance*, *Spatial resolution*, ....
+
+If you are interested in those domains, we recommend [our tutorial](https://tscnlab.github.io/ZaunerEtAl_JVis_2025/) specifically for the more comprehensive but also more complex datasets in the visual experience domains.
 
 ## Validation
 

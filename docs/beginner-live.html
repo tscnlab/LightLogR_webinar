@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.6.42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Johannes Zauner">
-<meta name="dcterms.date" content="2025-10-05">
+<meta name="dcterms.date" content="2025-10-06">
 <title>Open and reproducible analysis of light exposure and visual experience data (Beginner) – LightLogR Webinar</title>
 <style>
 code{white-space: pre-wrap;}
@@ -280,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Last modified:</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 5, 2025</p>
+      <p class="date">October 6, 2025</p>
     </div>
   </div>
   
@@ -496,8 +496,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjMsImZpZy13aWR0aCI6
 </script>
 </div>
 </div>
-<p>This is because many <code>LightLogR</code> functions default to the melanopic EDI variable[^3]. However, the nanoLambda export does not include this variable. Therefore, we must explicitly specify which variable to display. Let’s inspect the available variables:</p>
-<p>[^3] melanopic equivalent daylight-illuminance, CIE S026:2018</p>
+<p>This is because many <code>LightLogR</code> functions default to the melanopic EDI variable<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. However, the nanoLambda export does not include this variable. Therefore, we must explicitly specify which variable to display. Let’s inspect the available variables:</p>
 <div class="cell">
 <div>
 <div id="webr-14" class="exercise-cell">
@@ -534,7 +533,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjMsImZpZy13aWR0aCI6
 <p>In summary, importing from different devices is typically as simple as specifying the device name. Some devices require additional arguments; consult the <code>?import</code> help for details.</p>
 </section></section><section id="importing-more-than-one-file" class="level3" data-number="4.4"><h3 data-number="4.4" class="anchored" data-anchor-id="importing-more-than-one-file">
 <span class="header-section-number">4.4</span> Importing more than one file</h3>
-<p>In typical studies, you’ll work with multiple participants, and importing each file individually is cumbersome. <code>LightLogR</code> supports batch imports; simply pass multiple files to the import function. In this tutorial, we’ll use three files from three participants, all drawn from the open‑access personal light‑exposure dataset by <a href="https://github.com/MeLiDosProject/GuidolinEtAl_Dataset_2025">Guidolin et al.&nbsp;2025</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. All data were collected with the <code>ActLumus</code> device type.</p>
+<p>In typical studies, you’ll work with multiple participants, and importing each file individually is cumbersome. <code>LightLogR</code> supports batch imports; simply pass multiple files to the import function. In this tutorial, we’ll use three files from three participants, all drawn from the open‑access personal light‑exposure dataset by <a href="https://github.com/MeLiDosProject/GuidolinEtAl_Dataset_2025">Guidolin et al.&nbsp;2025</a><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. All data were collected with the <code>ActLumus</code> device type.</p>
 <p>When importing multiple files, keep the following in mind:</p>
 <ul>
 <li>All files must originate from the same device type, share the same export structure, and use the same time‑zone specification. If they differ, import them separately.</li>
@@ -713,6 +712,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjYsImZpZy13aWR0aCI6
 </script>
 </div>
 </div>
+<p>While beyond the scope of this tutorial, there are many research disciplines that work with <strong>visual experience</strong> data, which covers many different domains: <em>Light</em>, <em>Spectrum</em>, <em>Distance</em>, <em>Spatial resolution</em>, ….</p>
+<p>If you are interested in those domains, we recommend <a href="https://tscnlab.github.io/ZaunerEtAl_JVis_2025/">our tutorial</a> specifically for the more comprehensive but also more complex datasets in the visual experience domains.</p>
 </section></section><section id="validation" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="validation">
 <span class="header-section-number">6</span> Validation</h2>
 <p>Currently, <code>LightLogR</code>’s validation aims to ensure a regular, uninterrupted time series for each participant. Additional features are planned.</p>
@@ -1469,7 +1470,8 @@ WyJkYXRhL1NwZWNjeS5jc3YiLCJkYXRhLzIxNl9hY3RsdW11c19Mb2dfMTM4Ml8yMDIzMTAwOTEzMDcw
 <ol>
 <li id="fn1"><p>If you are new to the R language or want a great introduction to R for data science, we can recommend the free online book <a href="https://r4ds.hadley.nz">R for Data Science (second edition)</a> by Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>If you want to know more about <code>webR</code> and the <code>Quarto-live</code> extension that powers this document, you can visit the <a href="https://r-wasm.github.io/quarto-live/">documentation page</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Guidolin, C., Zauner, J., &amp; Spitschan, M., (2025). Personal light exposure dataset for Tuebingen, Germany (Version 1.0.0) [Data set]. URL: https://github.com/MeLiDosProject/GuidolinEtAl_Dataset_2025. DOI: doi.org/10.5281/zenodo.16895188<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>melanopic equivalent daylight-illuminance, CIE S026:2018<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Guidolin, C., Zauner, J., &amp; Spitschan, M., (2025). Personal light exposure dataset for Tuebingen, Germany (Version 1.0.0) [Data set]. URL: https://github.com/MeLiDosProject/GuidolinEtAl_Dataset_2025. DOI: doi.org/10.5281/zenodo.16895188<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol></section></div></main><!-- /main --><script type="ojs-module-contents">
 eyJjb250ZW50cyI6W119
 </script><script type="module">
@@ -2174,7 +2176,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>This is because many <span class="in">`LightLogR`</span> functions default to the melanopic EDI variable<span class="ot">[^3]</span>. However, the nanoLambda export does not include this variable. Therefore, we must explicitly specify which variable to display. Let’s inspect the available variables:</span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="ot">[^3]</span> melanopic equivalent daylight-illuminance, CIE S026:2018 </span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="ot">[^3]: </span>melanopic equivalent daylight-illuminance, CIE S026:2018 </span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
 <span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; names()</span></span>
@@ -2371,632 +2373,635 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a><span class="in">  coord_cartesian(ylim = c(0, 5000))</span></span>
 <span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a><span class="fu">## Validation</span></span>
-<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a>Currently, <span class="in">`LightLogR`</span>’s validation aims to ensure a regular, uninterrupted time series for each participant. Additional features are planned.</span>
-<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>The figures below summarize the gap terminology used in <span class="in">`LightLogR`</span> and illustrate how <span class="in">`gap_handler()`</span> fills implicit missing data.</span>
-<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=2}</span>
-<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a><span class="al">![Terminology of gaps in `LightLogR`](assets/gap_terminology.png)</span></span>
+<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>While beyond the scope of this tutorial, there are many research disciplines that work with **visual experience** data, which covers many different domains: *Light*, *Spectrum*, *Distance*, *Spatial resolution*, ....</span>
+<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>If you are interested in those domains, we recommend <span class="co">[</span><span class="ot">our tutorial</span><span class="co">](https://tscnlab.github.io/ZaunerEtAl_JVis_2025/)</span> specifically for the more comprehensive but also more complex datasets in the visual experience domains.</span>
+<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a><span class="fu">## Validation</span></span>
+<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>Currently, <span class="in">`LightLogR`</span>’s validation aims to ensure a regular, uninterrupted time series for each participant. Additional features are planned.</span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>The figures below summarize the gap terminology used in <span class="in">`LightLogR`</span> and illustrate how <span class="in">`gap_handler()`</span> fills implicit missing data.</span>
 <span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a><span class="al">![`gap_handler()` identifies the time series’ `dominant epoch` (the most common sampling interval) and fills `NA` entries between the first and last observation. By default, no observations are dropped, so irregular samples are preserved.](assets/gap_handler.png)</span></span>
-<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=2}</span>
+<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a><span class="al">![Terminology of gaps in `LightLogR`](assets/gap_terminology.png)</span></span>
 <span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a>To quickly assess whether a dataset contains (implicit) gaps or irregular sampling, use the following diagnostic helpers:</span>
-<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; has_gaps()</span></span>
-<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; has_irregulars()</span></span>
-<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>We can then quickly visualize where these issues occur within the affected days.</span>
-<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 12</span></span>
-<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 5</span></span>
-<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
-<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)</span></span>
-<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">To generate this figure yourself, please execute the [static R script](beginner.qmd)</span><span class="co">](assets/gg_gaps.png)</span>{width="50%"}</span>
-<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>This function can be slow when a dataset contains many gaps or irregular samples. If needed, pre‑filter the data or adjust the function’s arguments.</span>
-<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>In our example, we identify eight participant‑days with gaps:</span>
-<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Three straightforward cases:** data collection ends around noon on Monday, leaving the remainder of the day missing. By default, the function evaluates complete calendar days (this is configurable). These days only require converting implicit gaps into explicit missing values.</span>
-<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Two pre‑trial snippets:** brief measurements occur on the Friday or Monday preceding the trial—likely test recordings. These days are outside the study window and should be removed entirely.</span>
-<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Three early irregularities:** irregular sampling appears shortly after data collection starts. This most likely reflects a test recording immediately before the device was handed to the participant. Trimming this initial segment eliminates the irregularity and the rest of the day can be changed to explicit missingness.</span>
-<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a><span class="fu">### Preparing the dataset</span></span>
-<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>There are several ways to address these issues. We will showcase three in the next sections.</span>
-<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 1. Set the maximum length of the dataset.</span></span>
-<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>If the study follows a fixed‑length protocol, you can enforce a maximum observation window (e.g., 7 days) by trimming from the beginning so that each participant’s series has the same duration. This approach preserves participant‑specific end times, which must meaningfully reflect protocol completion; otherwise, you risk cutting away valid data.</span>
-<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 8</span></span>
-<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 5</span></span>
-<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
-<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a><span class="in">filter(</span></span>
-<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a><span class="in">  Datetime &gt; (max(Datetime) - days(7))</span></span>
-<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a><span class="in">  ) |&gt; </span></span>
-<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)</span></span>
-<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>The remaining gaps are simple start‑ and end‑day truncations.</span>
-<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 2. Remove the first values from the dataset</span></span>
-<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>You can remove a fixed number of observations from the beginning of each participant’s series. This approach is helpful when the exact total measurement duration is not critical—for example, to discard brief pre‑trial test recordings or initial device‑stabilization periods.</span>
-<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 12</span></span>
-<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 5</span></span>
-<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
-<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a><span class="in">  slice_tail(n = -(3*60*6)) |&gt; </span></span>
-<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)</span></span>
-<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>The results are similarly effective.</span>
-<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 3. Trim with a list</span></span>
-<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>The most robust way to enforce sensible measurement windows is to supply a table of trial <span class="in">`start`</span> and <span class="in">`end`</span> timestamps (per participant) and filter the time series accordingly. In this tutorial we create that table *on the fly*; in practice, it is typically stored in a CSV or Excel file. The <span class="in">`add_states()`</span> function provides an effective interface between the two datasets: it aligns by identifier and time, adds state information (e.g., “in‑trial”), and enables precise trimming. Ensure that the identifying variables (e.g., <span class="in">`Id`</span>) are named identically across files.</span>
-<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a><span class="in">#create a dataframe of trial times</span></span>
-<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a><span class="in">trial_times &lt;-</span></span>
-<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a><span class="in">  data.frame(</span></span>
-<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a><span class="in">    Id = c("216", "218", "219"),</span></span>
-<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a><span class="in">    start = c(</span></span>
-<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a><span class="in">      "02.10.2023  12:30:00",</span></span>
-<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a><span class="in">      "16.10.2023  12:00:00",</span></span>
-<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a><span class="in">      "16.10.2023  12:00:00"</span></span>
-<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
-<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a><span class="in">    end = c(</span></span>
-<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a><span class="in">      "09.10.2023  12:30:00",</span></span>
-<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a><span class="in">      "23.10.2023  12:00:00",</span></span>
-<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a><span class="in">      "23.10.2023  12:00:00"</span></span>
-<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
-<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a><span class="in">    trial = TRUE</span></span>
-<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a><span class="in">  ) |&gt;</span></span>
-<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(across(</span></span>
-<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a><span class="in">    c(start, end),</span></span>
-<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a><span class="in">    \(x) parse_date_time(x, order = "%d%m%y %H%M%S", tz = "Europe/Berlin")</span></span>
-<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a><span class="in">  )) |&gt;</span></span>
-<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(Id)</span></span>
-<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 12</span></span>
-<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 5</span></span>
-<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
-<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a><span class="in"># filter dataset by trial time</span></span>
-<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a><span class="in">dataset &lt;-</span></span>
-<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a><span class="in">  dataset |&gt;</span></span>
-<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a><span class="in">  add_states(trial_times) |&gt;</span></span>
-<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a><span class="in">  dplyr::filter(trial) |&gt;</span></span>
-<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a><span class="in">  select(-trial)</span></span>
-<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)</span></span>
+<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a><span class="al">![`gap_handler()` identifies the time series’ `dominant epoch` (the most common sampling interval) and fills `NA` entries between the first and last observation. By default, no observations are dropped, so irregular samples are preserved.](assets/gap_handler.png)</span></span>
+<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a>To quickly assess whether a dataset contains (implicit) gaps or irregular sampling, use the following diagnostic helpers:</span>
+<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; has_gaps()</span></span>
+<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; has_irregulars()</span></span>
+<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>We can then quickly visualize where these issues occur within the affected days.</span>
+<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 12</span></span>
+<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 5</span></span>
+<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
+<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)</span></span>
+<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">To generate this figure yourself, please execute the [static R script](beginner.qmd)</span><span class="co">](assets/gg_gaps.png)</span>{width="50%"}</span>
+<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a>This function can be slow when a dataset contains many gaps or irregular samples. If needed, pre‑filter the data or adjust the function’s arguments.</span>
+<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>In our example, we identify eight participant‑days with gaps:</span>
+<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Three straightforward cases:** data collection ends around noon on Monday, leaving the remainder of the day missing. By default, the function evaluates complete calendar days (this is configurable). These days only require converting implicit gaps into explicit missing values.</span>
+<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Two pre‑trial snippets:** brief measurements occur on the Friday or Monday preceding the trial—likely test recordings. These days are outside the study window and should be removed entirely.</span>
+<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Three early irregularities:** irregular sampling appears shortly after data collection starts. This most likely reflects a test recording immediately before the device was handed to the participant. Trimming this initial segment eliminates the irregularity and the rest of the day can be changed to explicit missingness.</span>
+<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a><span class="fu">### Preparing the dataset</span></span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>There are several ways to address these issues. We will showcase three in the next sections.</span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 1. Set the maximum length of the dataset.</span></span>
+<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>If the study follows a fixed‑length protocol, you can enforce a maximum observation window (e.g., 7 days) by trimming from the beginning so that each participant’s series has the same duration. This approach preserves participant‑specific end times, which must meaningfully reflect protocol completion; otherwise, you risk cutting away valid data.</span>
+<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 8</span></span>
+<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 5</span></span>
+<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a><span class="in">filter(</span></span>
+<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a><span class="in">  Datetime &gt; (max(Datetime) - days(7))</span></span>
+<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a><span class="in">  ) |&gt; </span></span>
+<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)</span></span>
+<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a>The remaining gaps are simple start‑ and end‑day truncations.</span>
+<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 2. Remove the first values from the dataset</span></span>
+<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>You can remove a fixed number of observations from the beginning of each participant’s series. This approach is helpful when the exact total measurement duration is not critical—for example, to discard brief pre‑trial test recordings or initial device‑stabilization periods.</span>
+<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 12</span></span>
+<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 5</span></span>
+<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a><span class="in">  slice_tail(n = -(3*60*6)) |&gt; </span></span>
+<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)</span></span>
+<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>The results are similarly effective.</span>
+<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 3. Trim with a list</span></span>
+<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>The most robust way to enforce sensible measurement windows is to supply a table of trial <span class="in">`start`</span> and <span class="in">`end`</span> timestamps (per participant) and filter the time series accordingly. In this tutorial we create that table *on the fly*; in practice, it is typically stored in a CSV or Excel file. The <span class="in">`add_states()`</span> function provides an effective interface between the two datasets: it aligns by identifier and time, adds state information (e.g., “in‑trial”), and enables precise trimming. Ensure that the identifying variables (e.g., <span class="in">`Id`</span>) are named identically across files.</span>
+<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a><span class="in">#create a dataframe of trial times</span></span>
+<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a><span class="in">trial_times &lt;-</span></span>
+<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a><span class="in">  data.frame(</span></span>
+<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a><span class="in">    Id = c("216", "218", "219"),</span></span>
+<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a><span class="in">    start = c(</span></span>
+<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a><span class="in">      "02.10.2023  12:30:00",</span></span>
+<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a><span class="in">      "16.10.2023  12:00:00",</span></span>
+<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a><span class="in">      "16.10.2023  12:00:00"</span></span>
+<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
+<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a><span class="in">    end = c(</span></span>
+<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a><span class="in">      "09.10.2023  12:30:00",</span></span>
+<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a><span class="in">      "23.10.2023  12:00:00",</span></span>
+<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a><span class="in">      "23.10.2023  12:00:00"</span></span>
+<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
+<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a><span class="in">    trial = TRUE</span></span>
+<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a><span class="in">  ) |&gt;</span></span>
+<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(across(</span></span>
+<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a><span class="in">    c(start, end),</span></span>
+<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a><span class="in">    \(x) parse_date_time(x, order = "%d%m%y %H%M%S", tz = "Europe/Berlin")</span></span>
+<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a><span class="in">  )) |&gt;</span></span>
+<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(Id)</span></span>
+<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 12</span></span>
+<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 5</span></span>
+<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a><span class="in"># filter dataset by trial time</span></span>
+<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a><span class="in">dataset &lt;-</span></span>
+<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a><span class="in">  dataset |&gt;</span></span>
+<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a><span class="in">  add_states(trial_times) |&gt;</span></span>
+<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a><span class="in">  dplyr::filter(trial) |&gt;</span></span>
+<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a><span class="in">  select(-trial)</span></span>
 <span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a><span class="fu">### `gap_table()`</span></span>
-<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a>We can summarize each dataset’s regularity and missingness in a table. Note that this function may be slow when many gaps are present.</span>
-<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
-<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; gap_table()</span></span>
-<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">To generate this table yourself, please execute the [static R script](beginner.qmd)</span><span class="co">](assets/gap_table1.png)</span></span>
-<span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a><span class="fu">### `gap_handler()`</span></span>
-<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a>Approximately 13% of the missing data are *implicit*—they arise from truncated start and end days. It is good practice to make these gaps explicit. Use <span class="in">`gap_handler(full.days = TRUE)`</span> to fill implicit gaps to full‑day regularity. Then verify the result with <span class="in">`gap_table()`</span>, the diagnostic helpers, and a follow‑up visualization:</span>
-<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a><span class="in">dataset &lt;- dataset |&gt; gap_handler(full.days = TRUE)</span></span>
-<span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-642"><a href="#cb1-642" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
-<span id="cb1-643"><a href="#cb1-643" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; gap_table()</span></span>
-<span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">To generate this table yourself, please execute the [static R script](beginner.qmd)</span><span class="co">](assets/gap_table2.png)</span></span>
-<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-651"><a href="#cb1-651" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; has_gaps()</span></span>
-<span id="cb1-652"><a href="#cb1-652" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; has_irregulars()</span></span>
-<span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-654"><a href="#cb1-654" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-657"><a href="#cb1-657" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-658"><a href="#cb1-658" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
-<span id="cb1-659"><a href="#cb1-659" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 12</span></span>
-<span id="cb1-660"><a href="#cb1-660" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
-<span id="cb1-661"><a href="#cb1-661" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; gg_days(aes_col = Id)</span></span>
-<span id="cb1-662"><a href="#cb1-662" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-663"><a href="#cb1-663" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-664"><a href="#cb1-664" aria-hidden="true" tabindex="-1"></a><span class="fu">### `remove_partial_data()`</span></span>
-<span id="cb1-665"><a href="#cb1-665" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-666"><a href="#cb1-666" aria-hidden="true" tabindex="-1"></a>It is often necessary to set missingness thresholds at different levels (hour, day, participant). Typical questions include:</span>
-<span id="cb1-667"><a href="#cb1-667" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-668"><a href="#cb1-668" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How much data may be missing within an hour before that hour is excluded?</span>
-<span id="cb1-669"><a href="#cb1-669" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How much data may be missing from a day before that day is excluded?</span>
-<span id="cb1-670"><a href="#cb1-670" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How much data may be missing for a participant before excluding them from further analyses?</span>
-<span id="cb1-671"><a href="#cb1-671" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-672"><a href="#cb1-672" aria-hidden="true" tabindex="-1"></a><span class="in">`remove_partial_data()`</span> addresses these questions. It evaluates each group (by default, <span class="in">`Id`</span>) and quantifies missingness either as an absolute duration or a relative proportion. Groups that exceed the specified threshold are discarded. A useful option is <span class="in">`by.date`</span>, which performs the thresholding per calendar day (for removal) while leaving the output grouping unchanged. Note that missingness is determined by the amount of data points in each group, relative to NA values.</span>
-<span id="cb1-673"><a href="#cb1-673" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-674"><a href="#cb1-674" aria-hidden="true" tabindex="-1"></a>For this tutorial, we will remove any day with more than one hour of missing data—this effectively drops both partial Mondays:</span>
-<span id="cb1-675"><a href="#cb1-675" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)</span></span>
+<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a><span class="fu">### `gap_table()`</span></span>
+<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>We can summarize each dataset’s regularity and missingness in a table. Note that this function may be slow when many gaps are present.</span>
+<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
+<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; gap_table()</span></span>
+<span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">To generate this table yourself, please execute the [static R script](beginner.qmd)</span><span class="co">](assets/gap_table1.png)</span></span>
+<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a><span class="fu">### `gap_handler()`</span></span>
+<span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a>Approximately 13% of the missing data are *implicit*—they arise from truncated start and end days. It is good practice to make these gaps explicit. Use <span class="in">`gap_handler(full.days = TRUE)`</span> to fill implicit gaps to full‑day regularity. Then verify the result with <span class="in">`gap_table()`</span>, the diagnostic helpers, and a follow‑up visualization:</span>
+<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a><span class="in">dataset &lt;- dataset |&gt; gap_handler(full.days = TRUE)</span></span>
+<span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
+<span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; gap_table()</span></span>
+<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-648"><a href="#cb1-648" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-649"><a href="#cb1-649" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">To generate this table yourself, please execute the [static R script](beginner.qmd)</span><span class="co">](assets/gap_table2.png)</span></span>
+<span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-654"><a href="#cb1-654" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; has_gaps()</span></span>
+<span id="cb1-655"><a href="#cb1-655" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; has_irregulars()</span></span>
+<span id="cb1-656"><a href="#cb1-656" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-657"><a href="#cb1-657" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-660"><a href="#cb1-660" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-661"><a href="#cb1-661" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
+<span id="cb1-662"><a href="#cb1-662" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 12</span></span>
+<span id="cb1-663"><a href="#cb1-663" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb1-664"><a href="#cb1-664" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; gg_days(aes_col = Id)</span></span>
+<span id="cb1-665"><a href="#cb1-665" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-666"><a href="#cb1-666" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-667"><a href="#cb1-667" aria-hidden="true" tabindex="-1"></a><span class="fu">### `remove_partial_data()`</span></span>
+<span id="cb1-668"><a href="#cb1-668" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-669"><a href="#cb1-669" aria-hidden="true" tabindex="-1"></a>It is often necessary to set missingness thresholds at different levels (hour, day, participant). Typical questions include:</span>
+<span id="cb1-670"><a href="#cb1-670" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-671"><a href="#cb1-671" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How much data may be missing within an hour before that hour is excluded?</span>
+<span id="cb1-672"><a href="#cb1-672" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How much data may be missing from a day before that day is excluded?</span>
+<span id="cb1-673"><a href="#cb1-673" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How much data may be missing for a participant before excluding them from further analyses?</span>
+<span id="cb1-674"><a href="#cb1-674" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-675"><a href="#cb1-675" aria-hidden="true" tabindex="-1"></a><span class="in">`remove_partial_data()`</span> addresses these questions. It evaluates each group (by default, <span class="in">`Id`</span>) and quantifies missingness either as an absolute duration or a relative proportion. Groups that exceed the specified threshold are discarded. A useful option is <span class="in">`by.date`</span>, which performs the thresholding per calendar day (for removal) while leaving the output grouping unchanged. Note that missingness is determined by the amount of data points in each group, relative to NA values.</span>
 <span id="cb1-676"><a href="#cb1-676" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-679"><a href="#cb1-679" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-680"><a href="#cb1-680" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
-<span id="cb1-681"><a href="#cb1-681" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 12</span></span>
-<span id="cb1-682"><a href="#cb1-682" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
-<span id="cb1-683"><a href="#cb1-683" aria-hidden="true" tabindex="-1"></a><span class="in">dataset &lt;- </span></span>
-<span id="cb1-684"><a href="#cb1-684" aria-hidden="true" tabindex="-1"></a><span class="in">  dataset |&gt; </span></span>
-<span id="cb1-685"><a href="#cb1-685" aria-hidden="true" tabindex="-1"></a><span class="in">  remove_partial_data(Variable.colname = MEDI, </span></span>
-<span id="cb1-686"><a href="#cb1-686" aria-hidden="true" tabindex="-1"></a><span class="in">                      threshold.missing = "1 hour",</span></span>
-<span id="cb1-687"><a href="#cb1-687" aria-hidden="true" tabindex="-1"></a><span class="in">                      by.date = TRUE)</span></span>
-<span id="cb1-688"><a href="#cb1-688" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-689"><a href="#cb1-689" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; gg_days(aes_col = Id)</span></span>
-<span id="cb1-690"><a href="#cb1-690" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-677"><a href="#cb1-677" aria-hidden="true" tabindex="-1"></a>For this tutorial, we will remove any day with more than one hour of missing data—this effectively drops both partial Mondays:</span>
+<span id="cb1-678"><a href="#cb1-678" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-679"><a href="#cb1-679" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-682"><a href="#cb1-682" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-683"><a href="#cb1-683" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
+<span id="cb1-684"><a href="#cb1-684" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 12</span></span>
+<span id="cb1-685"><a href="#cb1-685" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb1-686"><a href="#cb1-686" aria-hidden="true" tabindex="-1"></a><span class="in">dataset &lt;- </span></span>
+<span id="cb1-687"><a href="#cb1-687" aria-hidden="true" tabindex="-1"></a><span class="in">  dataset |&gt; </span></span>
+<span id="cb1-688"><a href="#cb1-688" aria-hidden="true" tabindex="-1"></a><span class="in">  remove_partial_data(Variable.colname = MEDI, </span></span>
+<span id="cb1-689"><a href="#cb1-689" aria-hidden="true" tabindex="-1"></a><span class="in">                      threshold.missing = "1 hour",</span></span>
+<span id="cb1-690"><a href="#cb1-690" aria-hidden="true" tabindex="-1"></a><span class="in">                      by.date = TRUE)</span></span>
 <span id="cb1-691"><a href="#cb1-691" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-692"><a href="#cb1-692" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-693"><a href="#cb1-693" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why did we just spend all this time handling gaps and irregularities on the Mondays only to remove them afterward?</span></span>
+<span id="cb1-692"><a href="#cb1-692" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; gg_days(aes_col = Id)</span></span>
+<span id="cb1-693"><a href="#cb1-693" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-694"><a href="#cb1-694" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-695"><a href="#cb1-695" aria-hidden="true" tabindex="-1"></a>Not all datasets are this straightforward. Deciding whether a day should be included in the analysis should come **after** ensuring the data are aligned to a regular, uninterrupted time series. Regularization makes diagnostics meaningful and prevents threshold rules from behaving unpredictably.</span>
-<span id="cb1-696"><a href="#cb1-696" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-697"><a href="#cb1-697" aria-hidden="true" tabindex="-1"></a>Moreover, there are different frameworks for grouping personal light‑exposure data. In this tutorial we focus on calendar dates and 24‑hour days. Other frameworks group differently. For example, anchoring to sleep–wake cycles—under which both Mondays might still contain useful nocturnal data. Harmonizing first ensures those alternatives remain viable even if calendar‑day summaries are later excluded.</span>
-<span id="cb1-698"><a href="#cb1-698" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-699"><a href="#cb1-699" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-700"><a href="#cb1-700" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-701"><a href="#cb1-701" aria-hidden="true" tabindex="-1"></a><span class="fu">## Metrics</span></span>
-<span id="cb1-702"><a href="#cb1-702" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-703"><a href="#cb1-703" aria-hidden="true" tabindex="-1"></a>Metrics form the second major pillar of <span class="in">`LightLogR`</span>, alongside visualization. The literature contains many light‑exposure metrics; <span class="in">`LightLogR`</span> implements a broad set of them behind a uniform, well‑documented interface. The currently available metrics are:</span>
-<span id="cb1-704"><a href="#cb1-704" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-705"><a href="#cb1-705" aria-hidden="true" tabindex="-1"></a>| Metric Family                        | Submetrics | Note                 | Documentation                                                                                     |</span>
-<span id="cb1-706"><a href="#cb1-706" aria-hidden="true" tabindex="-1"></a>|------------------|----------------|-----------------|---------------------|</span>
-<span id="cb1-707"><a href="#cb1-707" aria-hidden="true" tabindex="-1"></a>| Barroso                              | 7                 |                      | <span class="in">`barroso_lighting_metrics()`</span>                                                                      |</span>
-<span id="cb1-708"><a href="#cb1-708" aria-hidden="true" tabindex="-1"></a>| Bright-dark period                   | 4x2               | bright / dark        | <span class="in">`bright_dark_period()`</span>                                                                            |</span>
-<span id="cb1-709"><a href="#cb1-709" aria-hidden="true" tabindex="-1"></a>| Centroid of light exposure           | 1                 |                      | <span class="in">`centroidLE()`</span>                                                                                    |</span>
-<span id="cb1-710"><a href="#cb1-710" aria-hidden="true" tabindex="-1"></a>| Dose                                 | 1                 |                      | <span class="in">`dose()`</span>                                                                               |</span>
-<span id="cb1-711"><a href="#cb1-711" aria-hidden="true" tabindex="-1"></a>| Disparity index                      | 1                 |                      | <span class="in">`disparity_index()`</span>                                                                               |</span>
-<span id="cb1-712"><a href="#cb1-712" aria-hidden="true" tabindex="-1"></a>| Duration above threshold             | 3                 | above, below, within | <span class="in">`duration_above_threshold()`</span>                                                                      |</span>
-<span id="cb1-713"><a href="#cb1-713" aria-hidden="true" tabindex="-1"></a>| Exponential moving average (EMA)     | 1                 |                      | <span class="in">`exponential_moving_average()`</span>                                                                    |</span>
-<span id="cb1-714"><a href="#cb1-714" aria-hidden="true" tabindex="-1"></a>| Frequency crossing threshold         | 1                 |                      | <span class="in">`frequency_crossing_threshold()`</span>                                                                  |</span>
-<span id="cb1-715"><a href="#cb1-715" aria-hidden="true" tabindex="-1"></a>| Intradaily Variance (IV)             | 1                 |                      | <span class="in">`intradaily_variability()`</span>                                                                        |</span>
-<span id="cb1-716"><a href="#cb1-716" aria-hidden="true" tabindex="-1"></a>| Interdaily Stability (IS)            | 1                 |                      | <span class="in">`interdaily_stability()`</span>                                                                          |</span>
-<span id="cb1-717"><a href="#cb1-717" aria-hidden="true" tabindex="-1"></a>| Midpoint CE (Cumulative Exposure)    | 1                 |                      | <span class="in">`midpointCE()`</span>                                                                                    |</span>
-<span id="cb1-718"><a href="#cb1-718" aria-hidden="true" tabindex="-1"></a>| nvRC (Non-visual circadian response) | 4                 |                      | <span class="in">`nvRC()`</span>, <span class="in">`nvRC_circadianDisturbance()`</span>, <span class="in">`nvRC_circadianBias()`</span>, <span class="in">`nvRC_relativeAmplitudeError()`</span> |</span>
-<span id="cb1-719"><a href="#cb1-719" aria-hidden="true" tabindex="-1"></a>| nvRD (Non-visual direct response)    | 2                 |                      | <span class="in">`nvRD()`</span>, <span class="in">`nvRD_cumulative_response()`</span>                                                           |</span>
-<span id="cb1-720"><a href="#cb1-720" aria-hidden="true" tabindex="-1"></a>| Period above threshold               | 3                 | above, below, within | <span class="in">`period_above_threshold()`</span>                                                                        |</span>
-<span id="cb1-721"><a href="#cb1-721" aria-hidden="true" tabindex="-1"></a>| Pulses above threshold               | 7x3               | above, below, within | <span class="in">`pulses_above_threshold()`</span>                                                                        |</span>
-<span id="cb1-722"><a href="#cb1-722" aria-hidden="true" tabindex="-1"></a>| Threshold for duration               | 2                 | above, below         | <span class="in">`threshold_for_duration()`</span>                                                                        |</span>
-<span id="cb1-723"><a href="#cb1-723" aria-hidden="true" tabindex="-1"></a>| Timing above threshold               | 3                 | above, below, within | <span class="in">`timing_above_threshold()`</span>                                                                        |</span>
-<span id="cb1-724"><a href="#cb1-724" aria-hidden="true" tabindex="-1"></a>| **Total:**                           |                   |                      |                                                                                                   |</span>
-<span id="cb1-725"><a href="#cb1-725" aria-hidden="true" tabindex="-1"></a>| **17 families**                      | **62 metrics**    |                      |                                                                                                   |</span>
-<span id="cb1-726"><a href="#cb1-726" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-727"><a href="#cb1-727" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb1-728"><a href="#cb1-728" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-729"><a href="#cb1-729" aria-hidden="true" tabindex="-1"></a>LightLogR supports a wide range of metrics across different metric families. You can find the full documentation of metrics functions in the <span class="co">[</span><span class="ot">reference section</span><span class="co">](https://tscnlab.github.io/LightLogR/reference/index.html#metrics)</span>. There is also an overview article on how to use <span class="co">[</span><span class="ot">Metrics</span><span class="co">](https://tscnlab.github.io/LightLogR/articles/Metrics.html)</span>.</span>
-<span id="cb1-730"><a href="#cb1-730" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-731"><a href="#cb1-731" aria-hidden="true" tabindex="-1"></a>If you would like to use a metric you don't find represented in LightLogR, please contact the developers. The easiest and most trackable way to get in contact is by opening a new issue on our <span class="co">[</span><span class="ot">Github repository</span><span class="co">](https://github.com/tscnlab/LightLogR/issues)</span>.</span>
-<span id="cb1-732"><a href="#cb1-732" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-733"><a href="#cb1-733" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-734"><a href="#cb1-734" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-735"><a href="#cb1-735" aria-hidden="true" tabindex="-1"></a><span class="fu">### Principles</span></span>
-<span id="cb1-736"><a href="#cb1-736" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-737"><a href="#cb1-737" aria-hidden="true" tabindex="-1"></a>Each metric function operates on vectors. Although the main argument is often named <span class="in">`Light.vector`</span>, the name is conventional - the function will accept any variable you supply. All metric functions are thoroughly documented, with references to their intended use and interpretation.</span>
-<span id="cb1-738"><a href="#cb1-738" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-739"><a href="#cb1-739" aria-hidden="true" tabindex="-1"></a>While we don’t generally recommend it, you can pass a raw vector directly to a metric function. For example, to compute *Time above 250&nbsp;lx melanopic EDI*, you could run:</span>
-<span id="cb1-740"><a href="#cb1-740" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-743"><a href="#cb1-743" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-744"><a href="#cb1-744" aria-hidden="true" tabindex="-1"></a><span class="in">duration_above_threshold(</span></span>
-<span id="cb1-745"><a href="#cb1-745" aria-hidden="true" tabindex="-1"></a><span class="in">  Light.vector = dataset$MEDI,</span></span>
-<span id="cb1-746"><a href="#cb1-746" aria-hidden="true" tabindex="-1"></a><span class="in">  Time.vector = dataset$Datetime,</span></span>
-<span id="cb1-747"><a href="#cb1-747" aria-hidden="true" tabindex="-1"></a><span class="in">  threshold = 250</span></span>
-<span id="cb1-748"><a href="#cb1-748" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
-<span id="cb1-749"><a href="#cb1-749" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-750"><a href="#cb1-750" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-751"><a href="#cb1-751" aria-hidden="true" tabindex="-1"></a>However, that single result is not very informative - it aggregates across all participants and all days. To recover the total recorded duration, recompute the complementary metric: *Time below 250&nbsp;lx melanopic EDI*. This should approximate the full two weeks and four days of data when evaluated over the whole dataset:</span>
-<span id="cb1-752"><a href="#cb1-752" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-755"><a href="#cb1-755" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-756"><a href="#cb1-756" aria-hidden="true" tabindex="-1"></a><span class="in">duration_above_threshold(</span></span>
-<span id="cb1-757"><a href="#cb1-757" aria-hidden="true" tabindex="-1"></a><span class="in">  Light.vector = dataset$MEDI,</span></span>
-<span id="cb1-758"><a href="#cb1-758" aria-hidden="true" tabindex="-1"></a><span class="in">  Time.vector = dataset$Datetime,</span></span>
-<span id="cb1-759"><a href="#cb1-759" aria-hidden="true" tabindex="-1"></a><span class="in">  threshold = 250,</span></span>
-<span id="cb1-760"><a href="#cb1-760" aria-hidden="true" tabindex="-1"></a><span class="in">  comparison = "below"</span></span>
-<span id="cb1-761"><a href="#cb1-761" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
-<span id="cb1-762"><a href="#cb1-762" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-763"><a href="#cb1-763" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-764"><a href="#cb1-764" aria-hidden="true" tabindex="-1"></a>The problem is amplified for metrics defined at the day scale (or shorter). For example, the *brightest 10 hours* (**M10**) is computed within each 24‑hour day using a consecutive 10‑hour window—so applying it to a pooled, cross‑day vector is almost meaningless:</span>
-<span id="cb1-765"><a href="#cb1-765" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-768"><a href="#cb1-768" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-769"><a href="#cb1-769" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
-<span id="cb1-770"><a href="#cb1-770" aria-hidden="true" tabindex="-1"></a><span class="in">bright_dark_period(</span></span>
-<span id="cb1-771"><a href="#cb1-771" aria-hidden="true" tabindex="-1"></a><span class="in">  Light.vector = dataset$MEDI,</span></span>
-<span id="cb1-772"><a href="#cb1-772" aria-hidden="true" tabindex="-1"></a><span class="in">  Time.vector = dataset$Datetime</span></span>
-<span id="cb1-773"><a href="#cb1-773" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
-<span id="cb1-774"><a href="#cb1-774" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-775"><a href="#cb1-775" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-776"><a href="#cb1-776" aria-hidden="true" tabindex="-1"></a>The resulting value - although computationally valid - is substantively meaningless: it selects the single brightest 10‑hour window **across all participants**, rather than computing M10 *per participant per day*. In addition, two time series (218 &amp; 219) overlap in time, which violates the assumption of a single, regularly spaced series and can produce errors. Hence the <span class="in">`Warning: Time.vector is not regularly spaced. Calculated results may be incorrect!`</span> </span>
-<span id="cb1-777"><a href="#cb1-777" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-778"><a href="#cb1-778" aria-hidden="true" tabindex="-1"></a>Accordingly, metric functions should be applied within tidy groups (e.g., by <span class="in">`Id`</span> and by calendar <span class="in">`Date`</span>), not to a pooled vector. You can achieve this with explicit for‑loops or, preferably, a tidy approach using <span class="in">`dplyr`</span> (e.g., <span class="in">`group_by()`</span>/<span class="in">`summarise()`</span> or <span class="in">`nest()`</span>/<span class="in">`map()`</span>). We recommend the latter.</span>
-<span id="cb1-779"><a href="#cb1-779" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-780"><a href="#cb1-780" aria-hidden="true" tabindex="-1"></a><span class="fu">### Use of `summarize()`</span></span>
-<span id="cb1-781"><a href="#cb1-781" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-782"><a href="#cb1-782" aria-hidden="true" tabindex="-1"></a>Wrap the metric inside a dplyr <span class="in">`summarise()`</span>/<span class="in">`summarize()`</span> call, supply the **grouped** dataset, and set `as.df = TRUE`. This yields a tidy, one‑row‑per‑group result (e.g., per `Id`). For example, computing **interdaily stability (IS)**:</span>
-<span id="cb1-783"><a href="#cb1-783" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-786"><a href="#cb1-786" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-787"><a href="#cb1-787" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-788"><a href="#cb1-788" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(</span></span>
-<span id="cb1-789"><a href="#cb1-789" aria-hidden="true" tabindex="-1"></a><span class="in">    interdaily_stability(</span></span>
-<span id="cb1-790"><a href="#cb1-790" aria-hidden="true" tabindex="-1"></a><span class="in">      Light.vector = MEDI,</span></span>
-<span id="cb1-791"><a href="#cb1-791" aria-hidden="true" tabindex="-1"></a><span class="in">      Datetime.vector = Datetime,</span></span>
-<span id="cb1-792"><a href="#cb1-792" aria-hidden="true" tabindex="-1"></a><span class="in">      as.df = TRUE</span></span>
-<span id="cb1-793"><a href="#cb1-793" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
-<span id="cb1-794"><a href="#cb1-794" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
-<span id="cb1-795"><a href="#cb1-795" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-796"><a href="#cb1-796" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-797"><a href="#cb1-797" aria-hidden="true" tabindex="-1"></a>To compute multiple metrics at once, include additional expressions inside the <span class="in">`summarize()`</span> call. For instance, add **Time above 250&nbsp;lx melanopic EDI** alongside IS:</span>
-<span id="cb1-798"><a href="#cb1-798" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-801"><a href="#cb1-801" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-802"><a href="#cb1-802" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-803"><a href="#cb1-803" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(</span></span>
-<span id="cb1-804"><a href="#cb1-804" aria-hidden="true" tabindex="-1"></a><span class="in">     duration_above_threshold(</span></span>
-<span id="cb1-805"><a href="#cb1-805" aria-hidden="true" tabindex="-1"></a><span class="in">      Light.vector = MEDI,</span></span>
-<span id="cb1-806"><a href="#cb1-806" aria-hidden="true" tabindex="-1"></a><span class="in">      Time.vector = Datetime,</span></span>
-<span id="cb1-807"><a href="#cb1-807" aria-hidden="true" tabindex="-1"></a><span class="in">      threshold = 250,</span></span>
-<span id="cb1-808"><a href="#cb1-808" aria-hidden="true" tabindex="-1"></a><span class="in">      as.df = TRUE</span></span>
-<span id="cb1-809"><a href="#cb1-809" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
-<span id="cb1-810"><a href="#cb1-810" aria-hidden="true" tabindex="-1"></a><span class="in">    interdaily_stability(</span></span>
-<span id="cb1-811"><a href="#cb1-811" aria-hidden="true" tabindex="-1"></a><span class="in">      Light.vector = MEDI,</span></span>
-<span id="cb1-812"><a href="#cb1-812" aria-hidden="true" tabindex="-1"></a><span class="in">      Datetime.vector = Datetime,</span></span>
-<span id="cb1-813"><a href="#cb1-813" aria-hidden="true" tabindex="-1"></a><span class="in">      as.df = TRUE</span></span>
-<span id="cb1-814"><a href="#cb1-814" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
-<span id="cb1-815"><a href="#cb1-815" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
-<span id="cb1-816"><a href="#cb1-816" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-817"><a href="#cb1-817" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-818"><a href="#cb1-818" aria-hidden="true" tabindex="-1"></a>For finer granularity, add additional grouping variables before summarizing—for example, group by calendar <span class="in">`Date`</span> to compute metrics per participant–day:</span>
-<span id="cb1-819"><a href="#cb1-819" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-822"><a href="#cb1-822" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-823"><a href="#cb1-823" aria-hidden="true" tabindex="-1"></a><span class="in">TAT250 &lt;- </span></span>
-<span id="cb1-824"><a href="#cb1-824" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-825"><a href="#cb1-825" aria-hidden="true" tabindex="-1"></a><span class="in">  add_Date_col(group.by = TRUE, as.wday = TRUE) |&gt; #add a Date column + group</span></span>
-<span id="cb1-826"><a href="#cb1-826" aria-hidden="true" tabindex="-1"></a><span class="in">    summarize(</span></span>
-<span id="cb1-827"><a href="#cb1-827" aria-hidden="true" tabindex="-1"></a><span class="in">     duration_above_threshold(</span></span>
-<span id="cb1-828"><a href="#cb1-828" aria-hidden="true" tabindex="-1"></a><span class="in">      Light.vector = MEDI,</span></span>
-<span id="cb1-829"><a href="#cb1-829" aria-hidden="true" tabindex="-1"></a><span class="in">      Time.vector = Datetime,</span></span>
-<span id="cb1-830"><a href="#cb1-830" aria-hidden="true" tabindex="-1"></a><span class="in">      threshold = 250,</span></span>
-<span id="cb1-831"><a href="#cb1-831" aria-hidden="true" tabindex="-1"></a><span class="in">      as.df = TRUE</span></span>
-<span id="cb1-832"><a href="#cb1-832" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
-<span id="cb1-833"><a href="#cb1-833" aria-hidden="true" tabindex="-1"></a><span class="in">    .groups = "drop_last"</span></span>
-<span id="cb1-834"><a href="#cb1-834" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
-<span id="cb1-835"><a href="#cb1-835" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-836"><a href="#cb1-836" aria-hidden="true" tabindex="-1"></a><span class="in">TAT250</span></span>
-<span id="cb1-837"><a href="#cb1-837" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-695"><a href="#cb1-695" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-696"><a href="#cb1-696" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why did we just spend all this time handling gaps and irregularities on the Mondays only to remove them afterward?</span></span>
+<span id="cb1-697"><a href="#cb1-697" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-698"><a href="#cb1-698" aria-hidden="true" tabindex="-1"></a>Not all datasets are this straightforward. Deciding whether a day should be included in the analysis should come **after** ensuring the data are aligned to a regular, uninterrupted time series. Regularization makes diagnostics meaningful and prevents threshold rules from behaving unpredictably.</span>
+<span id="cb1-699"><a href="#cb1-699" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-700"><a href="#cb1-700" aria-hidden="true" tabindex="-1"></a>Moreover, there are different frameworks for grouping personal light‑exposure data. In this tutorial we focus on calendar dates and 24‑hour days. Other frameworks group differently. For example, anchoring to sleep–wake cycles—under which both Mondays might still contain useful nocturnal data. Harmonizing first ensures those alternatives remain viable even if calendar‑day summaries are later excluded.</span>
+<span id="cb1-701"><a href="#cb1-701" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-702"><a href="#cb1-702" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-703"><a href="#cb1-703" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-704"><a href="#cb1-704" aria-hidden="true" tabindex="-1"></a><span class="fu">## Metrics</span></span>
+<span id="cb1-705"><a href="#cb1-705" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-706"><a href="#cb1-706" aria-hidden="true" tabindex="-1"></a>Metrics form the second major pillar of <span class="in">`LightLogR`</span>, alongside visualization. The literature contains many light‑exposure metrics; <span class="in">`LightLogR`</span> implements a broad set of them behind a uniform, well‑documented interface. The currently available metrics are:</span>
+<span id="cb1-707"><a href="#cb1-707" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-708"><a href="#cb1-708" aria-hidden="true" tabindex="-1"></a>| Metric Family                        | Submetrics | Note                 | Documentation                                                                                     |</span>
+<span id="cb1-709"><a href="#cb1-709" aria-hidden="true" tabindex="-1"></a>|------------------|----------------|-----------------|---------------------|</span>
+<span id="cb1-710"><a href="#cb1-710" aria-hidden="true" tabindex="-1"></a>| Barroso                              | 7                 |                      | <span class="in">`barroso_lighting_metrics()`</span>                                                                      |</span>
+<span id="cb1-711"><a href="#cb1-711" aria-hidden="true" tabindex="-1"></a>| Bright-dark period                   | 4x2               | bright / dark        | <span class="in">`bright_dark_period()`</span>                                                                            |</span>
+<span id="cb1-712"><a href="#cb1-712" aria-hidden="true" tabindex="-1"></a>| Centroid of light exposure           | 1                 |                      | <span class="in">`centroidLE()`</span>                                                                                    |</span>
+<span id="cb1-713"><a href="#cb1-713" aria-hidden="true" tabindex="-1"></a>| Dose                                 | 1                 |                      | <span class="in">`dose()`</span>                                                                               |</span>
+<span id="cb1-714"><a href="#cb1-714" aria-hidden="true" tabindex="-1"></a>| Disparity index                      | 1                 |                      | <span class="in">`disparity_index()`</span>                                                                               |</span>
+<span id="cb1-715"><a href="#cb1-715" aria-hidden="true" tabindex="-1"></a>| Duration above threshold             | 3                 | above, below, within | <span class="in">`duration_above_threshold()`</span>                                                                      |</span>
+<span id="cb1-716"><a href="#cb1-716" aria-hidden="true" tabindex="-1"></a>| Exponential moving average (EMA)     | 1                 |                      | <span class="in">`exponential_moving_average()`</span>                                                                    |</span>
+<span id="cb1-717"><a href="#cb1-717" aria-hidden="true" tabindex="-1"></a>| Frequency crossing threshold         | 1                 |                      | <span class="in">`frequency_crossing_threshold()`</span>                                                                  |</span>
+<span id="cb1-718"><a href="#cb1-718" aria-hidden="true" tabindex="-1"></a>| Intradaily Variance (IV)             | 1                 |                      | <span class="in">`intradaily_variability()`</span>                                                                        |</span>
+<span id="cb1-719"><a href="#cb1-719" aria-hidden="true" tabindex="-1"></a>| Interdaily Stability (IS)            | 1                 |                      | <span class="in">`interdaily_stability()`</span>                                                                          |</span>
+<span id="cb1-720"><a href="#cb1-720" aria-hidden="true" tabindex="-1"></a>| Midpoint CE (Cumulative Exposure)    | 1                 |                      | <span class="in">`midpointCE()`</span>                                                                                    |</span>
+<span id="cb1-721"><a href="#cb1-721" aria-hidden="true" tabindex="-1"></a>| nvRC (Non-visual circadian response) | 4                 |                      | <span class="in">`nvRC()`</span>, <span class="in">`nvRC_circadianDisturbance()`</span>, <span class="in">`nvRC_circadianBias()`</span>, <span class="in">`nvRC_relativeAmplitudeError()`</span> |</span>
+<span id="cb1-722"><a href="#cb1-722" aria-hidden="true" tabindex="-1"></a>| nvRD (Non-visual direct response)    | 2                 |                      | <span class="in">`nvRD()`</span>, <span class="in">`nvRD_cumulative_response()`</span>                                                           |</span>
+<span id="cb1-723"><a href="#cb1-723" aria-hidden="true" tabindex="-1"></a>| Period above threshold               | 3                 | above, below, within | <span class="in">`period_above_threshold()`</span>                                                                        |</span>
+<span id="cb1-724"><a href="#cb1-724" aria-hidden="true" tabindex="-1"></a>| Pulses above threshold               | 7x3               | above, below, within | <span class="in">`pulses_above_threshold()`</span>                                                                        |</span>
+<span id="cb1-725"><a href="#cb1-725" aria-hidden="true" tabindex="-1"></a>| Threshold for duration               | 2                 | above, below         | <span class="in">`threshold_for_duration()`</span>                                                                        |</span>
+<span id="cb1-726"><a href="#cb1-726" aria-hidden="true" tabindex="-1"></a>| Timing above threshold               | 3                 | above, below, within | <span class="in">`timing_above_threshold()`</span>                                                                        |</span>
+<span id="cb1-727"><a href="#cb1-727" aria-hidden="true" tabindex="-1"></a>| **Total:**                           |                   |                      |                                                                                                   |</span>
+<span id="cb1-728"><a href="#cb1-728" aria-hidden="true" tabindex="-1"></a>| **17 families**                      | **62 metrics**    |                      |                                                                                                   |</span>
+<span id="cb1-729"><a href="#cb1-729" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-730"><a href="#cb1-730" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-731"><a href="#cb1-731" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-732"><a href="#cb1-732" aria-hidden="true" tabindex="-1"></a>LightLogR supports a wide range of metrics across different metric families. You can find the full documentation of metrics functions in the <span class="co">[</span><span class="ot">reference section</span><span class="co">](https://tscnlab.github.io/LightLogR/reference/index.html#metrics)</span>. There is also an overview article on how to use <span class="co">[</span><span class="ot">Metrics</span><span class="co">](https://tscnlab.github.io/LightLogR/articles/Metrics.html)</span>.</span>
+<span id="cb1-733"><a href="#cb1-733" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-734"><a href="#cb1-734" aria-hidden="true" tabindex="-1"></a>If you would like to use a metric you don't find represented in LightLogR, please contact the developers. The easiest and most trackable way to get in contact is by opening a new issue on our <span class="co">[</span><span class="ot">Github repository</span><span class="co">](https://github.com/tscnlab/LightLogR/issues)</span>.</span>
+<span id="cb1-735"><a href="#cb1-735" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-736"><a href="#cb1-736" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-737"><a href="#cb1-737" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-738"><a href="#cb1-738" aria-hidden="true" tabindex="-1"></a><span class="fu">### Principles</span></span>
+<span id="cb1-739"><a href="#cb1-739" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-740"><a href="#cb1-740" aria-hidden="true" tabindex="-1"></a>Each metric function operates on vectors. Although the main argument is often named <span class="in">`Light.vector`</span>, the name is conventional - the function will accept any variable you supply. All metric functions are thoroughly documented, with references to their intended use and interpretation.</span>
+<span id="cb1-741"><a href="#cb1-741" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-742"><a href="#cb1-742" aria-hidden="true" tabindex="-1"></a>While we don’t generally recommend it, you can pass a raw vector directly to a metric function. For example, to compute *Time above 250&nbsp;lx melanopic EDI*, you could run:</span>
+<span id="cb1-743"><a href="#cb1-743" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-746"><a href="#cb1-746" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-747"><a href="#cb1-747" aria-hidden="true" tabindex="-1"></a><span class="in">duration_above_threshold(</span></span>
+<span id="cb1-748"><a href="#cb1-748" aria-hidden="true" tabindex="-1"></a><span class="in">  Light.vector = dataset$MEDI,</span></span>
+<span id="cb1-749"><a href="#cb1-749" aria-hidden="true" tabindex="-1"></a><span class="in">  Time.vector = dataset$Datetime,</span></span>
+<span id="cb1-750"><a href="#cb1-750" aria-hidden="true" tabindex="-1"></a><span class="in">  threshold = 250</span></span>
+<span id="cb1-751"><a href="#cb1-751" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
+<span id="cb1-752"><a href="#cb1-752" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-753"><a href="#cb1-753" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-754"><a href="#cb1-754" aria-hidden="true" tabindex="-1"></a>However, that single result is not very informative - it aggregates across all participants and all days. To recover the total recorded duration, recompute the complementary metric: *Time below 250&nbsp;lx melanopic EDI*. This should approximate the full two weeks and four days of data when evaluated over the whole dataset:</span>
+<span id="cb1-755"><a href="#cb1-755" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-758"><a href="#cb1-758" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-759"><a href="#cb1-759" aria-hidden="true" tabindex="-1"></a><span class="in">duration_above_threshold(</span></span>
+<span id="cb1-760"><a href="#cb1-760" aria-hidden="true" tabindex="-1"></a><span class="in">  Light.vector = dataset$MEDI,</span></span>
+<span id="cb1-761"><a href="#cb1-761" aria-hidden="true" tabindex="-1"></a><span class="in">  Time.vector = dataset$Datetime,</span></span>
+<span id="cb1-762"><a href="#cb1-762" aria-hidden="true" tabindex="-1"></a><span class="in">  threshold = 250,</span></span>
+<span id="cb1-763"><a href="#cb1-763" aria-hidden="true" tabindex="-1"></a><span class="in">  comparison = "below"</span></span>
+<span id="cb1-764"><a href="#cb1-764" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
+<span id="cb1-765"><a href="#cb1-765" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-766"><a href="#cb1-766" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-767"><a href="#cb1-767" aria-hidden="true" tabindex="-1"></a>The problem is amplified for metrics defined at the day scale (or shorter). For example, the *brightest 10 hours* (**M10**) is computed within each 24‑hour day using a consecutive 10‑hour window—so applying it to a pooled, cross‑day vector is almost meaningless:</span>
+<span id="cb1-768"><a href="#cb1-768" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-771"><a href="#cb1-771" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-772"><a href="#cb1-772" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
+<span id="cb1-773"><a href="#cb1-773" aria-hidden="true" tabindex="-1"></a><span class="in">bright_dark_period(</span></span>
+<span id="cb1-774"><a href="#cb1-774" aria-hidden="true" tabindex="-1"></a><span class="in">  Light.vector = dataset$MEDI,</span></span>
+<span id="cb1-775"><a href="#cb1-775" aria-hidden="true" tabindex="-1"></a><span class="in">  Time.vector = dataset$Datetime</span></span>
+<span id="cb1-776"><a href="#cb1-776" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
+<span id="cb1-777"><a href="#cb1-777" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-778"><a href="#cb1-778" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-779"><a href="#cb1-779" aria-hidden="true" tabindex="-1"></a>The resulting value - although computationally valid - is substantively meaningless: it selects the single brightest 10‑hour window **across all participants**, rather than computing M10 *per participant per day*. In addition, two time series (218 &amp; 219) overlap in time, which violates the assumption of a single, regularly spaced series and can produce errors. Hence the <span class="in">`Warning: Time.vector is not regularly spaced. Calculated results may be incorrect!`</span> </span>
+<span id="cb1-780"><a href="#cb1-780" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-781"><a href="#cb1-781" aria-hidden="true" tabindex="-1"></a>Accordingly, metric functions should be applied within tidy groups (e.g., by <span class="in">`Id`</span> and by calendar <span class="in">`Date`</span>), not to a pooled vector. You can achieve this with explicit for‑loops or, preferably, a tidy approach using <span class="in">`dplyr`</span> (e.g., <span class="in">`group_by()`</span>/<span class="in">`summarise()`</span> or <span class="in">`nest()`</span>/<span class="in">`map()`</span>). We recommend the latter.</span>
+<span id="cb1-782"><a href="#cb1-782" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-783"><a href="#cb1-783" aria-hidden="true" tabindex="-1"></a><span class="fu">### Use of `summarize()`</span></span>
+<span id="cb1-784"><a href="#cb1-784" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-785"><a href="#cb1-785" aria-hidden="true" tabindex="-1"></a>Wrap the metric inside a dplyr <span class="in">`summarise()`</span>/<span class="in">`summarize()`</span> call, supply the **grouped** dataset, and set `as.df = TRUE`. This yields a tidy, one‑row‑per‑group result (e.g., per `Id`). For example, computing **interdaily stability (IS)**:</span>
+<span id="cb1-786"><a href="#cb1-786" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-789"><a href="#cb1-789" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-790"><a href="#cb1-790" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-791"><a href="#cb1-791" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(</span></span>
+<span id="cb1-792"><a href="#cb1-792" aria-hidden="true" tabindex="-1"></a><span class="in">    interdaily_stability(</span></span>
+<span id="cb1-793"><a href="#cb1-793" aria-hidden="true" tabindex="-1"></a><span class="in">      Light.vector = MEDI,</span></span>
+<span id="cb1-794"><a href="#cb1-794" aria-hidden="true" tabindex="-1"></a><span class="in">      Datetime.vector = Datetime,</span></span>
+<span id="cb1-795"><a href="#cb1-795" aria-hidden="true" tabindex="-1"></a><span class="in">      as.df = TRUE</span></span>
+<span id="cb1-796"><a href="#cb1-796" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
+<span id="cb1-797"><a href="#cb1-797" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
+<span id="cb1-798"><a href="#cb1-798" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-799"><a href="#cb1-799" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-800"><a href="#cb1-800" aria-hidden="true" tabindex="-1"></a>To compute multiple metrics at once, include additional expressions inside the <span class="in">`summarize()`</span> call. For instance, add **Time above 250&nbsp;lx melanopic EDI** alongside IS:</span>
+<span id="cb1-801"><a href="#cb1-801" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-804"><a href="#cb1-804" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-805"><a href="#cb1-805" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-806"><a href="#cb1-806" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(</span></span>
+<span id="cb1-807"><a href="#cb1-807" aria-hidden="true" tabindex="-1"></a><span class="in">     duration_above_threshold(</span></span>
+<span id="cb1-808"><a href="#cb1-808" aria-hidden="true" tabindex="-1"></a><span class="in">      Light.vector = MEDI,</span></span>
+<span id="cb1-809"><a href="#cb1-809" aria-hidden="true" tabindex="-1"></a><span class="in">      Time.vector = Datetime,</span></span>
+<span id="cb1-810"><a href="#cb1-810" aria-hidden="true" tabindex="-1"></a><span class="in">      threshold = 250,</span></span>
+<span id="cb1-811"><a href="#cb1-811" aria-hidden="true" tabindex="-1"></a><span class="in">      as.df = TRUE</span></span>
+<span id="cb1-812"><a href="#cb1-812" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
+<span id="cb1-813"><a href="#cb1-813" aria-hidden="true" tabindex="-1"></a><span class="in">    interdaily_stability(</span></span>
+<span id="cb1-814"><a href="#cb1-814" aria-hidden="true" tabindex="-1"></a><span class="in">      Light.vector = MEDI,</span></span>
+<span id="cb1-815"><a href="#cb1-815" aria-hidden="true" tabindex="-1"></a><span class="in">      Datetime.vector = Datetime,</span></span>
+<span id="cb1-816"><a href="#cb1-816" aria-hidden="true" tabindex="-1"></a><span class="in">      as.df = TRUE</span></span>
+<span id="cb1-817"><a href="#cb1-817" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
+<span id="cb1-818"><a href="#cb1-818" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
+<span id="cb1-819"><a href="#cb1-819" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-820"><a href="#cb1-820" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-821"><a href="#cb1-821" aria-hidden="true" tabindex="-1"></a>For finer granularity, add additional grouping variables before summarizing—for example, group by calendar <span class="in">`Date`</span> to compute metrics per participant–day:</span>
+<span id="cb1-822"><a href="#cb1-822" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-825"><a href="#cb1-825" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-826"><a href="#cb1-826" aria-hidden="true" tabindex="-1"></a><span class="in">TAT250 &lt;- </span></span>
+<span id="cb1-827"><a href="#cb1-827" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-828"><a href="#cb1-828" aria-hidden="true" tabindex="-1"></a><span class="in">  add_Date_col(group.by = TRUE, as.wday = TRUE) |&gt; #add a Date column + group</span></span>
+<span id="cb1-829"><a href="#cb1-829" aria-hidden="true" tabindex="-1"></a><span class="in">    summarize(</span></span>
+<span id="cb1-830"><a href="#cb1-830" aria-hidden="true" tabindex="-1"></a><span class="in">     duration_above_threshold(</span></span>
+<span id="cb1-831"><a href="#cb1-831" aria-hidden="true" tabindex="-1"></a><span class="in">      Light.vector = MEDI,</span></span>
+<span id="cb1-832"><a href="#cb1-832" aria-hidden="true" tabindex="-1"></a><span class="in">      Time.vector = Datetime,</span></span>
+<span id="cb1-833"><a href="#cb1-833" aria-hidden="true" tabindex="-1"></a><span class="in">      threshold = 250,</span></span>
+<span id="cb1-834"><a href="#cb1-834" aria-hidden="true" tabindex="-1"></a><span class="in">      as.df = TRUE</span></span>
+<span id="cb1-835"><a href="#cb1-835" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
+<span id="cb1-836"><a href="#cb1-836" aria-hidden="true" tabindex="-1"></a><span class="in">    .groups = "drop_last"</span></span>
+<span id="cb1-837"><a href="#cb1-837" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
 <span id="cb1-838"><a href="#cb1-838" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-839"><a href="#cb1-839" aria-hidden="true" tabindex="-1"></a>We can further condense this:</span>
-<span id="cb1-840"><a href="#cb1-840" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-843"><a href="#cb1-843" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-844"><a href="#cb1-844" aria-hidden="true" tabindex="-1"></a><span class="in">TAT250 |&gt; </span></span>
-<span id="cb1-845"><a href="#cb1-845" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize_numeric()</span></span>
-<span id="cb1-846"><a href="#cb1-846" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-847"><a href="#cb1-847" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-848"><a href="#cb1-848" aria-hidden="true" tabindex="-1"></a>That’s all you need to get started with metric calculation in <span class="in">`LightLogR`</span>. While advanced metrics involve additional considerations, this tidy grouped workflow will take you a long way.</span>
-<span id="cb1-849"><a href="#cb1-849" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-850"><a href="#cb1-850" aria-hidden="true" tabindex="-1"></a><span class="fu">## Photoperiod</span></span>
-<span id="cb1-851"><a href="#cb1-851" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-852"><a href="#cb1-852" aria-hidden="true" tabindex="-1"></a>Photoperiod is a key covariate in many analyses of personal light exposure. <span class="in">`LightLogR`</span> includes utilities to derive photoperiod information with minimal effort. All you need are geographic coordinates in decimal degrees (latitude, longitude); functions will align photoperiod features to your time series. Provide coordinates in standard decimal format (e.g., <span class="in">`48.52, 9.06`</span>):</span>
-<span id="cb1-853"><a href="#cb1-853" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-856"><a href="#cb1-856" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-857"><a href="#cb1-857" aria-hidden="true" tabindex="-1"></a><span class="in">#specifying coordinates (latitude/longitude)</span></span>
-<span id="cb1-858"><a href="#cb1-858" aria-hidden="true" tabindex="-1"></a><span class="in">coordinates &lt;- c(48.521637, 9.057645)</span></span>
-<span id="cb1-859"><a href="#cb1-859" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-860"><a href="#cb1-860" aria-hidden="true" tabindex="-1"></a><span class="in">#extracting photoperiod information</span></span>
-<span id="cb1-861"><a href="#cb1-861" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; extract_photoperiod(coordinates)</span></span>
-<span id="cb1-862"><a href="#cb1-862" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-863"><a href="#cb1-863" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-864"><a href="#cb1-864" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-867"><a href="#cb1-867" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-868"><a href="#cb1-868" aria-hidden="true" tabindex="-1"></a><span class="in">#adding photoperiod information</span></span>
-<span id="cb1-869"><a href="#cb1-869" aria-hidden="true" tabindex="-1"></a><span class="in">dataset &lt;- </span></span>
-<span id="cb1-870"><a href="#cb1-870" aria-hidden="true" tabindex="-1"></a><span class="in">  dataset |&gt; </span></span>
-<span id="cb1-871"><a href="#cb1-871" aria-hidden="true" tabindex="-1"></a><span class="in">  add_photoperiod(coordinates)</span></span>
-<span id="cb1-872"><a href="#cb1-872" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-873"><a href="#cb1-873" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; head()</span></span>
-<span id="cb1-874"><a href="#cb1-874" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-839"><a href="#cb1-839" aria-hidden="true" tabindex="-1"></a><span class="in">TAT250</span></span>
+<span id="cb1-840"><a href="#cb1-840" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-841"><a href="#cb1-841" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-842"><a href="#cb1-842" aria-hidden="true" tabindex="-1"></a>We can further condense this:</span>
+<span id="cb1-843"><a href="#cb1-843" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-846"><a href="#cb1-846" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-847"><a href="#cb1-847" aria-hidden="true" tabindex="-1"></a><span class="in">TAT250 |&gt; </span></span>
+<span id="cb1-848"><a href="#cb1-848" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize_numeric()</span></span>
+<span id="cb1-849"><a href="#cb1-849" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-850"><a href="#cb1-850" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-851"><a href="#cb1-851" aria-hidden="true" tabindex="-1"></a>That’s all you need to get started with metric calculation in <span class="in">`LightLogR`</span>. While advanced metrics involve additional considerations, this tidy grouped workflow will take you a long way.</span>
+<span id="cb1-852"><a href="#cb1-852" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-853"><a href="#cb1-853" aria-hidden="true" tabindex="-1"></a><span class="fu">## Photoperiod</span></span>
+<span id="cb1-854"><a href="#cb1-854" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-855"><a href="#cb1-855" aria-hidden="true" tabindex="-1"></a>Photoperiod is a key covariate in many analyses of personal light exposure. <span class="in">`LightLogR`</span> includes utilities to derive photoperiod information with minimal effort. All you need are geographic coordinates in decimal degrees (latitude, longitude); functions will align photoperiod features to your time series. Provide coordinates in standard decimal format (e.g., <span class="in">`48.52, 9.06`</span>):</span>
+<span id="cb1-856"><a href="#cb1-856" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-859"><a href="#cb1-859" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-860"><a href="#cb1-860" aria-hidden="true" tabindex="-1"></a><span class="in">#specifying coordinates (latitude/longitude)</span></span>
+<span id="cb1-861"><a href="#cb1-861" aria-hidden="true" tabindex="-1"></a><span class="in">coordinates &lt;- c(48.521637, 9.057645)</span></span>
+<span id="cb1-862"><a href="#cb1-862" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-863"><a href="#cb1-863" aria-hidden="true" tabindex="-1"></a><span class="in">#extracting photoperiod information</span></span>
+<span id="cb1-864"><a href="#cb1-864" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; extract_photoperiod(coordinates)</span></span>
+<span id="cb1-865"><a href="#cb1-865" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-866"><a href="#cb1-866" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-867"><a href="#cb1-867" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-870"><a href="#cb1-870" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-871"><a href="#cb1-871" aria-hidden="true" tabindex="-1"></a><span class="in">#adding photoperiod information</span></span>
+<span id="cb1-872"><a href="#cb1-872" aria-hidden="true" tabindex="-1"></a><span class="in">dataset &lt;- </span></span>
+<span id="cb1-873"><a href="#cb1-873" aria-hidden="true" tabindex="-1"></a><span class="in">  dataset |&gt; </span></span>
+<span id="cb1-874"><a href="#cb1-874" aria-hidden="true" tabindex="-1"></a><span class="in">  add_photoperiod(coordinates)</span></span>
 <span id="cb1-875"><a href="#cb1-875" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-876"><a href="#cb1-876" aria-hidden="true" tabindex="-1"></a><span class="fu">### Photoperiod in visualizations</span></span>
-<span id="cb1-877"><a href="#cb1-877" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-880"><a href="#cb1-880" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-881"><a href="#cb1-881" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
-<span id="cb1-882"><a href="#cb1-882" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 12</span></span>
-<span id="cb1-883"><a href="#cb1-883" aria-hidden="true" tabindex="-1"></a><span class="in">#if photoperiod information was already added to the data</span></span>
-<span id="cb1-884"><a href="#cb1-884" aria-hidden="true" tabindex="-1"></a><span class="in">#nothing has to be specified</span></span>
-<span id="cb1-885"><a href="#cb1-885" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; gg_days() |&gt; gg_photoperiod()</span></span>
-<span id="cb1-886"><a href="#cb1-886" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-887"><a href="#cb1-887" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-890"><a href="#cb1-890" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-891"><a href="#cb1-891" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
-<span id="cb1-892"><a href="#cb1-892" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 12</span></span>
-<span id="cb1-893"><a href="#cb1-893" aria-hidden="true" tabindex="-1"></a><span class="in">#if no photoperiod information is available in the data, coordinates have to</span></span>
-<span id="cb1-894"><a href="#cb1-894" aria-hidden="true" tabindex="-1"></a><span class="in">#be specified</span></span>
-<span id="cb1-895"><a href="#cb1-895" aria-hidden="true" tabindex="-1"></a><span class="in">dataset_red |&gt; gg_days() |&gt; gg_photoperiod(coordinates)</span></span>
-<span id="cb1-896"><a href="#cb1-896" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-897"><a href="#cb1-897" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-898"><a href="#cb1-898" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data</span></span>
-<span id="cb1-899"><a href="#cb1-899" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-900"><a href="#cb1-900" aria-hidden="true" tabindex="-1"></a>Photoperiod features make it easy to split data into day and night states—for example, to compute metrics by phase. The <span class="in">`number_states()`</span> function places a counter each time the state changes, effectively numbering successive day and night episodes. Grouping by these counters then allows you to calculate metrics for individual days and nights:</span>
-<span id="cb1-901"><a href="#cb1-901" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-904"><a href="#cb1-904" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-905"><a href="#cb1-905" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-906"><a href="#cb1-906" aria-hidden="true" tabindex="-1"></a><span class="in">  #create numbered days and nights:</span></span>
-<span id="cb1-907"><a href="#cb1-907" aria-hidden="true" tabindex="-1"></a><span class="in">  number_states(photoperiod.state) |&gt; </span></span>
-<span id="cb1-908"><a href="#cb1-908" aria-hidden="true" tabindex="-1"></a><span class="in">  #group by Id, day and nights, and also the numbers:</span></span>
-<span id="cb1-909"><a href="#cb1-909" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(photoperiod.state, photoperiod.state.count, .add = TRUE) |&gt; </span></span>
-<span id="cb1-910"><a href="#cb1-910" aria-hidden="true" tabindex="-1"></a><span class="in">  #calculate the brightest hour in each day and each night:</span></span>
-<span id="cb1-911"><a href="#cb1-911" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(</span></span>
-<span id="cb1-912"><a href="#cb1-912" aria-hidden="true" tabindex="-1"></a><span class="in">    duration_above_threshold(MEDI, Datetime, threshold = 250, as.df = TRUE),</span></span>
-<span id="cb1-913"><a href="#cb1-913" aria-hidden="true" tabindex="-1"></a><span class="in">    .groups = "drop_last") |&gt; </span></span>
-<span id="cb1-914"><a href="#cb1-914" aria-hidden="true" tabindex="-1"></a><span class="in">  #condense the instances to a single summary</span></span>
-<span id="cb1-915"><a href="#cb1-915" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize_numeric(prefix = "")</span></span>
-<span id="cb1-916"><a href="#cb1-916" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-917"><a href="#cb1-917" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-918"><a href="#cb1-918" aria-hidden="true" tabindex="-1"></a>This yields the average brightest 1‑hour period for each participant, separately for day and night. Notably, the participant with the highest daytime brightness also shows the lowest nighttime brightness, and vice versa.</span>
-<span id="cb1-919"><a href="#cb1-919" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-920"><a href="#cb1-920" aria-hidden="true" tabindex="-1"></a><span class="fu">## Distribution of light exposure</span></span>
-<span id="cb1-921"><a href="#cb1-921" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-922"><a href="#cb1-922" aria-hidden="true" tabindex="-1"></a>Personal light‑exposure data exhibit a characteristic distribution (see figure): they are strongly right‑skewed—approximately log‑normal—and contain many zeros (i.e., zero‑inflation).</span>
-<span id="cb1-923"><a href="#cb1-923" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-924"><a href="#cb1-924" aria-hidden="true" tabindex="-1"></a><span class="al">![Distribution of light exposure in the environment and for a participant, both at night and day](assets/Distribution.png)</span></span>
-<span id="cb1-925"><a href="#cb1-925" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-926"><a href="#cb1-926" aria-hidden="true" tabindex="-1"></a>Consequently, the arithmetic mean is not a representative summary for these data. We can visualize this by placing common location metrics on the distribution.</span>
-<span id="cb1-927"><a href="#cb1-927" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-930"><a href="#cb1-930" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-931"><a href="#cb1-931" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-932"><a href="#cb1-932" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup() |&gt; </span></span>
-<span id="cb1-933"><a href="#cb1-933" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(</span></span>
-<span id="cb1-934"><a href="#cb1-934" aria-hidden="true" tabindex="-1"></a><span class="in">    mean = mean(MEDI),</span></span>
-<span id="cb1-935"><a href="#cb1-935" aria-hidden="true" tabindex="-1"></a><span class="in">    median = median(MEDI),</span></span>
-<span id="cb1-936"><a href="#cb1-936" aria-hidden="true" tabindex="-1"></a><span class="in">    geo_mean = exp(mean(log(MEDI[MEDI &gt; 0]), na.rm = TRUE))</span></span>
-<span id="cb1-937"><a href="#cb1-937" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
-<span id="cb1-938"><a href="#cb1-938" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-939"><a href="#cb1-939" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-942"><a href="#cb1-942" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-943"><a href="#cb1-943" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-944"><a href="#cb1-944" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Datetime("5 min") |&gt; </span></span>
-<span id="cb1-945"><a href="#cb1-945" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(aes(x=MEDI, y = after_stat(ncount))) +</span></span>
-<span id="cb1-946"><a href="#cb1-946" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_histogram(binwidth = 0.2) +</span></span>
-<span id="cb1-947"><a href="#cb1-947" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_continuous(trans = "symlog", </span></span>
-<span id="cb1-948"><a href="#cb1-948" aria-hidden="true" tabindex="-1"></a><span class="in">                     breaks = c(0, 10^(0:5)), </span></span>
-<span id="cb1-949"><a href="#cb1-949" aria-hidden="true" tabindex="-1"></a><span class="in">                     labels= expression(0,10^0,10^1, 10^2, 10^3, 10^4, 10^5)</span></span>
-<span id="cb1-950"><a href="#cb1-950" aria-hidden="true" tabindex="-1"></a><span class="in">                     ) +</span></span>
-<span id="cb1-951"><a href="#cb1-951" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_vline(xintercept = c(282, 9, 33), col = "red") +</span></span>
-<span id="cb1-952"><a href="#cb1-952" aria-hidden="true" tabindex="-1"></a><span class="in">  theme_minimal() +</span></span>
-<span id="cb1-953"><a href="#cb1-953" aria-hidden="true" tabindex="-1"></a><span class="in">  # facet_wrap(~Id) +</span></span>
-<span id="cb1-954"><a href="#cb1-954" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x = "Melanopic illuminance (lx, mel EDI)", y = "Scaled counts (max = 1)")</span></span>
-<span id="cb1-955"><a href="#cb1-955" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-956"><a href="#cb1-956" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-957"><a href="#cb1-957" aria-hidden="true" tabindex="-1"></a>To better characterize zero‑inflated, right‑skewed light data, use <span class="in">`log_zero_inflated()`</span>. The function adds a small constant (ε) to every observation **before taking logs**, making the transform well‑defined at zero. Choose ε based on the device’s measurement resolution/accuracy; for wearables spanning roughly 1–10^5&nbsp;lx, we recommend ε = 0.1&nbsp;lx. The inverse, <span class="in">`exp_zero_inflated()`</span>, returns values to the original scale by exponentiating and then subtracting the same ε. The default basis for these functions is 10.</span>
-<span id="cb1-958"><a href="#cb1-958" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-961"><a href="#cb1-961" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-962"><a href="#cb1-962" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-963"><a href="#cb1-963" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup() |&gt; </span></span>
-<span id="cb1-964"><a href="#cb1-964" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(</span></span>
-<span id="cb1-965"><a href="#cb1-965" aria-hidden="true" tabindex="-1"></a><span class="in">    mean = mean(MEDI),</span></span>
-<span id="cb1-966"><a href="#cb1-966" aria-hidden="true" tabindex="-1"></a><span class="in">    median = median(MEDI),</span></span>
-<span id="cb1-967"><a href="#cb1-967" aria-hidden="true" tabindex="-1"></a><span class="in">    geo_mean =  exp(mean(log(MEDI[MEDI &gt; 0]), na.rm = TRUE)),</span></span>
-<span id="cb1-968"><a href="#cb1-968" aria-hidden="true" tabindex="-1"></a><span class="in">    log_zero_inflated_mean = </span></span>
-<span id="cb1-969"><a href="#cb1-969" aria-hidden="true" tabindex="-1"></a><span class="in">      MEDI |&gt; log_zero_inflated() |&gt; mean() |&gt; exp_zero_inflated()</span></span>
-<span id="cb1-970"><a href="#cb1-970" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
-<span id="cb1-971"><a href="#cb1-971" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-972"><a href="#cb1-972" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-975"><a href="#cb1-975" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-976"><a href="#cb1-976" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-977"><a href="#cb1-977" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Datetime("5 min") |&gt; </span></span>
-<span id="cb1-978"><a href="#cb1-978" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(aes(x=MEDI, y = after_stat(ncount))) +</span></span>
-<span id="cb1-979"><a href="#cb1-979" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_histogram(binwidth = 0.2) +</span></span>
-<span id="cb1-980"><a href="#cb1-980" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_continuous(trans = "symlog", </span></span>
-<span id="cb1-981"><a href="#cb1-981" aria-hidden="true" tabindex="-1"></a><span class="in">                     breaks = c(0, 10^(0:5)), </span></span>
-<span id="cb1-982"><a href="#cb1-982" aria-hidden="true" tabindex="-1"></a><span class="in">                     labels= expression(0,10^0,10^1, 10^2, 10^3, 10^4, 10^5)</span></span>
-<span id="cb1-983"><a href="#cb1-983" aria-hidden="true" tabindex="-1"></a><span class="in">                     ) +</span></span>
-<span id="cb1-984"><a href="#cb1-984" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_vline(xintercept = c(282, 9, 33, 7), col = "red") +</span></span>
-<span id="cb1-985"><a href="#cb1-985" aria-hidden="true" tabindex="-1"></a><span class="in">  theme_minimal() +</span></span>
-<span id="cb1-986"><a href="#cb1-986" aria-hidden="true" tabindex="-1"></a><span class="in">  # facet_wrap(~Id) +</span></span>
-<span id="cb1-987"><a href="#cb1-987" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x = "Melanopic illuminance (lx, mel EDI)", y = "Scaled counts (max = 1)")</span></span>
-<span id="cb1-988"><a href="#cb1-988" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-989"><a href="#cb1-989" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-990"><a href="#cb1-990" aria-hidden="true" tabindex="-1"></a><span class="fu">### Log zero-inflated with metrics</span></span>
-<span id="cb1-991"><a href="#cb1-991" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-992"><a href="#cb1-992" aria-hidden="true" tabindex="-1"></a>When computing averaging metrics, apply the transformation **explicitly** to the variable you pass to the metric. This ensures the statistic is computed on the intended scale and makes your code easy to audit later. </span>
-<span id="cb1-993"><a href="#cb1-993" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-994"><a href="#cb1-994" aria-hidden="true" tabindex="-1"></a>For the zero‑inflated log approach, transform before averaging and (if desired) back‑transform for reporting:</span>
-<span id="cb1-995"><a href="#cb1-995" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-998"><a href="#cb1-998" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-999"><a href="#cb1-999" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-1000"><a href="#cb1-1000" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(</span></span>
-<span id="cb1-1001"><a href="#cb1-1001" aria-hidden="true" tabindex="-1"></a><span class="in">    #without transformation:</span></span>
-<span id="cb1-1002"><a href="#cb1-1002" aria-hidden="true" tabindex="-1"></a><span class="in">    untransformed = mean(MEDI),</span></span>
-<span id="cb1-1003"><a href="#cb1-1003" aria-hidden="true" tabindex="-1"></a><span class="in">    #with transformation:</span></span>
-<span id="cb1-1004"><a href="#cb1-1004" aria-hidden="true" tabindex="-1"></a><span class="in">    transformed = mean(log_zero_inflated(MEDI)),</span></span>
-<span id="cb1-1005"><a href="#cb1-1005" aria-hidden="true" tabindex="-1"></a><span class="in">    .groups = "drop_last"</span></span>
-<span id="cb1-1006"><a href="#cb1-1006" aria-hidden="true" tabindex="-1"></a><span class="in">            ) |&gt; </span></span>
-<span id="cb1-1007"><a href="#cb1-1007" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(backtransformed = exp_zero_inflated(transformed))</span></span>
-<span id="cb1-1008"><a href="#cb1-1008" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1009"><a href="#cb1-1009" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1010"><a href="#cb1-1010" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summaries</span></span>
-<span id="cb1-1011"><a href="#cb1-1011" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1012"><a href="#cb1-1012" aria-hidden="true" tabindex="-1"></a>Summary helpers provide fast, dataset‑wide overviews. Existing examples include <span class="in">`gap_table()`</span> (tabular diagnostics) and <span class="in">`gg_overview()`</span> (visual timeline). In the next release, two higher‑level tools are planned: <span class="in">`grand_overview()`</span> (a dataset‑level summary plot) and <span class="in">`light_summary_table()`</span> (a table of key exposure metrics). These are not available in <span class="in">`LightLogR 0.9.3`</span> but are slated for an upcoming release and are shown in the next two sections as *sneak previews*. In keeping with <span class="in">`LightLogR`</span>’s design, they will have straightforward interfaces and play well with grouped/tidy workflows.</span>
-<span id="cb1-1013"><a href="#cb1-1013" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1014"><a href="#cb1-1014" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary plot</span></span>
-<span id="cb1-1015"><a href="#cb1-1015" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1018"><a href="#cb1-1018" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1019"><a href="#cb1-1019" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
-<span id="cb1-1020"><a href="#cb1-1020" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-1021"><a href="#cb1-1021" aria-hidden="true" tabindex="-1"></a><span class="in">  grand_overview(coordinates, #provide the coordinates</span></span>
-<span id="cb1-1022"><a href="#cb1-1022" aria-hidden="true" tabindex="-1"></a><span class="in">                 "Tübingen", #provide a site name</span></span>
-<span id="cb1-1023"><a href="#cb1-1023" aria-hidden="true" tabindex="-1"></a><span class="in">                 "Germany", #provide a country name</span></span>
-<span id="cb1-1024"><a href="#cb1-1024" aria-hidden="true" tabindex="-1"></a><span class="in">                 "#DDCC77", #provide a color for the dataset</span></span>
-<span id="cb1-1025"><a href="#cb1-1025" aria-hidden="true" tabindex="-1"></a><span class="in">                 photoperiod_sequence = 1 #specify the photoperiod resolution</span></span>
-<span id="cb1-1026"><a href="#cb1-1026" aria-hidden="true" tabindex="-1"></a><span class="in">                 )</span></span>
-<span id="cb1-1027"><a href="#cb1-1027" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1028"><a href="#cb1-1028" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1029"><a href="#cb1-1029" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">To generate this figure yourself, please execute the [static R script](beginner.qmd)</span><span class="co">](assets/grand_overview.png)</span></span>
-<span id="cb1-1030"><a href="#cb1-1030" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1031"><a href="#cb1-1031" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary table</span></span>
-<span id="cb1-1032"><a href="#cb1-1032" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1035"><a href="#cb1-1035" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1036"><a href="#cb1-1036" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
-<span id="cb1-1037"><a href="#cb1-1037" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-1038"><a href="#cb1-1038" aria-hidden="true" tabindex="-1"></a><span class="in">light_summary_table(</span></span>
-<span id="cb1-1039"><a href="#cb1-1039" aria-hidden="true" tabindex="-1"></a><span class="in">  coordinates, #provide coordinates</span></span>
-<span id="cb1-1040"><a href="#cb1-1040" aria-hidden="true" tabindex="-1"></a><span class="in">  "Tuebingen", #provide a site name</span></span>
-<span id="cb1-1041"><a href="#cb1-1041" aria-hidden="true" tabindex="-1"></a><span class="in">  "Germany", #provide a country name</span></span>
-<span id="cb1-1042"><a href="#cb1-1042" aria-hidden="true" tabindex="-1"></a><span class="in">  "#DDCC77", #provide a color for histograms</span></span>
-<span id="cb1-1043"><a href="#cb1-1043" aria-hidden="true" tabindex="-1"></a><span class="in">  histograms = TRUE #show histograms</span></span>
-<span id="cb1-1044"><a href="#cb1-1044" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
-<span id="cb1-1045"><a href="#cb1-1045" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1046"><a href="#cb1-1046" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1047"><a href="#cb1-1047" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">To generate this table yourself, please execute the [static R script](beginner.qmd)</span><span class="co">](assets/table_summary.png)</span></span>
-<span id="cb1-1048"><a href="#cb1-1048" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1049"><a href="#cb1-1049" aria-hidden="true" tabindex="-1"></a><span class="fu">## Processing &amp; states</span></span>
-<span id="cb1-1050"><a href="#cb1-1050" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1051"><a href="#cb1-1051" aria-hidden="true" tabindex="-1"></a><span class="in">`LightLogR`</span> contains many functions to manipulate, expand, or condense datasets. We will highlight the most important ones.</span>
-<span id="cb1-1052"><a href="#cb1-1052" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1053"><a href="#cb1-1053" aria-hidden="true" tabindex="-1"></a><span class="fu">### `aggregate_Datetime()`</span></span>
-<span id="cb1-1054"><a href="#cb1-1054" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1055"><a href="#cb1-1055" aria-hidden="true" tabindex="-1"></a><span class="in">`aggregate_Datetime()`</span> is a general‑purpose resampling utility that bins observations into fixed‑duration intervals and computes a summary statistic per bin. It is intentionally opinionated, providing sensible defaults (e.g., mean for numeric columns and mode for character/factor columns), but all summaries are configurable and additional metrics can be requested. Use it as a lightweight formatter to change the effective measurement interval after the fact (e.g., re‑epoching from 10 s to 1 min).</span>
-<span id="cb1-1056"><a href="#cb1-1056" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1059"><a href="#cb1-1059" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1060"><a href="#cb1-1060" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
-<span id="cb1-1061"><a href="#cb1-1061" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 12</span></span>
-<span id="cb1-1062"><a href="#cb1-1062" aria-hidden="true" tabindex="-1"></a><span class="in">  dataset |&gt; </span></span>
-<span id="cb1-1063"><a href="#cb1-1063" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Datetime("1 hour") |&gt; #try to set different units: "15 mins", "2 hours",...</span></span>
-<span id="cb1-1064"><a href="#cb1-1064" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_days(aes_col = Id)</span></span>
-<span id="cb1-1065"><a href="#cb1-1065" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1066"><a href="#cb1-1066" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1067"><a href="#cb1-1067" aria-hidden="true" tabindex="-1"></a><span class="fu">### `aggregate_Date()`</span></span>
-<span id="cb1-1068"><a href="#cb1-1068" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1069"><a href="#cb1-1069" aria-hidden="true" tabindex="-1"></a><span class="in">`aggregate_Date()`</span> is a companion function that collapses each group into a single 24‑hour profile, optionally re‑epoching the data in the process. It is well‑suited to very large datasets when you need an overview of the *average day*. It applies the same summarization rules as <span class="in">`aggregate_Datetime()`</span> and is equally configurable to your requirements:</span>
-<span id="cb1-1070"><a href="#cb1-1070" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1073"><a href="#cb1-1073" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1074"><a href="#cb1-1074" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
-<span id="cb1-1075"><a href="#cb1-1075" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 8</span></span>
-<span id="cb1-1076"><a href="#cb1-1076" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-1077"><a href="#cb1-1077" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Date(unit = "5 minutes") |&gt; </span></span>
-<span id="cb1-1078"><a href="#cb1-1078" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_days(aes_col = Id)</span></span>
-<span id="cb1-1079"><a href="#cb1-1079" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1080"><a href="#cb1-1080" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1081"><a href="#cb1-1081" aria-hidden="true" tabindex="-1"></a><span class="fu">### `gg_doubleplot()`</span></span>
-<span id="cb1-1082"><a href="#cb1-1082" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1083"><a href="#cb1-1083" aria-hidden="true" tabindex="-1"></a><span class="in">`aggregate_Date()`</span> pairs well with <span class="in">`gg_doubleplot()`</span>, which duplicates each day with an offset to reveal patterns that span midnight. While it can be applied to any dataset, use it on only a handful of days at a time to keep plots readable. If the dataset it is called on contains more than one day <span class="in">`gg_doubleplot()`</span> defaults to displaying the next day instead of duplicating the same day.</span>
-<span id="cb1-1084"><a href="#cb1-1084" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1087"><a href="#cb1-1087" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1088"><a href="#cb1-1088" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
-<span id="cb1-1089"><a href="#cb1-1089" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 8</span></span>
-<span id="cb1-1090"><a href="#cb1-1090" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-1091"><a href="#cb1-1091" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Date(unit = "30 minutes") |&gt; </span></span>
-<span id="cb1-1092"><a href="#cb1-1092" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_doubleplot(aes_col = Id, aes_fill = Id)</span></span>
-<span id="cb1-1093"><a href="#cb1-1093" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1094"><a href="#cb1-1094" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1097"><a href="#cb1-1097" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1098"><a href="#cb1-1098" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
-<span id="cb1-1099"><a href="#cb1-1099" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 12</span></span>
-<span id="cb1-1100"><a href="#cb1-1100" aria-hidden="true" tabindex="-1"></a><span class="in"># it is recommended to add photoperiod information after aggregating to the Date</span></span>
-<span id="cb1-1101"><a href="#cb1-1101" aria-hidden="true" tabindex="-1"></a><span class="in"># level and prior to the doubleplot for best results.</span></span>
-<span id="cb1-1102"><a href="#cb1-1102" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-1103"><a href="#cb1-1103" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Date(unit = "30 minutes") |&gt; </span></span>
-<span id="cb1-1104"><a href="#cb1-1104" aria-hidden="true" tabindex="-1"></a><span class="in">  add_photoperiod(coordinates, overwrite = TRUE) |&gt;</span></span>
-<span id="cb1-1105"><a href="#cb1-1105" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_doubleplot(aes_fill = Id) |&gt;</span></span>
-<span id="cb1-1106"><a href="#cb1-1106" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_photoperiod()</span></span>
-<span id="cb1-1107"><a href="#cb1-1107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1108"><a href="#cb1-1108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1109"><a href="#cb1-1109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1110"><a href="#cb1-1110" aria-hidden="true" tabindex="-1"></a><span class="fu">### Beyond inital variables</span></span>
+<span id="cb1-876"><a href="#cb1-876" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; head()</span></span>
+<span id="cb1-877"><a href="#cb1-877" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-878"><a href="#cb1-878" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-879"><a href="#cb1-879" aria-hidden="true" tabindex="-1"></a><span class="fu">### Photoperiod in visualizations</span></span>
+<span id="cb1-880"><a href="#cb1-880" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-883"><a href="#cb1-883" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-884"><a href="#cb1-884" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
+<span id="cb1-885"><a href="#cb1-885" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 12</span></span>
+<span id="cb1-886"><a href="#cb1-886" aria-hidden="true" tabindex="-1"></a><span class="in">#if photoperiod information was already added to the data</span></span>
+<span id="cb1-887"><a href="#cb1-887" aria-hidden="true" tabindex="-1"></a><span class="in">#nothing has to be specified</span></span>
+<span id="cb1-888"><a href="#cb1-888" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; gg_days() |&gt; gg_photoperiod()</span></span>
+<span id="cb1-889"><a href="#cb1-889" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-890"><a href="#cb1-890" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-893"><a href="#cb1-893" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-894"><a href="#cb1-894" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
+<span id="cb1-895"><a href="#cb1-895" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 12</span></span>
+<span id="cb1-896"><a href="#cb1-896" aria-hidden="true" tabindex="-1"></a><span class="in">#if no photoperiod information is available in the data, coordinates have to</span></span>
+<span id="cb1-897"><a href="#cb1-897" aria-hidden="true" tabindex="-1"></a><span class="in">#be specified</span></span>
+<span id="cb1-898"><a href="#cb1-898" aria-hidden="true" tabindex="-1"></a><span class="in">dataset_red |&gt; gg_days() |&gt; gg_photoperiod(coordinates)</span></span>
+<span id="cb1-899"><a href="#cb1-899" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-900"><a href="#cb1-900" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-901"><a href="#cb1-901" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data</span></span>
+<span id="cb1-902"><a href="#cb1-902" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-903"><a href="#cb1-903" aria-hidden="true" tabindex="-1"></a>Photoperiod features make it easy to split data into day and night states—for example, to compute metrics by phase. The <span class="in">`number_states()`</span> function places a counter each time the state changes, effectively numbering successive day and night episodes. Grouping by these counters then allows you to calculate metrics for individual days and nights:</span>
+<span id="cb1-904"><a href="#cb1-904" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-907"><a href="#cb1-907" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-908"><a href="#cb1-908" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-909"><a href="#cb1-909" aria-hidden="true" tabindex="-1"></a><span class="in">  #create numbered days and nights:</span></span>
+<span id="cb1-910"><a href="#cb1-910" aria-hidden="true" tabindex="-1"></a><span class="in">  number_states(photoperiod.state) |&gt; </span></span>
+<span id="cb1-911"><a href="#cb1-911" aria-hidden="true" tabindex="-1"></a><span class="in">  #group by Id, day and nights, and also the numbers:</span></span>
+<span id="cb1-912"><a href="#cb1-912" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(photoperiod.state, photoperiod.state.count, .add = TRUE) |&gt; </span></span>
+<span id="cb1-913"><a href="#cb1-913" aria-hidden="true" tabindex="-1"></a><span class="in">  #calculate the brightest hour in each day and each night:</span></span>
+<span id="cb1-914"><a href="#cb1-914" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(</span></span>
+<span id="cb1-915"><a href="#cb1-915" aria-hidden="true" tabindex="-1"></a><span class="in">    duration_above_threshold(MEDI, Datetime, threshold = 250, as.df = TRUE),</span></span>
+<span id="cb1-916"><a href="#cb1-916" aria-hidden="true" tabindex="-1"></a><span class="in">    .groups = "drop_last") |&gt; </span></span>
+<span id="cb1-917"><a href="#cb1-917" aria-hidden="true" tabindex="-1"></a><span class="in">  #condense the instances to a single summary</span></span>
+<span id="cb1-918"><a href="#cb1-918" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize_numeric(prefix = "")</span></span>
+<span id="cb1-919"><a href="#cb1-919" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-920"><a href="#cb1-920" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-921"><a href="#cb1-921" aria-hidden="true" tabindex="-1"></a>This yields the average brightest 1‑hour period for each participant, separately for day and night. Notably, the participant with the highest daytime brightness also shows the lowest nighttime brightness, and vice versa.</span>
+<span id="cb1-922"><a href="#cb1-922" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-923"><a href="#cb1-923" aria-hidden="true" tabindex="-1"></a><span class="fu">## Distribution of light exposure</span></span>
+<span id="cb1-924"><a href="#cb1-924" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-925"><a href="#cb1-925" aria-hidden="true" tabindex="-1"></a>Personal light‑exposure data exhibit a characteristic distribution (see figure): they are strongly right‑skewed—approximately log‑normal—and contain many zeros (i.e., zero‑inflation).</span>
+<span id="cb1-926"><a href="#cb1-926" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-927"><a href="#cb1-927" aria-hidden="true" tabindex="-1"></a><span class="al">![Distribution of light exposure in the environment and for a participant, both at night and day](assets/Distribution.png)</span></span>
+<span id="cb1-928"><a href="#cb1-928" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-929"><a href="#cb1-929" aria-hidden="true" tabindex="-1"></a>Consequently, the arithmetic mean is not a representative summary for these data. We can visualize this by placing common location metrics on the distribution.</span>
+<span id="cb1-930"><a href="#cb1-930" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-933"><a href="#cb1-933" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-934"><a href="#cb1-934" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-935"><a href="#cb1-935" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup() |&gt; </span></span>
+<span id="cb1-936"><a href="#cb1-936" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(</span></span>
+<span id="cb1-937"><a href="#cb1-937" aria-hidden="true" tabindex="-1"></a><span class="in">    mean = mean(MEDI),</span></span>
+<span id="cb1-938"><a href="#cb1-938" aria-hidden="true" tabindex="-1"></a><span class="in">    median = median(MEDI),</span></span>
+<span id="cb1-939"><a href="#cb1-939" aria-hidden="true" tabindex="-1"></a><span class="in">    geo_mean = exp(mean(log(MEDI[MEDI &gt; 0]), na.rm = TRUE))</span></span>
+<span id="cb1-940"><a href="#cb1-940" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
+<span id="cb1-941"><a href="#cb1-941" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-942"><a href="#cb1-942" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-945"><a href="#cb1-945" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-946"><a href="#cb1-946" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-947"><a href="#cb1-947" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Datetime("5 min") |&gt; </span></span>
+<span id="cb1-948"><a href="#cb1-948" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(aes(x=MEDI, y = after_stat(ncount))) +</span></span>
+<span id="cb1-949"><a href="#cb1-949" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_histogram(binwidth = 0.2) +</span></span>
+<span id="cb1-950"><a href="#cb1-950" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_continuous(trans = "symlog", </span></span>
+<span id="cb1-951"><a href="#cb1-951" aria-hidden="true" tabindex="-1"></a><span class="in">                     breaks = c(0, 10^(0:5)), </span></span>
+<span id="cb1-952"><a href="#cb1-952" aria-hidden="true" tabindex="-1"></a><span class="in">                     labels= expression(0,10^0,10^1, 10^2, 10^3, 10^4, 10^5)</span></span>
+<span id="cb1-953"><a href="#cb1-953" aria-hidden="true" tabindex="-1"></a><span class="in">                     ) +</span></span>
+<span id="cb1-954"><a href="#cb1-954" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_vline(xintercept = c(282, 9, 33), col = "red") +</span></span>
+<span id="cb1-955"><a href="#cb1-955" aria-hidden="true" tabindex="-1"></a><span class="in">  theme_minimal() +</span></span>
+<span id="cb1-956"><a href="#cb1-956" aria-hidden="true" tabindex="-1"></a><span class="in">  # facet_wrap(~Id) +</span></span>
+<span id="cb1-957"><a href="#cb1-957" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x = "Melanopic illuminance (lx, mel EDI)", y = "Scaled counts (max = 1)")</span></span>
+<span id="cb1-958"><a href="#cb1-958" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-959"><a href="#cb1-959" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-960"><a href="#cb1-960" aria-hidden="true" tabindex="-1"></a>To better characterize zero‑inflated, right‑skewed light data, use <span class="in">`log_zero_inflated()`</span>. The function adds a small constant (ε) to every observation **before taking logs**, making the transform well‑defined at zero. Choose ε based on the device’s measurement resolution/accuracy; for wearables spanning roughly 1–10^5&nbsp;lx, we recommend ε = 0.1&nbsp;lx. The inverse, <span class="in">`exp_zero_inflated()`</span>, returns values to the original scale by exponentiating and then subtracting the same ε. The default basis for these functions is 10.</span>
+<span id="cb1-961"><a href="#cb1-961" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-964"><a href="#cb1-964" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-965"><a href="#cb1-965" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-966"><a href="#cb1-966" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup() |&gt; </span></span>
+<span id="cb1-967"><a href="#cb1-967" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(</span></span>
+<span id="cb1-968"><a href="#cb1-968" aria-hidden="true" tabindex="-1"></a><span class="in">    mean = mean(MEDI),</span></span>
+<span id="cb1-969"><a href="#cb1-969" aria-hidden="true" tabindex="-1"></a><span class="in">    median = median(MEDI),</span></span>
+<span id="cb1-970"><a href="#cb1-970" aria-hidden="true" tabindex="-1"></a><span class="in">    geo_mean =  exp(mean(log(MEDI[MEDI &gt; 0]), na.rm = TRUE)),</span></span>
+<span id="cb1-971"><a href="#cb1-971" aria-hidden="true" tabindex="-1"></a><span class="in">    log_zero_inflated_mean = </span></span>
+<span id="cb1-972"><a href="#cb1-972" aria-hidden="true" tabindex="-1"></a><span class="in">      MEDI |&gt; log_zero_inflated() |&gt; mean() |&gt; exp_zero_inflated()</span></span>
+<span id="cb1-973"><a href="#cb1-973" aria-hidden="true" tabindex="-1"></a><span class="in">  )</span></span>
+<span id="cb1-974"><a href="#cb1-974" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-975"><a href="#cb1-975" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-978"><a href="#cb1-978" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-979"><a href="#cb1-979" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-980"><a href="#cb1-980" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Datetime("5 min") |&gt; </span></span>
+<span id="cb1-981"><a href="#cb1-981" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(aes(x=MEDI, y = after_stat(ncount))) +</span></span>
+<span id="cb1-982"><a href="#cb1-982" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_histogram(binwidth = 0.2) +</span></span>
+<span id="cb1-983"><a href="#cb1-983" aria-hidden="true" tabindex="-1"></a><span class="in">  scale_x_continuous(trans = "symlog", </span></span>
+<span id="cb1-984"><a href="#cb1-984" aria-hidden="true" tabindex="-1"></a><span class="in">                     breaks = c(0, 10^(0:5)), </span></span>
+<span id="cb1-985"><a href="#cb1-985" aria-hidden="true" tabindex="-1"></a><span class="in">                     labels= expression(0,10^0,10^1, 10^2, 10^3, 10^4, 10^5)</span></span>
+<span id="cb1-986"><a href="#cb1-986" aria-hidden="true" tabindex="-1"></a><span class="in">                     ) +</span></span>
+<span id="cb1-987"><a href="#cb1-987" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_vline(xintercept = c(282, 9, 33, 7), col = "red") +</span></span>
+<span id="cb1-988"><a href="#cb1-988" aria-hidden="true" tabindex="-1"></a><span class="in">  theme_minimal() +</span></span>
+<span id="cb1-989"><a href="#cb1-989" aria-hidden="true" tabindex="-1"></a><span class="in">  # facet_wrap(~Id) +</span></span>
+<span id="cb1-990"><a href="#cb1-990" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x = "Melanopic illuminance (lx, mel EDI)", y = "Scaled counts (max = 1)")</span></span>
+<span id="cb1-991"><a href="#cb1-991" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-992"><a href="#cb1-992" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-993"><a href="#cb1-993" aria-hidden="true" tabindex="-1"></a><span class="fu">### Log zero-inflated with metrics</span></span>
+<span id="cb1-994"><a href="#cb1-994" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-995"><a href="#cb1-995" aria-hidden="true" tabindex="-1"></a>When computing averaging metrics, apply the transformation **explicitly** to the variable you pass to the metric. This ensures the statistic is computed on the intended scale and makes your code easy to audit later. </span>
+<span id="cb1-996"><a href="#cb1-996" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-997"><a href="#cb1-997" aria-hidden="true" tabindex="-1"></a>For the zero‑inflated log approach, transform before averaging and (if desired) back‑transform for reporting:</span>
+<span id="cb1-998"><a href="#cb1-998" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1001"><a href="#cb1-1001" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1002"><a href="#cb1-1002" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-1003"><a href="#cb1-1003" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize(</span></span>
+<span id="cb1-1004"><a href="#cb1-1004" aria-hidden="true" tabindex="-1"></a><span class="in">    #without transformation:</span></span>
+<span id="cb1-1005"><a href="#cb1-1005" aria-hidden="true" tabindex="-1"></a><span class="in">    untransformed = mean(MEDI),</span></span>
+<span id="cb1-1006"><a href="#cb1-1006" aria-hidden="true" tabindex="-1"></a><span class="in">    #with transformation:</span></span>
+<span id="cb1-1007"><a href="#cb1-1007" aria-hidden="true" tabindex="-1"></a><span class="in">    transformed = mean(log_zero_inflated(MEDI)),</span></span>
+<span id="cb1-1008"><a href="#cb1-1008" aria-hidden="true" tabindex="-1"></a><span class="in">    .groups = "drop_last"</span></span>
+<span id="cb1-1009"><a href="#cb1-1009" aria-hidden="true" tabindex="-1"></a><span class="in">            ) |&gt; </span></span>
+<span id="cb1-1010"><a href="#cb1-1010" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(backtransformed = exp_zero_inflated(transformed))</span></span>
+<span id="cb1-1011"><a href="#cb1-1011" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1012"><a href="#cb1-1012" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1013"><a href="#cb1-1013" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summaries</span></span>
+<span id="cb1-1014"><a href="#cb1-1014" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1015"><a href="#cb1-1015" aria-hidden="true" tabindex="-1"></a>Summary helpers provide fast, dataset‑wide overviews. Existing examples include <span class="in">`gap_table()`</span> (tabular diagnostics) and <span class="in">`gg_overview()`</span> (visual timeline). In the next release, two higher‑level tools are planned: <span class="in">`grand_overview()`</span> (a dataset‑level summary plot) and <span class="in">`light_summary_table()`</span> (a table of key exposure metrics). These are not available in <span class="in">`LightLogR 0.9.3`</span> but are slated for an upcoming release and are shown in the next two sections as *sneak previews*. In keeping with <span class="in">`LightLogR`</span>’s design, they will have straightforward interfaces and play well with grouped/tidy workflows.</span>
+<span id="cb1-1016"><a href="#cb1-1016" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1017"><a href="#cb1-1017" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary plot</span></span>
+<span id="cb1-1018"><a href="#cb1-1018" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1021"><a href="#cb1-1021" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1022"><a href="#cb1-1022" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
+<span id="cb1-1023"><a href="#cb1-1023" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-1024"><a href="#cb1-1024" aria-hidden="true" tabindex="-1"></a><span class="in">  grand_overview(coordinates, #provide the coordinates</span></span>
+<span id="cb1-1025"><a href="#cb1-1025" aria-hidden="true" tabindex="-1"></a><span class="in">                 "Tübingen", #provide a site name</span></span>
+<span id="cb1-1026"><a href="#cb1-1026" aria-hidden="true" tabindex="-1"></a><span class="in">                 "Germany", #provide a country name</span></span>
+<span id="cb1-1027"><a href="#cb1-1027" aria-hidden="true" tabindex="-1"></a><span class="in">                 "#DDCC77", #provide a color for the dataset</span></span>
+<span id="cb1-1028"><a href="#cb1-1028" aria-hidden="true" tabindex="-1"></a><span class="in">                 photoperiod_sequence = 1 #specify the photoperiod resolution</span></span>
+<span id="cb1-1029"><a href="#cb1-1029" aria-hidden="true" tabindex="-1"></a><span class="in">                 )</span></span>
+<span id="cb1-1030"><a href="#cb1-1030" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1031"><a href="#cb1-1031" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1032"><a href="#cb1-1032" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">To generate this figure yourself, please execute the [static R script](beginner.qmd)</span><span class="co">](assets/grand_overview.png)</span></span>
+<span id="cb1-1033"><a href="#cb1-1033" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1034"><a href="#cb1-1034" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary table</span></span>
+<span id="cb1-1035"><a href="#cb1-1035" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1038"><a href="#cb1-1038" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1039"><a href="#cb1-1039" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
+<span id="cb1-1040"><a href="#cb1-1040" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-1041"><a href="#cb1-1041" aria-hidden="true" tabindex="-1"></a><span class="in">light_summary_table(</span></span>
+<span id="cb1-1042"><a href="#cb1-1042" aria-hidden="true" tabindex="-1"></a><span class="in">  coordinates, #provide coordinates</span></span>
+<span id="cb1-1043"><a href="#cb1-1043" aria-hidden="true" tabindex="-1"></a><span class="in">  "Tuebingen", #provide a site name</span></span>
+<span id="cb1-1044"><a href="#cb1-1044" aria-hidden="true" tabindex="-1"></a><span class="in">  "Germany", #provide a country name</span></span>
+<span id="cb1-1045"><a href="#cb1-1045" aria-hidden="true" tabindex="-1"></a><span class="in">  "#DDCC77", #provide a color for histograms</span></span>
+<span id="cb1-1046"><a href="#cb1-1046" aria-hidden="true" tabindex="-1"></a><span class="in">  histograms = TRUE #show histograms</span></span>
+<span id="cb1-1047"><a href="#cb1-1047" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
+<span id="cb1-1048"><a href="#cb1-1048" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1049"><a href="#cb1-1049" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1050"><a href="#cb1-1050" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">To generate this table yourself, please execute the [static R script](beginner.qmd)</span><span class="co">](assets/table_summary.png)</span></span>
+<span id="cb1-1051"><a href="#cb1-1051" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1052"><a href="#cb1-1052" aria-hidden="true" tabindex="-1"></a><span class="fu">## Processing &amp; states</span></span>
+<span id="cb1-1053"><a href="#cb1-1053" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1054"><a href="#cb1-1054" aria-hidden="true" tabindex="-1"></a><span class="in">`LightLogR`</span> contains many functions to manipulate, expand, or condense datasets. We will highlight the most important ones.</span>
+<span id="cb1-1055"><a href="#cb1-1055" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1056"><a href="#cb1-1056" aria-hidden="true" tabindex="-1"></a><span class="fu">### `aggregate_Datetime()`</span></span>
+<span id="cb1-1057"><a href="#cb1-1057" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1058"><a href="#cb1-1058" aria-hidden="true" tabindex="-1"></a><span class="in">`aggregate_Datetime()`</span> is a general‑purpose resampling utility that bins observations into fixed‑duration intervals and computes a summary statistic per bin. It is intentionally opinionated, providing sensible defaults (e.g., mean for numeric columns and mode for character/factor columns), but all summaries are configurable and additional metrics can be requested. Use it as a lightweight formatter to change the effective measurement interval after the fact (e.g., re‑epoching from 10 s to 1 min).</span>
+<span id="cb1-1059"><a href="#cb1-1059" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1062"><a href="#cb1-1062" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1063"><a href="#cb1-1063" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
+<span id="cb1-1064"><a href="#cb1-1064" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 12</span></span>
+<span id="cb1-1065"><a href="#cb1-1065" aria-hidden="true" tabindex="-1"></a><span class="in">  dataset |&gt; </span></span>
+<span id="cb1-1066"><a href="#cb1-1066" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Datetime("1 hour") |&gt; #try to set different units: "15 mins", "2 hours",...</span></span>
+<span id="cb1-1067"><a href="#cb1-1067" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_days(aes_col = Id)</span></span>
+<span id="cb1-1068"><a href="#cb1-1068" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1069"><a href="#cb1-1069" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1070"><a href="#cb1-1070" aria-hidden="true" tabindex="-1"></a><span class="fu">### `aggregate_Date()`</span></span>
+<span id="cb1-1071"><a href="#cb1-1071" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1072"><a href="#cb1-1072" aria-hidden="true" tabindex="-1"></a><span class="in">`aggregate_Date()`</span> is a companion function that collapses each group into a single 24‑hour profile, optionally re‑epoching the data in the process. It is well‑suited to very large datasets when you need an overview of the *average day*. It applies the same summarization rules as <span class="in">`aggregate_Datetime()`</span> and is equally configurable to your requirements:</span>
+<span id="cb1-1073"><a href="#cb1-1073" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1076"><a href="#cb1-1076" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1077"><a href="#cb1-1077" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
+<span id="cb1-1078"><a href="#cb1-1078" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 8</span></span>
+<span id="cb1-1079"><a href="#cb1-1079" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-1080"><a href="#cb1-1080" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Date(unit = "5 minutes") |&gt; </span></span>
+<span id="cb1-1081"><a href="#cb1-1081" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_days(aes_col = Id)</span></span>
+<span id="cb1-1082"><a href="#cb1-1082" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1083"><a href="#cb1-1083" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1084"><a href="#cb1-1084" aria-hidden="true" tabindex="-1"></a><span class="fu">### `gg_doubleplot()`</span></span>
+<span id="cb1-1085"><a href="#cb1-1085" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1086"><a href="#cb1-1086" aria-hidden="true" tabindex="-1"></a><span class="in">`aggregate_Date()`</span> pairs well with <span class="in">`gg_doubleplot()`</span>, which duplicates each day with an offset to reveal patterns that span midnight. While it can be applied to any dataset, use it on only a handful of days at a time to keep plots readable. If the dataset it is called on contains more than one day <span class="in">`gg_doubleplot()`</span> defaults to displaying the next day instead of duplicating the same day.</span>
+<span id="cb1-1087"><a href="#cb1-1087" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1090"><a href="#cb1-1090" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1091"><a href="#cb1-1091" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
+<span id="cb1-1092"><a href="#cb1-1092" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 8</span></span>
+<span id="cb1-1093"><a href="#cb1-1093" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-1094"><a href="#cb1-1094" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Date(unit = "30 minutes") |&gt; </span></span>
+<span id="cb1-1095"><a href="#cb1-1095" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_doubleplot(aes_col = Id, aes_fill = Id)</span></span>
+<span id="cb1-1096"><a href="#cb1-1096" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1097"><a href="#cb1-1097" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1100"><a href="#cb1-1100" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1101"><a href="#cb1-1101" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
+<span id="cb1-1102"><a href="#cb1-1102" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 12</span></span>
+<span id="cb1-1103"><a href="#cb1-1103" aria-hidden="true" tabindex="-1"></a><span class="in"># it is recommended to add photoperiod information after aggregating to the Date</span></span>
+<span id="cb1-1104"><a href="#cb1-1104" aria-hidden="true" tabindex="-1"></a><span class="in"># level and prior to the doubleplot for best results.</span></span>
+<span id="cb1-1105"><a href="#cb1-1105" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-1106"><a href="#cb1-1106" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Date(unit = "30 minutes") |&gt; </span></span>
+<span id="cb1-1107"><a href="#cb1-1107" aria-hidden="true" tabindex="-1"></a><span class="in">  add_photoperiod(coordinates, overwrite = TRUE) |&gt;</span></span>
+<span id="cb1-1108"><a href="#cb1-1108" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_doubleplot(aes_fill = Id) |&gt;</span></span>
+<span id="cb1-1109"><a href="#cb1-1109" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_photoperiod()</span></span>
+<span id="cb1-1110"><a href="#cb1-1110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-1111"><a href="#cb1-1111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1112"><a href="#cb1-1112" aria-hidden="true" tabindex="-1"></a>Both <span class="in">`aggregate_Datetime()`</span> and <span class="in">`aggregate_Date()`</span> allow for the calculation of additional metrics within their respective bins. One use case is to gauge the spread of the data within certain times. A simple approach is to plot the minimum and maximum value of a dataset that was condensed to a single day.</span>
-<span id="cb1-1113"><a href="#cb1-1113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1116"><a href="#cb1-1116" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1117"><a href="#cb1-1117" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
-<span id="cb1-1118"><a href="#cb1-1118" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 8</span></span>
-<span id="cb1-1119"><a href="#cb1-1119" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-1120"><a href="#cb1-1120" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Date(unit = "30 minutes",</span></span>
-<span id="cb1-1121"><a href="#cb1-1121" aria-hidden="true" tabindex="-1"></a><span class="in">                 lower = min(MEDI), #create new variables...</span></span>
-<span id="cb1-1122"><a href="#cb1-1122" aria-hidden="true" tabindex="-1"></a><span class="in">                 upper = max(MEDI)  #...as many as needed</span></span>
-<span id="cb1-1123"><a href="#cb1-1123" aria-hidden="true" tabindex="-1"></a><span class="in">                 ) |&gt; </span></span>
-<span id="cb1-1124"><a href="#cb1-1124" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_doubleplot(geom = "blank") + # use gg_doubleplot only as a canvas</span></span>
-<span id="cb1-1125"><a href="#cb1-1125" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_ribbon(aes(ymin = lower, ymax = upper, fill = Id), alpha = 0.5) +</span></span>
-<span id="cb1-1126"><a href="#cb1-1126" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line()</span></span>
-<span id="cb1-1127"><a href="#cb1-1127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1128"><a href="#cb1-1128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1129"><a href="#cb1-1129" aria-hidden="true" tabindex="-1"></a><span class="fu">### States</span></span>
-<span id="cb1-1130"><a href="#cb1-1130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1131"><a href="#cb1-1131" aria-hidden="true" tabindex="-1"></a>States, in the context of LightLogR, means any non-numeric variable. Those can be part of the dataset, be calculated from the dataset (e.g., mel EDI &gt;= 250 lx), or added from an external source. We showcase some capabilities by dividing the dataset into sections by the Brown et al. (2022) recommendations for healthy lighting, using the <span class="in">`Brown_cut()`</span> function.</span>
-<span id="cb1-1132"><a href="#cb1-1132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1135"><a href="#cb1-1135" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1136"><a href="#cb1-1136" aria-hidden="true" tabindex="-1"></a><span class="in">dataset_1day &lt;- </span></span>
-<span id="cb1-1137"><a href="#cb1-1137" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
-<span id="cb1-1138"><a href="#cb1-1138" aria-hidden="true" tabindex="-1"></a><span class="in">  Brown_cut() |&gt; #creating a column with the cuts</span></span>
-<span id="cb1-1139"><a href="#cb1-1139" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Date(unit = "30 minutes", </span></span>
-<span id="cb1-1140"><a href="#cb1-1140" aria-hidden="true" tabindex="-1"></a><span class="in">                 numeric.handler = median #note that we switched from mean to median</span></span>
-<span id="cb1-1141"><a href="#cb1-1141" aria-hidden="true" tabindex="-1"></a><span class="in">                 ) |&gt; </span></span>
-<span id="cb1-1142"><a href="#cb1-1142" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(state = state |&gt; fct_relevel("≥250lx", "≤10lx", "≤1lx")) #order the levels</span></span>
-<span id="cb1-1143"><a href="#cb1-1143" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1144"><a href="#cb1-1144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1145"><a href="#cb1-1145" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `gg_state()`</span></span>
-<span id="cb1-1146"><a href="#cb1-1146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1147"><a href="#cb1-1147" aria-hidden="true" tabindex="-1"></a><span class="in">`gg_state()`</span> augments an existing plot by adding background rectangles that mark state intervals. When multiple states are present, map them to distinct fills (or colors) to improve readability.</span>
-<span id="cb1-1148"><a href="#cb1-1148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1151"><a href="#cb1-1151" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1152"><a href="#cb1-1152" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
-<span id="cb1-1153"><a href="#cb1-1153" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 8</span></span>
-<span id="cb1-1154"><a href="#cb1-1154" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
-<span id="cb1-1155"><a href="#cb1-1155" aria-hidden="true" tabindex="-1"></a><span class="in">dataset_1day |&gt; </span></span>
-<span id="cb1-1156"><a href="#cb1-1156" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_doubleplot(col = "black", alpha = 1, geom = "line") |&gt;</span></span>
-<span id="cb1-1157"><a href="#cb1-1157" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_state(State.colname = state, aes_fill = state) +</span></span>
-<span id="cb1-1158"><a href="#cb1-1158" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(fill = "Brown levels")</span></span>
-<span id="cb1-1159"><a href="#cb1-1159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1160"><a href="#cb1-1160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1161"><a href="#cb1-1161" aria-hidden="true" tabindex="-1"></a><span class="fu">### `durations()`</span></span>
-<span id="cb1-1162"><a href="#cb1-1162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1163"><a href="#cb1-1163" aria-hidden="true" tabindex="-1"></a>If you need a numeric summary of states, <span class="in">`durations()`</span> computes the total time spent in each state per grouping (e.g., by <span class="in">`Id`</span>, by day). With a small reshaping step, you can produce a tidy table showing the average duration each participant spends in each state:</span>
-<span id="cb1-1164"><a href="#cb1-1164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1167"><a href="#cb1-1167" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1168"><a href="#cb1-1168" aria-hidden="true" tabindex="-1"></a><span class="in">dataset_1day |&gt; </span></span>
-<span id="cb1-1169"><a href="#cb1-1169" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(state, .add = TRUE) |&gt; #adding Brown states to the grouping</span></span>
-<span id="cb1-1170"><a href="#cb1-1170" aria-hidden="true" tabindex="-1"></a><span class="in">  durations(MEDI) |&gt; #calculating durations</span></span>
-<span id="cb1-1171"><a href="#cb1-1171" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup() |&gt;  #remove all grouping</span></span>
-<span id="cb1-1172"><a href="#cb1-1172" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(state = fct_na_value_to_level(state, "10-250lx")) |&gt; #name NA level</span></span>
-<span id="cb1-1173"><a href="#cb1-1173" aria-hidden="true" tabindex="-1"></a><span class="in">  pivot_wider(id_cols = Id, names_from = state, values_from = duration) #reshape</span></span>
-<span id="cb1-1174"><a href="#cb1-1174" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1175"><a href="#cb1-1175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1176"><a href="#cb1-1176" aria-hidden="true" tabindex="-1"></a><span class="fu">### `extract_states()` &amp; `summarize_numeric()`</span></span>
-<span id="cb1-1177"><a href="#cb1-1177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1178"><a href="#cb1-1178" aria-hidden="true" tabindex="-1"></a>If your interest in states centers on *individual occurrences* - for example, how often a state occurred, how long each episode persisted, or when episodes began - use the following tools. <span class="in">`extract_states()`</span> returns an occurrence‑level table (one row per episode) with start/end times and durations; <span class="in">`summarize_numeric()`</span> then aggregates those episodes into concise metrics (e.g., counts, total duration, mean/median episode length) by the grouping you specify.</span>
-<span id="cb1-1179"><a href="#cb1-1179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1182"><a href="#cb1-1182" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1183"><a href="#cb1-1183" aria-hidden="true" tabindex="-1"></a><span class="in">dataset_1day |&gt; </span></span>
-<span id="cb1-1184"><a href="#cb1-1184" aria-hidden="true" tabindex="-1"></a><span class="in">  extract_states(state) |&gt; </span></span>
-<span id="cb1-1185"><a href="#cb1-1185" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize_numeric()</span></span>
-<span id="cb1-1186"><a href="#cb1-1186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-1187"><a href="#cb1-1187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1188"><a href="#cb1-1188" aria-hidden="true" tabindex="-1"></a><span class="fu">## It's a wrap</span></span>
-<span id="cb1-1189"><a href="#cb1-1189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1190"><a href="#cb1-1190" aria-hidden="true" tabindex="-1"></a>This concludes the first part of the <span class="in">`LightLogR`</span> tutorial. We hope it has given you a nice introduction to the package and convinced you to try it out with your own data and in your local installation. For more on <span class="in">`LightLogR`</span>, we recommend the <span class="co">[</span><span class="ot">documentation page</span><span class="co">](https://tscnlab.github.io/LightLogR/)</span>. If you want to stay up to date with the development of the package, you can sign up to our <span class="co">[</span><span class="ot">LightLogR mailing list</span><span class="co">](https://lists.lrz.de/mailman/listinfo/lightlogr-users)</span>.</span>
+<span id="cb1-1112"><a href="#cb1-1112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1113"><a href="#cb1-1113" aria-hidden="true" tabindex="-1"></a><span class="fu">### Beyond inital variables</span></span>
+<span id="cb1-1114"><a href="#cb1-1114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1115"><a href="#cb1-1115" aria-hidden="true" tabindex="-1"></a>Both <span class="in">`aggregate_Datetime()`</span> and <span class="in">`aggregate_Date()`</span> allow for the calculation of additional metrics within their respective bins. One use case is to gauge the spread of the data within certain times. A simple approach is to plot the minimum and maximum value of a dataset that was condensed to a single day.</span>
+<span id="cb1-1116"><a href="#cb1-1116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1119"><a href="#cb1-1119" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1120"><a href="#cb1-1120" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
+<span id="cb1-1121"><a href="#cb1-1121" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 8</span></span>
+<span id="cb1-1122"><a href="#cb1-1122" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-1123"><a href="#cb1-1123" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Date(unit = "30 minutes",</span></span>
+<span id="cb1-1124"><a href="#cb1-1124" aria-hidden="true" tabindex="-1"></a><span class="in">                 lower = min(MEDI), #create new variables...</span></span>
+<span id="cb1-1125"><a href="#cb1-1125" aria-hidden="true" tabindex="-1"></a><span class="in">                 upper = max(MEDI)  #...as many as needed</span></span>
+<span id="cb1-1126"><a href="#cb1-1126" aria-hidden="true" tabindex="-1"></a><span class="in">                 ) |&gt; </span></span>
+<span id="cb1-1127"><a href="#cb1-1127" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_doubleplot(geom = "blank") + # use gg_doubleplot only as a canvas</span></span>
+<span id="cb1-1128"><a href="#cb1-1128" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_ribbon(aes(ymin = lower, ymax = upper, fill = Id), alpha = 0.5) +</span></span>
+<span id="cb1-1129"><a href="#cb1-1129" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_line()</span></span>
+<span id="cb1-1130"><a href="#cb1-1130" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1131"><a href="#cb1-1131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1132"><a href="#cb1-1132" aria-hidden="true" tabindex="-1"></a><span class="fu">### States</span></span>
+<span id="cb1-1133"><a href="#cb1-1133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1134"><a href="#cb1-1134" aria-hidden="true" tabindex="-1"></a>States, in the context of LightLogR, means any non-numeric variable. Those can be part of the dataset, be calculated from the dataset (e.g., mel EDI &gt;= 250 lx), or added from an external source. We showcase some capabilities by dividing the dataset into sections by the Brown et al. (2022) recommendations for healthy lighting, using the <span class="in">`Brown_cut()`</span> function.</span>
+<span id="cb1-1135"><a href="#cb1-1135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1138"><a href="#cb1-1138" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1139"><a href="#cb1-1139" aria-hidden="true" tabindex="-1"></a><span class="in">dataset_1day &lt;- </span></span>
+<span id="cb1-1140"><a href="#cb1-1140" aria-hidden="true" tabindex="-1"></a><span class="in">dataset |&gt; </span></span>
+<span id="cb1-1141"><a href="#cb1-1141" aria-hidden="true" tabindex="-1"></a><span class="in">  Brown_cut() |&gt; #creating a column with the cuts</span></span>
+<span id="cb1-1142"><a href="#cb1-1142" aria-hidden="true" tabindex="-1"></a><span class="in">  aggregate_Date(unit = "30 minutes", </span></span>
+<span id="cb1-1143"><a href="#cb1-1143" aria-hidden="true" tabindex="-1"></a><span class="in">                 numeric.handler = median #note that we switched from mean to median</span></span>
+<span id="cb1-1144"><a href="#cb1-1144" aria-hidden="true" tabindex="-1"></a><span class="in">                 ) |&gt; </span></span>
+<span id="cb1-1145"><a href="#cb1-1145" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(state = state |&gt; fct_relevel("≥250lx", "≤10lx", "≤1lx")) #order the levels</span></span>
+<span id="cb1-1146"><a href="#cb1-1146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1147"><a href="#cb1-1147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1148"><a href="#cb1-1148" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `gg_state()`</span></span>
+<span id="cb1-1149"><a href="#cb1-1149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1150"><a href="#cb1-1150" aria-hidden="true" tabindex="-1"></a><span class="in">`gg_state()`</span> augments an existing plot by adding background rectangles that mark state intervals. When multiple states are present, map them to distinct fills (or colors) to improve readability.</span>
+<span id="cb1-1151"><a href="#cb1-1151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1154"><a href="#cb1-1154" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1155"><a href="#cb1-1155" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 6</span></span>
+<span id="cb1-1156"><a href="#cb1-1156" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 8</span></span>
+<span id="cb1-1157"><a href="#cb1-1157" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb1-1158"><a href="#cb1-1158" aria-hidden="true" tabindex="-1"></a><span class="in">dataset_1day |&gt; </span></span>
+<span id="cb1-1159"><a href="#cb1-1159" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_doubleplot(col = "black", alpha = 1, geom = "line") |&gt;</span></span>
+<span id="cb1-1160"><a href="#cb1-1160" aria-hidden="true" tabindex="-1"></a><span class="in">  gg_state(State.colname = state, aes_fill = state) +</span></span>
+<span id="cb1-1161"><a href="#cb1-1161" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(fill = "Brown levels")</span></span>
+<span id="cb1-1162"><a href="#cb1-1162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1163"><a href="#cb1-1163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1164"><a href="#cb1-1164" aria-hidden="true" tabindex="-1"></a><span class="fu">### `durations()`</span></span>
+<span id="cb1-1165"><a href="#cb1-1165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1166"><a href="#cb1-1166" aria-hidden="true" tabindex="-1"></a>If you need a numeric summary of states, <span class="in">`durations()`</span> computes the total time spent in each state per grouping (e.g., by <span class="in">`Id`</span>, by day). With a small reshaping step, you can produce a tidy table showing the average duration each participant spends in each state:</span>
+<span id="cb1-1167"><a href="#cb1-1167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1170"><a href="#cb1-1170" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1171"><a href="#cb1-1171" aria-hidden="true" tabindex="-1"></a><span class="in">dataset_1day |&gt; </span></span>
+<span id="cb1-1172"><a href="#cb1-1172" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(state, .add = TRUE) |&gt; #adding Brown states to the grouping</span></span>
+<span id="cb1-1173"><a href="#cb1-1173" aria-hidden="true" tabindex="-1"></a><span class="in">  durations(MEDI) |&gt; #calculating durations</span></span>
+<span id="cb1-1174"><a href="#cb1-1174" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup() |&gt;  #remove all grouping</span></span>
+<span id="cb1-1175"><a href="#cb1-1175" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(state = fct_na_value_to_level(state, "10-250lx")) |&gt; #name NA level</span></span>
+<span id="cb1-1176"><a href="#cb1-1176" aria-hidden="true" tabindex="-1"></a><span class="in">  pivot_wider(id_cols = Id, names_from = state, values_from = duration) #reshape</span></span>
+<span id="cb1-1177"><a href="#cb1-1177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1178"><a href="#cb1-1178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1179"><a href="#cb1-1179" aria-hidden="true" tabindex="-1"></a><span class="fu">### `extract_states()` &amp; `summarize_numeric()`</span></span>
+<span id="cb1-1180"><a href="#cb1-1180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1181"><a href="#cb1-1181" aria-hidden="true" tabindex="-1"></a>If your interest in states centers on *individual occurrences* - for example, how often a state occurred, how long each episode persisted, or when episodes began - use the following tools. <span class="in">`extract_states()`</span> returns an occurrence‑level table (one row per episode) with start/end times and durations; <span class="in">`summarize_numeric()`</span> then aggregates those episodes into concise metrics (e.g., counts, total duration, mean/median episode length) by the grouping you specify.</span>
+<span id="cb1-1182"><a href="#cb1-1182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1185"><a href="#cb1-1185" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1186"><a href="#cb1-1186" aria-hidden="true" tabindex="-1"></a><span class="in">dataset_1day |&gt; </span></span>
+<span id="cb1-1187"><a href="#cb1-1187" aria-hidden="true" tabindex="-1"></a><span class="in">  extract_states(state) |&gt; </span></span>
+<span id="cb1-1188"><a href="#cb1-1188" aria-hidden="true" tabindex="-1"></a><span class="in">  summarize_numeric()</span></span>
+<span id="cb1-1189"><a href="#cb1-1189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-1190"><a href="#cb1-1190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1191"><a href="#cb1-1191" aria-hidden="true" tabindex="-1"></a><span class="fu">## It's a wrap</span></span>
+<span id="cb1-1192"><a href="#cb1-1192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1193"><a href="#cb1-1193" aria-hidden="true" tabindex="-1"></a>This concludes the first part of the <span class="in">`LightLogR`</span> tutorial. We hope it has given you a nice introduction to the package and convinced you to try it out with your own data and in your local installation. For more on <span class="in">`LightLogR`</span>, we recommend the <span class="co">[</span><span class="ot">documentation page</span><span class="co">](https://tscnlab.github.io/LightLogR/)</span>. If you want to stay up to date with the development of the package, you can sign up to our <span class="co">[</span><span class="ot">LightLogR mailing list</span><span class="co">](https://lists.lrz.de/mailman/listinfo/lightlogr-users)</span>.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
