@@ -43,4 +43,11 @@ For more information on the two tracks, have a look at the [course flyer](assets
 
 The tutorials are open to give them a go at any time. Try the *live* tutorials to forego any setup, or download the scripts from the *static* tutorials alongside the data from the [GitHub repository](https://github.com/tscnlab/LightLogR_webinar) for the full experience.
 
-We are also offering free, regular webinars on the topic of *Open and reproducible analysis of light exposure and visual experience data* using `LightLogR. Have a look at the [course flyer](assets/Online_course_series_2025-26.pdf) and [register here](https://tum-conf.zoom.us/webinar/register/WN_xGoHi1i_Sz2flC6-qGcLoQ#/registration).
+We are also offering free, regular webinars on the topic of *Open and reproducible analysis of light exposure and visual experience data* using `LightLogR`. Have a look at the [course flyer](assets/Online_course_series_2025-26.pdf) and [register here](https://tum-conf.zoom.us/webinar/register/WN_xGoHi1i_Sz2flC6-qGcLoQ#/registration).
+
+::: {.callout-note}
+## Did you miss the last webinar?
+
+No problem, you can watch the [recordings](recordings.qmd) of webinars after the fact. That said, participating in the webinars live gives you the Q&A and also a certificate.
+
+:::
