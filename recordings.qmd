@@ -1,0 +1,9 @@
+---
+title: "Webinar Recordings"
+format: html
+toc: false
+---
+
+## Beginner
+
+{{< video https://www.youtube.com/embed/s8HaovPq3eI?si=rvTfdyAE1Np64Rs_ >}}

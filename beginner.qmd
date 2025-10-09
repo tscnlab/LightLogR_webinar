@@ -62,6 +62,7 @@ library(rlang)
 library(glue)
 library(gtExtras)
 library(svglite)
+library(downlit)
 
 #the next two scripts will be integrated into the next release of LightLogR
 #but have to be loaded separately for now (≤0.9.3)
@@ -186,7 +187,7 @@ dataset |> gg_day()
 
 This is because many `LightLogR` functions default to the melanopic EDI variable[^3]. However, the nanoLambda export does not include this variable. Therefore, we must explicitly specify which variable to display. Let’s inspect the available variables:
 
-[^3] melanopic equivalent daylight-illuminance, CIE S026:2018 
+[^3]: melanopic equivalent daylight-illuminance, CIE S026:2018 
 
 ```{r}
 dataset |> names()

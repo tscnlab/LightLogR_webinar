@@ -19,6 +19,8 @@ website:
       - text: "Register"
         href: https://tum-conf.zoom.us/webinar/register/WN_xGoHi1i_Sz2flC6-qGcLoQ#/registration
         target: "_blank"
+      - text: "Recordings"
+        href: recordings.qmd
       - text: "Slides"
         href: assets/2025.10.07_LightLogR.pdf
         target: "_blank"
