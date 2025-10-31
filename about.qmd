@@ -2,7 +2,7 @@
 title: "About / Funding"
 ---
 
-This online course was developed by the [Translational Sensory & Circadian Neuroscience Unit](https://www.tscnlab.org).
+This online course was developed by the [Translational Sensory & Circadian Neuroscience Unit (MPS/TUM/TUMCREATE)](https://www.tscnlab.org).
 
 ## Funding
 
