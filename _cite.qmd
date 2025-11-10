@@ -1,0 +1,6 @@
+Please cite this course as
+
+```{r}
+#| eval: false
+Zauner, J., & Spitschan, M. (2025). Open and reproducible analysis of light exposure and visual experience data Webinar. Retrieved from https://tscnlab.github.io/LightLogR_webinar/. https://doi.org/10.5281/zenodo.17570985
+```

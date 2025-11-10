@@ -1,0 +1,15 @@
+{
+  "hash": "8e0ad3f521d7e75d863e426aaa9b47d4",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"About / Funding\"\nformat:\n  html:\n    code-overflow: wrap\n---\n\n\n\nThis online course was developed by the [Translational Sensory & Circadian Neuroscience Unit (MPS/TUM/TUMCREATE)](https://www.tscnlab.org).\n\n## How to cite this course?\n\n\nPlease cite this course as\n\n\n::: {.cell}\n\n```{.r .cell-code}\nZauner, J., & Spitschan, M. (2025). Open and reproducible analysis of light exposure and visual experience data Webinar. Retrieved from https://tscnlab.github.io/LightLogR_webinar/. https://doi.org/10.5281/zenodo.17570985\n```\n:::\n\n\n\n\n## Funding\n\nLightLogR's development is supported by the following projects and funders:\n\n![](assets/Acknowledgement badge.jpg)\n\n![](assets/logo_glee-2.png){width=\"50%\"}\n\n![](assets/Wellcome_Trust_logo.svg.png){width=\"25%\"}\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -24,7 +24,11 @@ authors:
     affiliation: >-
       Technical University of Munich & Max Planck Institute
       for Biological Cybernetics, Germany
-repository-code: 'https://github.com/tscnlab/LightLogR_webinar/tree/main'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.17570985
+    description: Zenodo Archive (latest)
+repository-code: 'https://github.com/tscnlab/LightLogR_webinar/'
 url: 'https://tscnlab.github.io/LightLogR_webinar/'
 keywords:
   - open science

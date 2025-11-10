@@ -1,6 +1,13 @@
 ---
 title: "License"
+format:
+  html:
+    code-overflow: wrap
 ---
+
+{{< include _cite.qmd >}}
+
+## License text
 
 ```
 {{< include LICENSE >}}

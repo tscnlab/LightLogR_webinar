@@ -1,8 +1,15 @@
 ---
 title: "About / Funding"
+format:
+  html:
+    code-overflow: wrap
 ---
 
 This online course was developed by the [Translational Sensory & Circadian Neuroscience Unit (MPS/TUM/TUMCREATE)](https://www.tscnlab.org).
+
+## How to cite this course?
+
+{{< include _cite.qmd >}}
 
 ## Funding
 

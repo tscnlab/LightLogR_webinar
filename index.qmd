@@ -1,7 +1,19 @@
 ---
 bibliography: references.bib
 toc: false
-title-block-style: none
+title-block-banner: false
+doi: 10.5281/zenodo.17570985
+date: last-modified
+author: 
+  - name: "Johannes Zauner"
+    affiliation: "Technical University of Munich & Max Planck Institute for Biological Cybernetics, Germany"
+    orcid: "0000-0003-2171-4566"
+  - name: "Manuel Spitschan"
+    affiliation: "Technical University of Munich & Max Planck Institute for Biological Cybernetics, Germany"      
+    orcid: "0000-0002-8572-9268"
+format:
+  html:
+    code-overflow: wrap
 ---
 :::{.column-screen}
 ![](assets/LLR_Tutorial_Banner.png){width="100%"}
@@ -51,3 +63,7 @@ We are also offering free, regular webinars on the topic of *Open and reproducib
 No problem, you can watch the [recordings](recordings.qmd) of webinars after the fact. That said, participating in the webinars live gives you the Q&A and also a certificate.
 
 :::
+
+## How to cite this course?
+
+{{< include _cite.qmd >}}
