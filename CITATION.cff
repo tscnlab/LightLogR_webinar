@@ -1,0 +1,35 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Open and reproducible analysis of light exposure and
+  visual experience data Webinar
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Johannes
+    family-names: Zauner
+    email: johannes.zauner@tum.de
+    affiliation: >-
+      Technical University of Munich & Max Planck Institute
+      for Biological Cybernetics, Germany
+    orcid: 'https://orcid.org/0000-0003-2171-4566'
+  - given-names: Manuel
+    family-names: Spitschan
+    email: manuel.spitschan@tum.de
+    orcid: 'https://orcid.org/0000-0002-8572-9268'
+    affiliation: >-
+      Technical University of Munich & Max Planck Institute
+      for Biological Cybernetics, Germany
+repository-code: 'https://github.com/tscnlab/LightLogR_webinar/tree/main'
+url: 'https://tscnlab.github.io/LightLogR_webinar/'
+keywords:
+  - open science
+  - wearables
+  - light exposure
+  - visual experience
+license: CC-BY-4.0
+date-released: '2020-11-10'
