@@ -1,0 +1,18 @@
+## How this page works
+
+This document contains the script for the online course series as a [Quarto](https://quarto.org) script, which can be executed on a local installation of R. Please ensure that all libraries are installed prior to running the script.
+
+If you want to test `LightLogR` without installing R or the package, try the script version running webR, for a autonymous but slightly reduced version. These versions are indicated as *(live)*, whereas the current version is considered *(static)*, as it is pre-rendered.
+
+To run this script, we recommend cloning or downloading the [GitHub repository](https://github.com/tscnlab/LightLogR_webinar) ([link to Zip-file](https://github.com/tscnlab/LightLogR_webinar/archive/refs/heads/main.zip)) and running the respective script. You will need to install the required packages. A quick way is to run:
+
+```{r}
+#| eval: false
+renv::restore()
+```
+
+::: {.callout-note}
+## If this is your first course tutorial
+
+This tutorial is considered as **advanced**. Basic functions in the `LightLogR` package as well as general `tidy` workflows are used without dedicated explanation. We recommend working through the [beginner](beginner.qmd) example if you are new to `LightLogR` (note that there is also a [live](beginner-live.qmd) variant).
+:::

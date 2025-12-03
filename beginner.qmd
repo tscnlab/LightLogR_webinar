@@ -63,6 +63,7 @@ library(glue)
 library(gtExtras)
 library(svglite)
 library(downlit)
+library(plotly)
 
 #the next two scripts will be integrated into the next release of LightLogR
 #but have to be loaded separately for now (≤0.9.3)
@@ -157,7 +158,7 @@ We will now import from two other devices to showcase the differences.
 ```{r}
 #| fig-height: 2
 #| fig-width: 5
-filename <- "data/Speccy.csv"
+filename <- "data/beginner/Speccy.csv"
 dataset <- import$Speccy(filename, tz = "Europe/Berlin", manual.id = "P1")
 ```
 
@@ -172,7 +173,7 @@ dataset |> gg_days()
 ```{r}
 #| fig-height: 2
 #| fig-width: 5
-filename <- "data/nanoLambda.csv"
+filename <- "data/beginner/nanoLambda.csv"
 dataset <- import$nanoLambda(filename, tz = "Europe/Berlin", manual.id = "P1")
 ```
 
@@ -224,7 +225,7 @@ When importing multiple files, keep the following in mind:
 - Be deliberate about participant‑ID assignment. The `manual.id` argument used above would assign the same ID to all imported data in a batch. If a file contains a column specifying the `Id`, you can point to that column; more often, the identifier is encoded in the filename. If you omit ID arguments, the filename is used as `Id` by default. Because filenames are often verbose, you will typically extract only the participant code. In our three example files, the relevant IDs are `216`, `218`, and `219`.
 
 ```{r}
-filenames <- list.files("data", pattern = "actlumus", full.names = TRUE)
+filenames <- list.files("data/beginner", pattern = "actlumus", full.names = TRUE)
 filenames
 ```
 

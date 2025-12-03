@@ -1,0 +1,290 @@
+---
+title: "Use case #03: Light therapy"
+subtitle: "Open and reproducible analysis of light exposure and visual experience data (Advanced)"
+author: 
+  - name: "Johannes Zauner"
+    affiliation: "Technical University of Munich & Max Planck Institute for Biological Cybernetics, Germany"
+    orcid: "0000-0003-2171-4566"
+lightbox: true
+code-tools: true
+code-link: true
+code-line-numbers: true
+date: last-modified
+---
+
+## Preface
+
+This use case covers an exploratory protocol to capture the effect of a light therapy intervention on personal light exposure. Two participants sit in an office environment, one with, one without a therapy lamp on their respective desk. They follow a typical office workflow. The blinds are shut to reduce the directional (and thus differential) effect of daylight on participant's light exposure. Artificial lighting is switched on. In the intervention condition the therapy lamp is switched on for one hour. The participants document the start and end times of each protocol phase (pre-light, therapy light, post-light), as well as any deviations from the protocol. 
+
+::: {#fig-elephants layout-ncol=2}
+
+![Therapy light workplace (therapy light switched off)](assets/advanced/light_therapy_01.jpg) 
+
+![Control workplace](assets/advanced/light_therapy_02.jpg)
+
+Photographs of workplaces (pre-light)
+:::
+
+The tutorial focuses on
+
+- merging of participant protocol logs with light from a wearable device
+
+- analysis of light exposure dependent on lighting conditions
+
+- dealing with interruptions from the protocol
+
+- advanced plotting & table styling
+
+- working with data < 1 day in `LightLogR`
+
+{{< include _how_this_page_works.qmd >}}
+
+## Setup
+
+We start by loading the necessary packages.
+
+```{r}
+#| label: setup
+#| output: false
+library(LightLogR) # main package
+library(tidyverse) # for tidy data science
+library(gt) # for great tables
+library(legendry) # for advanced legend manipulation
+library(patchwork) # for plot combination
+library(readxl) # to read in Excel files
+library(cowplot) # to theme plots
+library(ggridges) # for stacked plots within a panel
+```
+
+## Import
+
+We require both light and log data to be loaded into R before we are able to merge them.
+
+### Light
+
+Light data were captured with `ActLumus` devices. The exported data files sit in `data/light_therapy/`.
+
+```{r}
+#| label: import light
+#| fig-width: 5
+#| fig-height: 2
+path <- "data/light_therapy"
+files <- list.files(path, pattern = ".txt$", full.names = TRUE)
+pattern <- "Log_(.{4})_" #<1>
+tz <- "Europe/Berlin"
+data <- import$ActLumus(files, tz = tz, auto.id = pattern)
+```
+
+1. Pattern to extract Id's from file names
+
+We can see that it is a small dataset. If we visualize it we can see both participants measured simultaneously in the morning.
+
+```{r}
+#| label: viz light
+#| fig-width: 8
+#| fig-height: 4
+coordinates <- c(48.1371, 11.5754) #data were captured in Munich, Germany
+data |> 
+  gg_day(aes_col = fct_rev(Id)) |> 
+  gg_photoperiod(coordinates)
+```
+
+Participant `5541` received the `therapy light`, and `4789` is the `control condition`.
+
+While the import summary did not show indications of gaps or irregular data, it always pays to check this.
+
+```{r}
+#| label: check light
+#| message: false
+data |> 
+  gap_table(full.days = FALSE) |> #<1>
+  cols_hide(contains("_n")) #<2>
+```
+
+1. As we have less than one day of data, it would not be sensible to check for missing data with regards to a full day.
+2. Hides a few columns which are unnecessary here
+
+### Logs
+
+Participant logs are stored in a consolidated Excel file. @fig-log shows the contents of the files when opened in Excel. 
+
+::: {.callout-note}
+#### On the utility of manually entered content (logs/diaries)
+
+Note that pre-cleaning was performed to ensure consistent naming and formatting. I have yet to come upon an experiment with manually entered content in the form of logs or diaries that required no cleaning whatsoever. 
+
+The utility of these data depend heavily on these factors, some of which can be changed after import:
+
+- Identical naming of grouping variables between wearable devices and logs. If there are even slight differences, like an additional whitespace " ", the merge will be lossy.
+
+- Date, time, and datetime formats must be absolutely consistent and follow a standard formatting convention. If there are differences, they will be read in as text and parsing whole columns to the desired format can be lossy.
+:::
+
+::: {.column-margin}
+![Participant log as opened in Excel](assets/advanced/light_therapy_log.png){#fig-log}
+:::
+
+```{r}
+#| label: import logs
+path <- "data/light_therapy/event_log_LightLamp.xlsx"
+state_data <- read_excel(path)
+state_data |> group_by(Participant) |>  slice_head(n=2)
+```
+
+Next we need to make adjustments to naming and types of variables. Note that the time variable is already recognized as a datetime, but with a nonsensical date.
+
+```{r}
+#| label: import logs
+state_data <-
+  state_data |> 
+    rename(Id = Participant, state = Event) |> #<1>
+    mutate(Datetime = `date<-`(Time, Date), #<2>
+           Id = factor(Id)) |> #<2>
+    select(-Date, -Time) |> #<2>
+    number_states(type, use.original.state = FALSE) |> #<3>
+    pivot_wider(id_cols = c(Id, state, type.count), values_from = Datetime, #<4>
+                names_from = type) |> #<4>
+    select(-type.count) |> 
+  group_by(Id)
+```
+
+1. Use naming conventions from `LightLogR`
+2. Create a datetime that takes the `Time` variable (which is already recognized as a datetime) and just replace the `Date` component. `Id` is changed to a factor, and unnecessary columns are dropped
+3. Number the `type` column by increasing the number with each `start` and `end` combo.
+4. Pivot the dataset so that we end up with a `start` and `end` datetime for each state.
+
+```{r}
+#| label: gt logs
+state_data |> 
+  gt(rowname_col = "state") |> 
+  tab_footnote(
+    ("Note that only ID 5541 received the therapy light intervention, 
+     but the time span it was active in the room is denoted in both 
+     state datasets"), 
+    locations = cells_stub(contains("therapy light"))
+    )
+```
+
+## Combine light and log data
+
+```{r}
+#| label: combine data
+# states to keep
+states_to_keep <- c("pre-light", "therapy light", "post-light", "baseline")
+data <-
+  data |> 
+  select(Id, Datetime, MEDI) |> 
+  add_states(state_data, force.tz = TRUE) |> #<1>
+  mutate(state = state |> 
+                  factor(levels = states_to_keep, #<2>
+                         labels = states_to_keep |> str_to_sentence()) |> #<2>
+                  fct_recode(`Desk (horizontal)` = "Baseline") #<2>
+  )
+data |> slice_head(n=3)
+```
+
+1. Merges the `state_data` participant logs with the wearable `data`
+2. Here we perform several actions on the resulting state. First, we create a factor that only has the relevant states (and will be `NA` otherwise), and relabel them for sentence case. Lastly we recode the baseline to the correct label.
+
+## Compare conditions
+
+### Histogram
+
+This next section is not using any `LightLogR` functions, but it helps to get a sense for the data.
+
+```{r}
+#| label: histogram
+#| fig-width: 8
+#| fig-height: 5
+
+data |> 
+  filter(state %in% c("Post-light", "Pre-light", "Therapy light")) |> 
+  ggplot(aes(x=MEDI, y = state, fill = fct_rev(Id))) +
+  geom_density_ridges(aes(height = after_stat(ncount)), 
+                      stat = "binline",
+                      binwidth = 100, 
+                      col = NA,
+                      alpha = 0.75,
+                      scale = 0.75,
+                      draw_baseline = TRUE) +
+  theme_ridges() +
+  ggsci::scale_fill_jco() +
+  scale_x_continuous(breaks = c(0, seq(500, 2500, by = 500))) +
+  coord_cartesian(ylim = c(1, NA), expand = FALSE) +
+  labs(y = NULL, x = "melanopic EDI (lx)", fill = "Participant") +
+  theme(panel.grid.major.y = ggplot2::element_line("grey95"), 
+    panel.grid.major.x = ggplot2::element_line(colour = "grey", 
+      linewidth = 0.25))
+
+```
+
+### Table
+
+```{r}
+#| label: table preparation
+data_tbl_comparison <- 
+data |>
+  extract_states(state) |> #<1>
+  extract_metric(data, #<2>
+                 mean = mean(MEDI), #<2>
+                 dose = dose(MEDI, Datetime, epoch = "60s", na.rm = TRUE )) |>  #<2>
+  summarize_numeric(prefix = "") |> #<3>
+  mutate(dose = dose*episodes) |> #<4>
+  select(Id, state, mean, dose, total_duration) |> 
+  drop_na() |> 
+  mutate(Id = case_when(  
+                        Id == "4789" ~ "Control condition", 
+                        Id == "5541" ~ "Therapy light"), 
+         ) |>
+  pivot_wider(id_cols = state, #<5>
+              names_from = Id, #<5>
+              values_from = c(mean, total_duration, dose)) |> #<5>
+  arrange(state) |> 
+  select(1, 2, 4, 6, 3, 5, 7)
+```
+
+1. Condense the dataset to an account of each state (given the grouping by participant). While this is very close to our original `state_data` it takes the wearable data into account as well.
+2. We extract specific metrics from the original dataset with regards to the extracted data. In this case the arithmetic mean (as logarithmic distribution is not really an issue here), and the dose of light.
+3. This function not only calculates the average of values within each group (participant and state in this case), but also provide the total duration for each condition.
+4. `summarize_numeric()` calculated the average dose per episode. To get to the correct dose, we need to weigh it by the number of episodes.
+5. By pivoting wider we move from one row per condition and participant to one row per condition.
+
+```{r}
+#| label: table
+data_tbl_comparison |> 
+  gt(rowname_col = "state") |> 
+  tab_spanner("Control condition", contains("Control condition")) |> 
+  tab_spanner("Therapy lamp", contains("Therapy light", ignore.case = FALSE)) |> 
+  cols_label_with(
+    fn = \(x) x |> 
+               str_remove_all(" |_|Control|condition|Therapy|total|light|No") |> 
+               str_to_title()
+    ) |> 
+  fmt_duration(contains("duration"), 
+               input_units = "seconds", 
+               output_units = "minutes",
+               duration_style = "wide") |> 
+  tab_style(locations = cells_column_spanners(1),
+            style = cell_text(color = "#EFC000", weight = "bold")
+  ) |> 
+  tab_style(locations = cells_column_spanners(2),
+            style = cell_text(color = "#0073C2", weight = "bold")
+  ) |> 
+  cols_align("left", columns = state) |> 
+  cols_add(
+    `Rel. difference` = 
+    (`mean_Therapy light`-`mean_Control condition`)/`mean_Control condition`) |> 
+  fmt(columns = contains("mean"), 
+      fns =  \(x) vec_fmt_number(x, decimals = 0, pattern = "{x} lx")
+      ) |> 
+  fmt(columns = contains("dose"), 
+      fns =  \(x) vec_fmt_number(x, decimals = 0, pattern = "{x} lx·h")
+      ) |> 
+  fmt_percent(contains("difference"), force_sign = TRUE, decimals = 0) |> 
+  tab_style(locations = list(cells_stub(), cells_column_labels()),
+            style = cell_text(weight = "bold")) |> 
+  gt::cols_width(-state ~ px(100), 
+                 state ~ px(150)) |> 
+  grand_summary_rows()
+```
+

@@ -22,6 +22,7 @@ webr:
     - LightLogR
     - tidyverse
     - gt
+    - plotly
   repos:
     - https://tscnlab.r-universe.dev
     - https://cloud.r-project.org
