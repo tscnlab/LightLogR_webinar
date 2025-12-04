@@ -64,11 +64,11 @@ library(gtExtras)
 library(svglite)
 library(downlit)
 library(plotly)
+library(webshot2)
 
-#the next two scripts will be integrated into the next release of LightLogR
-#but have to be loaded separately for now (≤0.9.3)
+#the next script will be integrated into the next release of LightLogR
+#but have to be loaded separately for now (≤0.10.0)
 source("scripts/overview_plot.R")
-source("scripts/summary_table.R")
 
 # Set a global theme for the background
 theme_set(
@@ -866,7 +866,7 @@ dataset |>
 
 ## Summaries
 
-Summary helpers provide fast, dataset‑wide overviews. Existing examples include `gap_table()` (tabular diagnostics) and `gg_overview()` (visual timeline). In the next release, two higher‑level tools are planned: `grand_overview()` (a dataset‑level summary plot) and `light_summary_table()` (a table of key exposure metrics). These are not available in `LightLogR 0.9.3` but are slated for an upcoming release and are shown in the next two sections as *sneak previews*. In keeping with `LightLogR`’s design, they will have straightforward interfaces and play well with grouped/tidy workflows.
+Summary helpers provide fast, dataset‑wide overviews. Existing examples include `gap_table()` (tabular diagnostics) and `gg_overview()` (visual timeline). In the next release, a higher‑level tool is planned: `grand_overview()` (a dataset‑level summary plot). Already implemented in `LightLogR 0.10.0` is `summary_table()` (a table of key exposure metrics). In keeping with `LightLogR`’s design, they have straightforward interfaces and play well with grouped/tidy workflows.
 
 ### Summary plot
 
@@ -890,15 +890,16 @@ dataset |>
 ```{r}
 summary_table <- 
 dataset |> 
-light_summary_table(
-  coordinates, #provide coordinates
-  "Tuebingen", #provide a site name
-  "Germany", #provide a country name
-  "#DDCC77", #provide a color for histograms
+summary_table(
+  coordinates = coordinates, #provide coordinates
+  location = "Tuebingen", #provide a site name
+  site = "Germany", #provide a country name
+  color = "#DDCC77", #provide a color for histograms
   histograms = TRUE #show histograms
 )
+
 summary_table 
-# summary_table |> gtsave("assets/table_summary.png", vwidth = 820)
+summary_table |> gtsave("assets/table_summary.png", vwidth = 820)
 ```
 
 ## Processing & states

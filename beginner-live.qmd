@@ -14,7 +14,7 @@ lightbox: true
 code-tools: true
 code-link: true
 resources:
-  - data
+  - data/beginner
   - scripts
 webr:
   # render-df: gt-interactive
@@ -52,7 +52,7 @@ Try it for yourself by making a quick visualization of a sample dataset that com
 #| fig-height: 3
 #| fig-width: 10
 sample.data.environment |> #sample data
-  gg_days(geom = "ribbon", 
+  gg_days(geom = "ribbon",
           aes_fill = Id, 
           alpha = 0.6, 
           facetting = FALSE
@@ -107,10 +107,9 @@ library(gtExtras)
 
 ```{webr}
 #| eval: false
-#the next two scripts will be integrated into the next release of LightLogR
-#but have to be loaded separately for now (≤0.9.3)
+#the next script will be integrated into the next release of LightLogR
+#but have to be loaded separately for now (≤0.10.0)
 source("scripts/overview_plot.R")
-source("scripts/summary_table.R")
 
 # set a global theme for the background
 theme_set(
@@ -197,7 +196,7 @@ We will now import from two other devices to showcase the differences.
 ```{webr}
 #| fig-height: 2
 #| fig-width: 5
-filename <- "data/Speccy.csv"
+filename <- "data/beginner/Speccy.csv"
 dataset <- import$Speccy(filename, tz = "Europe/Berlin", manual.id = "P1")
 ```
 
@@ -212,7 +211,7 @@ dataset |> gg_days()
 ```{webr}
 #| fig-height: 2
 #| fig-width: 5
-filename <- "data/nanoLambda.csv"
+filename <- "data/beginner/nanoLambda.csv"
 dataset <- import$nanoLambda(filename, tz = "Europe/Berlin", manual.id = "P1")
 ```
 
@@ -263,7 +262,7 @@ When importing multiple files, keep the following in mind:
 - Be deliberate about participant‑ID assignment. The `manual.id` argument used above would assign the same ID to all imported data in a batch. If a file contains a column specifying the `Id`, you can point to that column; more often, the identifier is encoded in the filename. If you omit ID arguments, the filename is used as `Id` by default. Because filenames are often verbose, you will typically extract only the participant code. In our three example files, the relevant IDs are `216`, `218`, and `219`.
 
 ```{webr}
-filenames <- list.files("data", pattern = "actlumus", full.names = TRUE)
+filenames <- list.files("data/beginner", pattern = "actlumus", full.names = TRUE)
 filenames
 ```
 
@@ -527,6 +526,7 @@ trial_times <-
     \(x) parse_date_time(x, order = "%d%m%y %H%M%S", tz = "Europe/Berlin")
   )) |>
   group_by(Id)
+trial_times
 ```
 
 ```{webr}
@@ -895,7 +895,7 @@ dataset |>
 
 ## Summaries
 
-Summary helpers provide fast, dataset‑wide overviews. Existing examples include `gap_table()` (tabular diagnostics) and `gg_overview()` (visual timeline). In the next release, two higher‑level tools are planned: `grand_overview()` (a dataset‑level summary plot) and `light_summary_table()` (a table of key exposure metrics). These are not available in `LightLogR 0.9.3` but are slated for an upcoming release and are shown in the next two sections as *sneak previews*. In keeping with `LightLogR`’s design, they will have straightforward interfaces and play well with grouped/tidy workflows.
+Summary helpers provide fast, dataset‑wide overviews. Existing examples include `gap_table()` (tabular diagnostics) and `gg_overview()` (visual timeline). In the next release, a higher‑level tool is planned: `grand_overview()` (a dataset‑level summary plot). Already implemented in `LightLogR 0.10.0` is `summary_table()` (a table of key exposure metrics). In keeping with `LightLogR`’s design, they have straightforward interfaces and play well with grouped/tidy workflows.
 
 ### Summary plot
 
@@ -917,11 +917,11 @@ dataset |>
 ```{webr}
 #| eval: false
 dataset |> 
-light_summary_table(
-  coordinates, #provide coordinates
-  "Tuebingen", #provide a site name
-  "Germany", #provide a country name
-  "#DDCC77", #provide a color for histograms
+summary_table(
+  coordinates = coordinates, #provide coordinates
+  location = "Tuebingen", #provide a site name
+  site = "Germany", #provide a country name
+  color = "#DDCC77", #provide a color for histograms
   histograms = TRUE #show histograms
 )
 ```
@@ -1012,9 +1012,9 @@ dataset |>
   mutate(state = state |> fct_relevel("≥250lx", "≤10lx", "≤1lx")) #order the levels
 ```
 
-#### `gg_state()`
+#### `gg_states()`
 
-`gg_state()` augments an existing plot by adding background rectangles that mark state intervals. When multiple states are present, map them to distinct fills (or colors) to improve readability.
+`gg_states()` augments an existing plot by adding background rectangles that mark state intervals. When multiple states are present, map them to distinct fills (or colors) to improve readability.
 
 ```{webr}
 #| fig-height: 6
@@ -1022,7 +1022,7 @@ dataset |>
 #| warning: false
 dataset_1day |> 
   gg_doubleplot(col = "black", alpha = 1, geom = "line") |>
-  gg_state(State.colname = state, aes_fill = state) +
+  gg_states(State.colname = state, aes_fill = state) +
   labs(fill = "Brown levels")
 ```
 
