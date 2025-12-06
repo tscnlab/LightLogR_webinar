@@ -1,0 +1,48 @@
+"device_id","record_id","age","sex","city","country","latitude","longitude","tz_identifier","UTC_dev"
+5812,"3",32,"Female","Riehen","Switzerland",47.573056,7.644167,"Europe/Zurich",2
+6199,"4",57,"Male","Madrid","Spain",40.523106,-3.7038,"Europe/Madrid",2
+3781,"5",35,"Male","Bochum","Germany",51.48025,7.237972,"Europe/Berlin",2
+3333,"6",26,"Male","Kumasi","Ghana",6.69097,-1.61613,"Africa/Accra",0
+4081,"7",40,"Male","Dortmund","Germany",51.5136,7.4653,"Europe/Berlin",2
+5777,"8",33,"Male","Antalya","Turkey",36.9,30.7,"Europe/Istanbul",3
+5875,"9",26,"Female","Eindhoven","Netherlands",51.4485802,5.4860307,"Europe/Amsterdam",2
+3564,"10",40,"Male","Dortmund","Germany",51.514167,7.463889,"Europe/Berlin",2
+4103,"11",26,"Male","Dortmund","Germany",51.500556,7.467222,"Europe/Berlin",2
+6699,"12",41,"Female","Tübingen","Germany",48.53,9.069,"Europe/Berlin",2
+4067,"13",46,"Male","Berlin","Germany",52.512194,13.346528,"Europe/Berlin",2
+2003462,"15",49,"Male","Berlin","Germany",52.233333,13.633333,"Europe/Berlin",2
+6441,"16",24,"Male","Tübingen","Germany",48.53675,9.05931,"Europe/Berlin",2
+4394,"17",70,"Female","Dortmund","Germany",51.514167,7.463889,"Europe/Berlin",2
+6499,"18",28,"Female","Tübingen","Germany",48.5216,9.0576,"Europe/Berlin",2
+3899,"19",53,"Female","Velbert","Germany",51.335278,7.51,"Europe/Berlin",2
+5716,"20",24,"Male","Izmir","Turkey",38.1967207,26.8391099,"Europe/Istanbul",3
+3868,"21",41,"Male","Dortmund","Germany",51.5,7.4,"Europe/Berlin",2
+6471,"23",26,"Female","Shenzhen","China",22,114,"Asia/Shanghai",8
+4536,"24",24,"Female","Izmir","Turkey",38.4192,27.1287,"Europe/Istanbul",3
+5349,"25",33,"Female","Johor Bahru","Malaysia",1.4799,103.7643,"Asia/Kuala_Lumpur",8
+4524,"26",24,"Female","Izmir","Turkey",38.33261,26.64507,"Europe/Istanbul",3
+6334,"27",41,"Female","Philadelphia","United States of America",40.1417,-75.1927,"America/New_York",-4
+5655,"28",42,"Male","Kongsberg","Norway",59.6759766,9.6534677,"Europe/Oslo",2
+3771,"29",60,"Male","Dortmund","Germany",51.5,7.3,"Europe/Berlin",2
+2215,"34",31,"Female","Guildford","United Kingdom",51.2354,-0.5743,"Europe/London",1
+6275,"35",52,"Female","Dublin","Ireland",53.35,-6.26,"Europe/Dublin",1
+4396,"36",51,"Female","Borås","Sweden",57.72,12.94,"Europe/Stockholm",2
+5399,"37",38,"Female","Tübingen","Germany",48.5366,9.0576,"Europe/Berlin",2
+6837,"38",27,"Male","San José","Costa Rica",9.833,-84,"America/Costa_Rica",-6
+6305,"39",43,"Female","San José","Costa Rica",9.94365,-84.17604,"America/Costa_Rica",-6
+6189,"40",50,"Female","Havertown","United States of America",39.9763656,-75.3149796,"America/New_York",-4
+5935,"41",41,"Female","Eindhoven","Netherlands",51.4416,5.4697,"Europe/Amsterdam",2
+2003249,"42",56,"Male","Velbert","Germany",51.3333,7.05,"Europe/Berlin",2
+6253,"43",23,"Female","Liberia","Costa Rica",10.63517,-85.43779,"America/Costa_Rica",-6
+3852,"45",64,"Female","League City","United States of America",29.487,-95.109,"America/Chicago",-5
+6293,"46",46,"Female","Madrid","Spain",40.5,-3.6667,"Europe/Madrid",2
+5692,"47",55,"Female","Kongsberg","Norway",59.65,9.65,"Europe/Oslo",2
+4023,"48",36,"Female","Berlin","Germany",52.5,13.6,"Europe/Berlin",2
+4914,"49",29,"Male","San Jose","United States of America",37.414971,-122.059474,"America/Los_Angeles",-7
+5163,"50",22,"Female","Mountain View","United States of America",37.4145646,-122.0524302,"America/Los_Angeles",-7
+5160,"51",35,"Female","El Cerrito","United States of America",37.9161,-122.3108,"America/Los_Angeles",-7
+5090,"52",41,"Female","San Francisco","United States of America",37.7502,-122.3801,"America/Los_Angeles",-7
+5110,"53",24,"Female","San Leandro","United States of America",37.67,-122.08,"America/Los_Angeles",-7
+5236,"54",54,"Female","San Jose","United States of America",37.2,-121.53,"America/Los_Angeles",-7
+6011,"55",33,"Female","Melbourne","Australia",-37.8,144.96,"Australia/Melbourne",11
+4789,"56",22,"Female","Munich","Germany",48.135,11.569997,"Europe/Berlin",2
