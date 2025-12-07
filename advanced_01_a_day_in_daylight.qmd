@@ -514,7 +514,7 @@ TAT250 |>
 
 ## Event data
 
-The last aspect we will cover in this use case, are the activity logs that participants filled in, whenever their status changed - be it whether they took off their device, changed location, activity, or switched light settings. The activity logs are available as an R object here, this has the benefit that variable labels are retained.
+The last major aspect we will cover in this use case, are the activity logs that participants filled in, whenever their status changed - be it whether they took off their device, changed location, activity, or switched light settings. The activity logs are available as an R object here, this has the benefit that variable labels are retained.
 
 ::: {.callout-important}
 ### On the order of including wear-information
@@ -686,7 +686,7 @@ This shows us that removing those instances was successful. To close up this use
 quick_summaries <- function(variable) {
 light_data |> 
   group_by({{ variable }}, .add = TRUE) |>
-    durations() |> #<1>
+    durations(LIGHT, show.missing = TRUE, FALSE.as.NA = TRUE) |> #<1>
     ungroup(Id) |>
     summarize_numeric(prefix = "mean_per_participant_") |> #<2>
     extract_metric( #<3>
@@ -721,6 +721,53 @@ quick_summaries(setting_indoors)
 quick_summaries(setting_outdoors)
 quick_summaries(setting_mixed)
 quick_summaries(wear_activity)
+```
+
+## Circular time
+
+We close this use case off with with a small detour to averaging of times. Many calculations in wearable data analysis involves averaging. This is tricky for variables that are circular in nature, like the time of day. consider the following case:
+
+```{r}
+times <- as.POSIXct(c("2025-12-07 23:59:00", "2025-12-09 00:01:00"))
+times2 <- as.POSIXct(c("2025-12-06 23:59:00", "2025-12-09 00:01:00"))
+```
+
+When we take the average of these two, we get noon on 8 December.
+
+```{r}
+mean(times)
+mean(times2)
+```
+
+Depending on what the values represent, this is a correct handling. But consider they represent sleep times. In this case the averaging results to not output what we want, especially the sensitivity to the date for the result. We can lose the reliance on the date if we use a function like `Datetime2Time()` or `summarize_numeric()`s defaults:
+
+```{r}
+tibble(times, times2) |> Datetime2Time()
+tibble(times, times2) |> summarize_numeric()
+```
+
+Now we have consistent results - but they are still wrong in the context we are thinking in. We need `circular` time for this, i.e., where the distance of two timepoints is equal, even across midnight. `LightLogR` has implemented functions from the `circular` package to make this process easy. Simply specify a circular handling. After the summary, apply `Circular2Time()` to backtransform to the common representation.
+
+```{r}
+tibble(times, times2) |> Datetime2Time(circular = TRUE)
+tibble(times, times2) |> 
+  summarize_numeric(Datetime2Time.circular = TRUE) |> 
+  Circular2Time()
+```
+
+We can use this approach in our use case. Say we want to know the average `Bedtime` of people, based on their logs:
+
+```{r}
+bedtimes <- 
+  events |> filter(type == "Bedtime") |> select(start) 
+bedtimes |> head() |> gt()
+```
+
+Now focus on the difference of whether we work with circular time or not:
+
+```{r}
+bedtimes |> summarize_numeric()
+bedtimes |> summarize_numeric(Datetime2Time.circular = TRUE) |> Circular2Time()
 ```
 
 
