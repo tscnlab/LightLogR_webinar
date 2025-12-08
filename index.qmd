@@ -27,6 +27,8 @@ Build open, reproducible analyses of wearable light exposure and visual experien
 
 *Live* tutorials run a self‑contained version of R in your browser - no setup required - with only minor functional limitations. *Static* tutorials provide the complete script exactly as you would run it in a local R installation.
 
+### Beginner
+
 [Beginner (live)](beginner-live.qmd){.btn .btn-primary}
 [Beginner (static)](beginner.qmd){.btn .btn-secondary}
 
