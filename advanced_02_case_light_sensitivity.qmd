@@ -42,7 +42,7 @@ The tutorial focuses on
 
 - assessing compliance to Brown et al. (2022)[^1] recommendations
 
-[^1]: https://doi.org/10.1371/journal.pbio.3001571
+[^1]: [Link to publication](https://doi.org/10.1371/journal.pbio.3001571){target="_blank"}
 
 {{< include _how_this_page_works.qmd >}}
 
@@ -110,7 +110,7 @@ We can continue seeing as there are no issues with the regular time series. We s
 ```
 
 1. Reduce the interval by averaging over 15 minute periods
-2. Easily change the label format. Look at the help page of [`?strptime`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/strptime) for the available syntax.
+2. Easily change the label format. Look at the help page of [`?strptime`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/strptime){target="_blank"} for the available syntax.
 
 We can see the light intensity varies greatly. Let's look at the extremes.
 
@@ -416,7 +416,7 @@ data_sw |>
     dose(MEDI, Datetime, as.df = TRUE),
     duration_above_threshold(MEDI, Datetime, threshold = 250, as.df = TRUE)
   ) |> 
-  left_join(states, by = "Date") #<1>
+  left_join(states, by = "Date") #<2>
 ```
 
 1. This step relates the sleep cycles to the date where the wake-state starts.

@@ -1,6 +1,6 @@
 ## How this page works
 
-This document runs a self‑contained version of R **completely in your browser**[^2]. No setup or installation is required. 
+This document runs a self‑contained version of R **completely in your browser**[^10]. No setup or installation is required. 
 
 As soon as as *webR* has finished loading in the background, the **Run Code** button on code cells will become available. You can change the code and execute it either by clicking **Run Code** or by hitting `CTRL+Enter` (Windows) or `CMD+Enter` (MacOS).
 Some code lines have commments below. These indicate code-cell line numbers
@@ -24,4 +24,4 @@ This approach also comes with a few drawbacks:
 - After running a command for more than 30 seconds, each code cell will go into a time out. If that happens on your browser, try reducing the complexity of commands or choose the local installation.
 - Depending on your browser and system settings, functionality or output may differ. Common differences include default fonts and occasional plot background colors. If you encounter an issue, please describe it in detail—along with your system information (hardware, OS, browser)—in the [issues](https://github.com/tscnlab/LightLogR_webinar/issues) section of the GitHub repository. This helps us to improve your experience moving forward.
 
-[^2]: If you want to know more about `webR` and the `Quarto-live` extension that powers this document, you can visit the [documentation page](https://r-wasm.github.io/quarto-live/)
+[^10]: If you want to know more about `webR` and the `Quarto-live` extension that powers this document, you can visit the [documentation page](https://r-wasm.github.io/quarto-live/)
