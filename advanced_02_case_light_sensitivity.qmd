@@ -14,6 +14,13 @@ date: last-modified
 number-sections: true
 ---
 
+```{r}
+#| echo: false
+live <- "advanced_02_case_light_sensitivity-live.qmd"
+static <- "advanced_02_case_light_sensitivity.qmd"
+```
+
+
 ## Preface
 
 A single patient reports worse sleep after bright days. Consequently, personal light exposure and activity was captured with wearable devices for several weeks. Additionally, morning and evening questionnaires were used to capture sleep, performance, and well-being self evaluations. In this tutorial, we focus on the ActLumus device worn on the chest and the self evaluations.

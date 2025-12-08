@@ -14,6 +14,12 @@ number-sections: true
 date: last-modified
 ---
 
+```{r}
+#| echo: false
+live <- "advanced_01_a_day_in_daylight-live.qmd"
+static <- "advanced_01_a_day_in_daylight.qmd"
+```
+
 ## Preface
 
 On the September 2025 equinox, over 50 participants across the globe logged and annotated their daily light exposure. While not a (traditional) study, the data is extraordinarily well suited to explore a diverse dataset across many participants in terms of geolocation, device-type, and contextual information, as participants logged their statechanges via a smartphone application. The dataset were analysed and presented as part of the *A Day in Daylight* event on 3 November 2025. They can be explored in an [interactive dashboard](https://tscnlab.github.io/2025_ADayInDaylight/). For this use case, we will take a subset of the datasets to explore workflows for these conditions, and summarize the data by combining it with activity logs and participant demographics.
@@ -269,7 +275,7 @@ data <-
 2. Put in explicit gaps
 3. Only leave a section of data
 4. Adding a `local_time` colum
-5. Adding photoperiod information based on `local_time`
+5. Adding photoperiod information and forcing it to the same time zone as `local_time`.
 
 ### Visualizing light data
 

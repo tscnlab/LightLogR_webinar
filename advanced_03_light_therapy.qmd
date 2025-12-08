@@ -14,6 +14,12 @@ date: last-modified
 number-sections: true
 ---
 
+```{r}
+#| echo: false
+live <- "advanced_03_light_therapy-live.qmd"
+static <- "advanced_03_light_therapy.qmd"
+```
+
 ## Preface
 
 This use case covers an exploratory protocol to capture the effect of a light therapy intervention on personal light exposure. Two participants sit in an office environment, one with, one without a therapy lamp on their respective desk. They follow a typical office workflow. The blinds are shut to reduce the directional (and thus differential) effect of daylight on participant's light exposure. Artificial lighting is switched on. In the intervention condition the therapy lamp is switched on for one hour. The participants document the start and end times of each protocol phase (pre-light, therapy light, post-light), as well as any deviations from the protocol. 

@@ -2,7 +2,7 @@
 
 This document contains the script for the online course series as a [Quarto](https://quarto.org) script, which can be executed on a local installation of R. Please ensure that all libraries are installed prior to running the script.
 
-If you want to test `LightLogR` without installing R or the package, try the script version running webR, for a autonymous but slightly reduced version. These versions are indicated as *(live)*, whereas the current version is considered *(static)*, as it is pre-rendered.
+If you want to test `LightLogR` without installing R or the package, try the [script](`r live`) version running webR, for a autonymous but slightly reduced version. These versions are indicated as *(live)*, whereas the current version is considered *(static)*, as it is pre-rendered.
 
 To run this script, we recommend cloning or downloading the [GitHub repository](https://github.com/tscnlab/LightLogR_webinar) ([link to Zip-file](https://github.com/tscnlab/LightLogR_webinar/archive/refs/heads/main.zip)) and running the respective script. You will need to install the required packages. A quick way is to run:
 
