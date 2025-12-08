@@ -57,7 +57,6 @@ library(LightLogR) # main package
 library(tidyverse) # for tidy data science
 library(gt) # for great tables
 library(readxl) # to read in Excel files
-library(ggridges) # for stacked plots within a panel
 library(gtsummary) # for automatic summaries
 ```
 

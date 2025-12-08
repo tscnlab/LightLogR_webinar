@@ -401,7 +401,7 @@ light_data |>
                 color = "red")
 ```
 
-![To generate this table yourself, please execute the [static R script](`r static)](assets/advanced/01_tbl_summary.png)
+![To generate this table yourself, please execute the static R script](assets/advanced/01_tbl_summary.png)
 
 What are the timezones of our two datetime columns now? Let´s find out
 

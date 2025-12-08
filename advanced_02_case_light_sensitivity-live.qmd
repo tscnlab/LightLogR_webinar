@@ -23,7 +23,6 @@ webr:
     - tidyverse
     - gt
     - readxl
-    - ggridges
     - gtsummary
     - plotly
   repos:
