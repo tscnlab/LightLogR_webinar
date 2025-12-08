@@ -32,7 +32,30 @@ website:
           href: beginner.qmd
       - text: Advanced
         menu:
-        - text: To come soon
+        - text: A Day in Daylight 
+        - text: live
+          href: advanced_01_a_day_in_daylight-live.qmd
+        - text: static
+          href: advanced_01_a_day_in_daylight.qmd
+        - text: ---
+        - text: Case of high light sensitivity
+        - text: live
+          href: advanced_02_case_light_sensitivity-live.qmd
+        - text: static
+          href: advanced_02_case_light_sensitivity.qmd
+        - text: ---
+        - text: Therapy lamps
+        - text: live
+          href: advanced_03_light_therapy-live.qmd
+        - text: static
+          href: advanced_03_light_therapy.qmd
+        - text: ---
+        - text: "Visual experience: beyond light"
+        - text: live
+          href: advanced_04_visual_experience-live.qmd
+        - text: static
+          href: advanced_04_visual_experience.qmd
+        - text: ---
       - text: "About / Funding"
         href: about.qmd
       - text: "License"

@@ -77,9 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ff63373b1067ca6f91cf1456aa1f00a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
-<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -110,10 +108,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -173,7 +170,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Advanced</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-advanced">    
-        <li class="dropdown-header">To come soon</li>
+        <li class="dropdown-header">A Day in Daylight</li>
+        <li>
+    <a class="dropdown-item" href="./advanced_01_a_day_in_daylight-live.html">
+ <span class="dropdown-text">live</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_01_a_day_in_daylight.html">
+ <span class="dropdown-text">static</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Case of high light sensitivity</li>
+        <li>
+    <a class="dropdown-item" href="./advanced_02_case_light_sensitivity-live.html">
+ <span class="dropdown-text">live</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_02_case_light_sensitivity.html">
+ <span class="dropdown-text">static</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Therapy lamps</li>
+        <li>
+    <a class="dropdown-item" href="./advanced_03_light_therapy-live.html">
+ <span class="dropdown-text">live</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_03_light_therapy.html">
+ <span class="dropdown-text">static</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Visual experience: beyond light</li>
+        <li>
+    <a class="dropdown-item" href="./advanced_04_visual_experience-live.html">
+ <span class="dropdown-text">live</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_04_visual_experience.html">
+ <span class="dropdown-text">static</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
     </ul>
   </li>
   <li class="nav-item">
@@ -202,8 +238,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface"><span class="header-section-number">1</span> Preface</a></li>
+  <li><a href="#how-this-page-works" id="toc-how-this-page-works" class="nav-link" data-scroll-target="#how-this-page-works"><span class="header-section-number">2</span> How this page works</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">3</span> Setup</a></li>
+  <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import"><span class="header-section-number">4</span> Import</a>
+  <ul class="collapse">
+  <li><a href="#light" id="toc-light" class="nav-link" data-scroll-target="#light"><span class="header-section-number">4.1</span> Light</a></li>
+  <li><a href="#state-data" id="toc-state-data" class="nav-link" data-scroll-target="#state-data"><span class="header-section-number">4.2</span> State data</a></li>
+  </ul></li>
+  <li><a href="#merging-sleep-data" id="toc-merging-sleep-data" class="nav-link" data-scroll-target="#merging-sleep-data"><span class="header-section-number">5</span> Merging sleep data</a></li>
+  <li><a href="#brown-et-al.-2022-recommendations" id="toc-brown-et-al.-2022-recommendations" class="nav-link" data-scroll-target="#brown-et-al.-2022-recommendations"><span class="header-section-number">6</span> Brown et al.&nbsp;(2022) recommendations</a></li>
+  <li><a href="#calculate-metrics" id="toc-calculate-metrics" class="nav-link" data-scroll-target="#calculate-metrics"><span class="header-section-number">7</span> Calculate metrics</a>
+  <ul class="collapse">
+  <li><a href="#sleep-wake-cycles" id="toc-sleep-wake-cycles" class="nav-link" data-scroll-target="#sleep-wake-cycles"><span class="header-section-number">7.1</span> Sleep-wake cycles</a></li>
+  <li><a href="#light-exposure-metrics" id="toc-light-exposure-metrics" class="nav-link" data-scroll-target="#light-exposure-metrics"><span class="header-section-number">7.2</span> Light exposure metrics</a></li>
+  </ul></li>
+  <li><a href="#correlations" id="toc-correlations" class="nav-link" data-scroll-target="#correlations"><span class="header-section-number">8</span> Correlations</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">9</span> Conclusion</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tscnlab/LightLogR_webinar/edit/main/advanced_02_case_light_sensitivity.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tscnlab/LightLogR_webinar/issues" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -3505,20 +3563,6 @@ Self-reported sleep
 
 <!-- -->
 
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
-</script>
-<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
-<div id="exercise-loading-status" class="d-flex gap-2">
-
-</div>
-<div class="spinner-grow spinner-grow-sm">
-
-</div>
-</div>
-<script type="vfs-file">
-W10=
-</script>
 </section>
 
 
@@ -3528,17 +3572,6 @@ W10=
 <li id="fn1"><p><a href="https://doi.org/10.1371/journal.pbio.3001571" target="_blank">Link to publication</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
-</script>
-<script type="module">
-if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../..";
-window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "";
-window._ojs.selfContained = false;
-window._ojs.runtime.interpretFromScriptTags();
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -4525,7 +4558,7 @@ window._ojs.runtime.interpretFromScriptTags();
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/tscnlab/LightLogR_webinar/edit/main/advanced_02_case_light_sensitivity.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tscnlab/LightLogR_webinar/issues" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tscnlab/LightLogR_webinar/edit/main/advanced_02_case_light_sensitivity.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tscnlab/LightLogR_webinar/issues" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

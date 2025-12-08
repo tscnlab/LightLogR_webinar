@@ -30,10 +30,41 @@ Build open, reproducible analyses of wearable light exposure and visual experien
 [Beginner (live)](beginner-live.qmd){.btn .btn-primary}
 [Beginner (static)](beginner.qmd){.btn .btn-secondary}
 
-**To come soon:**
 
-[Advanced (live)]{.btn .btn-primary}
-[Advanced (static)]{.btn .btn-secondary}
+### Advanced
+
+The advanced course takes *use cases*, extracted from real-world examples, to highlight advanced analysis techniques. Each use case contains a short summary on the example and on the focus points as a *Preface*.
+
+![Overview of the use cases](assets/advanced/use_cases.png)
+
+#### 1. [A Day in Daylight](https://tscnlab.github.io/2025_ADayInDaylight/){target="_blank"}
+
+Analysis challenges: many participants, different devices and time zones, participant metadata, and activity logs
+
+[Advanced (live)](advanced_01_a_day_in_daylight-live.qmd){.btn .btn-primary}
+[Advanced (static)](advanced_01_a_day_in_daylight.qmd){.btn .btn-secondary}
+
+#### Case of high light sensitivity
+
+Analysis challenges: sleep-wake-cycles, self-assessments, compliance to Brown et al. (2022) recommendations for healthy light exposure
+
+[Advanced (live)](advanced_02_case_light_sensitivity-live.qmd){.btn .btn-primary}
+[Advanced (static)](advanced_02_case_light_sensitivity.qmd){.btn .btn-secondary}
+
+#### Therapy lamps
+
+Analysis challenges: merging protocol logs with wearable data, analysis dependent on lighting conditions, advanced plot & table styling, sub 1-day data
+
+[Advanced (live)](advanced_03_light_therapy-live.qmd){.btn .btn-primary}
+[Advanced (static)](advanced_03_light_therapy.qmd){.btn .btn-secondary}
+
+#### Visual experience: beyond light
+
+Analysis challenges: multimodal data, reconstructing light spectra, analysing light spectra, spatial distance data, detecting clusters of conditions
+
+[Advanced (live)](advanced_04_visual_experience-live.qmd){.btn .btn-primary}
+[Advanced (static)](advanced_04_visual_experience.qmd){.btn .btn-secondary}
+
 
 ## What you’ll do
 
