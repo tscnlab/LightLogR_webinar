@@ -11,7 +11,7 @@ Some code lines have commments below. These indicate code-cell line numbers
 This tutorial is considered as **advanced**. Basic functions in the `LightLogR` package as well as general `tidy` workflows are used without dedicated explanation. We recommend working through the [beginner](beginner-live.qmd) example if you are new to `LightLogR` (note that there is also a [static](beginner.qmd) variant).
 :::
 
-You can execute the same [script](`r static`) in a traditional R environment, but this browser‑based approach has several advantages:
+You can execute the same script in a traditional R environment, but this browser‑based approach has several advantages:
 
 - You can get started in seconds, avoiding configuration differences across machines and getting to the interesting part quickly.
 - Unlike a static tutorial, you can modify code to test the effects of different arguments and functions and receive immediate feedback.
@@ -20,7 +20,7 @@ You can execute the same [script](`r static`) in a traditional R environment, bu
 This approach also comes with a few drawbacks:
 
 - R and all required packages are loaded every time you load the page. If you close the page or navigate elsewhere in the same tab, webR must be re‑initialized and your session state is lost.
-- Certain functions do not behave as they would in a traditional runtime. For example, saving plot images directly to your local machine (e.g., with `ggsave()`) is not supported. If you need these capabilities, run the [script](`r static`) on your local R installation. In most cases, however, you can interact with the code as you would locally. Known cases where webR does not produce the desired output are marked specifically in this script and static images of outputs are displayed.
+- Certain functions do not behave as they would in a traditional runtime. For example, saving plot images directly to your local machine (e.g., with `ggsave()`) is not supported. If you need these capabilities, run the **static** version of the script on your local R installation. In most cases, however, you can interact with the code as you would locally. Known cases where webR does not produce the desired output are marked specifically in this script and static images of outputs are displayed.
 - After running a command for more than 30 seconds, each code cell will go into a time out. If that happens on your browser, try reducing the complexity of commands or choose the local installation.
 - Depending on your browser and system settings, functionality or output may differ. Common differences include default fonts and occasional plot background colors. If you encounter an issue, please describe it in detail—along with your system information (hardware, OS, browser)—in the [issues](https://github.com/tscnlab/LightLogR_webinar/issues) section of the GitHub repository. This helps us to improve your experience moving forward.
 

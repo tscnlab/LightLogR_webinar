@@ -288,7 +288,7 @@ Figure&nbsp;1
 <section id="how-this-page-works" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="how-this-page-works"><span class="header-section-number">2</span> How this page works</h2>
 <p>This document contains the script for the online course series as a <a href="https://quarto.org">Quarto</a> script, which can be executed on a local installation of R. Please ensure that all libraries are installed prior to running the script.</p>
-<p>If you want to test <code>LightLogR</code> without installing R or the package, try the <a href="advanced_02_case_light_sensitivity-live.qmd">script</a> version running webR, for a autonymous but slightly reduced version. These versions are indicated as <em>(live)</em>, whereas the current version is considered <em>(static)</em>, as it is pre-rendered.</p>
+<p>If you want to test <code>LightLogR</code> without installing R or the package, try the <a href="./advanced_02_case_light_sensitivity-live.html">script</a> version running webR, for a autonymous but slightly reduced version. These versions are indicated as <em>(live)</em>, whereas the current version is considered <em>(static)</em>, as it is pre-rendered.</p>
 <p>To run this script, we recommend cloning or downloading the <a href="https://github.com/tscnlab/LightLogR_webinar">GitHub repository</a> (<a href="https://github.com/tscnlab/LightLogR_webinar/archive/refs/heads/main.zip">link to Zip-file</a>) and running the respective script. You will need to install the required packages. A quick way is to run:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -552,23 +552,23 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(labels_states, <span class="st">"Performance next day"</span>, <span class="st">"Fatigue next day"</span>)) <span class="sc">|&gt;</span>  </span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">tbl_summary</span>(<span class="at">include =</span> <span class="fu">where</span>(is.numeric))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="xroijtiuzd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xroijtiuzd table {
+<div id="xprecdmtmj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xprecdmtmj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xroijtiuzd thead, #xroijtiuzd tbody, #xroijtiuzd tfoot, #xroijtiuzd tr, #xroijtiuzd td, #xroijtiuzd th {
+#xprecdmtmj thead, #xprecdmtmj tbody, #xprecdmtmj tfoot, #xprecdmtmj tr, #xprecdmtmj td, #xprecdmtmj th {
   border-style: none;
 }
 
-#xroijtiuzd p {
+#xprecdmtmj p {
   margin: 0;
   padding: 0;
 }
 
-#xroijtiuzd .gt_table {
+#xprecdmtmj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -594,12 +594,12 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-left-color: #D3D3D3;
 }
 
-#xroijtiuzd .gt_caption {
+#xprecdmtmj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xroijtiuzd .gt_title {
+#xprecdmtmj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -611,7 +611,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-width: 0;
 }
 
-#xroijtiuzd .gt_subtitle {
+#xprecdmtmj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -623,7 +623,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-width: 0;
 }
 
-#xroijtiuzd .gt_heading {
+#xprecdmtmj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -635,13 +635,13 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#xroijtiuzd .gt_bottom_border {
+#xprecdmtmj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xroijtiuzd .gt_col_headings {
+#xprecdmtmj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -656,7 +656,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#xroijtiuzd .gt_col_heading {
+#xprecdmtmj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -676,7 +676,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#xroijtiuzd .gt_column_spanner_outer {
+#xprecdmtmj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -688,15 +688,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 4px;
 }
 
-#xroijtiuzd .gt_column_spanner_outer:first-child {
+#xprecdmtmj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xroijtiuzd .gt_column_spanner_outer:last-child {
+#xprecdmtmj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xroijtiuzd .gt_column_spanner {
+#xprecdmtmj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -708,11 +708,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   width: 100%;
 }
 
-#xroijtiuzd .gt_spanner_row {
+#xprecdmtmj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xroijtiuzd .gt_group_heading {
+#xprecdmtmj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -738,7 +738,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   text-align: left;
 }
 
-#xroijtiuzd .gt_empty_group_heading {
+#xprecdmtmj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -753,15 +753,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: middle;
 }
 
-#xroijtiuzd .gt_from_md > :first-child {
+#xprecdmtmj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xroijtiuzd .gt_from_md > :last-child {
+#xprecdmtmj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xroijtiuzd .gt_row {
+#xprecdmtmj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -780,7 +780,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#xroijtiuzd .gt_stub {
+#xprecdmtmj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -793,7 +793,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#xroijtiuzd .gt_stub_row_group {
+#xprecdmtmj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -807,15 +807,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: top;
 }
 
-#xroijtiuzd .gt_row_group_first td {
+#xprecdmtmj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xroijtiuzd .gt_row_group_first th {
+#xprecdmtmj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xroijtiuzd .gt_summary_row {
+#xprecdmtmj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -825,16 +825,16 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#xroijtiuzd .gt_first_summary_row {
+#xprecdmtmj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xroijtiuzd .gt_first_summary_row.thick {
+#xprecdmtmj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xroijtiuzd .gt_last_summary_row {
+#xprecdmtmj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -844,7 +844,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#xroijtiuzd .gt_grand_summary_row {
+#xprecdmtmj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -854,7 +854,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#xroijtiuzd .gt_first_grand_summary_row {
+#xprecdmtmj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -864,7 +864,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-color: #D3D3D3;
 }
 
-#xroijtiuzd .gt_last_grand_summary_row_top {
+#xprecdmtmj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -874,11 +874,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#xroijtiuzd .gt_striped {
+#xprecdmtmj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xroijtiuzd .gt_table_body {
+#xprecdmtmj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -887,7 +887,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#xroijtiuzd .gt_footnotes {
+#xprecdmtmj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -901,7 +901,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#xroijtiuzd .gt_footnote {
+#xprecdmtmj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -910,7 +910,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#xroijtiuzd .gt_sourcenotes {
+#xprecdmtmj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -924,7 +924,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#xroijtiuzd .gt_sourcenote {
+#xprecdmtmj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -932,72 +932,72 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#xroijtiuzd .gt_left {
+#xprecdmtmj .gt_left {
   text-align: left;
 }
 
-#xroijtiuzd .gt_center {
+#xprecdmtmj .gt_center {
   text-align: center;
 }
 
-#xroijtiuzd .gt_right {
+#xprecdmtmj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xroijtiuzd .gt_font_normal {
+#xprecdmtmj .gt_font_normal {
   font-weight: normal;
 }
 
-#xroijtiuzd .gt_font_bold {
+#xprecdmtmj .gt_font_bold {
   font-weight: bold;
 }
 
-#xroijtiuzd .gt_font_italic {
+#xprecdmtmj .gt_font_italic {
   font-style: italic;
 }
 
-#xroijtiuzd .gt_super {
+#xprecdmtmj .gt_super {
   font-size: 65%;
 }
 
-#xroijtiuzd .gt_footnote_marks {
+#xprecdmtmj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xroijtiuzd .gt_asterisk {
+#xprecdmtmj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xroijtiuzd .gt_indent_1 {
+#xprecdmtmj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xroijtiuzd .gt_indent_2 {
+#xprecdmtmj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xroijtiuzd .gt_indent_3 {
+#xprecdmtmj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xroijtiuzd .gt_indent_4 {
+#xprecdmtmj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xroijtiuzd .gt_indent_5 {
+#xprecdmtmj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xroijtiuzd .katex-display {
+#xprecdmtmj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xroijtiuzd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xprecdmtmj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1446,23 +1446,23 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 <span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">fmt_percent</span>(<span class="at">decimals =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="mvescnalzq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mvescnalzq table {
+<div id="zbgakuwild" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zbgakuwild table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mvescnalzq thead, #mvescnalzq tbody, #mvescnalzq tfoot, #mvescnalzq tr, #mvescnalzq td, #mvescnalzq th {
+#zbgakuwild thead, #zbgakuwild tbody, #zbgakuwild tfoot, #zbgakuwild tr, #zbgakuwild td, #zbgakuwild th {
   border-style: none;
 }
 
-#mvescnalzq p {
+#zbgakuwild p {
   margin: 0;
   padding: 0;
 }
 
-#mvescnalzq .gt_table {
+#zbgakuwild .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1488,12 +1488,12 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-left-color: #D3D3D3;
 }
 
-#mvescnalzq .gt_caption {
+#zbgakuwild .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mvescnalzq .gt_title {
+#zbgakuwild .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1505,7 +1505,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-width: 0;
 }
 
-#mvescnalzq .gt_subtitle {
+#zbgakuwild .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1517,7 +1517,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-width: 0;
 }
 
-#mvescnalzq .gt_heading {
+#zbgakuwild .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1529,13 +1529,13 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#mvescnalzq .gt_bottom_border {
+#zbgakuwild .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mvescnalzq .gt_col_headings {
+#zbgakuwild .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1550,7 +1550,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#mvescnalzq .gt_col_heading {
+#zbgakuwild .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1570,7 +1570,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#mvescnalzq .gt_column_spanner_outer {
+#zbgakuwild .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1582,15 +1582,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 4px;
 }
 
-#mvescnalzq .gt_column_spanner_outer:first-child {
+#zbgakuwild .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mvescnalzq .gt_column_spanner_outer:last-child {
+#zbgakuwild .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mvescnalzq .gt_column_spanner {
+#zbgakuwild .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1602,11 +1602,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   width: 100%;
 }
 
-#mvescnalzq .gt_spanner_row {
+#zbgakuwild .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mvescnalzq .gt_group_heading {
+#zbgakuwild .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1632,7 +1632,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   text-align: left;
 }
 
-#mvescnalzq .gt_empty_group_heading {
+#zbgakuwild .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1647,15 +1647,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: middle;
 }
 
-#mvescnalzq .gt_from_md > :first-child {
+#zbgakuwild .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mvescnalzq .gt_from_md > :last-child {
+#zbgakuwild .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mvescnalzq .gt_row {
+#zbgakuwild .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1674,7 +1674,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#mvescnalzq .gt_stub {
+#zbgakuwild .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1687,7 +1687,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#mvescnalzq .gt_stub_row_group {
+#zbgakuwild .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1701,15 +1701,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: top;
 }
 
-#mvescnalzq .gt_row_group_first td {
+#zbgakuwild .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mvescnalzq .gt_row_group_first th {
+#zbgakuwild .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mvescnalzq .gt_summary_row {
+#zbgakuwild .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1719,16 +1719,16 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#mvescnalzq .gt_first_summary_row {
+#zbgakuwild .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mvescnalzq .gt_first_summary_row.thick {
+#zbgakuwild .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mvescnalzq .gt_last_summary_row {
+#zbgakuwild .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1738,7 +1738,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#mvescnalzq .gt_grand_summary_row {
+#zbgakuwild .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1748,7 +1748,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#mvescnalzq .gt_first_grand_summary_row {
+#zbgakuwild .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1758,7 +1758,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-color: #D3D3D3;
 }
 
-#mvescnalzq .gt_last_grand_summary_row_top {
+#zbgakuwild .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1768,11 +1768,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#mvescnalzq .gt_striped {
+#zbgakuwild .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mvescnalzq .gt_table_body {
+#zbgakuwild .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1781,7 +1781,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#mvescnalzq .gt_footnotes {
+#zbgakuwild .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1795,7 +1795,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#mvescnalzq .gt_footnote {
+#zbgakuwild .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1804,7 +1804,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#mvescnalzq .gt_sourcenotes {
+#zbgakuwild .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1818,7 +1818,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#mvescnalzq .gt_sourcenote {
+#zbgakuwild .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1826,72 +1826,72 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#mvescnalzq .gt_left {
+#zbgakuwild .gt_left {
   text-align: left;
 }
 
-#mvescnalzq .gt_center {
+#zbgakuwild .gt_center {
   text-align: center;
 }
 
-#mvescnalzq .gt_right {
+#zbgakuwild .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mvescnalzq .gt_font_normal {
+#zbgakuwild .gt_font_normal {
   font-weight: normal;
 }
 
-#mvescnalzq .gt_font_bold {
+#zbgakuwild .gt_font_bold {
   font-weight: bold;
 }
 
-#mvescnalzq .gt_font_italic {
+#zbgakuwild .gt_font_italic {
   font-style: italic;
 }
 
-#mvescnalzq .gt_super {
+#zbgakuwild .gt_super {
   font-size: 65%;
 }
 
-#mvescnalzq .gt_footnote_marks {
+#zbgakuwild .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mvescnalzq .gt_asterisk {
+#zbgakuwild .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mvescnalzq .gt_indent_1 {
+#zbgakuwild .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mvescnalzq .gt_indent_2 {
+#zbgakuwild .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mvescnalzq .gt_indent_3 {
+#zbgakuwild .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mvescnalzq .gt_indent_4 {
+#zbgakuwild .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mvescnalzq .gt_indent_5 {
+#zbgakuwild .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mvescnalzq .katex-display {
+#zbgakuwild .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mvescnalzq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zbgakuwild div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1997,7 +1997,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 </dd>
 <dt data-target-cell="annotated-cell-16" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-16" data-code-lines="5,6" data-code-annotation="3">Remove the fill default, to provide your own</span>
+<span data-code-cell="annotated-cell-16" data-code-lines="5,6" data-code-annotation="3">Remove the default fill settings to provide your own</span>
 </dd>
 </dl>
 </div>
@@ -2013,23 +2013,23 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>data_sw <span class="sc">|&gt;</span> <span class="fu">durations</span>() <span class="sc">|&gt;</span> <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="yrnyrtjrcg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yrnyrtjrcg table {
+<div id="txzhgqzsxr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#txzhgqzsxr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yrnyrtjrcg thead, #yrnyrtjrcg tbody, #yrnyrtjrcg tfoot, #yrnyrtjrcg tr, #yrnyrtjrcg td, #yrnyrtjrcg th {
+#txzhgqzsxr thead, #txzhgqzsxr tbody, #txzhgqzsxr tfoot, #txzhgqzsxr tr, #txzhgqzsxr td, #txzhgqzsxr th {
   border-style: none;
 }
 
-#yrnyrtjrcg p {
+#txzhgqzsxr p {
   margin: 0;
   padding: 0;
 }
 
-#yrnyrtjrcg .gt_table {
+#txzhgqzsxr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2055,12 +2055,12 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-left-color: #D3D3D3;
 }
 
-#yrnyrtjrcg .gt_caption {
+#txzhgqzsxr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yrnyrtjrcg .gt_title {
+#txzhgqzsxr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2072,7 +2072,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-width: 0;
 }
 
-#yrnyrtjrcg .gt_subtitle {
+#txzhgqzsxr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2084,7 +2084,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-width: 0;
 }
 
-#yrnyrtjrcg .gt_heading {
+#txzhgqzsxr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2096,13 +2096,13 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#yrnyrtjrcg .gt_bottom_border {
+#txzhgqzsxr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yrnyrtjrcg .gt_col_headings {
+#txzhgqzsxr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2117,7 +2117,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#yrnyrtjrcg .gt_col_heading {
+#txzhgqzsxr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2137,7 +2137,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#yrnyrtjrcg .gt_column_spanner_outer {
+#txzhgqzsxr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2149,15 +2149,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 4px;
 }
 
-#yrnyrtjrcg .gt_column_spanner_outer:first-child {
+#txzhgqzsxr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yrnyrtjrcg .gt_column_spanner_outer:last-child {
+#txzhgqzsxr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yrnyrtjrcg .gt_column_spanner {
+#txzhgqzsxr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2169,11 +2169,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   width: 100%;
 }
 
-#yrnyrtjrcg .gt_spanner_row {
+#txzhgqzsxr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yrnyrtjrcg .gt_group_heading {
+#txzhgqzsxr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2199,7 +2199,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   text-align: left;
 }
 
-#yrnyrtjrcg .gt_empty_group_heading {
+#txzhgqzsxr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2214,15 +2214,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: middle;
 }
 
-#yrnyrtjrcg .gt_from_md > :first-child {
+#txzhgqzsxr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yrnyrtjrcg .gt_from_md > :last-child {
+#txzhgqzsxr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yrnyrtjrcg .gt_row {
+#txzhgqzsxr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2241,7 +2241,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#yrnyrtjrcg .gt_stub {
+#txzhgqzsxr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2254,7 +2254,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#yrnyrtjrcg .gt_stub_row_group {
+#txzhgqzsxr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2268,15 +2268,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: top;
 }
 
-#yrnyrtjrcg .gt_row_group_first td {
+#txzhgqzsxr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yrnyrtjrcg .gt_row_group_first th {
+#txzhgqzsxr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yrnyrtjrcg .gt_summary_row {
+#txzhgqzsxr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2286,16 +2286,16 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#yrnyrtjrcg .gt_first_summary_row {
+#txzhgqzsxr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yrnyrtjrcg .gt_first_summary_row.thick {
+#txzhgqzsxr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yrnyrtjrcg .gt_last_summary_row {
+#txzhgqzsxr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2305,7 +2305,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#yrnyrtjrcg .gt_grand_summary_row {
+#txzhgqzsxr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2315,7 +2315,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#yrnyrtjrcg .gt_first_grand_summary_row {
+#txzhgqzsxr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2325,7 +2325,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-color: #D3D3D3;
 }
 
-#yrnyrtjrcg .gt_last_grand_summary_row_top {
+#txzhgqzsxr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2335,11 +2335,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#yrnyrtjrcg .gt_striped {
+#txzhgqzsxr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yrnyrtjrcg .gt_table_body {
+#txzhgqzsxr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2348,7 +2348,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#yrnyrtjrcg .gt_footnotes {
+#txzhgqzsxr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2362,7 +2362,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#yrnyrtjrcg .gt_footnote {
+#txzhgqzsxr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2371,7 +2371,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#yrnyrtjrcg .gt_sourcenotes {
+#txzhgqzsxr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2385,7 +2385,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#yrnyrtjrcg .gt_sourcenote {
+#txzhgqzsxr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2393,72 +2393,72 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#yrnyrtjrcg .gt_left {
+#txzhgqzsxr .gt_left {
   text-align: left;
 }
 
-#yrnyrtjrcg .gt_center {
+#txzhgqzsxr .gt_center {
   text-align: center;
 }
 
-#yrnyrtjrcg .gt_right {
+#txzhgqzsxr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yrnyrtjrcg .gt_font_normal {
+#txzhgqzsxr .gt_font_normal {
   font-weight: normal;
 }
 
-#yrnyrtjrcg .gt_font_bold {
+#txzhgqzsxr .gt_font_bold {
   font-weight: bold;
 }
 
-#yrnyrtjrcg .gt_font_italic {
+#txzhgqzsxr .gt_font_italic {
   font-style: italic;
 }
 
-#yrnyrtjrcg .gt_super {
+#txzhgqzsxr .gt_super {
   font-size: 65%;
 }
 
-#yrnyrtjrcg .gt_footnote_marks {
+#txzhgqzsxr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yrnyrtjrcg .gt_asterisk {
+#txzhgqzsxr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yrnyrtjrcg .gt_indent_1 {
+#txzhgqzsxr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yrnyrtjrcg .gt_indent_2 {
+#txzhgqzsxr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yrnyrtjrcg .gt_indent_3 {
+#txzhgqzsxr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yrnyrtjrcg .gt_indent_4 {
+#txzhgqzsxr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yrnyrtjrcg .gt_indent_5 {
+#txzhgqzsxr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yrnyrtjrcg .katex-display {
+#txzhgqzsxr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yrnyrtjrcg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#txzhgqzsxr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2579,7 +2579,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-19" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-19" data-code-lines="4" data-code-annotation="1">This step relates the sleep cycles to the date where the wake-state happens.</span>
+<span data-code-cell="annotated-cell-19" data-code-lines="4,8" data-code-annotation="1">This step relates the sleep cycles to the date where the wake-state starts.</span>
 </dd>
 </dl>
 </div>
@@ -2618,23 +2618,23 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 <span id="cb11-30"><a href="#cb11-30"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Higher is worse"</span>, <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">14</span>))) <span class="sc">|&gt;</span> </span>
 <span id="cb11-31"><a href="#cb11-31"></a>  <span class="fu">sub_missing</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="zjoxlynfvn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zjoxlynfvn table {
+<div id="czpretpmys" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#czpretpmys table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zjoxlynfvn thead, #zjoxlynfvn tbody, #zjoxlynfvn tfoot, #zjoxlynfvn tr, #zjoxlynfvn td, #zjoxlynfvn th {
+#czpretpmys thead, #czpretpmys tbody, #czpretpmys tfoot, #czpretpmys tr, #czpretpmys td, #czpretpmys th {
   border-style: none;
 }
 
-#zjoxlynfvn p {
+#czpretpmys p {
   margin: 0;
   padding: 0;
 }
 
-#zjoxlynfvn .gt_table {
+#czpretpmys .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2660,12 +2660,12 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-left-color: #D3D3D3;
 }
 
-#zjoxlynfvn .gt_caption {
+#czpretpmys .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zjoxlynfvn .gt_title {
+#czpretpmys .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2677,7 +2677,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-width: 0;
 }
 
-#zjoxlynfvn .gt_subtitle {
+#czpretpmys .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2689,7 +2689,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-width: 0;
 }
 
-#zjoxlynfvn .gt_heading {
+#czpretpmys .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2701,13 +2701,13 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#zjoxlynfvn .gt_bottom_border {
+#czpretpmys .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zjoxlynfvn .gt_col_headings {
+#czpretpmys .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2722,7 +2722,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#zjoxlynfvn .gt_col_heading {
+#czpretpmys .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2742,7 +2742,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#zjoxlynfvn .gt_column_spanner_outer {
+#czpretpmys .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2754,15 +2754,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 4px;
 }
 
-#zjoxlynfvn .gt_column_spanner_outer:first-child {
+#czpretpmys .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zjoxlynfvn .gt_column_spanner_outer:last-child {
+#czpretpmys .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zjoxlynfvn .gt_column_spanner {
+#czpretpmys .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2774,11 +2774,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   width: 100%;
 }
 
-#zjoxlynfvn .gt_spanner_row {
+#czpretpmys .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zjoxlynfvn .gt_group_heading {
+#czpretpmys .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2804,7 +2804,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   text-align: left;
 }
 
-#zjoxlynfvn .gt_empty_group_heading {
+#czpretpmys .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2819,15 +2819,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: middle;
 }
 
-#zjoxlynfvn .gt_from_md > :first-child {
+#czpretpmys .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zjoxlynfvn .gt_from_md > :last-child {
+#czpretpmys .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zjoxlynfvn .gt_row {
+#czpretpmys .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2846,7 +2846,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#zjoxlynfvn .gt_stub {
+#czpretpmys .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2859,7 +2859,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zjoxlynfvn .gt_stub_row_group {
+#czpretpmys .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2873,15 +2873,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: top;
 }
 
-#zjoxlynfvn .gt_row_group_first td {
+#czpretpmys .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zjoxlynfvn .gt_row_group_first th {
+#czpretpmys .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zjoxlynfvn .gt_summary_row {
+#czpretpmys .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2891,16 +2891,16 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zjoxlynfvn .gt_first_summary_row {
+#czpretpmys .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zjoxlynfvn .gt_first_summary_row.thick {
+#czpretpmys .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zjoxlynfvn .gt_last_summary_row {
+#czpretpmys .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2910,7 +2910,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#zjoxlynfvn .gt_grand_summary_row {
+#czpretpmys .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2920,7 +2920,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zjoxlynfvn .gt_first_grand_summary_row {
+#czpretpmys .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2930,7 +2930,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-color: #D3D3D3;
 }
 
-#zjoxlynfvn .gt_last_grand_summary_row_top {
+#czpretpmys .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2940,11 +2940,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#zjoxlynfvn .gt_striped {
+#czpretpmys .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zjoxlynfvn .gt_table_body {
+#czpretpmys .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2953,7 +2953,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#zjoxlynfvn .gt_footnotes {
+#czpretpmys .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2967,7 +2967,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#zjoxlynfvn .gt_footnote {
+#czpretpmys .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2976,7 +2976,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zjoxlynfvn .gt_sourcenotes {
+#czpretpmys .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2990,7 +2990,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#zjoxlynfvn .gt_sourcenote {
+#czpretpmys .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2998,72 +2998,72 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zjoxlynfvn .gt_left {
+#czpretpmys .gt_left {
   text-align: left;
 }
 
-#zjoxlynfvn .gt_center {
+#czpretpmys .gt_center {
   text-align: center;
 }
 
-#zjoxlynfvn .gt_right {
+#czpretpmys .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zjoxlynfvn .gt_font_normal {
+#czpretpmys .gt_font_normal {
   font-weight: normal;
 }
 
-#zjoxlynfvn .gt_font_bold {
+#czpretpmys .gt_font_bold {
   font-weight: bold;
 }
 
-#zjoxlynfvn .gt_font_italic {
+#czpretpmys .gt_font_italic {
   font-style: italic;
 }
 
-#zjoxlynfvn .gt_super {
+#czpretpmys .gt_super {
   font-size: 65%;
 }
 
-#zjoxlynfvn .gt_footnote_marks {
+#czpretpmys .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zjoxlynfvn .gt_asterisk {
+#czpretpmys .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zjoxlynfvn .gt_indent_1 {
+#czpretpmys .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zjoxlynfvn .gt_indent_2 {
+#czpretpmys .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zjoxlynfvn .gt_indent_3 {
+#czpretpmys .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zjoxlynfvn .gt_indent_4 {
+#czpretpmys .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zjoxlynfvn .gt_indent_5 {
+#czpretpmys .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zjoxlynfvn .katex-display {
+#czpretpmys .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zjoxlynfvn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#czpretpmys div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4379,7 +4379,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb16-422"><a href="#cb16-422"></a></span>
 <span id="cb16-423"><a href="#cb16-423"></a><span class="ss">1. </span>Create a logical as the main variable that is <span class="in">`TRUE`</span> when the state is <span class="in">`sleep`</span></span>
 <span id="cb16-424"><a href="#cb16-424"></a><span class="ss">2. </span>Showing the next day in the doubleplot</span>
-<span id="cb16-425"><a href="#cb16-425"></a><span class="ss">3. </span>Remove the fill default, to provide your own</span>
+<span id="cb16-425"><a href="#cb16-425"></a><span class="ss">3. </span>Remove the default fill settings to provide your own</span>
 <span id="cb16-426"><a href="#cb16-426"></a></span>
 <span id="cb16-427"><a href="#cb16-427"></a>Again, we can look at the data as a table.</span>
 <span id="cb16-428"><a href="#cb16-428"></a></span>
@@ -4406,118 +4406,120 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb16-455"><a href="#cb16-455"></a>    <span class="fu">dose</span>(MEDI, Datetime, <span class="at">as.df =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb16-456"><a href="#cb16-456"></a>    <span class="fu">duration_above_threshold</span>(MEDI, Datetime, <span class="at">threshold =</span> <span class="dv">250</span>, <span class="at">as.df =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb16-457"><a href="#cb16-457"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb16-458"><a href="#cb16-458"></a>  <span class="fu">left_join</span>(states, <span class="at">by =</span> <span class="st">"Date"</span>)</span>
+<span id="cb16-458"><a href="#cb16-458"></a>  <span class="fu">left_join</span>(states, <span class="at">by =</span> <span class="st">"Date"</span>) <span class="co">#&lt;1&gt;</span></span>
 <span id="cb16-459"><a href="#cb16-459"></a><span class="in">```</span></span>
 <span id="cb16-460"><a href="#cb16-460"></a></span>
-<span id="cb16-461"><a href="#cb16-461"></a><span class="ss">1. </span>This step relates the sleep cycles to the date where the wake-state happens.</span>
-<span id="cb16-462"><a href="#cb16-462"></a></span>
-<span id="cb16-463"><a href="#cb16-463"></a>We bring this information together into a comprehensive table. Variables that have no meaningful variance are removed.</span>
+<span id="cb16-461"><a href="#cb16-461"></a><span class="ss">1. </span>This step relates the sleep cycles to the date where the wake-state starts.</span>
+<span id="cb16-462"><a href="#cb16-462"></a><span class="ss">2. </span>Adding the self-assessments to our summaries. The data (4) provides the right assignment.</span>
+<span id="cb16-463"><a href="#cb16-463"></a></span>
 <span id="cb16-464"><a href="#cb16-464"></a></span>
-<span id="cb16-467"><a href="#cb16-467"></a><span class="in">```{r}</span></span>
-<span id="cb16-468"><a href="#cb16-468"></a>summaries_sw <span class="sc">|&gt;</span> </span>
-<span id="cb16-469"><a href="#cb16-469"></a>  <span class="fu">select</span>(Date, sleep.wake, dose, duration_above_250,</span>
-<span id="cb16-470"><a href="#cb16-470"></a>         wellbeing.morning, sunny.day, low.movement, performance, </span>
-<span id="cb16-471"><a href="#cb16-471"></a>         fatigue, bedtime, sleepquality, sleepduration, </span>
-<span id="cb16-472"><a href="#cb16-472"></a>         sleepinterruptions, sleepinterruptions.duration) <span class="sc">|&gt;</span> </span>
-<span id="cb16-473"><a href="#cb16-473"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb16-474"><a href="#cb16-474"></a>  <span class="fu">fmt_number</span>(dose, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-475"><a href="#cb16-475"></a>  <span class="fu">fmt_duration</span>(<span class="fu">c</span>(duration_above_250, sleepduration, sleepinterruptions.duration), </span>
-<span id="cb16-476"><a href="#cb16-476"></a>               <span class="at">input_units =</span> <span class="st">"seconds"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb16-477"><a href="#cb16-477"></a>  <span class="fu">fmt_time</span>(bedtime) <span class="sc">|&gt;</span> </span>
-<span id="cb16-478"><a href="#cb16-478"></a>  <span class="fu">fmt</span>(<span class="fu">c</span>(sunny.day, low.movement), <span class="at">fns =</span> \(x) <span class="fu">ifelse</span>(x, <span class="st">"Yes"</span>, <span class="st">"No"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb16-479"><a href="#cb16-479"></a>  <span class="fu">tab_header</span>(<span class="st">"Overview of daily light exposure metrics and key questionnaire data"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb16-480"><a href="#cb16-480"></a>  <span class="fu">tab_spanner</span>(<span class="st">"Light exposure"</span>, <span class="at">columns =</span> <span class="fu">c</span>(dose, duration_above_250)) <span class="sc">|&gt;</span> </span>
-<span id="cb16-481"><a href="#cb16-481"></a>  <span class="fu">tab_spanner</span>(<span class="st">"Self-report"</span>, <span class="at">columns =</span> wellbeing.morning<span class="sc">:</span>fatigue) <span class="sc">|&gt;</span> </span>
-<span id="cb16-482"><a href="#cb16-482"></a>  <span class="fu">tab_spanner</span>(<span class="st">"Self-reported sleep"</span>, <span class="at">columns =</span> bedtime<span class="sc">:</span>sleepinterruptions.duration) <span class="sc">|&gt;</span> </span>
-<span id="cb16-483"><a href="#cb16-483"></a>  <span class="fu">cols_label</span>(<span class="at">sleep.wake =</span> <span class="st">"Sleep-wake"</span>,</span>
-<span id="cb16-484"><a href="#cb16-484"></a>             <span class="at">dose =</span> <span class="st">"Dose mel EDI (lx·h)"</span>,</span>
-<span id="cb16-485"><a href="#cb16-485"></a>             <span class="at">duration_above_250 =</span> <span class="st">"Time above 250lx mel EDI"</span>,</span>
-<span id="cb16-486"><a href="#cb16-486"></a>             <span class="at">wellbeing.morning =</span> <span class="st">"Wellbeing next morning"</span>,</span>
-<span id="cb16-487"><a href="#cb16-487"></a>             <span class="at">sunny.day =</span> <span class="st">"Sunny day"</span>,</span>
-<span id="cb16-488"><a href="#cb16-488"></a>             <span class="at">low.movement =</span> <span class="st">"Low activity"</span>,</span>
-<span id="cb16-489"><a href="#cb16-489"></a>             <span class="at">performance =</span> <span class="st">"Performance"</span>,</span>
-<span id="cb16-490"><a href="#cb16-490"></a>             <span class="at">fatigue =</span> <span class="st">"Fatigue"</span>,</span>
-<span id="cb16-491"><a href="#cb16-491"></a>             <span class="at">bedtime =</span> <span class="st">"Bedtime"</span>,</span>
-<span id="cb16-492"><a href="#cb16-492"></a>             <span class="at">sleepquality =</span> <span class="st">"Sleep quality"</span>,</span>
-<span id="cb16-493"><a href="#cb16-493"></a>             <span class="at">sleepduration =</span> <span class="st">"Sleep duration"</span>,</span>
-<span id="cb16-494"><a href="#cb16-494"></a>             <span class="at">sleepinterruptions =</span> <span class="st">"Sleep interruptions"</span>,</span>
-<span id="cb16-495"><a href="#cb16-495"></a>             <span class="at">sleepinterruptions.duration =</span> <span class="st">"Interruption duration"</span></span>
-<span id="cb16-496"><a href="#cb16-496"></a>             ) <span class="sc">|&gt;</span> </span>
-<span id="cb16-497"><a href="#cb16-497"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Higher is worse"</span>, <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">14</span>))) <span class="sc">|&gt;</span> </span>
-<span id="cb16-498"><a href="#cb16-498"></a>  <span class="fu">sub_missing</span>()</span>
-<span id="cb16-499"><a href="#cb16-499"></a><span class="in">```</span></span>
-<span id="cb16-500"><a href="#cb16-500"></a></span>
-<span id="cb16-501"><a href="#cb16-501"></a><span class="fu">## Correlations</span></span>
+<span id="cb16-465"><a href="#cb16-465"></a>We bring this information together into a comprehensive table. Variables that have no meaningful variance are removed.</span>
+<span id="cb16-466"><a href="#cb16-466"></a></span>
+<span id="cb16-469"><a href="#cb16-469"></a><span class="in">```{r}</span></span>
+<span id="cb16-470"><a href="#cb16-470"></a>summaries_sw <span class="sc">|&gt;</span> </span>
+<span id="cb16-471"><a href="#cb16-471"></a>  <span class="fu">select</span>(Date, sleep.wake, dose, duration_above_250,</span>
+<span id="cb16-472"><a href="#cb16-472"></a>         wellbeing.morning, sunny.day, low.movement, performance, </span>
+<span id="cb16-473"><a href="#cb16-473"></a>         fatigue, bedtime, sleepquality, sleepduration, </span>
+<span id="cb16-474"><a href="#cb16-474"></a>         sleepinterruptions, sleepinterruptions.duration) <span class="sc">|&gt;</span> </span>
+<span id="cb16-475"><a href="#cb16-475"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb16-476"><a href="#cb16-476"></a>  <span class="fu">fmt_number</span>(dose, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-477"><a href="#cb16-477"></a>  <span class="fu">fmt_duration</span>(<span class="fu">c</span>(duration_above_250, sleepduration, sleepinterruptions.duration), </span>
+<span id="cb16-478"><a href="#cb16-478"></a>               <span class="at">input_units =</span> <span class="st">"seconds"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-479"><a href="#cb16-479"></a>  <span class="fu">fmt_time</span>(bedtime) <span class="sc">|&gt;</span> </span>
+<span id="cb16-480"><a href="#cb16-480"></a>  <span class="fu">fmt</span>(<span class="fu">c</span>(sunny.day, low.movement), <span class="at">fns =</span> \(x) <span class="fu">ifelse</span>(x, <span class="st">"Yes"</span>, <span class="st">"No"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb16-481"><a href="#cb16-481"></a>  <span class="fu">tab_header</span>(<span class="st">"Overview of daily light exposure metrics and key questionnaire data"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-482"><a href="#cb16-482"></a>  <span class="fu">tab_spanner</span>(<span class="st">"Light exposure"</span>, <span class="at">columns =</span> <span class="fu">c</span>(dose, duration_above_250)) <span class="sc">|&gt;</span> </span>
+<span id="cb16-483"><a href="#cb16-483"></a>  <span class="fu">tab_spanner</span>(<span class="st">"Self-report"</span>, <span class="at">columns =</span> wellbeing.morning<span class="sc">:</span>fatigue) <span class="sc">|&gt;</span> </span>
+<span id="cb16-484"><a href="#cb16-484"></a>  <span class="fu">tab_spanner</span>(<span class="st">"Self-reported sleep"</span>, <span class="at">columns =</span> bedtime<span class="sc">:</span>sleepinterruptions.duration) <span class="sc">|&gt;</span> </span>
+<span id="cb16-485"><a href="#cb16-485"></a>  <span class="fu">cols_label</span>(<span class="at">sleep.wake =</span> <span class="st">"Sleep-wake"</span>,</span>
+<span id="cb16-486"><a href="#cb16-486"></a>             <span class="at">dose =</span> <span class="st">"Dose mel EDI (lx·h)"</span>,</span>
+<span id="cb16-487"><a href="#cb16-487"></a>             <span class="at">duration_above_250 =</span> <span class="st">"Time above 250lx mel EDI"</span>,</span>
+<span id="cb16-488"><a href="#cb16-488"></a>             <span class="at">wellbeing.morning =</span> <span class="st">"Wellbeing next morning"</span>,</span>
+<span id="cb16-489"><a href="#cb16-489"></a>             <span class="at">sunny.day =</span> <span class="st">"Sunny day"</span>,</span>
+<span id="cb16-490"><a href="#cb16-490"></a>             <span class="at">low.movement =</span> <span class="st">"Low activity"</span>,</span>
+<span id="cb16-491"><a href="#cb16-491"></a>             <span class="at">performance =</span> <span class="st">"Performance"</span>,</span>
+<span id="cb16-492"><a href="#cb16-492"></a>             <span class="at">fatigue =</span> <span class="st">"Fatigue"</span>,</span>
+<span id="cb16-493"><a href="#cb16-493"></a>             <span class="at">bedtime =</span> <span class="st">"Bedtime"</span>,</span>
+<span id="cb16-494"><a href="#cb16-494"></a>             <span class="at">sleepquality =</span> <span class="st">"Sleep quality"</span>,</span>
+<span id="cb16-495"><a href="#cb16-495"></a>             <span class="at">sleepduration =</span> <span class="st">"Sleep duration"</span>,</span>
+<span id="cb16-496"><a href="#cb16-496"></a>             <span class="at">sleepinterruptions =</span> <span class="st">"Sleep interruptions"</span>,</span>
+<span id="cb16-497"><a href="#cb16-497"></a>             <span class="at">sleepinterruptions.duration =</span> <span class="st">"Interruption duration"</span></span>
+<span id="cb16-498"><a href="#cb16-498"></a>             ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-499"><a href="#cb16-499"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Higher is worse"</span>, <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">14</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb16-500"><a href="#cb16-500"></a>  <span class="fu">sub_missing</span>()</span>
+<span id="cb16-501"><a href="#cb16-501"></a><span class="in">```</span></span>
 <span id="cb16-502"><a href="#cb16-502"></a></span>
-<span id="cb16-503"><a href="#cb16-503"></a>To visualize simple correlations between the self-assessments and the light exposure metrics we create a helper function:</span>
+<span id="cb16-503"><a href="#cb16-503"></a><span class="fu">## Correlations</span></span>
 <span id="cb16-504"><a href="#cb16-504"></a></span>
-<span id="cb16-507"><a href="#cb16-507"></a><span class="in">```{r}</span></span>
-<span id="cb16-508"><a href="#cb16-508"></a>time2hour <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">/</span><span class="dv">3600</span></span>
-<span id="cb16-509"><a href="#cb16-509"></a>correlation_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(variable, label) {</span>
-<span id="cb16-510"><a href="#cb16-510"></a>  summaries_sw <span class="sc">|&gt;</span> </span>
-<span id="cb16-511"><a href="#cb16-511"></a>  <span class="co">#prepare the light exposure variables and bedtime variable:</span></span>
-<span id="cb16-512"><a href="#cb16-512"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb16-513"><a href="#cb16-513"></a>    <span class="at">bedtime =</span> hms<span class="sc">::</span><span class="fu">as_hms</span>(bedtime) <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>() <span class="sc">|&gt;</span> <span class="fu">time2hour</span>(),</span>
-<span id="cb16-514"><a href="#cb16-514"></a>    <span class="at">duration_above_250 =</span> <span class="fu">as.numeric</span>(duration_above_250),</span>
-<span id="cb16-515"><a href="#cb16-515"></a>    <span class="at">duration_above_250 =</span> </span>
-<span id="cb16-516"><a href="#cb16-516"></a>      (duration_above_250 <span class="sc">-</span> <span class="fu">min</span>(duration_above_250))<span class="sc">/</span></span>
-<span id="cb16-517"><a href="#cb16-517"></a>      (<span class="fu">max</span>(duration_above_250)<span class="sc">-</span><span class="fu">min</span>(duration_above_250))<span class="sc">*</span><span class="fu">max</span>(dose)<span class="sc">/</span><span class="dv">1000</span>,</span>
-<span id="cb16-518"><a href="#cb16-518"></a>    <span class="at">dose =</span> dose<span class="sc">/</span><span class="dv">1000</span></span>
-<span id="cb16-519"><a href="#cb16-519"></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb16-520"><a href="#cb16-520"></a>  <span class="co">#create the ggplot:</span></span>
-<span id="cb16-521"><a href="#cb16-521"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> {{ variable }})) <span class="sc">+</span></span>
-<span id="cb16-522"><a href="#cb16-522"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, </span>
-<span id="cb16-523"><a href="#cb16-523"></a>              <span class="fu">aes</span>(<span class="at">x =</span> dose), </span>
-<span id="cb16-524"><a href="#cb16-524"></a>              <span class="at">col =</span> <span class="st">"#2E6F40"</span>, </span>
-<span id="cb16-525"><a href="#cb16-525"></a>              <span class="at">fill =</span> <span class="st">"#2E6F40"</span>) <span class="sc">+</span></span>
-<span id="cb16-526"><a href="#cb16-526"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, </span>
-<span id="cb16-527"><a href="#cb16-527"></a>              <span class="fu">aes</span>(<span class="at">x =</span> duration_above_250), </span>
-<span id="cb16-528"><a href="#cb16-528"></a>              <span class="at">col =</span> <span class="st">"#990011"</span>, </span>
-<span id="cb16-529"><a href="#cb16-529"></a>              <span class="at">fill =</span> <span class="st">"#990011"</span>) <span class="sc">+</span></span>
-<span id="cb16-530"><a href="#cb16-530"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> dose), </span>
-<span id="cb16-531"><a href="#cb16-531"></a>             <span class="at">col =</span> <span class="st">"#2E6F40"</span>) <span class="sc">+</span></span>
-<span id="cb16-532"><a href="#cb16-532"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> duration_above_250), </span>
-<span id="cb16-533"><a href="#cb16-533"></a>             <span class="at">col =</span> <span class="st">"#990011"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb16-534"><a href="#cb16-534"></a>  <span class="fu">scale_x_continuous</span>(</span>
-<span id="cb16-535"><a href="#cb16-535"></a>    <span class="st">"Melanopic EDI dose (klx·h)"</span>,</span>
-<span id="cb16-536"><a href="#cb16-536"></a>    <span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(<span class="sc">~</span> (.<span class="sc">*</span><span class="dv">1000</span><span class="sc">/</span><span class="dv">70280</span><span class="sc">*</span><span class="dv">23400</span> <span class="sc">-</span> <span class="dv">5580</span>)<span class="sc">/</span><span class="dv">3600</span>, </span>
-<span id="cb16-537"><a href="#cb16-537"></a>                        <span class="at">name =</span> <span class="st">"Time above 250 lx (h)"</span>)</span>
-<span id="cb16-538"><a href="#cb16-538"></a>  ) <span class="sc">+</span></span>
-<span id="cb16-539"><a href="#cb16-539"></a>  cowplot<span class="sc">::</span><span class="fu">theme_cowplot</span>() <span class="sc">+</span></span>
-<span id="cb16-540"><a href="#cb16-540"></a>  <span class="fu">theme_sub_axis_bottom</span>(<span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#2E6F40"</span>),</span>
-<span id="cb16-541"><a href="#cb16-541"></a>                        <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#2E6F40"</span>)) <span class="sc">+</span></span>
-<span id="cb16-542"><a href="#cb16-542"></a>  <span class="fu">theme_sub_axis_top</span>(<span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#990011"</span>),</span>
-<span id="cb16-543"><a href="#cb16-543"></a>                        <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#990011"</span>)) <span class="sc">+</span></span>
-<span id="cb16-544"><a href="#cb16-544"></a>  <span class="fu">labs</span>(<span class="at">y =</span> label) </span>
-<span id="cb16-545"><a href="#cb16-545"></a>}</span>
-<span id="cb16-546"><a href="#cb16-546"></a><span class="in">```</span></span>
-<span id="cb16-547"><a href="#cb16-547"></a></span>
-<span id="cb16-548"><a href="#cb16-548"></a>This allows us to easily look at the various parameters</span>
+<span id="cb16-505"><a href="#cb16-505"></a>To visualize simple correlations between the self-assessments and the light exposure metrics we create a helper function:</span>
+<span id="cb16-506"><a href="#cb16-506"></a></span>
+<span id="cb16-509"><a href="#cb16-509"></a><span class="in">```{r}</span></span>
+<span id="cb16-510"><a href="#cb16-510"></a>time2hour <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">/</span><span class="dv">3600</span></span>
+<span id="cb16-511"><a href="#cb16-511"></a>correlation_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(variable, label) {</span>
+<span id="cb16-512"><a href="#cb16-512"></a>  summaries_sw <span class="sc">|&gt;</span> </span>
+<span id="cb16-513"><a href="#cb16-513"></a>  <span class="co">#prepare the light exposure variables and bedtime variable:</span></span>
+<span id="cb16-514"><a href="#cb16-514"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-515"><a href="#cb16-515"></a>    <span class="at">bedtime =</span> hms<span class="sc">::</span><span class="fu">as_hms</span>(bedtime) <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>() <span class="sc">|&gt;</span> <span class="fu">time2hour</span>(),</span>
+<span id="cb16-516"><a href="#cb16-516"></a>    <span class="at">duration_above_250 =</span> <span class="fu">as.numeric</span>(duration_above_250),</span>
+<span id="cb16-517"><a href="#cb16-517"></a>    <span class="at">duration_above_250 =</span> </span>
+<span id="cb16-518"><a href="#cb16-518"></a>      (duration_above_250 <span class="sc">-</span> <span class="fu">min</span>(duration_above_250))<span class="sc">/</span></span>
+<span id="cb16-519"><a href="#cb16-519"></a>      (<span class="fu">max</span>(duration_above_250)<span class="sc">-</span><span class="fu">min</span>(duration_above_250))<span class="sc">*</span><span class="fu">max</span>(dose)<span class="sc">/</span><span class="dv">1000</span>,</span>
+<span id="cb16-520"><a href="#cb16-520"></a>    <span class="at">dose =</span> dose<span class="sc">/</span><span class="dv">1000</span></span>
+<span id="cb16-521"><a href="#cb16-521"></a>         ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-522"><a href="#cb16-522"></a>  <span class="co">#create the ggplot:</span></span>
+<span id="cb16-523"><a href="#cb16-523"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> {{ variable }})) <span class="sc">+</span></span>
+<span id="cb16-524"><a href="#cb16-524"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, </span>
+<span id="cb16-525"><a href="#cb16-525"></a>              <span class="fu">aes</span>(<span class="at">x =</span> dose), </span>
+<span id="cb16-526"><a href="#cb16-526"></a>              <span class="at">col =</span> <span class="st">"#2E6F40"</span>, </span>
+<span id="cb16-527"><a href="#cb16-527"></a>              <span class="at">fill =</span> <span class="st">"#2E6F40"</span>) <span class="sc">+</span></span>
+<span id="cb16-528"><a href="#cb16-528"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, </span>
+<span id="cb16-529"><a href="#cb16-529"></a>              <span class="fu">aes</span>(<span class="at">x =</span> duration_above_250), </span>
+<span id="cb16-530"><a href="#cb16-530"></a>              <span class="at">col =</span> <span class="st">"#990011"</span>, </span>
+<span id="cb16-531"><a href="#cb16-531"></a>              <span class="at">fill =</span> <span class="st">"#990011"</span>) <span class="sc">+</span></span>
+<span id="cb16-532"><a href="#cb16-532"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> dose), </span>
+<span id="cb16-533"><a href="#cb16-533"></a>             <span class="at">col =</span> <span class="st">"#2E6F40"</span>) <span class="sc">+</span></span>
+<span id="cb16-534"><a href="#cb16-534"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> duration_above_250), </span>
+<span id="cb16-535"><a href="#cb16-535"></a>             <span class="at">col =</span> <span class="st">"#990011"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb16-536"><a href="#cb16-536"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb16-537"><a href="#cb16-537"></a>    <span class="st">"Melanopic EDI dose (klx·h)"</span>,</span>
+<span id="cb16-538"><a href="#cb16-538"></a>    <span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(<span class="sc">~</span> (.<span class="sc">*</span><span class="dv">1000</span><span class="sc">/</span><span class="dv">70280</span><span class="sc">*</span><span class="dv">23400</span> <span class="sc">-</span> <span class="dv">5580</span>)<span class="sc">/</span><span class="dv">3600</span>, </span>
+<span id="cb16-539"><a href="#cb16-539"></a>                        <span class="at">name =</span> <span class="st">"Time above 250 lx (h)"</span>)</span>
+<span id="cb16-540"><a href="#cb16-540"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-541"><a href="#cb16-541"></a>  cowplot<span class="sc">::</span><span class="fu">theme_cowplot</span>() <span class="sc">+</span></span>
+<span id="cb16-542"><a href="#cb16-542"></a>  <span class="fu">theme_sub_axis_bottom</span>(<span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#2E6F40"</span>),</span>
+<span id="cb16-543"><a href="#cb16-543"></a>                        <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#2E6F40"</span>)) <span class="sc">+</span></span>
+<span id="cb16-544"><a href="#cb16-544"></a>  <span class="fu">theme_sub_axis_top</span>(<span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#990011"</span>),</span>
+<span id="cb16-545"><a href="#cb16-545"></a>                        <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#990011"</span>)) <span class="sc">+</span></span>
+<span id="cb16-546"><a href="#cb16-546"></a>  <span class="fu">labs</span>(<span class="at">y =</span> label) </span>
+<span id="cb16-547"><a href="#cb16-547"></a>}</span>
+<span id="cb16-548"><a href="#cb16-548"></a><span class="in">```</span></span>
 <span id="cb16-549"><a href="#cb16-549"></a></span>
-<span id="cb16-552"><a href="#cb16-552"></a><span class="in">```{r}</span></span>
-<span id="cb16-553"><a href="#cb16-553"></a><span class="co">#| message: false</span></span>
-<span id="cb16-554"><a href="#cb16-554"></a><span class="co">#| label: correlations</span></span>
-<span id="cb16-555"><a href="#cb16-555"></a><span class="fu">correlation_plot</span>(wellbeing.morning, </span>
-<span id="cb16-556"><a href="#cb16-556"></a>                 <span class="st">"Wellbeing on the next</span><span class="sc">\n</span><span class="st">morning (higher = better)"</span>)</span>
-<span id="cb16-557"><a href="#cb16-557"></a><span class="fu">correlation_plot</span>(sleepquality, <span class="st">"Sleep quality</span><span class="sc">\n</span><span class="st">(higher = worse"</span>)</span>
-<span id="cb16-558"><a href="#cb16-558"></a><span class="in">```</span></span>
-<span id="cb16-559"><a href="#cb16-559"></a></span>
-<span id="cb16-560"><a href="#cb16-560"></a>Try these for yourself. Could there be a meaningful relationship?</span>
+<span id="cb16-550"><a href="#cb16-550"></a>This allows us to easily look at the various parameters</span>
+<span id="cb16-551"><a href="#cb16-551"></a></span>
+<span id="cb16-554"><a href="#cb16-554"></a><span class="in">```{r}</span></span>
+<span id="cb16-555"><a href="#cb16-555"></a><span class="co">#| message: false</span></span>
+<span id="cb16-556"><a href="#cb16-556"></a><span class="co">#| label: correlations</span></span>
+<span id="cb16-557"><a href="#cb16-557"></a><span class="fu">correlation_plot</span>(wellbeing.morning, </span>
+<span id="cb16-558"><a href="#cb16-558"></a>                 <span class="st">"Wellbeing on the next</span><span class="sc">\n</span><span class="st">morning (higher = better)"</span>)</span>
+<span id="cb16-559"><a href="#cb16-559"></a><span class="fu">correlation_plot</span>(sleepquality, <span class="st">"Sleep quality</span><span class="sc">\n</span><span class="st">(higher = worse"</span>)</span>
+<span id="cb16-560"><a href="#cb16-560"></a><span class="in">```</span></span>
 <span id="cb16-561"><a href="#cb16-561"></a></span>
-<span id="cb16-564"><a href="#cb16-564"></a><span class="in">```{r}</span></span>
-<span id="cb16-565"><a href="#cb16-565"></a><span class="co">#| eval: false</span></span>
-<span id="cb16-566"><a href="#cb16-566"></a><span class="fu">correlation_plot</span>(performance, <span class="st">"Performance during</span><span class="sc">\n</span><span class="st">the day (higher = worse)"</span>)</span>
-<span id="cb16-567"><a href="#cb16-567"></a><span class="fu">correlation_plot</span>(performance.next, </span>
-<span id="cb16-568"><a href="#cb16-568"></a>                 <span class="st">"Performance on the</span><span class="sc">\n</span><span class="st"> next day (higher = worse)"</span>)</span>
-<span id="cb16-569"><a href="#cb16-569"></a><span class="fu">correlation_plot</span>(sleepduration<span class="sc">/</span><span class="dv">3600</span>, <span class="st">"Sleep duration (h)"</span>)</span>
-<span id="cb16-570"><a href="#cb16-570"></a><span class="fu">correlation_plot</span>(fatigue, <span class="st">"Fatigue during the day</span><span class="sc">\n</span><span class="st">(higher = worse)"</span>)</span>
-<span id="cb16-571"><a href="#cb16-571"></a><span class="fu">correlation_plot</span>(fatigue.next, <span class="st">"Fatigue on the next day</span><span class="sc">\n</span><span class="st">(higher = worse)"</span>)</span>
-<span id="cb16-572"><a href="#cb16-572"></a><span class="fu">correlation_plot</span>(sleepinterruptions, <span class="st">"Sleep interruptions"</span>)</span>
-<span id="cb16-573"><a href="#cb16-573"></a><span class="fu">correlation_plot</span>(sunny.day, <span class="st">"Self-assessed sunny day"</span>)</span>
-<span id="cb16-574"><a href="#cb16-574"></a><span class="fu">correlation_plot</span>(low.movement, <span class="st">"Self-assessed low activity"</span>)</span>
-<span id="cb16-575"><a href="#cb16-575"></a><span class="in">```</span></span>
-<span id="cb16-576"><a href="#cb16-576"></a></span>
-<span id="cb16-577"><a href="#cb16-577"></a>{{&lt; include _conclusion.qmd &gt;}}</span>
+<span id="cb16-562"><a href="#cb16-562"></a>Try these for yourself. Could there be a meaningful relationship?</span>
+<span id="cb16-563"><a href="#cb16-563"></a></span>
+<span id="cb16-566"><a href="#cb16-566"></a><span class="in">```{r}</span></span>
+<span id="cb16-567"><a href="#cb16-567"></a><span class="co">#| eval: false</span></span>
+<span id="cb16-568"><a href="#cb16-568"></a><span class="fu">correlation_plot</span>(performance, <span class="st">"Performance during</span><span class="sc">\n</span><span class="st">the day (higher = worse)"</span>)</span>
+<span id="cb16-569"><a href="#cb16-569"></a><span class="fu">correlation_plot</span>(performance.next, </span>
+<span id="cb16-570"><a href="#cb16-570"></a>                 <span class="st">"Performance on the</span><span class="sc">\n</span><span class="st"> next day (higher = worse)"</span>)</span>
+<span id="cb16-571"><a href="#cb16-571"></a><span class="fu">correlation_plot</span>(sleepduration<span class="sc">/</span><span class="dv">3600</span>, <span class="st">"Sleep duration (h)"</span>)</span>
+<span id="cb16-572"><a href="#cb16-572"></a><span class="fu">correlation_plot</span>(fatigue, <span class="st">"Fatigue during the day</span><span class="sc">\n</span><span class="st">(higher = worse)"</span>)</span>
+<span id="cb16-573"><a href="#cb16-573"></a><span class="fu">correlation_plot</span>(fatigue.next, <span class="st">"Fatigue on the next day</span><span class="sc">\n</span><span class="st">(higher = worse)"</span>)</span>
+<span id="cb16-574"><a href="#cb16-574"></a><span class="fu">correlation_plot</span>(sleepinterruptions, <span class="st">"Sleep interruptions"</span>)</span>
+<span id="cb16-575"><a href="#cb16-575"></a><span class="fu">correlation_plot</span>(sunny.day, <span class="st">"Self-assessed sunny day"</span>)</span>
+<span id="cb16-576"><a href="#cb16-576"></a><span class="fu">correlation_plot</span>(low.movement, <span class="st">"Self-assessed low activity"</span>)</span>
+<span id="cb16-577"><a href="#cb16-577"></a><span class="in">```</span></span>
+<span id="cb16-578"><a href="#cb16-578"></a></span>
+<span id="cb16-579"><a href="#cb16-579"></a>{{&lt; include _conclusion.qmd &gt;}}</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

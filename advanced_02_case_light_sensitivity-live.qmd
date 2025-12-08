@@ -5,21 +5,33 @@ author:
   - name: "Johannes Zauner"
     affiliation: "Technical University of Munich & Max Planck Institute for Biological Cybernetics, Germany"
     orcid: "0000-0003-2171-4566"
+format: live-html
+engine: knitr
+page-layout: full
+toc: true
+number-sections: true
+date: last-modified
 lightbox: true
 code-tools: true
-code-link: true
-code-annotations: below
 code-line-numbers: true
-date: last-modified
-number-sections: true
+code-link: true
+resources:
+  - data/case_light_sensitivity/
+webr:
+  packages:
+    - LightLogR
+    - tidyverse
+    - gt
+    - readxl
+    - ggridges
+    - gtsummary
+    - plotly
+  repos:
+    - https://tscnlab.r-universe.dev
+    - https://cloud.r-project.org
 ---
 
-```{r}
-#| echo: false
-live <- "advanced_02_case_light_sensitivity-live.qmd"
-static <- "advanced_02_case_light_sensitivity.qmd"
-```
-
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
 
 ## Preface
 
@@ -44,21 +56,31 @@ The tutorial focuses on
 
 [^1]: https://doi.org/10.1371/journal.pbio.3001571
 
-{{< include _how_this_page_works.qmd >}}
+{{< include _how_this_page_works-live.qmd >}}
 
 ## Setup
 
 We start by loading the necessary packages.
 
-```{r}
+```{webr}
 #| label: setup
-#| output: false
+#| eval: false
 library(LightLogR) # main package
 library(tidyverse) # for tidy data science
 library(gt) # for great tables
 library(readxl) # to read in Excel files
 library(ggridges) # for stacked plots within a panel
 library(gtsummary) # for automatic summaries
+```
+
+```{webr}
+#| edit: false
+# set a global theme for the background
+theme_set(
+    theme(
+      panel.background = element_rect(fill = "white", color = NA)
+    )
+)
 ```
 
 ## Import
@@ -69,74 +91,76 @@ We require both light and log data to be loaded into R before we are able to mer
 
 Light data were captured with `ActLumus` devices. The exported data files sit in `data/case_light_sensitivity/`.
 
-```{r}
+```{webr}
 #| label: context
 #| fig-height: 2
 #| fig-width: 6
 file <- "data/case_light_sensitivity/Log_5153_20251028143545799.txt"
 tz <- "Europe/Berlin"
-coordinates <- c(48.775555555556, 9.1827777777778247) #Stuttgart
-data <- import$ActLumus(file, tz = tz, manual.id = "ID001") #<1>
+coordinates <- c(48.78, 9.18) #Stuttgart, Germany
+data <- import$ActLumus(file, tz = tz, manual.id = "ID001") #<4>
 ```
 
-1. As there is only one participant, we set a manual `Id`
+4. As there is only one participant, we set a manual `Id`
 
 This dataset spans about three weeks. We know that the diaries only start on 24 September 2025 - thus we remove prior data. We also test for irregular data or gaps in this trimmed dataset.
 
-```{r}
+```{webr}
 #| label: gap checks
 data <- 
   data |> 
-  filter_Date(start = "2025-09-24") |> #<1>
-  ungroup() |>  #<2>
+  filter_Date(start = "2025-09-24") |> #<3>
+  ungroup() |>  #<4>
   select(Datetime, MEDI) 
 data |> has_gaps()
 data |> has_irregulars()
 ```
 
-1. If we have a hard-set beginning or end time, `filter_Date()` or `filter_Datetime()` provide convenient cut-off functionality.
+3. If we have a hard-set beginning or end time, `filter_Date()` or `filter_Datetime()` provide convenient cut-off functionality.
 
-2. As we are dealing with a single participant, we don't require grouping by `Id`.
+4. As we are dealing with a single participant, we don't require grouping by `Id`.
 
-We can continue seeing as there are no issues with the regular time series. We start by plotting the full series
+We can continue, seeing as there are no issues with the regular time series. We start by plotting the full series
 
-```{r}
+```{webr}
 #| label: first visualization
 #| fig-height: 3
 #| fig-width: 20
  data|> 
-  aggregate_Datetime("15 minutes") |> #<1>
-  gg_days(x.axis.format = "%a %d/%m") |> #<2>
+  aggregate_Datetime("15 minutes") |> #<2>
+  gg_days(x.axis.format = "%a %d/%m") |> #<3>
   gg_photoperiod(coordinates)
 ```
 
-1. Reduce the interval by averaging over 15 minute periods
-2. Easily change the label format. Look at the help page of [`?strptime`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/strptime) for the available syntax.
+2. Reduce the interval by averaging over 15 minute periods
+
+3. Easily change the label format. Look at the help page of [`?strptime`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/strptime) for the available syntax.
 
 We can see the light intensity varies greatly. Let's look at the extremes.
 
-```{r}
+```{webr}
 #| label: highest light exposure
 #| fig-height: 5
  data|> 
   aggregate_Datetime("5 minutes") |>
-  add_Date_col(group.by = TRUE) |> #<1>
-  sample_groups(n=3, #<2>
-                order.by = 
-                  duration_above_threshold(MEDI, Datetime, threshold = 250)#<2>
-                  ) |> #<2>
+  add_Date_col(group.by = TRUE) |> #<3>
+  sample_groups(n=3, #<4>
+                order.by = #<5>
+                  duration_above_threshold(MEDI, Datetime, threshold = 250)#<6>
+                  ) |> #<7>
   ungroup(Date) |> 
   gg_doubleplot(type = "repeat") |>
   gg_photoperiod(coordinates) +
   labs(title = "Three days with highest time above 250 lx mel EDI")
 ```
 
-1. Adding, and grouping by, the date gives us 20 groups, each covering one calender day
-2. Select the three groups with the highest duration above 250 lx mel EDI
+3. Adding, and grouping by, the date gives us 20 groups, each covering one calender day
+
+4-7. Select the three groups with the highest duration above 250 lx mel EDI
 
 Looking at the first half of `02 October 2025`, we can already see that this likely a period of non-wear, or sleep - this, we have to come back to later.
 
-```{r}
+```{webr}
 #| label: lowest light exposure
 #| fig-height: 5
  data|> 
@@ -161,17 +185,15 @@ We need information about sleep times. These can be found in the diaries.
 
 The morning diary is all about last nights sleep, how long the needed to fall asleep, wake-ups during the night, when they got up, how rested they feel and about sleep medication. See @fig-morning for an excerpt.
 
-::: {.column-margin}
 ![Excerpt from the morning diary as opened in Excel](assets/advanced/morning_protocol.png){#fig-morning}
 
 ![Excerpt from the evening diary as opened in Excel](assets/advanced/evening_protocol.png){#fig-evening}
-:::
 
 The evening diary is about the prior day, how well and they feel and about their performance during the day, alcohol consumation, when they got to bed, daytime naps and self-assessments about low activity and bright days. See @fig-evening for an excerpt.
 
 In the next step we import these data and combine them to a large table. While none of these steps contain `LightLogR` functions, it is a crucial step to set the data up right for merging - particularly in that we assign the morning diaries to the prior day, and also add information about performance and fatigue on a given day to the prior day.
 
-```{r}
+```{webr}
 #| label: Import daily diaries
 state_path1 <- "data/case_light_sensitivity/evening_protocol.xlsx"
 state_path2 <- "data/case_light_sensitivity/morning_protocol.xlsx"
@@ -179,9 +201,9 @@ state_path2 <- "data/case_light_sensitivity/morning_protocol.xlsx"
 state_evening <- read_excel(state_path1)
 state_morning <- read_excel(state_path2)
 
-state_evening$Date <- date(state_evening$Date) #<1>
-state_morning$Date <- date(state_morning$Date - days(1)) #<1>
-states <- left_join(state_evening, state_morning, by = "Date") #<2>
+state_evening$Date <- date(state_evening$Date) #<7>
+state_morning$Date <- date(state_morning$Date - days(1)) #<8>
+states <- left_join(state_evening, state_morning, by = "Date") #<9>
 
 labels_states <- 
   names(states) |> 
@@ -194,17 +216,20 @@ labels_states <-
 names(states) <- names(labels_states)
 
 states <- 
-  states |> mutate(performance.next = lead(performance), #<3>
-                   fatigue.next = lead(fatigue)) #<3>
+  states |> mutate(performance.next = lead(performance), #<22>
+                   fatigue.next = lead(fatigue)) #<23>
+names(states)
 ```
 
-1. Store the date information of the evening diaries as is, but the morning diary will be set one day back.
-2. By joining these two diaries by their (adjusted) date, morning diary information is related to the prior day evening diary.
-3. We add the next days performance and fatigue level to all days.
+7-8. Store the date information of the evening diaries as is, but the morning diary will be set one day back.
+
+9. By joining these two diaries by their (adjusted) date, morning diary information is related to the prior day evening diary.
+
+22-23. We add the next days performance and fatigue level to all days.
 
 The following table gives a short overview of the states. We will later get to whether a higher rating is better or worse for the individual items.
 
-```{r}
+```{webr}
 states |> 
   set_names(c(labels_states, "Performance next day", "Fatigue next day")) |>  
   tbl_summary(include = where(is.numeric))
@@ -215,72 +240,78 @@ states |>
 
 Now that the diaries are prepared, we can extract sleep data from the states. The goal for the next code cell is to end with a `statechange` variable, that has a datetime for every timepoint when a new state occurs.
 
-```{r}
+```{webr}
 #| label: create sleep data
 sleep_data <-
   states |>
-  mutate(sleep = bedtime + sleepdelay) |> #<1>
-  select(sleep, wake = wakeup) |> #<2>
-  pivot_longer(everything(), names_to = "state") |> #<3>
-  add_row(state = "wake", #<4>
-          value = as.POSIXct("2025-09-24 14:00:00", tz = "UTC"), #<4>
-          .before = 1) #<4>
+  mutate(sleep = bedtime + sleepdelay) |> #<3>
+  select(sleep, wake = wakeup) |> #<4>
+  pivot_longer(everything(), names_to = "state") |> #<5>
+  add_row(state = "wake", #<6>
+          value = as.POSIXct("2025-09-24 14:00:00", tz = "UTC"), #<7>
+          .before = 1) #<8>
+sleep_data |> head()
 ```
 
-1. Calculate sleep timing by adding bedtime and sleepdelay
-2. Reduce the dataset to only sleep and wake times
-3. We transform the data from wide to long format (i.e., consecutive wake-sleep statesd)
-4. We add an initial `wake` for the first day
+3. Calculate sleep timing by adding bedtime and sleepdelay
+
+4. Reduce the dataset to only sleep and wake times
+
+5. We transform the data from wide to long format (i.e., consecutive wake-sleep statesd)
+
+6-8. We add an initial `wake` for the first day
 
 While we are at it, we can also create states according to the *Brown et al. (2022)* recommendations, which distinguish daytime (`wake`), evening (`pre-sleep`), and nighttime (`sleep`) hours. The `LightLogR` function `sleep_int2Brown()` makes this conversion a breeze. By default, the evening phase is set to a length of `3 hours`.
 
-```{r}
+```{webr}
 #| label: create brown states
 sleep_data <-
   sleep_data |> 
-  sc2interval(value, state) |> #<1>
-  sleep_int2Brown(Brown.night = "sleep", #<2>
-                  Brown.day = "wake", #<2>
-                  Brown.evening = "pre-sleep") #<2>
+  sc2interval(value, state) |> #<3>
+  sleep_int2Brown(Brown.night = "sleep", #<4>
+                  Brown.day = "wake", #<5>
+                  Brown.evening = "pre-sleep") #<6>
+sleep_data |> head()
 ```
 
-1. Convert the `statechanges` into `intervals`, i.e. from datetimes when a state changes to intervals where a state is considered `active`.
-2. Add a variable (`State.Brown` by default) containing the *Brown et al. (2022)* phases. This function automatically extends the rows to include the `pre-sleep` phase.
+3. Convert the `statechanges` into `intervals`, i.e. from datetimes when a state changes to intervals where a state is considered `active`.
+
+4-6. Add a variable (`State.Brown` by default) containing the *Brown et al. (2022)* phases. This function automatically extends the rows to include the `pre-sleep` phase.
 
 Next, we combine the light dataset with the sleep data.
 
-```{r}
+```{webr}
 #| label: combine datasets
 data_ext <- 
 data |> 
-  add_states(sleep_data, #<1>
-             start.colname = Interval, #<2>
-             end.colname = Interval, #<2>
-             force.tz = TRUE) |> #<3>
-  drop_na(state) |> #<4>
+  add_states(sleep_data, #<3>
+             start.colname = Interval, #<4>
+             end.colname = Interval, #<5>
+             force.tz = TRUE) |> #<6>
+  drop_na(state) |> #<7>
   add_photoperiod(coordinates) |> 
   Brown2reference(
                   Brown.day = "wake",
                   Brown.evening = "pre-sleep",
                   Brown.night = "sleep")
 
-data_ext |> head()
+data_ext |> head() |> gt()
 ```
 
-1. Combine the two datasets
-2. Get the start and end datetimes for each state from the `Interval` column
-3. Assures that the times from the `sleep_data` dataset are matched up with the light data, even though the light data uses the `Central European Time`, whereas the sleep states use the default `UTC` time zone.
-4. Remove times that don't relate to any state
+3. Combine the two datasets
+
+4-5. Get the start and end datetimes for each state from the `Interval` column
+
+6. Assures that the times from the `sleep_data` dataset are matched up with the light data, even though the light data uses the `Central European Time`, whereas the sleep states use the default `UTC` time zone.
+
+7. Remove times that don't relate to any state
 
 ## Brown et al. (2022) recommendations
 
 Let's visualize the newly extended dataset with regards to the *Brown et al. (2022)* states.
 
-```{r}
-#| label: visualize datasets
-#| fig-height: 6
-#| fig-width: 12
-#| message: false
+```{webr}
+#| autorun: true
 color_palette <-
   c(
     wake =           "#0073C2FF",
@@ -289,54 +320,70 @@ color_palette <-
     compliant =      "#658354",
     `non-compliant` = "#CD534CFF"
   )
+print("already executed")
+```
 
+
+```{webr}
+#| label: visualize datasets
+#| fig-height: 6
+#| fig-width: 12
+#| message: false
+#| warning: false
 data_ext |>
   aggregate_Datetime("15 mins") |>
-  mutate(week = week(Datetime), #<1>
-         week = paste0("week: ", week), #<1>
+  mutate(week = week(Datetime), #<3>
+         week = paste0("week: ", week), #<4>
          Reference.check = 
            case_when(Reference.check ~ "compliant",
                      !Reference.check ~ "non-compliant"),
-         State.Brown = fct_expand(State.Brown, "compliant", "non-compliant") |> #<2>
-                       fct_relevel("wake") #<2>
+         State.Brown = fct_expand(State.Brown, "compliant", "non-compliant") |> #<8>
+                       fct_relevel("wake") #<9>
   ) |> 
-  group_by(week) |> #<1>
-  gg_days(geom = "ribbon", #<3>
+  group_by(week) |> #<11>
+  gg_days(geom = "ribbon", #<12>
           alpha = 0.8,
           lwd = 0.5,
-          aes_col = State.Brown, #<4>
-          aes_fill = State.Brown, #<4>
-          group = consecutive_id(State.Brown), #<4>
-          x.axis.limits = \(x) { #<5>
-            Datetime_limits(x, length = ddays(6), midnight.rollover = TRUE) #<5>
-            } #<5>
+          aes_col = State.Brown, #<15>
+          aes_fill = State.Brown, #<16>
+          group = consecutive_id(State.Brown), #<17>
+          x.axis.limits = \(x) { #<18>
+            Datetime_limits(x, length = ddays(6), midnight.rollover = TRUE) #<19>
+            } #<20>
           ) |> 
   gg_photoperiod(alpha = 0.1) |> 
-  gg_states(Reference.check, #<6>
-            aes_fill = Reference.check, #<6>
-            ymax = -0.1, ymin = -0.5, #<7>
+  gg_states(Reference.check, #<23>
+            aes_fill = Reference.check, #<24>
+            ymax = -0.1, ymin = -0.5, #<25>
             alpha = 1) + 
   labs(fill = "Brown et al.",
        caption = 
          "Brown et al. (2022) recommendations are ≥ 250 lx melanopic EDI (mel EDI) during daytime (wake) hours,\n≤ 10 lx mel EDI in the evening (pre-sleep), and ≤ 1 lx mel EDI at night (sleep)") +
   guides(color = "none") +
   scale_fill_manual(values = color_palette) +
-  theme_sub_strip(background = element_blank(), #<8>
-                  text.y = element_blank()) #<8>
+  theme_sub_strip(background = element_blank(), #<32>
+                  text.y = element_blank()) #<33>
 ```
 
-1. Grouping by week so that the plot is automatically sectioned into three rows
-2. The expansion of factor levels is purely so that the order in the legend is automatically kept in sensible order.
-3. Setting the geom to `ribbon` enables a filled band with the lower band set at 0.
-4. Coloring and filling by the Brown states will only look good, if each section is kept individually. `consecutive_id()` ensures just this.
-5. Manually setting the datetime limits ensures that each row is kept at 7 days
-6. We add a check whether the recommendations were fulfilled and color by it.
-7. Adjusting the height of the state bands ensures readability of the plot despite other color aspects.
-8. As the week grouping is just for row-setting, we are not interested in the strip and thus remove it.
+3&11. Grouping by week so that the plot is automatically sectioned into three rows
+
+8-9. The expansion of factor levels is purely so that the order in the legend is automatically kept in sensible order.
+
+12. Setting the geom to `ribbon` enables a filled band with the lower band set at 0.
+
+15-17. Coloring and filling by the Brown states will only look good, if each section is kept individually. `consecutive_id()` ensures just this.
+
+18-20. Manually setting the datetime limits ensures that each row is kept at 7 days
+
+23-24. We add a check whether the recommendations were fulfilled and color by it.
+
+25. Adjusting the height of the state bands ensures readability of the plot despite other color aspects.
+
+32-33. As the week grouping is just for row-setting, we are not interested in the strip and thus remove it.
 
 We can further summarize the compliance to the recommendations in a table.
 
-```{r}
+```{webr}
 data_ext |> 
   group_by(State.Brown) |> 
   summarize(`Relative compliance` = sum(Reference.check)/n(),
@@ -355,7 +402,7 @@ In this section, we calculate some light metrics that we can correlate with slee
 
 ### Sleep-wake cycles
 
-```{r}
+```{webr}
 data_sw <-
 data_ext |> 
   add_Date_col() |> 
@@ -365,21 +412,22 @@ data_ext |>
     .before = 1) |> 
   group_by(sleep.wake)
 
-data_sw |> head()
+data_sw
 ```
 
-1. Create a consecutive numbering per sleep-wake cycle. Beware if states are missing in other analyses!
-2. Format the sleep-wake cycles nicely
+4. Create a consecutive numbering per sleep-wake cycle. Beware if states are missing in other analyses!
+
+6. Format the sleep-wake cycles nicely
 
 Let's look at the sleep times as a doubleplot.
 
-```{r}
+```{webr}
 data_sw |> 
   ungroup() |>
-  gg_heatmap(state == "sleep", #<1>
-             doubleplot = "next", #<2>
-             fill.remove = TRUE) + #<3>
-  scale_fill_manual(values = c("TRUE" = "black", "FALSE" = "#00000000")) + #<3>
+  gg_heatmap(state == "sleep", #<3>
+             doubleplot = "next", #<4>
+             fill.remove = TRUE) + #<5>
+  scale_fill_manual(values = c("TRUE" = "black", "FALSE" = "#00000000")) + #<6>
   guides(fill = "none") +
   labs(title = "        Doubleplot of sleep times") +
   theme(
@@ -388,45 +436,49 @@ data_sw |>
   strip.placement = "inside")
 ```
 
-1. Create a logical as the main variable that is `TRUE` when the state is `sleep`
-2. Showing the next day in the doubleplot
-3. Remove the default fill settings to provide your own
+3. Create a logical as the main variable that is `TRUE` when the state is `sleep`
+
+4. Showing the next day in the doubleplot
+
+5-6. Remove the default fill settings to provide your own
 
 Again, we can look at the data as a table.
 
-```{r}
+```{webr}
 data_sw |> durations() |> ungroup() |> gt()
 ```
 
 Based on these results, we will remove `cycle 01` and `cycle 20`, as they have only partial data.
 
-```{r}
+```{webr}
 data_sw <-
   data_sw |> filter(!sleep.wake %in% c("cycle 01", "cycle 20"))
+data_sw$sleep.wake |> unique()
 ```
 
 ### Light exposure metrics
 
 For the last step, we will calculate two relevant light exposure metrics, `time above 250 lx mel EDI` and `dose`. and add this information to the original `states`.
 
-```{r}
+```{webr}
 summaries_sw <- 
 data_sw |> 
   summarize(
-    Date = min(Date), #<1>
+    Date = min(Date), #<4>
     dose(MEDI, Datetime, as.df = TRUE),
     duration_above_threshold(MEDI, Datetime, threshold = 250, as.df = TRUE)
   ) |> 
-  left_join(states, by = "Date") #<1>
+  left_join(states, by = "Date") #<8>
+summaries_sw |> head()
 ```
 
-1. This step relates the sleep cycles to the date where the wake-state starts.
-2. Adding the self-assessments to our summaries. The data (4) provides the right assignment.
+4. This step relates the sleep cycles to the date where the wake-state starts.
 
+8. Adding the self-assessments to our summaries. The data (4) provides the right assignment.
 
 We bring this information together into a comprehensive table. Variables that have no meaningful variance are removed.
 
-```{r}
+```{webr}
 summaries_sw |> 
   select(Date, sleep.wake, dose, duration_above_250,
          wellbeing.morning, sunny.day, low.movement, performance, 
@@ -464,7 +516,8 @@ summaries_sw |>
 
 To visualize simple correlations between the self-assessments and the light exposure metrics we create a helper function:
 
-```{r}
+```{webr}
+#| autorun: true
 time2hour <- function(x) x/3600
 correlation_plot <- function(variable, label) {
   summaries_sw |> 
@@ -503,21 +556,29 @@ correlation_plot <- function(variable, label) {
                         text = element_text(color = "#990011")) +
   labs(y = label) 
 }
+print("already executed")
 ```
 
 This allows us to easily look at the various parameters
 
-```{r}
+```{webr}
 #| message: false
+#| warning: false
 #| label: correlations
 correlation_plot(wellbeing.morning, 
                  "Wellbeing on the next\nmorning (higher = better)")
+```
+
+
+```{webr}
+#| message: false
+#| warning: false
 correlation_plot(sleepquality, "Sleep quality\n(higher = worse")
 ```
 
-Try these for yourself. Could there be a meaningful relationship?
+Try these for yourself by copying them into the active code cell. Could there be a meaningful relationship?
 
-```{r}
+```{webr}
 #| eval: false
 correlation_plot(performance, "Performance during\nthe day (higher = worse)")
 correlation_plot(performance.next, 
@@ -529,5 +590,12 @@ correlation_plot(sleepinterruptions, "Sleep interruptions")
 correlation_plot(sunny.day, "Self-assessed sunny day")
 correlation_plot(low.movement, "Self-assessed low activity")
 ```
+
+```{webr}
+#| message: false
+#| warning: false
+
+```
+
 
 {{< include _conclusion.qmd >}}
