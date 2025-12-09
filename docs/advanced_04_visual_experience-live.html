@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Johannes Zauner">
-<meta name="dcterms.date" content="2025-12-08">
+<meta name="dcterms.date" content="2025-12-09">
 
 <title>Use case #04: Visual experience – LightLogR Webinar</title>
 <style>
@@ -326,7 +326,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Last modified:</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 8, 2025</p>
+      <p class="date">December 9, 2025</p>
     </div>
   </div>
   
@@ -589,7 +589,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiI2ltcG9ydCBjYWxpYnJhdGlv
 
 </div>
 <script type="webr-12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGF0YV9zcGVjdHJhIDwtIFxuZGF0YSB8PiBcbiAgc2FtcGxlX2dyb3VwcyhvcmRlci5ieSA9IHN1bShpcy5pbXBsaWNpdCkpIHw+ICM8Mz5cbiAgbXV0YXRlKCBcbiAgICBJbGx1bWluYW5jZSA9IFNwZWN0cnVtIHw+ICM8NT5cbiAgICAgIG1hcF9kYmwoc3BlY3RyYWxfaW50ZWdyYXRpb24sICM8Nj5cbiAgICAgICAgICAgICAgYWN0aW9uLnNwZWN0cnVtID0gXCJwaG90b3BpY1wiLCAjPDc+XG4gICAgICAgICAgICAgIGdlbmVyYWwud2VpZ2h0ID0gXCJhdXRvXCIpICM8OD5cbiAgKSB8PiBcbiAgdW5uZXN0KFNwZWN0cnVtKSAjPDEwPlxuZGF0YV9zcGVjdHJhIHw+IHNlbGVjdChJZCwgRGF0ZSwgRGF0ZXRpbWUsIElsbHVtaW5hbmNlKSB8PiBkaXN0aW5jdCgpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGF0YV9zcGVjdHJhIDwtIFxuZGF0YSB8PiBcbiAgc2FtcGxlX2dyb3VwcyhvcmRlci5ieSA9IHN1bSghaXMuaW1wbGljaXQpKSB8PiAjPDM+XG4gIG11dGF0ZSggXG4gICAgSWxsdW1pbmFuY2UgPSBTcGVjdHJ1bSB8PiAjPDU+XG4gICAgICBtYXBfZGJsKHNwZWN0cmFsX2ludGVncmF0aW9uLCAjPDY+XG4gICAgICAgICAgICAgIGFjdGlvbi5zcGVjdHJ1bSA9IFwicGhvdG9waWNcIiwgIzw3PlxuICAgICAgICAgICAgICBnZW5lcmFsLndlaWdodCA9IFwiYXV0b1wiKSAjPDg+XG4gICkgfD4gXG4gIHVubmVzdChTcGVjdHJ1bSkgIzwxMD5cbmRhdGFfc3BlY3RyYSB8PiBzZWxlY3QoSWQsIERhdGUsIERhdGV0aW1lLCBJbGx1bWluYW5jZSkgfD4gZGlzdGluY3QoKSJ9
 </script>
 </div>
 </div>
@@ -1896,7 +1896,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb1-298"><a href="#cb1-298"></a><span class="in">```{webr}</span></span>
 <span id="cb1-299"><a href="#cb1-299"></a><span class="in">data_spectra &lt;- </span></span>
 <span id="cb1-300"><a href="#cb1-300"></a><span class="in">data |&gt; </span></span>
-<span id="cb1-301"><a href="#cb1-301"></a><span class="in">  sample_groups(order.by = sum(is.implicit)) |&gt; #&lt;3&gt;</span></span>
+<span id="cb1-301"><a href="#cb1-301"></a><span class="in">  sample_groups(order.by = sum(!is.implicit)) |&gt; #&lt;3&gt;</span></span>
 <span id="cb1-302"><a href="#cb1-302"></a><span class="in">  mutate( </span></span>
 <span id="cb1-303"><a href="#cb1-303"></a><span class="in">    Illuminance = Spectrum |&gt; #&lt;5&gt;</span></span>
 <span id="cb1-304"><a href="#cb1-304"></a><span class="in">      map_dbl(spectral_integration, #&lt;6&gt;</span></span>

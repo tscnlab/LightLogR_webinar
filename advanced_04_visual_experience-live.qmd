@@ -274,7 +274,7 @@ To visualize the data we will calculate the photopic illuminance based on the sp
 ```{webr}
 data_spectra <- 
 data |> 
-  sample_groups(order.by = sum(is.implicit)) |> #<3>
+  sample_groups(order.by = sum(!is.implicit)) |> #<3>
   mutate( 
     Illuminance = Spectrum |> #<5>
       map_dbl(spectral_integration, #<6>
