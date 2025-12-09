@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Johannes Zauner">
-<meta name="dcterms.date" content="2025-12-08">
+<meta name="dcterms.date" content="2025-12-09">
 
 <title>Use case #01: A day in daylight – LightLogR Webinar</title>
 <style>
@@ -301,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Last modified:</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 8, 2025</p>
+      <p class="date">December 9, 2025</p>
     </div>
   </div>
   
@@ -946,7 +946,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoiY29tYmluaW5nIGxpZ2h0IGFu
 
 </div>
 <script type="webr-37-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoicGxvdHRpbmcgbGlnaHQgZGF0YSJ9LCJjb2RlIjoic3RhdGVfcGxvdCA8LSBmdW5jdGlvbih2YXJpYWJsZSwgc2FtcGxlKSB7XG5saWdodF9kYXRhIHw+XG4gICAgc2FtcGxlX2dyb3VwcyhzYW1wbGUgPSBzYW1wbGUpIHw+IFxuICBnZ19kYXlzKExJR0hULCBcbiAgICAgICAgICB4LmF4aXMgPSBsb2NhbF90aW1lLFxuICAgICAgICAgIHkuYXhpcy5sYWJlbCA9IFwiUGhvdG9waWMgaWxsdW1pbmFuY2UgKGx4KVwiKSB8PlxuICAgIGdnX3Bob3RvcGVyaW9kKERhdGV0aW1lLmNvbG5hbWUgPSBsb2NhbF90aW1lKSB8PiBcbiAgZ2dfc3RhdGUoe3sgdmFyaWFibGUgfX0sIGFlc19maWxsID0ge3sgdmFyaWFibGUgfX0sIGFscGhhID0gMSwgeW1heCA9IDApICtcbiAgICB0aGVtZV9zdWJfbGVnZW5kKHBvc2l0aW9uID0gXCJib3R0b21cIilcbn1cbnByaW50KFwiYWxyZWFkeSBleGVjdXRlZFwiKSJ9
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoicGxvdHRpbmcgbGlnaHQgZGF0YSJ9LCJjb2RlIjoic3RhdGVfcGxvdCA8LSBmdW5jdGlvbih2YXJpYWJsZSwgc2FtcGxlKSB7XG5saWdodF9kYXRhIHw+XG4gICAgc2FtcGxlX2dyb3VwcyhzYW1wbGUgPSBzYW1wbGUpIHw+IFxuICBnZ19kYXlzKExJR0hULCBcbiAgICAgICAgICB4LmF4aXMgPSBsb2NhbF90aW1lLFxuICAgICAgICAgIHkuYXhpcy5sYWJlbCA9IFwiUGhvdG9waWMgaWxsdW1pbmFuY2UgKGx4KVwiKSB8PlxuICAgIGdnX3Bob3RvcGVyaW9kKERhdGV0aW1lLmNvbG5hbWUgPSBsb2NhbF90aW1lKSB8PiBcbiAgZ2dfc3RhdGUoe3sgdmFyaWFibGUgfX0sIGFlc19maWxsID0ge3sgdmFyaWFibGUgfX0sIFxuICAgICAgICAgICBhbHBoYSA9IDEsIHltYXggPSAwLCBEYXRldGltZS5jb2xuYW1lID0gbG9jYWxfdGltZSkgK1xuICAgIHRoZW1lX3N1Yl9sZWdlbmQocG9zaXRpb24gPSBcImJvdHRvbVwiKVxufVxucHJpbnQoXCJhbHJlYWR5IGV4ZWN1dGVkXCIpIn0=
 </script>
 </div>
 </div>
@@ -2399,169 +2399,170 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb1-830"><a href="#cb1-830"></a><span class="in">          x.axis = local_time,</span></span>
 <span id="cb1-831"><a href="#cb1-831"></a><span class="in">          y.axis.label = "Photopic illuminance (lx)") |&gt;</span></span>
 <span id="cb1-832"><a href="#cb1-832"></a><span class="in">    gg_photoperiod(Datetime.colname = local_time) |&gt; </span></span>
-<span id="cb1-833"><a href="#cb1-833"></a><span class="in">  gg_state({{ variable }}, aes_fill = {{ variable }}, alpha = 1, ymax = 0) +</span></span>
-<span id="cb1-834"><a href="#cb1-834"></a><span class="in">    theme_sub_legend(position = "bottom")</span></span>
-<span id="cb1-835"><a href="#cb1-835"></a><span class="in">}</span></span>
-<span id="cb1-836"><a href="#cb1-836"></a><span class="in">print("already executed")</span></span>
-<span id="cb1-837"><a href="#cb1-837"></a><span class="in">```</span></span>
-<span id="cb1-838"><a href="#cb1-838"></a></span>
+<span id="cb1-833"><a href="#cb1-833"></a><span class="in">  gg_state({{ variable }}, aes_fill = {{ variable }}, </span></span>
+<span id="cb1-834"><a href="#cb1-834"></a><span class="in">           alpha = 1, ymax = 0, Datetime.colname = local_time) +</span></span>
+<span id="cb1-835"><a href="#cb1-835"></a><span class="in">    theme_sub_legend(position = "bottom")</span></span>
+<span id="cb1-836"><a href="#cb1-836"></a><span class="in">}</span></span>
+<span id="cb1-837"><a href="#cb1-837"></a><span class="in">print("already executed")</span></span>
+<span id="cb1-838"><a href="#cb1-838"></a><span class="in">```</span></span>
 <span id="cb1-839"><a href="#cb1-839"></a></span>
-<span id="cb1-842"><a href="#cb1-842"></a><span class="in">```{webr}</span></span>
-<span id="cb1-843"><a href="#cb1-843"></a><span class="in">#| warning: false</span></span>
-<span id="cb1-844"><a href="#cb1-844"></a><span class="in">#| message: false</span></span>
-<span id="cb1-845"><a href="#cb1-845"></a><span class="in">#| fig-width: 10</span></span>
-<span id="cb1-846"><a href="#cb1-846"></a><span class="in">state_plot(setting_light, 6:7)</span></span>
-<span id="cb1-847"><a href="#cb1-847"></a><span class="in">```</span></span>
-<span id="cb1-848"><a href="#cb1-848"></a></span>
+<span id="cb1-840"><a href="#cb1-840"></a></span>
+<span id="cb1-843"><a href="#cb1-843"></a><span class="in">```{webr}</span></span>
+<span id="cb1-844"><a href="#cb1-844"></a><span class="in">#| warning: false</span></span>
+<span id="cb1-845"><a href="#cb1-845"></a><span class="in">#| message: false</span></span>
+<span id="cb1-846"><a href="#cb1-846"></a><span class="in">#| fig-width: 10</span></span>
+<span id="cb1-847"><a href="#cb1-847"></a><span class="in">state_plot(setting_light, 6:7)</span></span>
+<span id="cb1-848"><a href="#cb1-848"></a><span class="in">```</span></span>
 <span id="cb1-849"><a href="#cb1-849"></a></span>
-<span id="cb1-852"><a href="#cb1-852"></a><span class="in">```{webr}</span></span>
-<span id="cb1-853"><a href="#cb1-853"></a><span class="in">#| fig-width: 10</span></span>
-<span id="cb1-854"><a href="#cb1-854"></a><span class="in">state_plot(type, 7)</span></span>
-<span id="cb1-855"><a href="#cb1-855"></a><span class="in">```</span></span>
-<span id="cb1-856"><a href="#cb1-856"></a></span>
+<span id="cb1-850"><a href="#cb1-850"></a></span>
+<span id="cb1-853"><a href="#cb1-853"></a><span class="in">```{webr}</span></span>
+<span id="cb1-854"><a href="#cb1-854"></a><span class="in">#| fig-width: 10</span></span>
+<span id="cb1-855"><a href="#cb1-855"></a><span class="in">state_plot(type, 7)</span></span>
+<span id="cb1-856"><a href="#cb1-856"></a><span class="in">```</span></span>
 <span id="cb1-857"><a href="#cb1-857"></a></span>
-<span id="cb1-860"><a href="#cb1-860"></a><span class="in">```{webr}</span></span>
-<span id="cb1-861"><a href="#cb1-861"></a><span class="in">#| fig-width: 10</span></span>
-<span id="cb1-862"><a href="#cb1-862"></a><span class="in">state_plot(setting_indoors, 6)</span></span>
-<span id="cb1-863"><a href="#cb1-863"></a><span class="in">```</span></span>
-<span id="cb1-864"><a href="#cb1-864"></a></span>
-<span id="cb1-865"><a href="#cb1-865"></a><span class="fu">### Remove non-wear</span></span>
-<span id="cb1-866"><a href="#cb1-866"></a></span>
-<span id="cb1-867"><a href="#cb1-867"></a>As we now have logs of non-wear (both during the day and in sleep), we can set those measurements to <span class="in">`NA`</span>. Before that, let's check what the average value is during each state:</span>
-<span id="cb1-868"><a href="#cb1-868"></a></span>
-<span id="cb1-871"><a href="#cb1-871"></a><span class="in">```{webr}</span></span>
-<span id="cb1-872"><a href="#cb1-872"></a><span class="in">light_data |&gt; </span></span>
-<span id="cb1-873"><a href="#cb1-873"></a><span class="in">  group_by(type) |&gt;</span></span>
-<span id="cb1-874"><a href="#cb1-874"></a><span class="in">  summarize(mean = mean(LIGHT, na.rm = TRUE))</span></span>
-<span id="cb1-875"><a href="#cb1-875"></a><span class="in">```</span></span>
-<span id="cb1-876"><a href="#cb1-876"></a></span>
-<span id="cb1-877"><a href="#cb1-877"></a>Now let's remove these measurements.</span>
-<span id="cb1-878"><a href="#cb1-878"></a></span>
-<span id="cb1-881"><a href="#cb1-881"></a><span class="in">```{webr}</span></span>
-<span id="cb1-882"><a href="#cb1-882"></a><span class="in">light_data &lt;-</span></span>
-<span id="cb1-883"><a href="#cb1-883"></a><span class="in">  light_data |&gt; </span></span>
-<span id="cb1-884"><a href="#cb1-884"></a><span class="in">  mutate(LIGHT = case_match(as.character(type),</span></span>
-<span id="cb1-885"><a href="#cb1-885"></a><span class="in">                            c("Non-wear", "Bedtime") ~ NA_real_,</span></span>
-<span id="cb1-886"><a href="#cb1-886"></a><span class="in">                            .default = LIGHT))</span></span>
-<span id="cb1-887"><a href="#cb1-887"></a><span class="in">print("already executed")</span></span>
-<span id="cb1-888"><a href="#cb1-888"></a><span class="in">```</span></span>
-<span id="cb1-889"><a href="#cb1-889"></a></span>
-<span id="cb1-890"><a href="#cb1-890"></a>We can check whether we were successful, by summarizing our data depending on <span class="in">`type`</span>.</span>
-<span id="cb1-891"><a href="#cb1-891"></a></span>
-<span id="cb1-894"><a href="#cb1-894"></a><span class="in">```{webr}</span></span>
-<span id="cb1-895"><a href="#cb1-895"></a><span class="in">light_data |&gt; </span></span>
-<span id="cb1-896"><a href="#cb1-896"></a><span class="in">  group_by(type) |&gt;</span></span>
-<span id="cb1-897"><a href="#cb1-897"></a><span class="in">  summarize(mean = mean(LIGHT, na.rm = TRUE))</span></span>
-<span id="cb1-898"><a href="#cb1-898"></a><span class="in">```</span></span>
-<span id="cb1-899"><a href="#cb1-899"></a></span>
-<span id="cb1-900"><a href="#cb1-900"></a>This shows us that removing those instances was successful. To close up this use case, we can calculate a few metrics depending on the context with a helper function:</span>
-<span id="cb1-901"><a href="#cb1-901"></a></span>
-<span id="cb1-904"><a href="#cb1-904"></a><span class="in">```{webr}</span></span>
-<span id="cb1-905"><a href="#cb1-905"></a><span class="in">#| autorun: true</span></span>
-<span id="cb1-906"><a href="#cb1-906"></a><span class="in">quick_summaries &lt;- function(variable) {</span></span>
-<span id="cb1-907"><a href="#cb1-907"></a><span class="in">light_data |&gt; </span></span>
-<span id="cb1-908"><a href="#cb1-908"></a><span class="in">  group_by({{ variable }}, .add = TRUE) |&gt;</span></span>
-<span id="cb1-909"><a href="#cb1-909"></a><span class="in">    durations(LIGHT, show.missing = TRUE, FALSE.as.NA = TRUE) |&gt; #&lt;4&gt;</span></span>
-<span id="cb1-910"><a href="#cb1-910"></a><span class="in">    ungroup(Id) |&gt;</span></span>
-<span id="cb1-911"><a href="#cb1-911"></a><span class="in">    summarize_numeric(prefix = "mean_per_participant_") |&gt; #&lt;6&gt;</span></span>
-<span id="cb1-912"><a href="#cb1-912"></a><span class="in">    extract_metric( #&lt;7&gt;</span></span>
-<span id="cb1-913"><a href="#cb1-913"></a><span class="in">      light_data |&gt; #&lt;8&gt;</span></span>
-<span id="cb1-914"><a href="#cb1-914"></a><span class="in">        mutate({{ variable }} := factor({{ variable}})) |&gt; #&lt;9&gt;</span></span>
-<span id="cb1-915"><a href="#cb1-915"></a><span class="in">        group_by({{ variable }} #&lt;10&gt;</span></span>
-<span id="cb1-916"><a href="#cb1-916"></a><span class="in">                 ), #&lt;11&gt;</span></span>
-<span id="cb1-917"><a href="#cb1-917"></a><span class="in">      identifying.colname = {{ variable }}, #&lt;12&gt;</span></span>
-<span id="cb1-918"><a href="#cb1-918"></a><span class="in">      Datetime.colname = local_time, #&lt;13&gt;</span></span>
-<span id="cb1-919"><a href="#cb1-919"></a><span class="in">      geo_mean = log_zero_inflated(LIGHT) |&gt; #&lt;14&gt;</span></span>
-<span id="cb1-920"><a href="#cb1-920"></a><span class="in">             mean(na.rm = TRUE) |&gt; #&lt;15&gt;</span></span>
-<span id="cb1-921"><a href="#cb1-921"></a><span class="in">             exp_zero_inflated() #&lt;16&gt;</span></span>
-<span id="cb1-922"><a href="#cb1-922"></a><span class="in">      ) |&gt; #&lt;17&gt;</span></span>
-<span id="cb1-923"><a href="#cb1-923"></a><span class="in">    rename(participants = episodes) |&gt; </span></span>
-<span id="cb1-924"><a href="#cb1-924"></a><span class="in">    drop_na() |&gt;</span></span>
-<span id="cb1-925"><a href="#cb1-925"></a><span class="in">    gt() |&gt;</span></span>
-<span id="cb1-926"><a href="#cb1-926"></a><span class="in">    fmt_number(geo_mean)</span></span>
-<span id="cb1-927"><a href="#cb1-927"></a><span class="in">}</span></span>
-<span id="cb1-928"><a href="#cb1-928"></a><span class="in">print("already executed")</span></span>
-<span id="cb1-929"><a href="#cb1-929"></a><span class="in">```</span></span>
-<span id="cb1-930"><a href="#cb1-930"></a></span>
-<span id="cb1-931"><a href="#cb1-931"></a><span class="ss">4. </span>Calculate the duration of every state for each participant</span>
-<span id="cb1-932"><a href="#cb1-932"></a></span>
-<span id="cb1-933"><a href="#cb1-933"></a><span class="ss">6. </span>Calculate the average duration per state across participants</span>
-<span id="cb1-934"><a href="#cb1-934"></a></span>
-<span id="cb1-935"><a href="#cb1-935"></a>7-17. We add the geometric mean to the summary with <span class="in">`extract_metric`</span>, and supply the original dataset, grouped in the same way as our summary is</span>
-<span id="cb1-936"><a href="#cb1-936"></a></span>
-<span id="cb1-937"><a href="#cb1-937"></a>12-13. Secondary settings</span>
-<span id="cb1-938"><a href="#cb1-938"></a></span>
-<span id="cb1-939"><a href="#cb1-939"></a>14-16. The formula for the geometric mean uses <span class="in">`log_zero_inflated()`</span> and its counterpart <span class="in">`exp_zero_inflated()`</span> to allow for zero-lx values in the dataset</span>
-<span id="cb1-940"><a href="#cb1-940"></a></span>
-<span id="cb1-941"><a href="#cb1-941"></a>With this helper we can get quick overviews for many aspects:</span>
-<span id="cb1-942"><a href="#cb1-942"></a></span>
-<span id="cb1-945"><a href="#cb1-945"></a><span class="in">```{webr}</span></span>
-<span id="cb1-946"><a href="#cb1-946"></a><span class="in">quick_summaries(setting_light)</span></span>
-<span id="cb1-947"><a href="#cb1-947"></a><span class="in">```</span></span>
-<span id="cb1-948"><a href="#cb1-948"></a></span>
-<span id="cb1-951"><a href="#cb1-951"></a><span class="in">```{webr}</span></span>
-<span id="cb1-952"><a href="#cb1-952"></a><span class="in">quick_summaries(setting_outdoors)</span></span>
-<span id="cb1-953"><a href="#cb1-953"></a><span class="in">```</span></span>
-<span id="cb1-954"><a href="#cb1-954"></a></span>
-<span id="cb1-957"><a href="#cb1-957"></a><span class="in">```{webr}</span></span>
-<span id="cb1-958"><a href="#cb1-958"></a><span class="in">quick_summaries(setting_mixed)</span></span>
-<span id="cb1-959"><a href="#cb1-959"></a><span class="in">```</span></span>
-<span id="cb1-960"><a href="#cb1-960"></a></span>
-<span id="cb1-963"><a href="#cb1-963"></a><span class="in">```{webr}</span></span>
-<span id="cb1-964"><a href="#cb1-964"></a><span class="in">quick_summaries(wear_activity)</span></span>
-<span id="cb1-965"><a href="#cb1-965"></a><span class="in">```</span></span>
-<span id="cb1-966"><a href="#cb1-966"></a></span>
-<span id="cb1-967"><a href="#cb1-967"></a><span class="fu">## Circular time</span></span>
-<span id="cb1-968"><a href="#cb1-968"></a></span>
-<span id="cb1-969"><a href="#cb1-969"></a>We close this use case off with with a small detour to averaging of times. Many calculations in wearable data analysis involves averaging. This is tricky for variables that are circular in nature, like the time of day. consider the following case:</span>
-<span id="cb1-970"><a href="#cb1-970"></a></span>
-<span id="cb1-973"><a href="#cb1-973"></a><span class="in">```{webr}</span></span>
-<span id="cb1-974"><a href="#cb1-974"></a><span class="in">#| autorun: true</span></span>
-<span id="cb1-975"><a href="#cb1-975"></a><span class="in">times &lt;- as.POSIXct(c("2025-12-07 23:59:00", "2025-12-09 00:01:00"))</span></span>
-<span id="cb1-976"><a href="#cb1-976"></a><span class="in">times2 &lt;- as.POSIXct(c("2025-12-06 23:59:00", "2025-12-09 00:01:00"))</span></span>
-<span id="cb1-977"><a href="#cb1-977"></a><span class="in">print("already executed")</span></span>
-<span id="cb1-978"><a href="#cb1-978"></a><span class="in">```</span></span>
-<span id="cb1-979"><a href="#cb1-979"></a></span>
-<span id="cb1-980"><a href="#cb1-980"></a>When we take the average of these two, we get noon on 8 December.</span>
-<span id="cb1-981"><a href="#cb1-981"></a></span>
-<span id="cb1-984"><a href="#cb1-984"></a><span class="in">```{webr}</span></span>
-<span id="cb1-985"><a href="#cb1-985"></a><span class="in">mean(times)</span></span>
-<span id="cb1-986"><a href="#cb1-986"></a><span class="in">mean(times2)</span></span>
-<span id="cb1-987"><a href="#cb1-987"></a><span class="in">```</span></span>
-<span id="cb1-988"><a href="#cb1-988"></a></span>
-<span id="cb1-989"><a href="#cb1-989"></a>Depending on what the values represent, this is a correct handling. But consider they represent sleep times. In this case the averaging results to not output what we want, especially the sensitivity to the date for the result. We can lose the reliance on the date if we use a function like <span class="in">`Datetime2Time()`</span> or <span class="in">`summarize_numeric()`</span>s defaults:</span>
-<span id="cb1-990"><a href="#cb1-990"></a></span>
-<span id="cb1-993"><a href="#cb1-993"></a><span class="in">```{webr}</span></span>
-<span id="cb1-994"><a href="#cb1-994"></a><span class="in">tibble(times, times2) |&gt; Datetime2Time()</span></span>
-<span id="cb1-995"><a href="#cb1-995"></a><span class="in">tibble(times, times2) |&gt; summarize_numeric()</span></span>
-<span id="cb1-996"><a href="#cb1-996"></a><span class="in">```</span></span>
-<span id="cb1-997"><a href="#cb1-997"></a></span>
-<span id="cb1-998"><a href="#cb1-998"></a>Now we have consistent results - but they are still wrong in the context we are thinking in. We need <span class="in">`circular`</span> time for this, i.e., where the distance of two timepoints is equal, even across midnight. <span class="in">`LightLogR`</span> has implemented functions from the <span class="in">`circular`</span> package to make this process easy. Simply specify a circular handling. After the summary, apply <span class="in">`Circular2Time()`</span> to backtransform to the common representation.</span>
-<span id="cb1-999"><a href="#cb1-999"></a></span>
-<span id="cb1-1002"><a href="#cb1-1002"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1003"><a href="#cb1-1003"></a><span class="in">tibble(times, times2) |&gt; Datetime2Time(circular = TRUE)</span></span>
-<span id="cb1-1004"><a href="#cb1-1004"></a><span class="in">tibble(times, times2) |&gt; </span></span>
-<span id="cb1-1005"><a href="#cb1-1005"></a><span class="in">  summarize_numeric(Datetime2Time.circular = TRUE) |&gt; </span></span>
-<span id="cb1-1006"><a href="#cb1-1006"></a><span class="in">  Circular2Time()</span></span>
-<span id="cb1-1007"><a href="#cb1-1007"></a><span class="in">```</span></span>
-<span id="cb1-1008"><a href="#cb1-1008"></a></span>
-<span id="cb1-1009"><a href="#cb1-1009"></a>We can use this approach in our use case. Say we want to know the average <span class="in">`Bedtime`</span> of people, based on their logs:</span>
-<span id="cb1-1010"><a href="#cb1-1010"></a></span>
-<span id="cb1-1013"><a href="#cb1-1013"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1014"><a href="#cb1-1014"></a><span class="in">bedtimes &lt;- </span></span>
-<span id="cb1-1015"><a href="#cb1-1015"></a><span class="in">  events |&gt; filter(type == "Bedtime") |&gt; select(start) </span></span>
-<span id="cb1-1016"><a href="#cb1-1016"></a><span class="in">bedtimes |&gt; gt()</span></span>
-<span id="cb1-1017"><a href="#cb1-1017"></a><span class="in">```</span></span>
-<span id="cb1-1018"><a href="#cb1-1018"></a></span>
-<span id="cb1-1019"><a href="#cb1-1019"></a>Now focus on the difference of whether we work with circular time or not:</span>
-<span id="cb1-1020"><a href="#cb1-1020"></a></span>
-<span id="cb1-1023"><a href="#cb1-1023"></a><span class="in">```{webr}</span></span>
-<span id="cb1-1024"><a href="#cb1-1024"></a><span class="in">bedtimes |&gt; summarize_numeric()</span></span>
-<span id="cb1-1025"><a href="#cb1-1025"></a><span class="in">bedtimes |&gt; summarize_numeric(Datetime2Time.circular = TRUE) |&gt; Circular2Time()</span></span>
-<span id="cb1-1026"><a href="#cb1-1026"></a><span class="in">```</span></span>
-<span id="cb1-1027"><a href="#cb1-1027"></a></span>
+<span id="cb1-858"><a href="#cb1-858"></a></span>
+<span id="cb1-861"><a href="#cb1-861"></a><span class="in">```{webr}</span></span>
+<span id="cb1-862"><a href="#cb1-862"></a><span class="in">#| fig-width: 10</span></span>
+<span id="cb1-863"><a href="#cb1-863"></a><span class="in">state_plot(setting_indoors, 6)</span></span>
+<span id="cb1-864"><a href="#cb1-864"></a><span class="in">```</span></span>
+<span id="cb1-865"><a href="#cb1-865"></a></span>
+<span id="cb1-866"><a href="#cb1-866"></a><span class="fu">### Remove non-wear</span></span>
+<span id="cb1-867"><a href="#cb1-867"></a></span>
+<span id="cb1-868"><a href="#cb1-868"></a>As we now have logs of non-wear (both during the day and in sleep), we can set those measurements to <span class="in">`NA`</span>. Before that, let's check what the average value is during each state:</span>
+<span id="cb1-869"><a href="#cb1-869"></a></span>
+<span id="cb1-872"><a href="#cb1-872"></a><span class="in">```{webr}</span></span>
+<span id="cb1-873"><a href="#cb1-873"></a><span class="in">light_data |&gt; </span></span>
+<span id="cb1-874"><a href="#cb1-874"></a><span class="in">  group_by(type) |&gt;</span></span>
+<span id="cb1-875"><a href="#cb1-875"></a><span class="in">  summarize(mean = mean(LIGHT, na.rm = TRUE))</span></span>
+<span id="cb1-876"><a href="#cb1-876"></a><span class="in">```</span></span>
+<span id="cb1-877"><a href="#cb1-877"></a></span>
+<span id="cb1-878"><a href="#cb1-878"></a>Now let's remove these measurements.</span>
+<span id="cb1-879"><a href="#cb1-879"></a></span>
+<span id="cb1-882"><a href="#cb1-882"></a><span class="in">```{webr}</span></span>
+<span id="cb1-883"><a href="#cb1-883"></a><span class="in">light_data &lt;-</span></span>
+<span id="cb1-884"><a href="#cb1-884"></a><span class="in">  light_data |&gt; </span></span>
+<span id="cb1-885"><a href="#cb1-885"></a><span class="in">  mutate(LIGHT = case_match(as.character(type),</span></span>
+<span id="cb1-886"><a href="#cb1-886"></a><span class="in">                            c("Non-wear", "Bedtime") ~ NA_real_,</span></span>
+<span id="cb1-887"><a href="#cb1-887"></a><span class="in">                            .default = LIGHT))</span></span>
+<span id="cb1-888"><a href="#cb1-888"></a><span class="in">print("already executed")</span></span>
+<span id="cb1-889"><a href="#cb1-889"></a><span class="in">```</span></span>
+<span id="cb1-890"><a href="#cb1-890"></a></span>
+<span id="cb1-891"><a href="#cb1-891"></a>We can check whether we were successful, by summarizing our data depending on <span class="in">`type`</span>.</span>
+<span id="cb1-892"><a href="#cb1-892"></a></span>
+<span id="cb1-895"><a href="#cb1-895"></a><span class="in">```{webr}</span></span>
+<span id="cb1-896"><a href="#cb1-896"></a><span class="in">light_data |&gt; </span></span>
+<span id="cb1-897"><a href="#cb1-897"></a><span class="in">  group_by(type) |&gt;</span></span>
+<span id="cb1-898"><a href="#cb1-898"></a><span class="in">  summarize(mean = mean(LIGHT, na.rm = TRUE))</span></span>
+<span id="cb1-899"><a href="#cb1-899"></a><span class="in">```</span></span>
+<span id="cb1-900"><a href="#cb1-900"></a></span>
+<span id="cb1-901"><a href="#cb1-901"></a>This shows us that removing those instances was successful. To close up this use case, we can calculate a few metrics depending on the context with a helper function:</span>
+<span id="cb1-902"><a href="#cb1-902"></a></span>
+<span id="cb1-905"><a href="#cb1-905"></a><span class="in">```{webr}</span></span>
+<span id="cb1-906"><a href="#cb1-906"></a><span class="in">#| autorun: true</span></span>
+<span id="cb1-907"><a href="#cb1-907"></a><span class="in">quick_summaries &lt;- function(variable) {</span></span>
+<span id="cb1-908"><a href="#cb1-908"></a><span class="in">light_data |&gt; </span></span>
+<span id="cb1-909"><a href="#cb1-909"></a><span class="in">  group_by({{ variable }}, .add = TRUE) |&gt;</span></span>
+<span id="cb1-910"><a href="#cb1-910"></a><span class="in">    durations(LIGHT, show.missing = TRUE, FALSE.as.NA = TRUE) |&gt; #&lt;4&gt;</span></span>
+<span id="cb1-911"><a href="#cb1-911"></a><span class="in">    ungroup(Id) |&gt;</span></span>
+<span id="cb1-912"><a href="#cb1-912"></a><span class="in">    summarize_numeric(prefix = "mean_per_participant_") |&gt; #&lt;6&gt;</span></span>
+<span id="cb1-913"><a href="#cb1-913"></a><span class="in">    extract_metric( #&lt;7&gt;</span></span>
+<span id="cb1-914"><a href="#cb1-914"></a><span class="in">      light_data |&gt; #&lt;8&gt;</span></span>
+<span id="cb1-915"><a href="#cb1-915"></a><span class="in">        mutate({{ variable }} := factor({{ variable}})) |&gt; #&lt;9&gt;</span></span>
+<span id="cb1-916"><a href="#cb1-916"></a><span class="in">        group_by({{ variable }} #&lt;10&gt;</span></span>
+<span id="cb1-917"><a href="#cb1-917"></a><span class="in">                 ), #&lt;11&gt;</span></span>
+<span id="cb1-918"><a href="#cb1-918"></a><span class="in">      identifying.colname = {{ variable }}, #&lt;12&gt;</span></span>
+<span id="cb1-919"><a href="#cb1-919"></a><span class="in">      Datetime.colname = local_time, #&lt;13&gt;</span></span>
+<span id="cb1-920"><a href="#cb1-920"></a><span class="in">      geo_mean = log_zero_inflated(LIGHT) |&gt; #&lt;14&gt;</span></span>
+<span id="cb1-921"><a href="#cb1-921"></a><span class="in">             mean(na.rm = TRUE) |&gt; #&lt;15&gt;</span></span>
+<span id="cb1-922"><a href="#cb1-922"></a><span class="in">             exp_zero_inflated() #&lt;16&gt;</span></span>
+<span id="cb1-923"><a href="#cb1-923"></a><span class="in">      ) |&gt; #&lt;17&gt;</span></span>
+<span id="cb1-924"><a href="#cb1-924"></a><span class="in">    rename(participants = episodes) |&gt; </span></span>
+<span id="cb1-925"><a href="#cb1-925"></a><span class="in">    drop_na() |&gt;</span></span>
+<span id="cb1-926"><a href="#cb1-926"></a><span class="in">    gt() |&gt;</span></span>
+<span id="cb1-927"><a href="#cb1-927"></a><span class="in">    fmt_number(geo_mean)</span></span>
+<span id="cb1-928"><a href="#cb1-928"></a><span class="in">}</span></span>
+<span id="cb1-929"><a href="#cb1-929"></a><span class="in">print("already executed")</span></span>
+<span id="cb1-930"><a href="#cb1-930"></a><span class="in">```</span></span>
+<span id="cb1-931"><a href="#cb1-931"></a></span>
+<span id="cb1-932"><a href="#cb1-932"></a><span class="ss">4. </span>Calculate the duration of every state for each participant</span>
+<span id="cb1-933"><a href="#cb1-933"></a></span>
+<span id="cb1-934"><a href="#cb1-934"></a><span class="ss">6. </span>Calculate the average duration per state across participants</span>
+<span id="cb1-935"><a href="#cb1-935"></a></span>
+<span id="cb1-936"><a href="#cb1-936"></a>7-17. We add the geometric mean to the summary with <span class="in">`extract_metric`</span>, and supply the original dataset, grouped in the same way as our summary is</span>
+<span id="cb1-937"><a href="#cb1-937"></a></span>
+<span id="cb1-938"><a href="#cb1-938"></a>12-13. Secondary settings</span>
+<span id="cb1-939"><a href="#cb1-939"></a></span>
+<span id="cb1-940"><a href="#cb1-940"></a>14-16. The formula for the geometric mean uses <span class="in">`log_zero_inflated()`</span> and its counterpart <span class="in">`exp_zero_inflated()`</span> to allow for zero-lx values in the dataset</span>
+<span id="cb1-941"><a href="#cb1-941"></a></span>
+<span id="cb1-942"><a href="#cb1-942"></a>With this helper we can get quick overviews for many aspects:</span>
+<span id="cb1-943"><a href="#cb1-943"></a></span>
+<span id="cb1-946"><a href="#cb1-946"></a><span class="in">```{webr}</span></span>
+<span id="cb1-947"><a href="#cb1-947"></a><span class="in">quick_summaries(setting_light)</span></span>
+<span id="cb1-948"><a href="#cb1-948"></a><span class="in">```</span></span>
+<span id="cb1-949"><a href="#cb1-949"></a></span>
+<span id="cb1-952"><a href="#cb1-952"></a><span class="in">```{webr}</span></span>
+<span id="cb1-953"><a href="#cb1-953"></a><span class="in">quick_summaries(setting_outdoors)</span></span>
+<span id="cb1-954"><a href="#cb1-954"></a><span class="in">```</span></span>
+<span id="cb1-955"><a href="#cb1-955"></a></span>
+<span id="cb1-958"><a href="#cb1-958"></a><span class="in">```{webr}</span></span>
+<span id="cb1-959"><a href="#cb1-959"></a><span class="in">quick_summaries(setting_mixed)</span></span>
+<span id="cb1-960"><a href="#cb1-960"></a><span class="in">```</span></span>
+<span id="cb1-961"><a href="#cb1-961"></a></span>
+<span id="cb1-964"><a href="#cb1-964"></a><span class="in">```{webr}</span></span>
+<span id="cb1-965"><a href="#cb1-965"></a><span class="in">quick_summaries(wear_activity)</span></span>
+<span id="cb1-966"><a href="#cb1-966"></a><span class="in">```</span></span>
+<span id="cb1-967"><a href="#cb1-967"></a></span>
+<span id="cb1-968"><a href="#cb1-968"></a><span class="fu">## Circular time</span></span>
+<span id="cb1-969"><a href="#cb1-969"></a></span>
+<span id="cb1-970"><a href="#cb1-970"></a>We close this use case off with with a small detour to averaging of times. Many calculations in wearable data analysis involves averaging. This is tricky for variables that are circular in nature, like the time of day. consider the following case:</span>
+<span id="cb1-971"><a href="#cb1-971"></a></span>
+<span id="cb1-974"><a href="#cb1-974"></a><span class="in">```{webr}</span></span>
+<span id="cb1-975"><a href="#cb1-975"></a><span class="in">#| autorun: true</span></span>
+<span id="cb1-976"><a href="#cb1-976"></a><span class="in">times &lt;- as.POSIXct(c("2025-12-07 23:59:00", "2025-12-09 00:01:00"))</span></span>
+<span id="cb1-977"><a href="#cb1-977"></a><span class="in">times2 &lt;- as.POSIXct(c("2025-12-06 23:59:00", "2025-12-09 00:01:00"))</span></span>
+<span id="cb1-978"><a href="#cb1-978"></a><span class="in">print("already executed")</span></span>
+<span id="cb1-979"><a href="#cb1-979"></a><span class="in">```</span></span>
+<span id="cb1-980"><a href="#cb1-980"></a></span>
+<span id="cb1-981"><a href="#cb1-981"></a>When we take the average of these two, we get noon on 8 December.</span>
+<span id="cb1-982"><a href="#cb1-982"></a></span>
+<span id="cb1-985"><a href="#cb1-985"></a><span class="in">```{webr}</span></span>
+<span id="cb1-986"><a href="#cb1-986"></a><span class="in">mean(times)</span></span>
+<span id="cb1-987"><a href="#cb1-987"></a><span class="in">mean(times2)</span></span>
+<span id="cb1-988"><a href="#cb1-988"></a><span class="in">```</span></span>
+<span id="cb1-989"><a href="#cb1-989"></a></span>
+<span id="cb1-990"><a href="#cb1-990"></a>Depending on what the values represent, this is a correct handling. But consider they represent sleep times. In this case the averaging results to not output what we want, especially the sensitivity to the date for the result. We can lose the reliance on the date if we use a function like <span class="in">`Datetime2Time()`</span> or <span class="in">`summarize_numeric()`</span>s defaults:</span>
+<span id="cb1-991"><a href="#cb1-991"></a></span>
+<span id="cb1-994"><a href="#cb1-994"></a><span class="in">```{webr}</span></span>
+<span id="cb1-995"><a href="#cb1-995"></a><span class="in">tibble(times, times2) |&gt; Datetime2Time()</span></span>
+<span id="cb1-996"><a href="#cb1-996"></a><span class="in">tibble(times, times2) |&gt; summarize_numeric()</span></span>
+<span id="cb1-997"><a href="#cb1-997"></a><span class="in">```</span></span>
+<span id="cb1-998"><a href="#cb1-998"></a></span>
+<span id="cb1-999"><a href="#cb1-999"></a>Now we have consistent results - but they are still wrong in the context we are thinking in. We need <span class="in">`circular`</span> time for this, i.e., where the distance of two timepoints is equal, even across midnight. <span class="in">`LightLogR`</span> has implemented functions from the <span class="in">`circular`</span> package to make this process easy. Simply specify a circular handling. After the summary, apply <span class="in">`Circular2Time()`</span> to backtransform to the common representation.</span>
+<span id="cb1-1000"><a href="#cb1-1000"></a></span>
+<span id="cb1-1003"><a href="#cb1-1003"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1004"><a href="#cb1-1004"></a><span class="in">tibble(times, times2) |&gt; Datetime2Time(circular = TRUE)</span></span>
+<span id="cb1-1005"><a href="#cb1-1005"></a><span class="in">tibble(times, times2) |&gt; </span></span>
+<span id="cb1-1006"><a href="#cb1-1006"></a><span class="in">  summarize_numeric(Datetime2Time.circular = TRUE) |&gt; </span></span>
+<span id="cb1-1007"><a href="#cb1-1007"></a><span class="in">  Circular2Time()</span></span>
+<span id="cb1-1008"><a href="#cb1-1008"></a><span class="in">```</span></span>
+<span id="cb1-1009"><a href="#cb1-1009"></a></span>
+<span id="cb1-1010"><a href="#cb1-1010"></a>We can use this approach in our use case. Say we want to know the average <span class="in">`Bedtime`</span> of people, based on their logs:</span>
+<span id="cb1-1011"><a href="#cb1-1011"></a></span>
+<span id="cb1-1014"><a href="#cb1-1014"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1015"><a href="#cb1-1015"></a><span class="in">bedtimes &lt;- </span></span>
+<span id="cb1-1016"><a href="#cb1-1016"></a><span class="in">  events |&gt; filter(type == "Bedtime") |&gt; select(start) </span></span>
+<span id="cb1-1017"><a href="#cb1-1017"></a><span class="in">bedtimes |&gt; gt()</span></span>
+<span id="cb1-1018"><a href="#cb1-1018"></a><span class="in">```</span></span>
+<span id="cb1-1019"><a href="#cb1-1019"></a></span>
+<span id="cb1-1020"><a href="#cb1-1020"></a>Now focus on the difference of whether we work with circular time or not:</span>
+<span id="cb1-1021"><a href="#cb1-1021"></a></span>
+<span id="cb1-1024"><a href="#cb1-1024"></a><span class="in">```{webr}</span></span>
+<span id="cb1-1025"><a href="#cb1-1025"></a><span class="in">bedtimes |&gt; summarize_numeric()</span></span>
+<span id="cb1-1026"><a href="#cb1-1026"></a><span class="in">bedtimes |&gt; summarize_numeric(Datetime2Time.circular = TRUE) |&gt; Circular2Time()</span></span>
+<span id="cb1-1027"><a href="#cb1-1027"></a><span class="in">```</span></span>
 <span id="cb1-1028"><a href="#cb1-1028"></a></span>
-<span id="cb1-1029"><a href="#cb1-1029"></a>{{&lt; include _conclusion.qmd &gt;}}</span>
+<span id="cb1-1029"><a href="#cb1-1029"></a></span>
+<span id="cb1-1030"><a href="#cb1-1030"></a>{{&lt; include _conclusion.qmd &gt;}}</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

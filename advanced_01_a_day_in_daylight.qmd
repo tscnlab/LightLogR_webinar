@@ -658,7 +658,8 @@ light_data |>
           x.axis = local_time,
           y.axis.label = "Photopic illuminance (lx)") |>
     gg_photoperiod(Datetime.colname = local_time) |> 
-  gg_state({{ variable }}, aes_fill = {{ variable }}, alpha = 1, ymax = 0) +
+  gg_state({{ variable }}, aes_fill = {{ variable }}, 
+           alpha = 1, ymax = 0, Datetime.colname = local_time) +
     theme_sub_legend(position = "bottom")
 }
 state_plot(setting_light, 6:7)
