@@ -35,15 +35,14 @@ params:
   align: center + top,
   polygon(
     points: ((0pt,0pt),(60pt,34pt),(120pt,0pt)),
-    fill: gradient.linear(
-      stops: (
-        (0%, accent),
-        (100%, rgb("72c6d9")),
-      ),
-      start: (0pt, 0pt),
-      end: (0pt, 48pt),
-    ),
-  )
+fill: gradient.linear(
+  stops: [
+    (0%, accent),
+    (100%, rgb("72c6d9")),
+  ],
+  start: (0pt, 0pt),
+  end: (0pt, 48pt),
+))
 )
 #place(
   align: right + top,
