@@ -1,7 +1,9 @@
 ```{mermaid}
 %%| echo: false
 %%| label: fig-flowchart
+%%| fig-width: 8
 %%| fig-cap: "Flowchart diagram of the *Case of light sensitivity* use case."
+%%{init: {"flowchart": {"diagramPadding": 40}}}%%
 
 flowchart TD
 

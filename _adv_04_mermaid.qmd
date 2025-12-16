@@ -3,6 +3,7 @@
 ```{mermaid}
 %%| echo: false
 %%| fig-width: 8
+%%{init: {"flowchart": {"diagramPadding": 40}}}%%
 %%| fig-cap: "Part 1: spectrum."
 
 flowchart TD
@@ -47,6 +48,7 @@ S_RECON --> M_DAYNIGHT
 %%| echo: false
 %%| fig-width: 4
 %%| fig-cap: "Part 2: distance."
+%%{init: {"flowchart": {"diagramPadding": 40}}}%%
 
 flowchart TD
 

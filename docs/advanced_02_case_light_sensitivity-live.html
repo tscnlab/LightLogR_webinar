@@ -112,9 +112,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -355,91 +352,7 @@ Figure&nbsp;1
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<pre class="mermaid mermaid-js" data-label="fig-flowchart">flowchart TD
-
-%% ===== Setup =====
-P[Load packages]
-
-%% ===== Light data stream =====
-LFILE[Define light file tz coordinates]
-LDATA[Import ActLumus to data]
-LTRIM[Trim to diary period select Datetime and MEDI]
-LQC1[Check gaps and irregulars]
-LPLOT1[Plot full time series]
-LPLOT2[Plot days with highest time above 250]
-LPLOT3[Plot days with lowest time above 250]
-
-LFILE --&gt; LDATA
-LDATA --&gt; LTRIM
-LTRIM --&gt; LQC1
-LTRIM --&gt; LPLOT1
-LTRIM --&gt; LPLOT2
-LTRIM --&gt; LPLOT3
-
-%% ===== Diary data stream =====
-SEVE[Import evening diary]
-SMOR[Import morning diary]
-SDATES[Align evening and morning dates]
-SJOIN[Join diaries into states]
-SLABEL[Rename variables add next day performance fatigue]
-SSUM[Summary table of diary variables]
-
-SEVE --&gt; SDATES
-SMOR --&gt; SDATES
-SDATES --&gt; SJOIN
-SJOIN --&gt; SLABEL
-SLABEL --&gt; SSUM
-
-%% ===== Build sleep intervals and Brown states =====
-SLEEP1[Build sleep and wake timestamps from states]
-SLEEP2[Convert to intervals and Brown states]
-
-SLABEL --&gt; SLEEP1
-SLEEP1 --&gt; SLEEP2
-
-%% ===== Merge light with sleep states =====
-MERGE1[Add states to light data to create data_ext]
-MERGE2[Add photoperiod and Brown reference columns]
-
-LTRIM --&gt; MERGE1
-SLEEP2 --&gt; MERGE1
-MERGE1 --&gt; MERGE2
-
-%% ===== Brown recommendations branch =====
-BROWN_PLOT[Plot Brown states and compliance over weeks]
-BROWN_TAB[Table of Brown compliance and duration]
-
-MERGE2 --&gt; BROWN_PLOT
-MERGE2 --&gt; BROWN_TAB
-
-%% ===== Sleep wake cycles and metrics =====
-SW1[Create sleep wake cycles data_sw]
-SWPLOT[Heatmap doubleplot of sleep timing]
-SWDUR[Durations of sleep wake cycles]
-SWFILTER[Remove partial cycles 01 and 20]
-
-MERGE2 --&gt; SW1
-SW1 --&gt; SWPLOT
-SW1 --&gt; SWDUR
-SW1 --&gt; SWFILTER
-
-METRICS[Summarize dose and time above 250 per cycle to summaries_sw]
-JOINDIARY[Join summaries_sw with states by date]
-
-SWFILTER --&gt; METRICS
-METRICS --&gt; JOINDIARY
-SLABEL --&gt; JOINDIARY
-
-TABLE[Formatted overview table of light metrics and questionnaire data]
-JOINDIARY --&gt; TABLE
-
-%% ===== Correlation plots =====
-CORFUNC[Define correlation_plot helper]
-CORPLOT[Correlation plots between light metrics and self report]
-
-JOINDIARY --&gt; CORFUNC
-CORFUNC --&gt; CORPLOT
-</pre>
+<p><a href="advanced_02_case_light_sensitivity-live_files/figure-html/mermaid-figure-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: Flowchart diagram of the Case of light sensitivity use case."><img src="advanced_02_case_light_sensitivity-live_files/figure-html/mermaid-figure-1.png" style="width:8in;height:6.68in" class="figure-img"></a></p>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -595,7 +508,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjUsImxhYmVsIjoibG93
 <div id="fig-morning" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-morning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/advanced/morning_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Excerpt from the morning diary as opened in Excel"><img src="assets/advanced/morning_protocol.png" class="img-fluid figure-img"></a>
+<a href="assets/advanced/morning_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;3: Excerpt from the morning diary as opened in Excel"><img src="assets/advanced/morning_protocol.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-morning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Excerpt from the morning diary as opened in Excel
@@ -605,7 +518,7 @@ Figure&nbsp;3: Excerpt from the morning diary as opened in Excel
 <div id="fig-evening" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-evening-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/advanced/evening_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Excerpt from the evening diary as opened in Excel"><img src="assets/advanced/evening_protocol.png" class="img-fluid figure-img"></a>
+<a href="assets/advanced/evening_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;4: Excerpt from the evening diary as opened in Excel"><img src="assets/advanced/evening_protocol.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-evening-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Excerpt from the evening diary as opened in Excel

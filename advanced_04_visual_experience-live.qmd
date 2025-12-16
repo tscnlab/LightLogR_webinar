@@ -9,7 +9,6 @@ format: live-html
 engine: knitr
 page-layout: full
 toc: true
-mermaid-format: png
 number-sections: true
 date: last-modified
 lightbox: true

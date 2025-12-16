@@ -67,11 +67,14 @@ website:
         
 format:
   html:
+    mermaid-format: png
     theme:
       - cosmo
       - brand
     css: styles.css
     toc: true
+  live-html:
+    mermaid-format: png
 
 execute:
   freeze: auto

@@ -112,9 +112,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -354,70 +351,7 @@ Figure&nbsp;1: Photographs of workplaces (pre-light). Both workplace have the sa
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<pre class="mermaid mermaid-js" data-label="fig-flowchart">flowchart TD
-
-%% ===== Setup =====
-P[Load packages]
-
-%% ===== Light data stream =====
-LFILE[Define light path files pattern tz]
-LDATA[Import ActLumus light data into data]
-LQC[Check gaps and irregulars with gap_table]
-LPLOT[Quick light plot with gg_day and gg_photoperiod]
-
-LFILE --&gt; LDATA
-LDATA --&gt; LQC
-LDATA --&gt; LPLOT
-
-%% ===== Log data stream =====
-EFILE[Read Excel logs into state_data]
-EPREP[Rename columns build Datetime pivot to start and end per state]
-EOVERVIEW[Overview table of state intervals with gt]
-
-EFILE --&gt; EPREP
-EPREP --&gt; EOVERVIEW
-
-%% ===== Combine light and logs =====
-KEEP[Define states_to_keep]
-MERGE[Add states to light data with add_states]
-STATEFAC[Factor and recode state labels in data]
-
-LDATA --&gt; KEEP
-KEEP --&gt; MERGE
-EPREP --&gt; MERGE
-MERGE --&gt; STATEFAC
-
-%% ===== Compare conditions – histogram =====
-HIST[Density ridge histogram of MEDI by state and participant]
-
-STATEFAC --&gt; HIST
-
-%% ===== Compare conditions – tables =====
-TABLE_EP[Episode based metrics  extract_states  extract_metric  summarize_numeric]
-
-STATEFAC --&gt; TABLE_EP
-
-DPREP[Prepare data_prep drop missing states and group by state]
-DUR[Calculate durations by state with durations]
-METRIC[State based mean and dose with extract_metric]
-COMPTBL[Build wide comparison table data_tbl_comparison]
-GT[Styled comparison table with gt formatting and grand totals]
-
-STATEFAC --&gt; DPREP
-DPREP --&gt; DUR
-DUR --&gt; METRIC
-METRIC --&gt; COMPTBL
-COMPTBL --&gt; GT
-
-%% ===== Compare conditions – plots =====
-PREPAX[Prepare protocol axis times and symbol metadata]
-TSERIES[Timeline plot of MEDI by state and participant]
-CUMDOSE[Cumulative dose plot over time using derived dose]
-
-STATEFAC --&gt; PREPAX
-PREPAX --&gt; TSERIES
-PREPAX --&gt; CUMDOSE
-</pre>
+<p><a href="advanced_03_light_therapy-live_files/figure-html/mermaid-figure-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: Flowchart diagram of the Light therapy use case."><img src="advanced_03_light_therapy-live_files/figure-html/mermaid-figure-1.png" style="width:8in;height:7.12in" class="figure-img"></a></p>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -531,7 +465,7 @@ eyJhdHRyIjp7ImVkaXQiOmZhbHNlLCJldmFsIjpmYWxzZSwibGFiZWwiOiJjaGVjayBsaWdodCJ9LCJj
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/advanced/gap_table.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="To generate this table yourself, please execute the static R script"><img src="assets/advanced/gap_table.png" class="img-fluid figure-img" alt="To generate this table yourself, please execute the static R script"></a></p>
+<p><a href="assets/advanced/gap_table.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="To generate this table yourself, please execute the static R script"><img src="assets/advanced/gap_table.png" class="img-fluid figure-img" alt="To generate this table yourself, please execute the static R script"></a></p>
 <figcaption>To generate this table yourself, please execute the static R script</figcaption>
 </figure>
 </div>
@@ -560,7 +494,7 @@ eyJhdHRyIjp7ImVkaXQiOmZhbHNlLCJldmFsIjpmYWxzZSwibGFiZWwiOiJjaGVjayBsaWdodCJ9LCJj
 <div id="fig-log" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/advanced/light_therapy_log.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;3: Participant log as opened in Excel"><img src="assets/advanced/light_therapy_log.png" class="img-fluid figure-img"></a>
+<a href="assets/advanced/light_therapy_log.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;3: Participant log as opened in Excel"><img src="assets/advanced/light_therapy_log.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Participant log as opened in Excel

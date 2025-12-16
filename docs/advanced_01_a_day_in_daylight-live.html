@@ -112,9 +112,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -340,65 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<pre class="mermaid mermaid-js" data-label="fig-flowchart">flowchart TD
-
-%% ===== Core Setup &amp; Metadata =====
-P[Load packages]
-
-PD[Import participant data]
-DDEM[Demographic plots]
-
-PD --&gt; DDEM
-
-%% ===== Wearable Import &amp; Cleaning =====
-DINFO[Add device_type and file_path]
-LIMPORT[Import wearable files into list column]
-LCLEAN[Clean per participant:  aggregate, gap handling, filter times, add photoperiod]
-LMERGE[Unnest list column into light_data]
-LTIME[Deal with local and real time]
-
-PD --&gt; DINFO
-DINFO --&gt; LIMPORT
-LIMPORT --&gt; LCLEAN
-LCLEAN --&gt; LMERGE
-LMERGE --&gt; LTIME
-
-%% ===== Overview Branch =====
-LOVERVIEW[Overview plots and QC summaries]
-LTIME --&gt; LOVERVIEW
-
-%% ===== TAT250 Branch =====
-TSEL[Select 22 Sept by local time]
-TAT[Compute time above 250 lux]
-TPL[TAT250 plots and country boxplots]
-
-LTIME --&gt; TSEL
-TSEL --&gt; TAT
-TAT --&gt; TPL
-
-%% ===== Event Data Stream =====
-ELOAD[Load events data]
-EPROC[Process events into time intervals and states]
-ETAB[Summaries from events only]
-
-ELOAD --&gt; EPROC
-EPROC --&gt; ETAB
-
-%% ===== Merge Events with Light Data =====
-EMERGE[Merge event states into light_data]
-ENW[Set nonwear and bedtime light to NA]
-ESUM[Context summaries, state plots, quick summaries]
-
-LTIME --&gt; EMERGE
-EPROC --&gt; EMERGE
-EMERGE --&gt; ENW
-ENW --&gt; ESUM
-
-%% ===== Circular Time Demo =====
-CDEMO[Circular time demonstration]
-
-ELOAD --&gt; CDEMO
-</pre>
+<p><a href="advanced_01_a_day_in_daylight-live_files/figure-html/mermaid-figure-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;1: Flowchart diagram of the A day in daylight use case."><img src="advanced_01_a_day_in_daylight-live_files/figure-html/mermaid-figure-1.png" style="width:8in;height:6.63in" class="figure-img"></a></p>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -504,7 +443,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibGlnaHQgZGF0YXNldHMifSwi
 <div id="fig-participants" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-participants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/advanced/participant_metadata.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Excerpt from the participant data"><img src="assets/advanced/participant_metadata.png" class="img-fluid figure-img"></a>
+<a href="assets/advanced/participant_metadata.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: Excerpt from the participant data"><img src="assets/advanced/participant_metadata.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-participants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Excerpt from the participant data
@@ -760,7 +699,7 @@ eyJhdHRyIjp7ImVkaXQiOmZhbHNlLCJldmFsIjpmYWxzZX0sImNvZGUiOiJsaWdodF9kYXRhIHw+IFxu
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/advanced/01_tbl_summary.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="To generate this table yourself, please execute the static R script"><img src="assets/advanced/01_tbl_summary.png" class="img-fluid figure-img" alt="To generate this table yourself, please execute the static R script"></a></p>
+<p><a href="assets/advanced/01_tbl_summary.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="To generate this table yourself, please execute the static R script"><img src="assets/advanced/01_tbl_summary.png" class="img-fluid figure-img" alt="To generate this table yourself, please execute the static R script"></a></p>
 <figcaption>To generate this table yourself, please execute the static R script</figcaption>
 </figure>
 </div>
