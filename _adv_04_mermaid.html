@@ -51,13 +51,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
 <div id="fig-flowchart" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell" data-fig-width="8" data-layout-align="default">
+<div class="cell-output-display">
 <div>
-<pre class="mermaid mermaid-js" data-label="fig-flowchart">flowchart TD
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
 
 %% ===== Setup =====
 P[Load packages]
@@ -72,8 +74,6 @@ S_SAMPLE[Select one well covered day and compute illuminance]
 S_PLOT1[Plot spectra colored by illuminance]
 S_PLOT2[Ridgeline plot of spectra over time]
 
-P --&gt; S_IMP
-P --&gt; S_CALMAT
 S_IMP --&gt; S_NORM
 S_NORM --&gt; S_AGG
 S_AGG --&gt; S_RECON
@@ -95,6 +95,19 @@ S_RECON --&gt; M_MORNING
 S_RECON --&gt; M_HOURLY
 S_RECON --&gt; M_DAYNIGHT
 
+</pre>
+</div>
+<p></p><figcaption> Part 1: spectrum.</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-fig-width="4" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+
 %% ===== Distance stream  TOF modality =====
 D_IMP[Import VEET distance TOF data]
 D_AGG[Aggregate distance to 10 second bins and clean days]
@@ -102,7 +115,6 @@ D_LONG[Pivot grid to long format one cell per row]
 D_COORD[Derive x and y positions observation id and confidence percent]
 D_PLOTFIELD[Spatial distance plot for one observation time]
 
-P --&gt; D_IMP
 D_IMP --&gt; D_AGG
 D_AGG --&gt; D_LONG
 D_LONG --&gt; D_COORD
@@ -123,13 +135,15 @@ DM_CONT_FREQ --&gt; DM_CONT_PLOT
 
 </pre>
 </div>
+<p></p><figcaption> Part 2: distance.</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Flowchart diagram of the <em>Visual experience</em> use case.
+Figure&nbsp;1: Flowchart diagram of the <em>Visual experience</em> use case
 </figcaption>
 </figure>
-</div>
-</div>
 </div>
 
 </main>
