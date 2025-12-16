@@ -346,21 +346,11 @@ Figure&nbsp;1
 <li><p>relating exposure metrics to self assessments of consecutive sleep, performance, and wellbeing</p></li>
 <li><p>assessing compliance to Brown et al.&nbsp;(2022)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> recommendations</p></li>
 </ul>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div id="fig-flowchart" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<p><a href="advanced_02_case_light_sensitivity-live_files/figure-html/mermaid-figure-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: Flowchart diagram of the Case of light sensitivity use case."><img src="advanced_02_case_light_sensitivity-live_files/figure-html/mermaid-figure-1.png" style="width:8in;height:6.68in" class="figure-img"></a></p>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Flowchart diagram of the <em>Case of light sensitivity</em> use case.
-</figcaption>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/advanced/flowcharts/adv_02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Flowchart diagram of the Case of light sensitivity use case."><img src="assets/advanced/flowcharts/adv_02.png" class="img-fluid figure-img" alt="Flowchart diagram of the Case of light sensitivity use case."></a></p>
+<figcaption>Flowchart diagram of the <em>Case of light sensitivity</em> use case.</figcaption>
 </figure>
-</div>
-</div>
 </div>
 </section>
 <section id="how-this-page-works" class="level2" data-number="2">
@@ -504,28 +494,28 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjUsImxhYmVsIjoibG93
 <section id="state-data" class="level3" data-number="5.2">
 <h3 data-number="5.2" class="anchored" data-anchor-id="state-data"><span class="header-section-number">5.2</span> State data</h3>
 <p>We need information about sleep times. These can be found in the diaries.</p>
-<p>The morning diary is all about last nights sleep, how long the needed to fall asleep, wake-ups during the night, when they got up, how rested they feel and about sleep medication. See <a href="#fig-morning" class="quarto-xref">Figure&nbsp;3</a> for an excerpt.</p>
+<p>The morning diary is all about last nights sleep, how long the needed to fall asleep, wake-ups during the night, when they got up, how rested they feel and about sleep medication. See <a href="#fig-morning" class="quarto-xref">Figure&nbsp;2</a> for an excerpt.</p>
 <div id="fig-morning" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-morning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/advanced/morning_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;3: Excerpt from the morning diary as opened in Excel"><img src="assets/advanced/morning_protocol.png" class="img-fluid figure-img"></a>
+<a href="assets/advanced/morning_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;2: Excerpt from the morning diary as opened in Excel"><img src="assets/advanced/morning_protocol.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-morning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Excerpt from the morning diary as opened in Excel
+Figure&nbsp;2: Excerpt from the morning diary as opened in Excel
 </figcaption>
 </figure>
 </div>
 <div id="fig-evening" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-evening-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/advanced/evening_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;4: Excerpt from the evening diary as opened in Excel"><img src="assets/advanced/evening_protocol.png" class="img-fluid figure-img"></a>
+<a href="assets/advanced/evening_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;3: Excerpt from the evening diary as opened in Excel"><img src="assets/advanced/evening_protocol.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-evening-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
+Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 </figcaption>
 </figure>
 </div>
-<p>The evening diary is about the prior day, how well and they feel and about their performance during the day, alcohol consumation, when they got to bed, daytime naps and self-assessments about low activity and bright days. See <a href="#fig-evening" class="quarto-xref">Figure&nbsp;4</a> for an excerpt.</p>
+<p>The evening diary is about the prior day, how well and they feel and about their performance during the day, alcohol consumation, when they got to bed, daytime naps and self-assessments about low activity and bright days. See <a href="#fig-evening" class="quarto-xref">Figure&nbsp;3</a> for an excerpt.</p>
 <p>In the next step we import these data and combine them to a large table. While none of these steps contain <code>LightLogR</code> functions, it is a crucial step to set the data up right for merging - particularly in that we assign the morning diaries to the prior day, and also add information about performance and fatigue on a given day to the prior day.</p>
 <div class="cell">
 <div>
@@ -1353,7 +1343,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb1-55"><a href="#cb1-55"></a></span>
 <span id="cb1-56"><a href="#cb1-56"></a><span class="ot">[^1]: https://doi.org/10.1371/journal.pbio.3001571</span></span>
 <span id="cb1-57"><a href="#cb1-57"></a></span>
-<span id="cb1-58"><a href="#cb1-58"></a>{{&lt; include _adv_02_mermaid.qmd &gt;}}</span>
+<span id="cb1-58"><a href="#cb1-58"></a><span class="al">![Flowchart diagram of the *Case of light sensitivity* use case.](assets/advanced/flowcharts/adv_02.png)</span></span>
 <span id="cb1-59"><a href="#cb1-59"></a></span>
 <span id="cb1-60"><a href="#cb1-60"></a>{{&lt; include _how_this_page_works-live.qmd &gt;}}</span>
 <span id="cb1-61"><a href="#cb1-61"></a></span>

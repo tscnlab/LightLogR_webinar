@@ -40,7 +40,14 @@ The tutorial focuses on
 
 -   detecting clusters of conditions (for distance)
 
-{{< include _adv_04_mermaid.qmd >}}
+::: {#fig-flowchart}
+
+![Part 1: spectrum](assets/advanced/flowcharts/adv_04-1.png)
+
+![Part 2: distance](assets/advanced/flowcharts/adv_04-2.png){width=50%}
+
+Flowchart diagram of the *Visual experience* use case
+:::
 
 {{< include _how_this_page_works.qmd >}}
 

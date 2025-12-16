@@ -55,7 +55,7 @@ The tutorial focuses on
 
 [^1]: https://doi.org/10.1371/journal.pbio.3001571
 
-{{< include _adv_02_mermaid.qmd >}}
+![Flowchart diagram of the *Case of light sensitivity* use case.](assets/advanced/flowcharts/adv_02.png)
 
 {{< include _how_this_page_works-live.qmd >}}
 

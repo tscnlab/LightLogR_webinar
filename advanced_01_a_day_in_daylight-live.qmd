@@ -61,7 +61,7 @@ The tutorial focuses on
 
 **Note that we will use a reduced dataset for the `live` tutorial of 10 participants for the wearable data.**
 
-{{< include _adv_01_mermaid.qmd >}}
+![Flowchart diagram of the *A day in daylight* use case.](assets/advanced/flowcharts/adv_01.png)
 
 {{< include _how_this_page_works-live.qmd >}}
 

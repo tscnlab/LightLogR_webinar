@@ -45,7 +45,7 @@ The tutorial focuses on
 
 - working with data < 1 day in `LightLogR`
 
-{{< include _adv_03_mermaid.qmd >}}
+![Flowchart diagram of the *Light therapy* use case.](assets/advanced/flowcharts/adv_03.png)
 
 {{< include _how_this_page_works.qmd >}}
 

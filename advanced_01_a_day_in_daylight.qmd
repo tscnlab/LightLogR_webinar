@@ -36,7 +36,7 @@ The tutorial focuses on
 
 - adding to and analysing participant-specific data (sex, age,…)
 
-{{< include _adv_01_mermaid.qmd >}}
+![Flowchart diagram of the *A day in daylight* use case.](assets/advanced/flowcharts/adv_01.png)
 
 {{< include _how_this_page_works.qmd >}}
 

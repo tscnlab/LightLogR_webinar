@@ -343,21 +343,11 @@ Figure&nbsp;1
 <li><p>relating exposure metrics to self assessments of consecutive sleep, performance, and wellbeing</p></li>
 <li><p>assessing compliance to Brown et al.&nbsp;(2022)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> recommendations</p></li>
 </ul>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div id="fig-flowchart" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<p><a href="advanced_02_case_light_sensitivity_files/figure-html/mermaid-figure-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: Flowchart diagram of the Case of light sensitivity use case."><img src="advanced_02_case_light_sensitivity_files/figure-html/mermaid-figure-1.png" style="width:8in;height:6.68in" class="figure-img"></a></p>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Flowchart diagram of the <em>Case of light sensitivity</em> use case.
-</figcaption>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/advanced/flowcharts/adv_02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Flowchart diagram of the Case of light sensitivity use case."><img src="assets/advanced/flowcharts/adv_02.png" class="img-fluid figure-img" alt="Flowchart diagram of the Case of light sensitivity use case."></a></p>
+<figcaption>Flowchart diagram of the <em>Case of light sensitivity</em> use case.</figcaption>
 </figure>
-</div>
-</div>
 </div>
 </section>
 <section id="how-this-page-works" class="level2" data-number="2">
@@ -558,30 +548,30 @@ Observation intervals:
 <section id="state-data" class="level3 page-columns page-full" data-number="5.2">
 <h3 data-number="5.2" class="anchored" data-anchor-id="state-data"><span class="header-section-number">5.2</span> State data</h3>
 <p>We need information about sleep times. These can be found in the diaries.</p>
-<p>The morning diary is all about last nights sleep, how long the needed to fall asleep, wake-ups during the night, when they got up, how rested they feel and about sleep medication. See <a href="#fig-morning" class="quarto-xref">Figure&nbsp;3</a> for an excerpt.</p>
+<p>The morning diary is all about last nights sleep, how long the needed to fall asleep, wake-ups during the night, when they got up, how rested they feel and about sleep medication. See <a href="#fig-morning" class="quarto-xref">Figure&nbsp;2</a> for an excerpt.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div id="fig-morning" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-morning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/advanced/morning_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;3: Excerpt from the morning diary as opened in Excel"><img src="assets/advanced/morning_protocol.png" class="img-fluid figure-img"></a>
+<a href="assets/advanced/morning_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;2: Excerpt from the morning diary as opened in Excel"><img src="assets/advanced/morning_protocol.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-morning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Excerpt from the morning diary as opened in Excel
+Figure&nbsp;2: Excerpt from the morning diary as opened in Excel
 </figcaption>
 </figure>
 </div>
 <div id="fig-evening" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-evening-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/advanced/evening_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;4: Excerpt from the evening diary as opened in Excel"><img src="assets/advanced/evening_protocol.png" class="img-fluid figure-img"></a>
+<a href="assets/advanced/evening_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;3: Excerpt from the evening diary as opened in Excel"><img src="assets/advanced/evening_protocol.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-evening-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
+Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 </figcaption>
 </figure>
 </div>
-</div></div><p>The evening diary is about the prior day, how well and they feel and about their performance during the day, alcohol consumation, when they got to bed, daytime naps and self-assessments about low activity and bright days. See <a href="#fig-evening" class="quarto-xref">Figure&nbsp;4</a> for an excerpt.</p>
+</div></div><p>The evening diary is about the prior day, how well and they feel and about their performance during the day, alcohol consumation, when they got to bed, daytime naps and self-assessments about low activity and bright days. See <a href="#fig-evening" class="quarto-xref">Figure&nbsp;3</a> for an excerpt.</p>
 <p>In the next step we import these data and combine them to a large table. While none of these steps contain <code>LightLogR</code> functions, it is a crucial step to set the data up right for merging - particularly in that we assign the morning diaries to the prior day, and also add information about performance and fatigue on a given day to the prior day.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1"></a>state_path1 <span class="ot">&lt;-</span> <span class="st">"data/case_light_sensitivity/evening_protocol.xlsx"</span></span>
@@ -630,23 +620,23 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(labels_states, <span class="st">"Performance next day"</span>, <span class="st">"Fatigue next day"</span>)) <span class="sc">|&gt;</span>  </span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">tbl_summary</span>(<span class="at">include =</span> <span class="fu">where</span>(is.numeric))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="zpkomlzbjr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zpkomlzbjr table {
+<div id="mckddcoisu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mckddcoisu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zpkomlzbjr thead, #zpkomlzbjr tbody, #zpkomlzbjr tfoot, #zpkomlzbjr tr, #zpkomlzbjr td, #zpkomlzbjr th {
+#mckddcoisu thead, #mckddcoisu tbody, #mckddcoisu tfoot, #mckddcoisu tr, #mckddcoisu td, #mckddcoisu th {
   border-style: none;
 }
 
-#zpkomlzbjr p {
+#mckddcoisu p {
   margin: 0;
   padding: 0;
 }
 
-#zpkomlzbjr .gt_table {
+#mckddcoisu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -672,12 +662,12 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-left-color: #D3D3D3;
 }
 
-#zpkomlzbjr .gt_caption {
+#mckddcoisu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zpkomlzbjr .gt_title {
+#mckddcoisu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -689,7 +679,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-width: 0;
 }
 
-#zpkomlzbjr .gt_subtitle {
+#mckddcoisu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -701,7 +691,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-top-width: 0;
 }
 
-#zpkomlzbjr .gt_heading {
+#mckddcoisu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -713,13 +703,13 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#zpkomlzbjr .gt_bottom_border {
+#mckddcoisu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zpkomlzbjr .gt_col_headings {
+#mckddcoisu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -734,7 +724,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#zpkomlzbjr .gt_col_heading {
+#mckddcoisu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -754,7 +744,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#zpkomlzbjr .gt_column_spanner_outer {
+#mckddcoisu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -766,15 +756,15 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 4px;
 }
 
-#zpkomlzbjr .gt_column_spanner_outer:first-child {
+#mckddcoisu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zpkomlzbjr .gt_column_spanner_outer:last-child {
+#mckddcoisu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zpkomlzbjr .gt_column_spanner {
+#mckddcoisu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -786,11 +776,11 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   width: 100%;
 }
 
-#zpkomlzbjr .gt_spanner_row {
+#mckddcoisu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zpkomlzbjr .gt_group_heading {
+#mckddcoisu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -816,7 +806,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   text-align: left;
 }
 
-#zpkomlzbjr .gt_empty_group_heading {
+#mckddcoisu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -831,15 +821,15 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   vertical-align: middle;
 }
 
-#zpkomlzbjr .gt_from_md > :first-child {
+#mckddcoisu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zpkomlzbjr .gt_from_md > :last-child {
+#mckddcoisu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zpkomlzbjr .gt_row {
+#mckddcoisu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -858,7 +848,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#zpkomlzbjr .gt_stub {
+#mckddcoisu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -871,7 +861,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zpkomlzbjr .gt_stub_row_group {
+#mckddcoisu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -885,15 +875,15 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   vertical-align: top;
 }
 
-#zpkomlzbjr .gt_row_group_first td {
+#mckddcoisu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zpkomlzbjr .gt_row_group_first th {
+#mckddcoisu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zpkomlzbjr .gt_summary_row {
+#mckddcoisu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -903,16 +893,16 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zpkomlzbjr .gt_first_summary_row {
+#mckddcoisu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zpkomlzbjr .gt_first_summary_row.thick {
+#mckddcoisu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zpkomlzbjr .gt_last_summary_row {
+#mckddcoisu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -922,7 +912,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#zpkomlzbjr .gt_grand_summary_row {
+#mckddcoisu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -932,7 +922,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zpkomlzbjr .gt_first_grand_summary_row {
+#mckddcoisu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -942,7 +932,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-top-color: #D3D3D3;
 }
 
-#zpkomlzbjr .gt_last_grand_summary_row_top {
+#mckddcoisu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -952,11 +942,11 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#zpkomlzbjr .gt_striped {
+#mckddcoisu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zpkomlzbjr .gt_table_body {
+#mckddcoisu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -965,7 +955,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#zpkomlzbjr .gt_footnotes {
+#mckddcoisu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -979,7 +969,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#zpkomlzbjr .gt_footnote {
+#mckddcoisu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -988,7 +978,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zpkomlzbjr .gt_sourcenotes {
+#mckddcoisu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1002,7 +992,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#zpkomlzbjr .gt_sourcenote {
+#mckddcoisu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1010,72 +1000,72 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zpkomlzbjr .gt_left {
+#mckddcoisu .gt_left {
   text-align: left;
 }
 
-#zpkomlzbjr .gt_center {
+#mckddcoisu .gt_center {
   text-align: center;
 }
 
-#zpkomlzbjr .gt_right {
+#mckddcoisu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zpkomlzbjr .gt_font_normal {
+#mckddcoisu .gt_font_normal {
   font-weight: normal;
 }
 
-#zpkomlzbjr .gt_font_bold {
+#mckddcoisu .gt_font_bold {
   font-weight: bold;
 }
 
-#zpkomlzbjr .gt_font_italic {
+#mckddcoisu .gt_font_italic {
   font-style: italic;
 }
 
-#zpkomlzbjr .gt_super {
+#mckddcoisu .gt_super {
   font-size: 65%;
 }
 
-#zpkomlzbjr .gt_footnote_marks {
+#mckddcoisu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zpkomlzbjr .gt_asterisk {
+#mckddcoisu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zpkomlzbjr .gt_indent_1 {
+#mckddcoisu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zpkomlzbjr .gt_indent_2 {
+#mckddcoisu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zpkomlzbjr .gt_indent_3 {
+#mckddcoisu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zpkomlzbjr .gt_indent_4 {
+#mckddcoisu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zpkomlzbjr .gt_indent_5 {
+#mckddcoisu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zpkomlzbjr .katex-display {
+#mckddcoisu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zpkomlzbjr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mckddcoisu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1524,23 +1514,23 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
 <span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">fmt_percent</span>(<span class="at">decimals =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="vmncawllzq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vmncawllzq table {
+<div id="buqktppqtl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#buqktppqtl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vmncawllzq thead, #vmncawllzq tbody, #vmncawllzq tfoot, #vmncawllzq tr, #vmncawllzq td, #vmncawllzq th {
+#buqktppqtl thead, #buqktppqtl tbody, #buqktppqtl tfoot, #buqktppqtl tr, #buqktppqtl td, #buqktppqtl th {
   border-style: none;
 }
 
-#vmncawllzq p {
+#buqktppqtl p {
   margin: 0;
   padding: 0;
 }
 
-#vmncawllzq .gt_table {
+#buqktppqtl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1566,12 +1556,12 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-left-color: #D3D3D3;
 }
 
-#vmncawllzq .gt_caption {
+#buqktppqtl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vmncawllzq .gt_title {
+#buqktppqtl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1583,7 +1573,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-width: 0;
 }
 
-#vmncawllzq .gt_subtitle {
+#buqktppqtl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1595,7 +1585,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-top-width: 0;
 }
 
-#vmncawllzq .gt_heading {
+#buqktppqtl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1607,13 +1597,13 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#vmncawllzq .gt_bottom_border {
+#buqktppqtl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vmncawllzq .gt_col_headings {
+#buqktppqtl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1628,7 +1618,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#vmncawllzq .gt_col_heading {
+#buqktppqtl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1648,7 +1638,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#vmncawllzq .gt_column_spanner_outer {
+#buqktppqtl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1660,15 +1650,15 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 4px;
 }
 
-#vmncawllzq .gt_column_spanner_outer:first-child {
+#buqktppqtl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vmncawllzq .gt_column_spanner_outer:last-child {
+#buqktppqtl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vmncawllzq .gt_column_spanner {
+#buqktppqtl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1680,11 +1670,11 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   width: 100%;
 }
 
-#vmncawllzq .gt_spanner_row {
+#buqktppqtl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vmncawllzq .gt_group_heading {
+#buqktppqtl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1710,7 +1700,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   text-align: left;
 }
 
-#vmncawllzq .gt_empty_group_heading {
+#buqktppqtl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1725,15 +1715,15 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   vertical-align: middle;
 }
 
-#vmncawllzq .gt_from_md > :first-child {
+#buqktppqtl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vmncawllzq .gt_from_md > :last-child {
+#buqktppqtl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vmncawllzq .gt_row {
+#buqktppqtl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1752,7 +1742,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#vmncawllzq .gt_stub {
+#buqktppqtl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1765,7 +1755,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#vmncawllzq .gt_stub_row_group {
+#buqktppqtl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1779,15 +1769,15 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   vertical-align: top;
 }
 
-#vmncawllzq .gt_row_group_first td {
+#buqktppqtl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vmncawllzq .gt_row_group_first th {
+#buqktppqtl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vmncawllzq .gt_summary_row {
+#buqktppqtl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1797,16 +1787,16 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#vmncawllzq .gt_first_summary_row {
+#buqktppqtl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vmncawllzq .gt_first_summary_row.thick {
+#buqktppqtl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vmncawllzq .gt_last_summary_row {
+#buqktppqtl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1816,7 +1806,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#vmncawllzq .gt_grand_summary_row {
+#buqktppqtl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1826,7 +1816,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#vmncawllzq .gt_first_grand_summary_row {
+#buqktppqtl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1836,7 +1826,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-top-color: #D3D3D3;
 }
 
-#vmncawllzq .gt_last_grand_summary_row_top {
+#buqktppqtl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1846,11 +1836,11 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#vmncawllzq .gt_striped {
+#buqktppqtl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vmncawllzq .gt_table_body {
+#buqktppqtl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1859,7 +1849,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#vmncawllzq .gt_footnotes {
+#buqktppqtl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1873,7 +1863,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#vmncawllzq .gt_footnote {
+#buqktppqtl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1882,7 +1872,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#vmncawllzq .gt_sourcenotes {
+#buqktppqtl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1896,7 +1886,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#vmncawllzq .gt_sourcenote {
+#buqktppqtl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1904,72 +1894,72 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#vmncawllzq .gt_left {
+#buqktppqtl .gt_left {
   text-align: left;
 }
 
-#vmncawllzq .gt_center {
+#buqktppqtl .gt_center {
   text-align: center;
 }
 
-#vmncawllzq .gt_right {
+#buqktppqtl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vmncawllzq .gt_font_normal {
+#buqktppqtl .gt_font_normal {
   font-weight: normal;
 }
 
-#vmncawllzq .gt_font_bold {
+#buqktppqtl .gt_font_bold {
   font-weight: bold;
 }
 
-#vmncawllzq .gt_font_italic {
+#buqktppqtl .gt_font_italic {
   font-style: italic;
 }
 
-#vmncawllzq .gt_super {
+#buqktppqtl .gt_super {
   font-size: 65%;
 }
 
-#vmncawllzq .gt_footnote_marks {
+#buqktppqtl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vmncawllzq .gt_asterisk {
+#buqktppqtl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vmncawllzq .gt_indent_1 {
+#buqktppqtl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vmncawllzq .gt_indent_2 {
+#buqktppqtl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vmncawllzq .gt_indent_3 {
+#buqktppqtl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vmncawllzq .gt_indent_4 {
+#buqktppqtl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vmncawllzq .gt_indent_5 {
+#buqktppqtl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vmncawllzq .katex-display {
+#buqktppqtl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vmncawllzq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#buqktppqtl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2091,23 +2081,23 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>data_sw <span class="sc">|&gt;</span> <span class="fu">durations</span>() <span class="sc">|&gt;</span> <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="qaquxtbqch" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qaquxtbqch table {
+<div id="ybwifqvmjn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ybwifqvmjn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qaquxtbqch thead, #qaquxtbqch tbody, #qaquxtbqch tfoot, #qaquxtbqch tr, #qaquxtbqch td, #qaquxtbqch th {
+#ybwifqvmjn thead, #ybwifqvmjn tbody, #ybwifqvmjn tfoot, #ybwifqvmjn tr, #ybwifqvmjn td, #ybwifqvmjn th {
   border-style: none;
 }
 
-#qaquxtbqch p {
+#ybwifqvmjn p {
   margin: 0;
   padding: 0;
 }
 
-#qaquxtbqch .gt_table {
+#ybwifqvmjn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2133,12 +2123,12 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-left-color: #D3D3D3;
 }
 
-#qaquxtbqch .gt_caption {
+#ybwifqvmjn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qaquxtbqch .gt_title {
+#ybwifqvmjn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2150,7 +2140,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-width: 0;
 }
 
-#qaquxtbqch .gt_subtitle {
+#ybwifqvmjn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2162,7 +2152,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-top-width: 0;
 }
 
-#qaquxtbqch .gt_heading {
+#ybwifqvmjn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2174,13 +2164,13 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#qaquxtbqch .gt_bottom_border {
+#ybwifqvmjn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qaquxtbqch .gt_col_headings {
+#ybwifqvmjn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2195,7 +2185,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#qaquxtbqch .gt_col_heading {
+#ybwifqvmjn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2215,7 +2205,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#qaquxtbqch .gt_column_spanner_outer {
+#ybwifqvmjn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2227,15 +2217,15 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 4px;
 }
 
-#qaquxtbqch .gt_column_spanner_outer:first-child {
+#ybwifqvmjn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qaquxtbqch .gt_column_spanner_outer:last-child {
+#ybwifqvmjn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qaquxtbqch .gt_column_spanner {
+#ybwifqvmjn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2247,11 +2237,11 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   width: 100%;
 }
 
-#qaquxtbqch .gt_spanner_row {
+#ybwifqvmjn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qaquxtbqch .gt_group_heading {
+#ybwifqvmjn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2277,7 +2267,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   text-align: left;
 }
 
-#qaquxtbqch .gt_empty_group_heading {
+#ybwifqvmjn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2292,15 +2282,15 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   vertical-align: middle;
 }
 
-#qaquxtbqch .gt_from_md > :first-child {
+#ybwifqvmjn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qaquxtbqch .gt_from_md > :last-child {
+#ybwifqvmjn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qaquxtbqch .gt_row {
+#ybwifqvmjn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2319,7 +2309,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#qaquxtbqch .gt_stub {
+#ybwifqvmjn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2332,7 +2322,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#qaquxtbqch .gt_stub_row_group {
+#ybwifqvmjn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2346,15 +2336,15 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   vertical-align: top;
 }
 
-#qaquxtbqch .gt_row_group_first td {
+#ybwifqvmjn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qaquxtbqch .gt_row_group_first th {
+#ybwifqvmjn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qaquxtbqch .gt_summary_row {
+#ybwifqvmjn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2364,16 +2354,16 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#qaquxtbqch .gt_first_summary_row {
+#ybwifqvmjn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qaquxtbqch .gt_first_summary_row.thick {
+#ybwifqvmjn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qaquxtbqch .gt_last_summary_row {
+#ybwifqvmjn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2383,7 +2373,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#qaquxtbqch .gt_grand_summary_row {
+#ybwifqvmjn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2393,7 +2383,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#qaquxtbqch .gt_first_grand_summary_row {
+#ybwifqvmjn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2403,7 +2393,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-top-color: #D3D3D3;
 }
 
-#qaquxtbqch .gt_last_grand_summary_row_top {
+#ybwifqvmjn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2413,11 +2403,11 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#qaquxtbqch .gt_striped {
+#ybwifqvmjn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qaquxtbqch .gt_table_body {
+#ybwifqvmjn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2426,7 +2416,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#qaquxtbqch .gt_footnotes {
+#ybwifqvmjn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2440,7 +2430,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#qaquxtbqch .gt_footnote {
+#ybwifqvmjn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2449,7 +2439,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#qaquxtbqch .gt_sourcenotes {
+#ybwifqvmjn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2463,7 +2453,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#qaquxtbqch .gt_sourcenote {
+#ybwifqvmjn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2471,72 +2461,72 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#qaquxtbqch .gt_left {
+#ybwifqvmjn .gt_left {
   text-align: left;
 }
 
-#qaquxtbqch .gt_center {
+#ybwifqvmjn .gt_center {
   text-align: center;
 }
 
-#qaquxtbqch .gt_right {
+#ybwifqvmjn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qaquxtbqch .gt_font_normal {
+#ybwifqvmjn .gt_font_normal {
   font-weight: normal;
 }
 
-#qaquxtbqch .gt_font_bold {
+#ybwifqvmjn .gt_font_bold {
   font-weight: bold;
 }
 
-#qaquxtbqch .gt_font_italic {
+#ybwifqvmjn .gt_font_italic {
   font-style: italic;
 }
 
-#qaquxtbqch .gt_super {
+#ybwifqvmjn .gt_super {
   font-size: 65%;
 }
 
-#qaquxtbqch .gt_footnote_marks {
+#ybwifqvmjn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qaquxtbqch .gt_asterisk {
+#ybwifqvmjn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qaquxtbqch .gt_indent_1 {
+#ybwifqvmjn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qaquxtbqch .gt_indent_2 {
+#ybwifqvmjn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qaquxtbqch .gt_indent_3 {
+#ybwifqvmjn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qaquxtbqch .gt_indent_4 {
+#ybwifqvmjn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qaquxtbqch .gt_indent_5 {
+#ybwifqvmjn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qaquxtbqch .katex-display {
+#ybwifqvmjn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qaquxtbqch div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ybwifqvmjn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2700,23 +2690,23 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
 <span id="cb11-30"><a href="#cb11-30"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Higher is worse"</span>, <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">14</span>))) <span class="sc">|&gt;</span> </span>
 <span id="cb11-31"><a href="#cb11-31"></a>  <span class="fu">sub_missing</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fdptbrlgtx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fdptbrlgtx table {
+<div id="hwauoykamv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hwauoykamv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fdptbrlgtx thead, #fdptbrlgtx tbody, #fdptbrlgtx tfoot, #fdptbrlgtx tr, #fdptbrlgtx td, #fdptbrlgtx th {
+#hwauoykamv thead, #hwauoykamv tbody, #hwauoykamv tfoot, #hwauoykamv tr, #hwauoykamv td, #hwauoykamv th {
   border-style: none;
 }
 
-#fdptbrlgtx p {
+#hwauoykamv p {
   margin: 0;
   padding: 0;
 }
 
-#fdptbrlgtx .gt_table {
+#hwauoykamv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2742,12 +2732,12 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-left-color: #D3D3D3;
 }
 
-#fdptbrlgtx .gt_caption {
+#hwauoykamv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fdptbrlgtx .gt_title {
+#hwauoykamv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2759,7 +2749,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-width: 0;
 }
 
-#fdptbrlgtx .gt_subtitle {
+#hwauoykamv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2771,7 +2761,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-top-width: 0;
 }
 
-#fdptbrlgtx .gt_heading {
+#hwauoykamv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2783,13 +2773,13 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#fdptbrlgtx .gt_bottom_border {
+#hwauoykamv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fdptbrlgtx .gt_col_headings {
+#hwauoykamv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2804,7 +2794,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#fdptbrlgtx .gt_col_heading {
+#hwauoykamv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2824,7 +2814,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#fdptbrlgtx .gt_column_spanner_outer {
+#hwauoykamv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2836,15 +2826,15 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 4px;
 }
 
-#fdptbrlgtx .gt_column_spanner_outer:first-child {
+#hwauoykamv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fdptbrlgtx .gt_column_spanner_outer:last-child {
+#hwauoykamv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fdptbrlgtx .gt_column_spanner {
+#hwauoykamv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2856,11 +2846,11 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   width: 100%;
 }
 
-#fdptbrlgtx .gt_spanner_row {
+#hwauoykamv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fdptbrlgtx .gt_group_heading {
+#hwauoykamv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2886,7 +2876,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   text-align: left;
 }
 
-#fdptbrlgtx .gt_empty_group_heading {
+#hwauoykamv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2901,15 +2891,15 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   vertical-align: middle;
 }
 
-#fdptbrlgtx .gt_from_md > :first-child {
+#hwauoykamv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fdptbrlgtx .gt_from_md > :last-child {
+#hwauoykamv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fdptbrlgtx .gt_row {
+#hwauoykamv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2928,7 +2918,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#fdptbrlgtx .gt_stub {
+#hwauoykamv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2941,7 +2931,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#fdptbrlgtx .gt_stub_row_group {
+#hwauoykamv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2955,15 +2945,15 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   vertical-align: top;
 }
 
-#fdptbrlgtx .gt_row_group_first td {
+#hwauoykamv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fdptbrlgtx .gt_row_group_first th {
+#hwauoykamv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fdptbrlgtx .gt_summary_row {
+#hwauoykamv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2973,16 +2963,16 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#fdptbrlgtx .gt_first_summary_row {
+#hwauoykamv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fdptbrlgtx .gt_first_summary_row.thick {
+#hwauoykamv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fdptbrlgtx .gt_last_summary_row {
+#hwauoykamv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2992,7 +2982,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#fdptbrlgtx .gt_grand_summary_row {
+#hwauoykamv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3002,7 +2992,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#fdptbrlgtx .gt_first_grand_summary_row {
+#hwauoykamv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3012,7 +3002,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-top-color: #D3D3D3;
 }
 
-#fdptbrlgtx .gt_last_grand_summary_row_top {
+#hwauoykamv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3022,11 +3012,11 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#fdptbrlgtx .gt_striped {
+#hwauoykamv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fdptbrlgtx .gt_table_body {
+#hwauoykamv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3035,7 +3025,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#fdptbrlgtx .gt_footnotes {
+#hwauoykamv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3049,7 +3039,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#fdptbrlgtx .gt_footnote {
+#hwauoykamv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3058,7 +3048,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#fdptbrlgtx .gt_sourcenotes {
+#hwauoykamv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3072,7 +3062,7 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#fdptbrlgtx .gt_sourcenote {
+#hwauoykamv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3080,72 +3070,72 @@ Figure&nbsp;4: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#fdptbrlgtx .gt_left {
+#hwauoykamv .gt_left {
   text-align: left;
 }
 
-#fdptbrlgtx .gt_center {
+#hwauoykamv .gt_center {
   text-align: center;
 }
 
-#fdptbrlgtx .gt_right {
+#hwauoykamv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fdptbrlgtx .gt_font_normal {
+#hwauoykamv .gt_font_normal {
   font-weight: normal;
 }
 
-#fdptbrlgtx .gt_font_bold {
+#hwauoykamv .gt_font_bold {
   font-weight: bold;
 }
 
-#fdptbrlgtx .gt_font_italic {
+#hwauoykamv .gt_font_italic {
   font-style: italic;
 }
 
-#fdptbrlgtx .gt_super {
+#hwauoykamv .gt_super {
   font-size: 65%;
 }
 
-#fdptbrlgtx .gt_footnote_marks {
+#hwauoykamv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fdptbrlgtx .gt_asterisk {
+#hwauoykamv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fdptbrlgtx .gt_indent_1 {
+#hwauoykamv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fdptbrlgtx .gt_indent_2 {
+#hwauoykamv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fdptbrlgtx .gt_indent_3 {
+#hwauoykamv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fdptbrlgtx .gt_indent_4 {
+#hwauoykamv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fdptbrlgtx .gt_indent_5 {
+#hwauoykamv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fdptbrlgtx .katex-display {
+#hwauoykamv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fdptbrlgtx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hwauoykamv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4090,7 +4080,7 @@ Self-reported sleep
 <span id="cb16-46"><a href="#cb16-46"></a></span>
 <span id="cb16-47"><a href="#cb16-47"></a><span class="ot">[^1]: </span><span class="co">[</span><span class="ot">Link to publication</span><span class="co">](https://doi.org/10.1371/journal.pbio.3001571)</span>{target="_blank"}</span>
 <span id="cb16-48"><a href="#cb16-48"></a></span>
-<span id="cb16-49"><a href="#cb16-49"></a>{{&lt; include _adv_02_mermaid.qmd &gt;}}</span>
+<span id="cb16-49"><a href="#cb16-49"></a><span class="al">![Flowchart diagram of the *Case of light sensitivity* use case.](assets/advanced/flowcharts/adv_02.png)</span></span>
 <span id="cb16-50"><a href="#cb16-50"></a></span>
 <span id="cb16-51"><a href="#cb16-51"></a>{{&lt; include _how_this_page_works.qmd &gt;}}</span>
 <span id="cb16-52"><a href="#cb16-52"></a></span>
