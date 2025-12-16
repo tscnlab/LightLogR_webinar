@@ -1,0 +1,81 @@
+::: {#fig-flowchart}
+
+```{mermaid}
+%%| echo: false
+%%| fig-width: 8
+%%| fig-cap: "Part 1: spectrum."
+
+flowchart TD
+
+%% ===== Setup =====
+P[Load packages]
+
+%% ===== Spectral stream  PHO modality =====
+S_IMP[Import VEET spectral PHO data]
+S_NORM[Normalize spectral counts with gain and integration time]
+S_AGG[Aggregate spectral data to 5 minute bins and clean days]
+S_CALMAT[Import calibration matrix for VEET]
+S_RECON[Reconstruct spectra into Spectrum list column]
+S_SAMPLE[Select one well covered day and compute illuminance]
+S_PLOT1[Plot spectra colored by illuminance]
+S_PLOT2[Ridgeline plot of spectra over time]
+
+S_IMP --> S_NORM
+S_NORM --> S_AGG
+S_AGG --> S_RECON
+S_CALMAT --> S_RECON
+S_RECON --> S_SAMPLE
+S_SAMPLE --> S_PLOT1
+S_SAMPLE --> S_PLOT2
+
+%% ===== Spectral metrics from reconstructed spectra =====
+M_SHORTLONG[Short and long wavelength integrals and daily ratios]
+M_MDER[Melanopic daylight efficacy ratio MDER]
+M_MORNING[Morning short wavelength exposure 7 to 11]
+M_HOURLY[Hourly profile of short wavelength exposure]
+M_DAYNIGHT[Day versus night short wavelength exposure]
+
+S_RECON --> M_SHORTLONG
+M_SHORTLONG --> M_MDER
+S_RECON --> M_MORNING
+S_RECON --> M_HOURLY
+S_RECON --> M_DAYNIGHT
+
+```
+
+```{mermaid}
+%%| echo: false
+%%| fig-width: 4
+%%| fig-cap: "Part 2: distance."
+
+flowchart TD
+
+%% ===== Distance stream  TOF modality =====
+D_IMP[Import VEET distance TOF data]
+D_AGG[Aggregate distance to 10 second bins and clean days]
+D_LONG[Pivot grid to long format one cell per row]
+D_COORD[Derive x and y positions observation id and confidence percent]
+D_PLOTFIELD[Spatial distance plot for one observation time]
+
+D_IMP --> D_AGG
+D_AGG --> D_LONG
+D_LONG --> D_COORD
+D_COORD --> D_PLOTFIELD
+
+%% ===== Distance in region of interest and metrics =====
+D_ROI[Reduce to central region of interest with high confidence]
+D_DAY[Central distance time series for selected day]
+DM_NEAR_DUR[Daily duration of near work]
+DM_CONT_FREQ[Frequency of continuous near work episodes]
+DM_CONT_PLOT[Plot of continuous near work episodes on distance series]
+
+D_COORD --> D_ROI
+D_ROI --> D_DAY
+D_ROI --> DM_NEAR_DUR
+D_ROI --> DM_CONT_FREQ
+DM_CONT_FREQ --> DM_CONT_PLOT
+
+```
+
+Flowchart diagram of the *Visual experience* use case
+:::

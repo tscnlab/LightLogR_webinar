@@ -36,7 +36,13 @@ The tutorial focuses on
 
 - adding to and analysing participant-specific data (sex, age,…)
 
+{{< include _adv_01_mermaid.qmd >}}
+
 {{< include _how_this_page_works.qmd >}}
+
+## Recording
+
+You can follow along with the [recordings](recordings.qmd) to get even more context about the workflow in `LightLogR`.
 
 ## Setup
 

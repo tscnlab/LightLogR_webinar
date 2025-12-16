@@ -1,0 +1,90 @@
+```{mermaid}
+%%| echo: false
+%%| label: fig-flowchart
+%%| fig-cap: "Flowchart diagram of the *Case of light sensitivity* use case."
+
+flowchart TD
+
+%% ===== Setup =====
+P[Load packages]
+
+%% ===== Light data stream =====
+LFILE[Define light file tz coordinates]
+LDATA[Import ActLumus to data]
+LTRIM[Trim to diary period select Datetime and MEDI]
+LQC1[Check gaps and irregulars]
+LPLOT1[Plot full time series]
+LPLOT2[Plot days with highest time above 250]
+LPLOT3[Plot days with lowest time above 250]
+
+LFILE --> LDATA
+LDATA --> LTRIM
+LTRIM --> LQC1
+LTRIM --> LPLOT1
+LTRIM --> LPLOT2
+LTRIM --> LPLOT3
+
+%% ===== Diary data stream =====
+SEVE[Import evening diary]
+SMOR[Import morning diary]
+SDATES[Align evening and morning dates]
+SJOIN[Join diaries into states]
+SLABEL[Rename variables add next day performance fatigue]
+SSUM[Summary table of diary variables]
+
+SEVE --> SDATES
+SMOR --> SDATES
+SDATES --> SJOIN
+SJOIN --> SLABEL
+SLABEL --> SSUM
+
+%% ===== Build sleep intervals and Brown states =====
+SLEEP1[Build sleep and wake timestamps from states]
+SLEEP2[Convert to intervals and Brown states]
+
+SLABEL --> SLEEP1
+SLEEP1 --> SLEEP2
+
+%% ===== Merge light with sleep states =====
+MERGE1[Add states to light data to create data_ext]
+MERGE2[Add photoperiod and Brown reference columns]
+
+LTRIM --> MERGE1
+SLEEP2 --> MERGE1
+MERGE1 --> MERGE2
+
+%% ===== Brown recommendations branch =====
+BROWN_PLOT[Plot Brown states and compliance over weeks]
+BROWN_TAB[Table of Brown compliance and duration]
+
+MERGE2 --> BROWN_PLOT
+MERGE2 --> BROWN_TAB
+
+%% ===== Sleep wake cycles and metrics =====
+SW1[Create sleep wake cycles data_sw]
+SWPLOT[Heatmap doubleplot of sleep timing]
+SWDUR[Durations of sleep wake cycles]
+SWFILTER[Remove partial cycles 01 and 20]
+
+MERGE2 --> SW1
+SW1 --> SWPLOT
+SW1 --> SWDUR
+SW1 --> SWFILTER
+
+METRICS[Summarize dose and time above 250 per cycle to summaries_sw]
+JOINDIARY[Join summaries_sw with states by date]
+
+SWFILTER --> METRICS
+METRICS --> JOINDIARY
+SLABEL --> JOINDIARY
+
+TABLE[Formatted overview table of light metrics and questionnaire data]
+JOINDIARY --> TABLE
+
+%% ===== Correlation plots =====
+CORFUNC[Define correlation_plot helper]
+CORPLOT[Correlation plots between light metrics and self report]
+
+JOINDIARY --> CORFUNC
+CORFUNC --> CORPLOT
+```

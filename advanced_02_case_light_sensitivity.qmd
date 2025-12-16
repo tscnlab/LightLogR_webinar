@@ -44,7 +44,13 @@ The tutorial focuses on
 
 [^1]: [Link to publication](https://doi.org/10.1371/journal.pbio.3001571){target="_blank"}
 
+{{< include _adv_02_mermaid.qmd >}}
+
 {{< include _how_this_page_works.qmd >}}
+
+## Recording
+
+You can follow along with the [recordings](recordings.qmd) to get even more context about the workflow in `LightLogR`.
 
 ## Setup
 

@@ -1,0 +1,69 @@
+```{mermaid}
+%%| echo: false
+%%| label: fig-flowchart
+%%| fig-cap: "Flowchart diagram of the *Light therapy* use case."
+
+flowchart TD
+
+%% ===== Setup =====
+P[Load packages]
+
+%% ===== Light data stream =====
+LFILE[Define light path files pattern tz]
+LDATA[Import ActLumus light data into data]
+LQC[Check gaps and irregulars with gap_table]
+LPLOT[Quick light plot with gg_day and gg_photoperiod]
+
+LFILE --> LDATA
+LDATA --> LQC
+LDATA --> LPLOT
+
+%% ===== Log data stream =====
+EFILE[Read Excel logs into state_data]
+EPREP[Rename columns build Datetime pivot to start and end per state]
+EOVERVIEW[Overview table of state intervals with gt]
+
+EFILE --> EPREP
+EPREP --> EOVERVIEW
+
+%% ===== Combine light and logs =====
+KEEP[Define states_to_keep]
+MERGE[Add states to light data with add_states]
+STATEFAC[Factor and recode state labels in data]
+
+LDATA --> KEEP
+KEEP --> MERGE
+EPREP --> MERGE
+MERGE --> STATEFAC
+
+%% ===== Compare conditions – histogram =====
+HIST[Density ridge histogram of MEDI by state and participant]
+
+STATEFAC --> HIST
+
+%% ===== Compare conditions – tables =====
+TABLE_EP[Episode based metrics  extract_states  extract_metric  summarize_numeric]
+
+STATEFAC --> TABLE_EP
+
+DPREP[Prepare data_prep drop missing states and group by state]
+DUR[Calculate durations by state with durations]
+METRIC[State based mean and dose with extract_metric]
+COMPTBL[Build wide comparison table data_tbl_comparison]
+GT[Styled comparison table with gt formatting and grand totals]
+
+STATEFAC --> DPREP
+DPREP --> DUR
+DUR --> METRIC
+METRIC --> COMPTBL
+COMPTBL --> GT
+
+%% ===== Compare conditions – plots =====
+PREPAX[Prepare protocol axis times and symbol metadata]
+TSERIES[Timeline plot of MEDI by state and participant]
+CUMDOSE[Cumulative dose plot over time using derived dose]
+
+STATEFAC --> PREPAX
+PREPAX --> TSERIES
+PREPAX --> CUMDOSE
+```

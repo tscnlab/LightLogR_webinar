@@ -7,3 +7,17 @@ toc: false
 ## Beginner
 
 {{< video https://www.youtube.com/embed/s8HaovPq3eI?si=rvTfdyAE1Np64Rs_ >}}
+
+## Advanced
+
+### Introduction of use cases
+
+{{< video https://www.youtube.com/watch?v=1MXa8KoFWmM >}}
+
+### Use case #1: A day in daylight
+
+{{< video https://www.youtube.com/watch?v=1CbUULQL2UM >}}
+
+### Use case #2: Case light sensitivity
+
+{{< video https://www.youtube.com/watch?v=mrFrXQCGnPY >}}

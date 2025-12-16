@@ -1,0 +1,64 @@
+```{mermaid}
+%%| echo: false
+%%| label: fig-flowchart
+%%| fig-cap: "Flowchart diagram of the *A day in daylight* use case."
+
+flowchart TD
+
+%% ===== Core Setup & Metadata =====
+P[Load packages]
+
+PD[Import participant data]
+DDEM[Demographic plots]
+
+PD --> DDEM
+
+%% ===== Wearable Import & Cleaning =====
+DINFO[Add device_type and file_path]
+LIMPORT[Import wearable files into list column]
+LCLEAN[Clean per participant:  aggregate, gap handling, filter times, add photoperiod]
+LMERGE[Unnest list column into light_data]
+LTIME[Deal with local and real time]
+
+PD --> DINFO
+DINFO --> LIMPORT
+LIMPORT --> LCLEAN
+LCLEAN --> LMERGE
+LMERGE --> LTIME
+
+%% ===== Overview Branch =====
+LOVERVIEW[Overview plots and QC summaries]
+LTIME --> LOVERVIEW
+
+%% ===== TAT250 Branch =====
+TSEL[Select 22 Sept by local time]
+TAT[Compute time above 250 lux]
+TPL[TAT250 plots and country boxplots]
+
+LTIME --> TSEL
+TSEL --> TAT
+TAT --> TPL
+
+%% ===== Event Data Stream =====
+ELOAD[Load events data]
+EPROC[Process events into time intervals and states]
+ETAB[Summaries from events only]
+
+ELOAD --> EPROC
+EPROC --> ETAB
+
+%% ===== Merge Events with Light Data =====
+EMERGE[Merge event states into light_data]
+ENW[Set nonwear and bedtime light to NA]
+ESUM[Context summaries, state plots, quick summaries]
+
+LTIME --> EMERGE
+EPROC --> EMERGE
+EMERGE --> ENW
+ENW --> ESUM
+
+%% ===== Circular Time Demo =====
+CDEMO[Circular time demonstration]
+
+ELOAD --> CDEMO
+```

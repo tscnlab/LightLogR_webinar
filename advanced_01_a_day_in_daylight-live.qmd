@@ -59,9 +59,15 @@ The tutorial focuses on
 
 - adding to and analysing activity logs from participants
 
+**Note that we will use a reduced dataset for the `live` tutorial of 10 participants for the wearable data.**
+
+{{< include _adv_01_mermaid.qmd >}}
+
 {{< include _how_this_page_works-live.qmd >}}
 
-**Note that we will use a reduced dataset for the `live` tutorial of 10 participants for the wearable data.**
+## Recording
+
+You can follow along with the [recordings](recordings.qmd) to get even more context about the workflow in `LightLogR`.
 
 ## Setup
 
@@ -306,7 +312,7 @@ In this section we will prepare the light data through the following steps:
 
 We do this the same way as we imported individual files above, with the `pmap` function. 
 
-**Note: the next code cell will date considerable time**
+**Note: the next code cell will take considerable time**
 
 ```{webr}
 #| label: Cleanup of light data

@@ -8,6 +8,7 @@ author:
 lightbox: true
 code-tools: true
 code-link: true
+mermaid-format: png
 code-annotations: below
 code-line-numbers: true
 number-sections: true
@@ -39,6 +40,8 @@ The tutorial focuses on
 -   simplifying a spatial grid of distance measurements
 
 -   detecting clusters of conditions (for distance)
+
+{{< include _adv_04_mermaid.qmd >}}
 
 {{< include _how_this_page_works.qmd >}}
 
@@ -151,7 +154,7 @@ data <-
 7.  Gain ratios (see 2.)
 8.  Drop original raw count columns
 
-In this call, we specified `gain.columns = rep("Gain", 11)` because we have 11 sensor columns that all use the same gain factor column (`Gain`). This step will add new columns (with a suffix, e.g. `.normalized`) for each spectral channel representing the count normalized by the gain. We then dropped the `raw` count columns and renamed the normalized ones by dropping `.normalized` from the names. After this, `data` contains the normalized sensor readings for `s415, s445, ..., s940, Dark, Clear` for each 5-minute time point.
+In this call, we specified `gain.columns = rep("Gain", 11)` because we have 11 sensor columns that all use the same gain factor column (`Gain`). This step will add new columns (with a suffix, e.g. `.normalized`) for each spectral channel representing the count normalized by the gain. We then dropped the `raw` count columns and renamed the normalized ones by dropping `.normalized` from the names. After this, `data` contains the normalized sensor readings for `s415, s445, ..., s940, Dark, Clear` for each time point.
 
 Because we do not need this high a resolution, we will **aggregate it to a 5-minute interval** for computational efficiency. The assumption is that spectral composition does not need to be examined at every 2-second instant for our purposes, and 5-minute averages can capture the general trends while drastically reducing data size and downstream computational costs.
 
@@ -463,7 +466,7 @@ In a first step, we condition the data similarly to the other `VEET` modality. F
 #| label: VEET-cleaning
 # Aggregate distance data to 10-second intervals and mark gaps
 dataDist <- 
-  dataDist |>
+  dataDist |> 
   select(-contains(c("conf2_", "dist2_"))) |> # <1>
   aggregate_Datetime(unit = "10 secs") |>     # <2>
   gap_handler(full.days = TRUE) |>           # <3>
