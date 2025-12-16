@@ -2,10 +2,9 @@
 title: "LightLogR Course Certificate"
 format:
   typst:
-    page-size: a4-landscape
-    margin: 1.5cm
+    page-size: a4
+    flipped: true
     colorlinks: false
-    title: false
 params:
   participant_name: "Dr. Alex Example"
   completion_date: "2025-10-07"
@@ -17,7 +16,8 @@ params:
 ```{=typst}
 // Page + palette
 #set page(
-  paper: "a4-landscape",
+  paper: "a4",
+  flipped: true,
   margin: 1.5cm,
   fill: luma(98%),
 )
@@ -26,7 +26,7 @@ params:
 #let border = stroke(
   paint: primary,
   thickness: 3pt,
-  dash: "12pt 6pt",
+  dash: "densely-dashed",
 )
 
 // Decorative frame and ribbon
