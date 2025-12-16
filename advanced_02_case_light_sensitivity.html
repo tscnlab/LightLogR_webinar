@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Johannes Zauner">
-<meta name="dcterms.date" content="2025-12-09">
+<meta name="dcterms.date" content="2025-12-16">
 
 <title>Use case #02: Case, light sensitivity – LightLogR Webinar</title>
 <style>
@@ -245,21 +245,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface"><span class="header-section-number">1</span> Preface</a></li>
   <li><a href="#how-this-page-works" id="toc-how-this-page-works" class="nav-link" data-scroll-target="#how-this-page-works"><span class="header-section-number">2</span> How this page works</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">3</span> Setup</a></li>
-  <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import"><span class="header-section-number">4</span> Import</a>
+  <li><a href="#recording" id="toc-recording" class="nav-link" data-scroll-target="#recording"><span class="header-section-number">3</span> Recording</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">4</span> Setup</a></li>
+  <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import"><span class="header-section-number">5</span> Import</a>
   <ul class="collapse">
-  <li><a href="#light" id="toc-light" class="nav-link" data-scroll-target="#light"><span class="header-section-number">4.1</span> Light</a></li>
-  <li><a href="#state-data" id="toc-state-data" class="nav-link" data-scroll-target="#state-data"><span class="header-section-number">4.2</span> State data</a></li>
+  <li><a href="#light" id="toc-light" class="nav-link" data-scroll-target="#light"><span class="header-section-number">5.1</span> Light</a></li>
+  <li><a href="#state-data" id="toc-state-data" class="nav-link" data-scroll-target="#state-data"><span class="header-section-number">5.2</span> State data</a></li>
   </ul></li>
-  <li><a href="#merging-sleep-data" id="toc-merging-sleep-data" class="nav-link" data-scroll-target="#merging-sleep-data"><span class="header-section-number">5</span> Merging sleep data</a></li>
-  <li><a href="#brown-et-al.-2022-recommendations" id="toc-brown-et-al.-2022-recommendations" class="nav-link" data-scroll-target="#brown-et-al.-2022-recommendations"><span class="header-section-number">6</span> Brown et al.&nbsp;(2022) recommendations</a></li>
-  <li><a href="#calculate-metrics" id="toc-calculate-metrics" class="nav-link" data-scroll-target="#calculate-metrics"><span class="header-section-number">7</span> Calculate metrics</a>
+  <li><a href="#merging-sleep-data" id="toc-merging-sleep-data" class="nav-link" data-scroll-target="#merging-sleep-data"><span class="header-section-number">6</span> Merging sleep data</a></li>
+  <li><a href="#brown-et-al.-2022-recommendations" id="toc-brown-et-al.-2022-recommendations" class="nav-link" data-scroll-target="#brown-et-al.-2022-recommendations"><span class="header-section-number">7</span> Brown et al.&nbsp;(2022) recommendations</a></li>
+  <li><a href="#calculate-metrics" id="toc-calculate-metrics" class="nav-link" data-scroll-target="#calculate-metrics"><span class="header-section-number">8</span> Calculate metrics</a>
   <ul class="collapse">
-  <li><a href="#sleep-wake-cycles" id="toc-sleep-wake-cycles" class="nav-link" data-scroll-target="#sleep-wake-cycles"><span class="header-section-number">7.1</span> Sleep-wake cycles</a></li>
-  <li><a href="#light-exposure-metrics" id="toc-light-exposure-metrics" class="nav-link" data-scroll-target="#light-exposure-metrics"><span class="header-section-number">7.2</span> Light exposure metrics</a></li>
+  <li><a href="#sleep-wake-cycles" id="toc-sleep-wake-cycles" class="nav-link" data-scroll-target="#sleep-wake-cycles"><span class="header-section-number">8.1</span> Sleep-wake cycles</a></li>
+  <li><a href="#light-exposure-metrics" id="toc-light-exposure-metrics" class="nav-link" data-scroll-target="#light-exposure-metrics"><span class="header-section-number">8.2</span> Light exposure metrics</a></li>
   </ul></li>
-  <li><a href="#correlations" id="toc-correlations" class="nav-link" data-scroll-target="#correlations"><span class="header-section-number">8</span> Correlations</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">9</span> Conclusion</a></li>
+  <li><a href="#correlations" id="toc-correlations" class="nav-link" data-scroll-target="#correlations"><span class="header-section-number">9</span> Correlations</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">10</span> Conclusion</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/tscnlab/LightLogR_webinar/edit/main/advanced_02_case_light_sensitivity.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tscnlab/LightLogR_webinar/issues" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -293,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Last modified:</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 9, 2025</p>
+      <p class="date">December 16, 2025</p>
     </div>
   </div>
   
@@ -342,6 +343,12 @@ Figure&nbsp;1
 <li><p>relating exposure metrics to self assessments of consecutive sleep, performance, and wellbeing</p></li>
 <li><p>assessing compliance to Brown et al.&nbsp;(2022)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> recommendations</p></li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/advanced/flowcharts/adv_02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Flowchart diagram of the Case of light sensitivity use case."><img src="assets/advanced/flowcharts/adv_02.png" class="img-fluid figure-img" alt="Flowchart diagram of the Case of light sensitivity use case."></a></p>
+<figcaption>Flowchart diagram of the <em>Case of light sensitivity</em> use case.</figcaption>
+</figure>
+</div>
 </section>
 <section id="how-this-page-works" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="how-this-page-works"><span class="header-section-number">2</span> How this page works</h2>
@@ -365,8 +372,12 @@ Figure&nbsp;1
 </div>
 </div>
 </section>
-<section id="setup" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="setup"><span class="header-section-number">3</span> Setup</h2>
+<section id="recording" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="recording"><span class="header-section-number">3</span> Recording</h2>
+<p>You can follow along with the <a href="./recordings.html">recordings</a> to get even more context about the workflow in <code>LightLogR</code>.</p>
+</section>
+<section id="setup" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="setup"><span class="header-section-number">4</span> Setup</h2>
 <p>We start by loading the necessary packages.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(LightLogR) <span class="co"># main package</span></span>
@@ -376,11 +387,11 @@ Figure&nbsp;1
 <span id="cb2-5"><a href="#cb2-5"></a><span class="fu">library</span>(gtsummary) <span class="co"># for automatic summaries</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="import" class="level2 page-columns page-full" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="import"><span class="header-section-number">4</span> Import</h2>
+<section id="import" class="level2 page-columns page-full" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="import"><span class="header-section-number">5</span> Import</h2>
 <p>We require both light and log data to be loaded into R before we are able to merge them.</p>
-<section id="light" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="light"><span class="header-section-number">4.1</span> Light</h3>
+<section id="light" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="light"><span class="header-section-number">5.1</span> Light</h3>
 <p>Light data were captured with <code>ActLumus</code> devices. The exported data files sit in <code>data/case_light_sensitivity/</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1"></a>file <span class="ot">&lt;-</span> <span class="st">"data/case_light_sensitivity/Log_5153_20251028143545799.txt"</span></span>
@@ -398,7 +409,7 @@ Figure&nbsp;1
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="advanced_02_case_light_sensitivity_files/figure-html/context-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="advanced_02_case_light_sensitivity_files/figure-html/context-1.png" class="img-fluid figure-img" width="576"></a></p>
+<p><a href="advanced_02_case_light_sensitivity_files/figure-html/context-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="advanced_02_case_light_sensitivity_files/figure-html/context-1.png" class="img-fluid figure-img" width="576"></a></p>
 </figure>
 </div>
 </div>
@@ -465,7 +476,7 @@ Observation intervals:
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="advanced_02_case_light_sensitivity_files/figure-html/first visualization-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="advanced_02_case_light_sensitivity_files/figure-html/first visualization-1.png" class="img-fluid figure-img" width="1920"></a></p>
+<p><a href="advanced_02_case_light_sensitivity_files/figure-html/first visualization-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="advanced_02_case_light_sensitivity_files/figure-html/first visualization-1.png" class="img-fluid figure-img" width="1920"></a></p>
 </figure>
 </div>
 </div>
@@ -498,7 +509,7 @@ Observation intervals:
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="advanced_02_case_light_sensitivity_files/figure-html/highest light exposure-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="advanced_02_case_light_sensitivity_files/figure-html/highest light exposure-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="advanced_02_case_light_sensitivity_files/figure-html/highest light exposure-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="advanced_02_case_light_sensitivity_files/figure-html/highest light exposure-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -528,14 +539,14 @@ Observation intervals:
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="advanced_02_case_light_sensitivity_files/figure-html/lowest light exposure-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="advanced_02_case_light_sensitivity_files/figure-html/lowest light exposure-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="advanced_02_case_light_sensitivity_files/figure-html/lowest light exposure-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="advanced_02_case_light_sensitivity_files/figure-html/lowest light exposure-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="state-data" class="level3 page-columns page-full" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="state-data"><span class="header-section-number">4.2</span> State data</h3>
+<section id="state-data" class="level3 page-columns page-full" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="state-data"><span class="header-section-number">5.2</span> State data</h3>
 <p>We need information about sleep times. These can be found in the diaries.</p>
 <p>The morning diary is all about last nights sleep, how long the needed to fall asleep, wake-ups during the night, when they got up, how rested they feel and about sleep medication. See <a href="#fig-morning" class="quarto-xref">Figure&nbsp;2</a> for an excerpt.</p>
 
@@ -543,7 +554,7 @@ Observation intervals:
 <div id="fig-morning" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-morning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/advanced/morning_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;2: Excerpt from the morning diary as opened in Excel"><img src="assets/advanced/morning_protocol.png" class="img-fluid figure-img"></a>
+<a href="assets/advanced/morning_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;2: Excerpt from the morning diary as opened in Excel"><img src="assets/advanced/morning_protocol.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-morning-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Excerpt from the morning diary as opened in Excel
@@ -553,7 +564,7 @@ Figure&nbsp;2: Excerpt from the morning diary as opened in Excel
 <div id="fig-evening" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-evening-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="assets/advanced/evening_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;3: Excerpt from the evening diary as opened in Excel"><img src="assets/advanced/evening_protocol.png" class="img-fluid figure-img"></a>
+<a href="assets/advanced/evening_protocol.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;3: Excerpt from the evening diary as opened in Excel"><img src="assets/advanced/evening_protocol.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-evening-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
@@ -609,23 +620,23 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(labels_states, <span class="st">"Performance next day"</span>, <span class="st">"Fatigue next day"</span>)) <span class="sc">|&gt;</span>  </span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">tbl_summary</span>(<span class="at">include =</span> <span class="fu">where</span>(is.numeric))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="zgwawbhxdq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zgwawbhxdq table {
+<div id="mckddcoisu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mckddcoisu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zgwawbhxdq thead, #zgwawbhxdq tbody, #zgwawbhxdq tfoot, #zgwawbhxdq tr, #zgwawbhxdq td, #zgwawbhxdq th {
+#mckddcoisu thead, #mckddcoisu tbody, #mckddcoisu tfoot, #mckddcoisu tr, #mckddcoisu td, #mckddcoisu th {
   border-style: none;
 }
 
-#zgwawbhxdq p {
+#mckddcoisu p {
   margin: 0;
   padding: 0;
 }
 
-#zgwawbhxdq .gt_table {
+#mckddcoisu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -651,12 +662,12 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-left-color: #D3D3D3;
 }
 
-#zgwawbhxdq .gt_caption {
+#mckddcoisu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zgwawbhxdq .gt_title {
+#mckddcoisu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -668,7 +679,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-width: 0;
 }
 
-#zgwawbhxdq .gt_subtitle {
+#mckddcoisu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -680,7 +691,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-width: 0;
 }
 
-#zgwawbhxdq .gt_heading {
+#mckddcoisu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -692,13 +703,13 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#zgwawbhxdq .gt_bottom_border {
+#mckddcoisu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zgwawbhxdq .gt_col_headings {
+#mckddcoisu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -713,7 +724,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#zgwawbhxdq .gt_col_heading {
+#mckddcoisu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -733,7 +744,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#zgwawbhxdq .gt_column_spanner_outer {
+#mckddcoisu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -745,15 +756,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 4px;
 }
 
-#zgwawbhxdq .gt_column_spanner_outer:first-child {
+#mckddcoisu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zgwawbhxdq .gt_column_spanner_outer:last-child {
+#mckddcoisu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zgwawbhxdq .gt_column_spanner {
+#mckddcoisu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -765,11 +776,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   width: 100%;
 }
 
-#zgwawbhxdq .gt_spanner_row {
+#mckddcoisu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zgwawbhxdq .gt_group_heading {
+#mckddcoisu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -795,7 +806,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   text-align: left;
 }
 
-#zgwawbhxdq .gt_empty_group_heading {
+#mckddcoisu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -810,15 +821,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: middle;
 }
 
-#zgwawbhxdq .gt_from_md > :first-child {
+#mckddcoisu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zgwawbhxdq .gt_from_md > :last-child {
+#mckddcoisu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zgwawbhxdq .gt_row {
+#mckddcoisu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -837,7 +848,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#zgwawbhxdq .gt_stub {
+#mckddcoisu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -850,7 +861,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zgwawbhxdq .gt_stub_row_group {
+#mckddcoisu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -864,15 +875,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: top;
 }
 
-#zgwawbhxdq .gt_row_group_first td {
+#mckddcoisu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zgwawbhxdq .gt_row_group_first th {
+#mckddcoisu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zgwawbhxdq .gt_summary_row {
+#mckddcoisu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -882,16 +893,16 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zgwawbhxdq .gt_first_summary_row {
+#mckddcoisu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zgwawbhxdq .gt_first_summary_row.thick {
+#mckddcoisu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zgwawbhxdq .gt_last_summary_row {
+#mckddcoisu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -901,7 +912,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#zgwawbhxdq .gt_grand_summary_row {
+#mckddcoisu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -911,7 +922,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zgwawbhxdq .gt_first_grand_summary_row {
+#mckddcoisu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -921,7 +932,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-color: #D3D3D3;
 }
 
-#zgwawbhxdq .gt_last_grand_summary_row_top {
+#mckddcoisu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -931,11 +942,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#zgwawbhxdq .gt_striped {
+#mckddcoisu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zgwawbhxdq .gt_table_body {
+#mckddcoisu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -944,7 +955,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#zgwawbhxdq .gt_footnotes {
+#mckddcoisu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -958,7 +969,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#zgwawbhxdq .gt_footnote {
+#mckddcoisu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -967,7 +978,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zgwawbhxdq .gt_sourcenotes {
+#mckddcoisu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -981,7 +992,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#zgwawbhxdq .gt_sourcenote {
+#mckddcoisu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -989,72 +1000,72 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#zgwawbhxdq .gt_left {
+#mckddcoisu .gt_left {
   text-align: left;
 }
 
-#zgwawbhxdq .gt_center {
+#mckddcoisu .gt_center {
   text-align: center;
 }
 
-#zgwawbhxdq .gt_right {
+#mckddcoisu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zgwawbhxdq .gt_font_normal {
+#mckddcoisu .gt_font_normal {
   font-weight: normal;
 }
 
-#zgwawbhxdq .gt_font_bold {
+#mckddcoisu .gt_font_bold {
   font-weight: bold;
 }
 
-#zgwawbhxdq .gt_font_italic {
+#mckddcoisu .gt_font_italic {
   font-style: italic;
 }
 
-#zgwawbhxdq .gt_super {
+#mckddcoisu .gt_super {
   font-size: 65%;
 }
 
-#zgwawbhxdq .gt_footnote_marks {
+#mckddcoisu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zgwawbhxdq .gt_asterisk {
+#mckddcoisu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zgwawbhxdq .gt_indent_1 {
+#mckddcoisu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zgwawbhxdq .gt_indent_2 {
+#mckddcoisu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zgwawbhxdq .gt_indent_3 {
+#mckddcoisu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zgwawbhxdq .gt_indent_4 {
+#mckddcoisu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zgwawbhxdq .gt_indent_5 {
+#mckddcoisu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zgwawbhxdq .katex-display {
+#mckddcoisu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zgwawbhxdq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mckddcoisu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1294,8 +1305,8 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 </div>
 </section>
 </section>
-<section id="merging-sleep-data" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="merging-sleep-data"><span class="header-section-number">5</span> Merging sleep data</h2>
+<section id="merging-sleep-data" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="merging-sleep-data"><span class="header-section-number">6</span> Merging sleep data</h2>
 <p>Now that the diaries are prepared, we can extract sleep data from the states. The goal for the next code cell is to end with a <code>statechange</code> variable, that has a datetime for every timepoint when a new state occurs.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1"></a>sleep_data <span class="ot">&lt;-</span></span>
@@ -1400,8 +1411,8 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 </div>
 </div>
 </section>
-<section id="brown-et-al.-2022-recommendations" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="brown-et-al.-2022-recommendations"><span class="header-section-number">6</span> Brown et al.&nbsp;(2022) recommendations</h2>
+<section id="brown-et-al.-2022-recommendations" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="brown-et-al.-2022-recommendations"><span class="header-section-number">7</span> Brown et al.&nbsp;(2022) recommendations</h2>
 <p>Let’s visualize the newly extended dataset with regards to the <em>Brown et al.&nbsp;(2022)</em> states.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-13"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-13-1"><a href="#annotated-cell-13-1"></a>color_palette <span class="ot">&lt;-</span></span>
@@ -1485,7 +1496,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="advanced_02_case_light_sensitivity_files/figure-html/visualize datasets-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="advanced_02_case_light_sensitivity_files/figure-html/visualize datasets-1.png" class="img-fluid figure-img" width="1152"></a></p>
+<p><a href="advanced_02_case_light_sensitivity_files/figure-html/visualize datasets-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="advanced_02_case_light_sensitivity_files/figure-html/visualize datasets-1.png" class="img-fluid figure-img" width="1152"></a></p>
 </figure>
 </div>
 </div>
@@ -1503,23 +1514,23 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 <span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb7-10"><a href="#cb7-10"></a>  <span class="fu">fmt_percent</span>(<span class="at">decimals =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="pqnqxkcjxr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pqnqxkcjxr table {
+<div id="buqktppqtl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#buqktppqtl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pqnqxkcjxr thead, #pqnqxkcjxr tbody, #pqnqxkcjxr tfoot, #pqnqxkcjxr tr, #pqnqxkcjxr td, #pqnqxkcjxr th {
+#buqktppqtl thead, #buqktppqtl tbody, #buqktppqtl tfoot, #buqktppqtl tr, #buqktppqtl td, #buqktppqtl th {
   border-style: none;
 }
 
-#pqnqxkcjxr p {
+#buqktppqtl p {
   margin: 0;
   padding: 0;
 }
 
-#pqnqxkcjxr .gt_table {
+#buqktppqtl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1545,12 +1556,12 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-left-color: #D3D3D3;
 }
 
-#pqnqxkcjxr .gt_caption {
+#buqktppqtl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pqnqxkcjxr .gt_title {
+#buqktppqtl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1562,7 +1573,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-width: 0;
 }
 
-#pqnqxkcjxr .gt_subtitle {
+#buqktppqtl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1574,7 +1585,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-width: 0;
 }
 
-#pqnqxkcjxr .gt_heading {
+#buqktppqtl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1586,13 +1597,13 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#pqnqxkcjxr .gt_bottom_border {
+#buqktppqtl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pqnqxkcjxr .gt_col_headings {
+#buqktppqtl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1607,7 +1618,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#pqnqxkcjxr .gt_col_heading {
+#buqktppqtl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1627,7 +1638,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#pqnqxkcjxr .gt_column_spanner_outer {
+#buqktppqtl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1639,15 +1650,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 4px;
 }
 
-#pqnqxkcjxr .gt_column_spanner_outer:first-child {
+#buqktppqtl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pqnqxkcjxr .gt_column_spanner_outer:last-child {
+#buqktppqtl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pqnqxkcjxr .gt_column_spanner {
+#buqktppqtl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1659,11 +1670,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   width: 100%;
 }
 
-#pqnqxkcjxr .gt_spanner_row {
+#buqktppqtl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pqnqxkcjxr .gt_group_heading {
+#buqktppqtl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1689,7 +1700,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   text-align: left;
 }
 
-#pqnqxkcjxr .gt_empty_group_heading {
+#buqktppqtl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1704,15 +1715,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: middle;
 }
 
-#pqnqxkcjxr .gt_from_md > :first-child {
+#buqktppqtl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pqnqxkcjxr .gt_from_md > :last-child {
+#buqktppqtl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pqnqxkcjxr .gt_row {
+#buqktppqtl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1731,7 +1742,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#pqnqxkcjxr .gt_stub {
+#buqktppqtl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1744,7 +1755,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#pqnqxkcjxr .gt_stub_row_group {
+#buqktppqtl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1758,15 +1769,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: top;
 }
 
-#pqnqxkcjxr .gt_row_group_first td {
+#buqktppqtl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pqnqxkcjxr .gt_row_group_first th {
+#buqktppqtl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pqnqxkcjxr .gt_summary_row {
+#buqktppqtl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1776,16 +1787,16 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#pqnqxkcjxr .gt_first_summary_row {
+#buqktppqtl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pqnqxkcjxr .gt_first_summary_row.thick {
+#buqktppqtl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pqnqxkcjxr .gt_last_summary_row {
+#buqktppqtl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1795,7 +1806,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#pqnqxkcjxr .gt_grand_summary_row {
+#buqktppqtl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1805,7 +1816,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#pqnqxkcjxr .gt_first_grand_summary_row {
+#buqktppqtl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1815,7 +1826,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-color: #D3D3D3;
 }
 
-#pqnqxkcjxr .gt_last_grand_summary_row_top {
+#buqktppqtl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1825,11 +1836,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#pqnqxkcjxr .gt_striped {
+#buqktppqtl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pqnqxkcjxr .gt_table_body {
+#buqktppqtl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1838,7 +1849,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#pqnqxkcjxr .gt_footnotes {
+#buqktppqtl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1852,7 +1863,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#pqnqxkcjxr .gt_footnote {
+#buqktppqtl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1861,7 +1872,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#pqnqxkcjxr .gt_sourcenotes {
+#buqktppqtl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1875,7 +1886,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#pqnqxkcjxr .gt_sourcenote {
+#buqktppqtl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1883,72 +1894,72 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#pqnqxkcjxr .gt_left {
+#buqktppqtl .gt_left {
   text-align: left;
 }
 
-#pqnqxkcjxr .gt_center {
+#buqktppqtl .gt_center {
   text-align: center;
 }
 
-#pqnqxkcjxr .gt_right {
+#buqktppqtl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pqnqxkcjxr .gt_font_normal {
+#buqktppqtl .gt_font_normal {
   font-weight: normal;
 }
 
-#pqnqxkcjxr .gt_font_bold {
+#buqktppqtl .gt_font_bold {
   font-weight: bold;
 }
 
-#pqnqxkcjxr .gt_font_italic {
+#buqktppqtl .gt_font_italic {
   font-style: italic;
 }
 
-#pqnqxkcjxr .gt_super {
+#buqktppqtl .gt_super {
   font-size: 65%;
 }
 
-#pqnqxkcjxr .gt_footnote_marks {
+#buqktppqtl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pqnqxkcjxr .gt_asterisk {
+#buqktppqtl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pqnqxkcjxr .gt_indent_1 {
+#buqktppqtl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pqnqxkcjxr .gt_indent_2 {
+#buqktppqtl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pqnqxkcjxr .gt_indent_3 {
+#buqktppqtl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pqnqxkcjxr .gt_indent_4 {
+#buqktppqtl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pqnqxkcjxr .gt_indent_5 {
+#buqktppqtl .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pqnqxkcjxr .katex-display {
+#buqktppqtl .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pqnqxkcjxr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#buqktppqtl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1984,11 +1995,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 </div>
 </div>
 </section>
-<section id="calculate-metrics" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="calculate-metrics"><span class="header-section-number">7</span> Calculate metrics</h2>
+<section id="calculate-metrics" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="calculate-metrics"><span class="header-section-number">8</span> Calculate metrics</h2>
 <p>In this section, we calculate some light metrics that we can correlate with sleep quality. We calculate these metrics not by the 24-hour day, but rather by wake-sleep rhythms.</p>
-<section id="sleep-wake-cycles" class="level3" data-number="7.1">
-<h3 data-number="7.1" class="anchored" data-anchor-id="sleep-wake-cycles"><span class="header-section-number">7.1</span> Sleep-wake cycles</h3>
+<section id="sleep-wake-cycles" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="sleep-wake-cycles"><span class="header-section-number">8.1</span> Sleep-wake cycles</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-15"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-15-1"><a href="#annotated-cell-15-1"></a>data_sw <span class="ot">&lt;-</span></span>
 <span id="annotated-cell-15-2"><a href="#annotated-cell-15-2"></a>data_ext <span class="sc">|&gt;</span> </span>
@@ -2061,7 +2072,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="advanced_02_case_light_sensitivity_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="advanced_02_case_light_sensitivity_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="advanced_02_case_light_sensitivity_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="advanced_02_case_light_sensitivity_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -2070,23 +2081,23 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>data_sw <span class="sc">|&gt;</span> <span class="fu">durations</span>() <span class="sc">|&gt;</span> <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="ajecbswxou" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ajecbswxou table {
+<div id="ybwifqvmjn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ybwifqvmjn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ajecbswxou thead, #ajecbswxou tbody, #ajecbswxou tfoot, #ajecbswxou tr, #ajecbswxou td, #ajecbswxou th {
+#ybwifqvmjn thead, #ybwifqvmjn tbody, #ybwifqvmjn tfoot, #ybwifqvmjn tr, #ybwifqvmjn td, #ybwifqvmjn th {
   border-style: none;
 }
 
-#ajecbswxou p {
+#ybwifqvmjn p {
   margin: 0;
   padding: 0;
 }
 
-#ajecbswxou .gt_table {
+#ybwifqvmjn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2112,12 +2123,12 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-left-color: #D3D3D3;
 }
 
-#ajecbswxou .gt_caption {
+#ybwifqvmjn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ajecbswxou .gt_title {
+#ybwifqvmjn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2129,7 +2140,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-width: 0;
 }
 
-#ajecbswxou .gt_subtitle {
+#ybwifqvmjn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2141,7 +2152,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-width: 0;
 }
 
-#ajecbswxou .gt_heading {
+#ybwifqvmjn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2153,13 +2164,13 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#ajecbswxou .gt_bottom_border {
+#ybwifqvmjn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ajecbswxou .gt_col_headings {
+#ybwifqvmjn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2174,7 +2185,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#ajecbswxou .gt_col_heading {
+#ybwifqvmjn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2194,7 +2205,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#ajecbswxou .gt_column_spanner_outer {
+#ybwifqvmjn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2206,15 +2217,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 4px;
 }
 
-#ajecbswxou .gt_column_spanner_outer:first-child {
+#ybwifqvmjn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ajecbswxou .gt_column_spanner_outer:last-child {
+#ybwifqvmjn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ajecbswxou .gt_column_spanner {
+#ybwifqvmjn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2226,11 +2237,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   width: 100%;
 }
 
-#ajecbswxou .gt_spanner_row {
+#ybwifqvmjn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ajecbswxou .gt_group_heading {
+#ybwifqvmjn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2256,7 +2267,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   text-align: left;
 }
 
-#ajecbswxou .gt_empty_group_heading {
+#ybwifqvmjn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2271,15 +2282,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: middle;
 }
 
-#ajecbswxou .gt_from_md > :first-child {
+#ybwifqvmjn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ajecbswxou .gt_from_md > :last-child {
+#ybwifqvmjn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ajecbswxou .gt_row {
+#ybwifqvmjn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2298,7 +2309,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#ajecbswxou .gt_stub {
+#ybwifqvmjn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2311,7 +2322,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#ajecbswxou .gt_stub_row_group {
+#ybwifqvmjn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2325,15 +2336,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: top;
 }
 
-#ajecbswxou .gt_row_group_first td {
+#ybwifqvmjn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ajecbswxou .gt_row_group_first th {
+#ybwifqvmjn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ajecbswxou .gt_summary_row {
+#ybwifqvmjn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2343,16 +2354,16 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#ajecbswxou .gt_first_summary_row {
+#ybwifqvmjn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ajecbswxou .gt_first_summary_row.thick {
+#ybwifqvmjn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ajecbswxou .gt_last_summary_row {
+#ybwifqvmjn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2362,7 +2373,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#ajecbswxou .gt_grand_summary_row {
+#ybwifqvmjn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2372,7 +2383,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#ajecbswxou .gt_first_grand_summary_row {
+#ybwifqvmjn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2382,7 +2393,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-color: #D3D3D3;
 }
 
-#ajecbswxou .gt_last_grand_summary_row_top {
+#ybwifqvmjn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2392,11 +2403,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#ajecbswxou .gt_striped {
+#ybwifqvmjn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ajecbswxou .gt_table_body {
+#ybwifqvmjn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2405,7 +2416,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#ajecbswxou .gt_footnotes {
+#ybwifqvmjn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2419,7 +2430,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#ajecbswxou .gt_footnote {
+#ybwifqvmjn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2428,7 +2439,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#ajecbswxou .gt_sourcenotes {
+#ybwifqvmjn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2442,7 +2453,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#ajecbswxou .gt_sourcenote {
+#ybwifqvmjn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2450,72 +2461,72 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#ajecbswxou .gt_left {
+#ybwifqvmjn .gt_left {
   text-align: left;
 }
 
-#ajecbswxou .gt_center {
+#ybwifqvmjn .gt_center {
   text-align: center;
 }
 
-#ajecbswxou .gt_right {
+#ybwifqvmjn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ajecbswxou .gt_font_normal {
+#ybwifqvmjn .gt_font_normal {
   font-weight: normal;
 }
 
-#ajecbswxou .gt_font_bold {
+#ybwifqvmjn .gt_font_bold {
   font-weight: bold;
 }
 
-#ajecbswxou .gt_font_italic {
+#ybwifqvmjn .gt_font_italic {
   font-style: italic;
 }
 
-#ajecbswxou .gt_super {
+#ybwifqvmjn .gt_super {
   font-size: 65%;
 }
 
-#ajecbswxou .gt_footnote_marks {
+#ybwifqvmjn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ajecbswxou .gt_asterisk {
+#ybwifqvmjn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ajecbswxou .gt_indent_1 {
+#ybwifqvmjn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ajecbswxou .gt_indent_2 {
+#ybwifqvmjn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ajecbswxou .gt_indent_3 {
+#ybwifqvmjn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ajecbswxou .gt_indent_4 {
+#ybwifqvmjn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ajecbswxou .gt_indent_5 {
+#ybwifqvmjn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ajecbswxou .katex-display {
+#ybwifqvmjn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ajecbswxou div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ybwifqvmjn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2620,8 +2631,8 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 <span id="cb10-2"><a href="#cb10-2"></a>  data_sw <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span>sleep.wake <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"cycle 01"</span>, <span class="st">"cycle 20"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="light-exposure-metrics" class="level3" data-number="7.2">
-<h3 data-number="7.2" class="anchored" data-anchor-id="light-exposure-metrics"><span class="header-section-number">7.2</span> Light exposure metrics</h3>
+<section id="light-exposure-metrics" class="level3" data-number="8.2">
+<h3 data-number="8.2" class="anchored" data-anchor-id="light-exposure-metrics"><span class="header-section-number">8.2</span> Light exposure metrics</h3>
 <p>For the last step, we will calculate two relevant light exposure metrics, <code>time above 250 lx mel EDI</code> and <code>dose</code>. and add this information to the original <code>states</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-19"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-19-1"><a href="#annotated-cell-19-1"></a>summaries_sw <span class="ot">&lt;-</span> </span>
@@ -2679,23 +2690,23 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
 <span id="cb11-30"><a href="#cb11-30"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Higher is worse"</span>, <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">14</span>))) <span class="sc">|&gt;</span> </span>
 <span id="cb11-31"><a href="#cb11-31"></a>  <span class="fu">sub_missing</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="xkibwowceg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xkibwowceg table {
+<div id="hwauoykamv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hwauoykamv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xkibwowceg thead, #xkibwowceg tbody, #xkibwowceg tfoot, #xkibwowceg tr, #xkibwowceg td, #xkibwowceg th {
+#hwauoykamv thead, #hwauoykamv tbody, #hwauoykamv tfoot, #hwauoykamv tr, #hwauoykamv td, #hwauoykamv th {
   border-style: none;
 }
 
-#xkibwowceg p {
+#hwauoykamv p {
   margin: 0;
   padding: 0;
 }
 
-#xkibwowceg .gt_table {
+#hwauoykamv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2721,12 +2732,12 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-left-color: #D3D3D3;
 }
 
-#xkibwowceg .gt_caption {
+#hwauoykamv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xkibwowceg .gt_title {
+#hwauoykamv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2738,7 +2749,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-width: 0;
 }
 
-#xkibwowceg .gt_subtitle {
+#hwauoykamv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2750,7 +2761,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-width: 0;
 }
 
-#xkibwowceg .gt_heading {
+#hwauoykamv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2762,13 +2773,13 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#xkibwowceg .gt_bottom_border {
+#hwauoykamv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xkibwowceg .gt_col_headings {
+#hwauoykamv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2783,7 +2794,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#xkibwowceg .gt_col_heading {
+#hwauoykamv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2803,7 +2814,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#xkibwowceg .gt_column_spanner_outer {
+#hwauoykamv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2815,15 +2826,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 4px;
 }
 
-#xkibwowceg .gt_column_spanner_outer:first-child {
+#hwauoykamv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xkibwowceg .gt_column_spanner_outer:last-child {
+#hwauoykamv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xkibwowceg .gt_column_spanner {
+#hwauoykamv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2835,11 +2846,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   width: 100%;
 }
 
-#xkibwowceg .gt_spanner_row {
+#hwauoykamv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xkibwowceg .gt_group_heading {
+#hwauoykamv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2865,7 +2876,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   text-align: left;
 }
 
-#xkibwowceg .gt_empty_group_heading {
+#hwauoykamv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2880,15 +2891,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: middle;
 }
 
-#xkibwowceg .gt_from_md > :first-child {
+#hwauoykamv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xkibwowceg .gt_from_md > :last-child {
+#hwauoykamv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xkibwowceg .gt_row {
+#hwauoykamv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2907,7 +2918,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   overflow-x: hidden;
 }
 
-#xkibwowceg .gt_stub {
+#hwauoykamv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2920,7 +2931,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#xkibwowceg .gt_stub_row_group {
+#hwauoykamv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2934,15 +2945,15 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   vertical-align: top;
 }
 
-#xkibwowceg .gt_row_group_first td {
+#hwauoykamv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xkibwowceg .gt_row_group_first th {
+#hwauoykamv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xkibwowceg .gt_summary_row {
+#hwauoykamv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2952,16 +2963,16 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#xkibwowceg .gt_first_summary_row {
+#hwauoykamv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xkibwowceg .gt_first_summary_row.thick {
+#hwauoykamv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xkibwowceg .gt_last_summary_row {
+#hwauoykamv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2971,7 +2982,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#xkibwowceg .gt_grand_summary_row {
+#hwauoykamv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2981,7 +2992,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#xkibwowceg .gt_first_grand_summary_row {
+#hwauoykamv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2991,7 +3002,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-top-color: #D3D3D3;
 }
 
-#xkibwowceg .gt_last_grand_summary_row_top {
+#hwauoykamv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3001,11 +3012,11 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#xkibwowceg .gt_striped {
+#hwauoykamv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xkibwowceg .gt_table_body {
+#hwauoykamv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3014,7 +3025,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-bottom-color: #D3D3D3;
 }
 
-#xkibwowceg .gt_footnotes {
+#hwauoykamv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3028,7 +3039,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#xkibwowceg .gt_footnote {
+#hwauoykamv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3037,7 +3048,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#xkibwowceg .gt_sourcenotes {
+#hwauoykamv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3051,7 +3062,7 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   border-right-color: #D3D3D3;
 }
 
-#xkibwowceg .gt_sourcenote {
+#hwauoykamv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3059,72 +3070,72 @@ Figure&nbsp;3: Excerpt from the evening diary as opened in Excel
   padding-right: 5px;
 }
 
-#xkibwowceg .gt_left {
+#hwauoykamv .gt_left {
   text-align: left;
 }
 
-#xkibwowceg .gt_center {
+#hwauoykamv .gt_center {
   text-align: center;
 }
 
-#xkibwowceg .gt_right {
+#hwauoykamv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xkibwowceg .gt_font_normal {
+#hwauoykamv .gt_font_normal {
   font-weight: normal;
 }
 
-#xkibwowceg .gt_font_bold {
+#hwauoykamv .gt_font_bold {
   font-weight: bold;
 }
 
-#xkibwowceg .gt_font_italic {
+#hwauoykamv .gt_font_italic {
   font-style: italic;
 }
 
-#xkibwowceg .gt_super {
+#hwauoykamv .gt_super {
   font-size: 65%;
 }
 
-#xkibwowceg .gt_footnote_marks {
+#hwauoykamv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xkibwowceg .gt_asterisk {
+#hwauoykamv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xkibwowceg .gt_indent_1 {
+#hwauoykamv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xkibwowceg .gt_indent_2 {
+#hwauoykamv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xkibwowceg .gt_indent_3 {
+#hwauoykamv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xkibwowceg .gt_indent_4 {
+#hwauoykamv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xkibwowceg .gt_indent_5 {
+#hwauoykamv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xkibwowceg .katex-display {
+#hwauoykamv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xkibwowceg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hwauoykamv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3480,8 +3491,8 @@ Self-reported sleep
 </div>
 </section>
 </section>
-<section id="correlations" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="correlations"><span class="header-section-number">8</span> Correlations</h2>
+<section id="correlations" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="correlations"><span class="header-section-number">9</span> Correlations</h2>
 <p>To visualize simple correlations between the self-assessments and the light exposure metrics we create a helper function:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>time2hour <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">/</span><span class="dv">3600</span></span>
@@ -3530,7 +3541,7 @@ Self-reported sleep
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="advanced_02_case_light_sensitivity_files/figure-html/correlations-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="advanced_02_case_light_sensitivity_files/figure-html/correlations-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="advanced_02_case_light_sensitivity_files/figure-html/correlations-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="advanced_02_case_light_sensitivity_files/figure-html/correlations-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -3538,7 +3549,7 @@ Self-reported sleep
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="advanced_02_case_light_sensitivity_files/figure-html/correlations-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="advanced_02_case_light_sensitivity_files/figure-html/correlations-2.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="advanced_02_case_light_sensitivity_files/figure-html/correlations-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="advanced_02_case_light_sensitivity_files/figure-html/correlations-2.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -3556,8 +3567,8 @@ Self-reported sleep
 <span id="cb15-9"><a href="#cb15-9"></a><span class="fu">correlation_plot</span>(low.movement, <span class="st">"Self-assessed low activity"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="conclusion" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">9</span> Conclusion</h2>
+<section id="conclusion" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">10</span> Conclusion</h2>
 <p>Congratulations! You have finished this section of the advanced course. If you go back to the <a href="./index.html">homepage</a>, you can select one of the other use cases.</p>
 
 
@@ -4069,492 +4080,498 @@ Self-reported sleep
 <span id="cb16-46"><a href="#cb16-46"></a></span>
 <span id="cb16-47"><a href="#cb16-47"></a><span class="ot">[^1]: </span><span class="co">[</span><span class="ot">Link to publication</span><span class="co">](https://doi.org/10.1371/journal.pbio.3001571)</span>{target="_blank"}</span>
 <span id="cb16-48"><a href="#cb16-48"></a></span>
-<span id="cb16-49"><a href="#cb16-49"></a>{{&lt; include _how_this_page_works.qmd &gt;}}</span>
+<span id="cb16-49"><a href="#cb16-49"></a><span class="al">![Flowchart diagram of the *Case of light sensitivity* use case.](assets/advanced/flowcharts/adv_02.png)</span></span>
 <span id="cb16-50"><a href="#cb16-50"></a></span>
-<span id="cb16-51"><a href="#cb16-51"></a><span class="fu">## Setup</span></span>
+<span id="cb16-51"><a href="#cb16-51"></a>{{&lt; include _how_this_page_works.qmd &gt;}}</span>
 <span id="cb16-52"><a href="#cb16-52"></a></span>
-<span id="cb16-53"><a href="#cb16-53"></a>We start by loading the necessary packages.</span>
+<span id="cb16-53"><a href="#cb16-53"></a><span class="fu">## Recording</span></span>
 <span id="cb16-54"><a href="#cb16-54"></a></span>
-<span id="cb16-57"><a href="#cb16-57"></a><span class="in">```{r}</span></span>
-<span id="cb16-58"><a href="#cb16-58"></a><span class="co">#| label: setup</span></span>
-<span id="cb16-59"><a href="#cb16-59"></a><span class="co">#| output: false</span></span>
-<span id="cb16-60"><a href="#cb16-60"></a><span class="fu">library</span>(LightLogR) <span class="co"># main package</span></span>
-<span id="cb16-61"><a href="#cb16-61"></a><span class="fu">library</span>(tidyverse) <span class="co"># for tidy data science</span></span>
-<span id="cb16-62"><a href="#cb16-62"></a><span class="fu">library</span>(gt) <span class="co"># for great tables</span></span>
-<span id="cb16-63"><a href="#cb16-63"></a><span class="fu">library</span>(readxl) <span class="co"># to read in Excel files</span></span>
-<span id="cb16-64"><a href="#cb16-64"></a><span class="fu">library</span>(gtsummary) <span class="co"># for automatic summaries</span></span>
-<span id="cb16-65"><a href="#cb16-65"></a><span class="in">```</span></span>
-<span id="cb16-66"><a href="#cb16-66"></a></span>
-<span id="cb16-67"><a href="#cb16-67"></a><span class="fu">## Import</span></span>
-<span id="cb16-68"><a href="#cb16-68"></a></span>
-<span id="cb16-69"><a href="#cb16-69"></a>We require both light and log data to be loaded into R before we are able to merge them.</span>
-<span id="cb16-70"><a href="#cb16-70"></a></span>
-<span id="cb16-71"><a href="#cb16-71"></a><span class="fu">### Light</span></span>
+<span id="cb16-55"><a href="#cb16-55"></a>You can follow along with the <span class="co">[</span><span class="ot">recordings</span><span class="co">](recordings.qmd)</span> to get even more context about the workflow in <span class="in">`LightLogR`</span>.</span>
+<span id="cb16-56"><a href="#cb16-56"></a></span>
+<span id="cb16-57"><a href="#cb16-57"></a><span class="fu">## Setup</span></span>
+<span id="cb16-58"><a href="#cb16-58"></a></span>
+<span id="cb16-59"><a href="#cb16-59"></a>We start by loading the necessary packages.</span>
+<span id="cb16-60"><a href="#cb16-60"></a></span>
+<span id="cb16-63"><a href="#cb16-63"></a><span class="in">```{r}</span></span>
+<span id="cb16-64"><a href="#cb16-64"></a><span class="co">#| label: setup</span></span>
+<span id="cb16-65"><a href="#cb16-65"></a><span class="co">#| output: false</span></span>
+<span id="cb16-66"><a href="#cb16-66"></a><span class="fu">library</span>(LightLogR) <span class="co"># main package</span></span>
+<span id="cb16-67"><a href="#cb16-67"></a><span class="fu">library</span>(tidyverse) <span class="co"># for tidy data science</span></span>
+<span id="cb16-68"><a href="#cb16-68"></a><span class="fu">library</span>(gt) <span class="co"># for great tables</span></span>
+<span id="cb16-69"><a href="#cb16-69"></a><span class="fu">library</span>(readxl) <span class="co"># to read in Excel files</span></span>
+<span id="cb16-70"><a href="#cb16-70"></a><span class="fu">library</span>(gtsummary) <span class="co"># for automatic summaries</span></span>
+<span id="cb16-71"><a href="#cb16-71"></a><span class="in">```</span></span>
 <span id="cb16-72"><a href="#cb16-72"></a></span>
-<span id="cb16-73"><a href="#cb16-73"></a>Light data were captured with <span class="in">`ActLumus`</span> devices. The exported data files sit in <span class="in">`data/case_light_sensitivity/`</span>.</span>
+<span id="cb16-73"><a href="#cb16-73"></a><span class="fu">## Import</span></span>
 <span id="cb16-74"><a href="#cb16-74"></a></span>
-<span id="cb16-77"><a href="#cb16-77"></a><span class="in">```{r}</span></span>
-<span id="cb16-78"><a href="#cb16-78"></a><span class="co">#| label: context</span></span>
-<span id="cb16-79"><a href="#cb16-79"></a><span class="co">#| fig-height: 2</span></span>
-<span id="cb16-80"><a href="#cb16-80"></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb16-81"><a href="#cb16-81"></a>file <span class="ot">&lt;-</span> <span class="st">"data/case_light_sensitivity/Log_5153_20251028143545799.txt"</span></span>
-<span id="cb16-82"><a href="#cb16-82"></a>tz <span class="ot">&lt;-</span> <span class="st">"Europe/Berlin"</span></span>
-<span id="cb16-83"><a href="#cb16-83"></a>coordinates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">48.775555555556</span>, <span class="fl">9.1827777777778247</span>) <span class="co">#Stuttgart</span></span>
-<span id="cb16-84"><a href="#cb16-84"></a>data <span class="ot">&lt;-</span> import<span class="sc">$</span><span class="fu">ActLumus</span>(file, <span class="at">tz =</span> tz, <span class="at">manual.id =</span> <span class="st">"ID001"</span>) <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-85"><a href="#cb16-85"></a><span class="in">```</span></span>
-<span id="cb16-86"><a href="#cb16-86"></a></span>
-<span id="cb16-87"><a href="#cb16-87"></a><span class="ss">1. </span>As there is only one participant, we set a manual <span class="in">`Id`</span></span>
-<span id="cb16-88"><a href="#cb16-88"></a></span>
-<span id="cb16-89"><a href="#cb16-89"></a>This dataset spans about three weeks. We know that the diaries only start on 24 September 2025 - thus we remove prior data. We also test for irregular data or gaps in this trimmed dataset.</span>
-<span id="cb16-90"><a href="#cb16-90"></a></span>
-<span id="cb16-93"><a href="#cb16-93"></a><span class="in">```{r}</span></span>
-<span id="cb16-94"><a href="#cb16-94"></a><span class="co">#| label: gap checks</span></span>
-<span id="cb16-95"><a href="#cb16-95"></a>data <span class="ot">&lt;-</span> </span>
-<span id="cb16-96"><a href="#cb16-96"></a>  data <span class="sc">|&gt;</span> </span>
-<span id="cb16-97"><a href="#cb16-97"></a>  <span class="fu">filter_Date</span>(<span class="at">start =</span> <span class="st">"2025-09-24"</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-98"><a href="#cb16-98"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span>  <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-99"><a href="#cb16-99"></a>  <span class="fu">select</span>(Datetime, MEDI) </span>
-<span id="cb16-100"><a href="#cb16-100"></a>data <span class="sc">|&gt;</span> <span class="fu">has_gaps</span>()</span>
-<span id="cb16-101"><a href="#cb16-101"></a>data <span class="sc">|&gt;</span> <span class="fu">has_irregulars</span>()</span>
-<span id="cb16-102"><a href="#cb16-102"></a><span class="in">```</span></span>
-<span id="cb16-103"><a href="#cb16-103"></a></span>
-<span id="cb16-104"><a href="#cb16-104"></a><span class="ss">1. </span>If we have a hard-set beginning or end time, <span class="in">`filter_Date()`</span> or <span class="in">`filter_Datetime()`</span> provide convenient cut-off functionality.</span>
-<span id="cb16-105"><a href="#cb16-105"></a></span>
-<span id="cb16-106"><a href="#cb16-106"></a><span class="ss">2. </span>As we are dealing with a single participant, we don't require grouping by <span class="in">`Id`</span>.</span>
-<span id="cb16-107"><a href="#cb16-107"></a></span>
-<span id="cb16-108"><a href="#cb16-108"></a>We can continue seeing as there are no issues with the regular time series. We start by plotting the full series</span>
+<span id="cb16-75"><a href="#cb16-75"></a>We require both light and log data to be loaded into R before we are able to merge them.</span>
+<span id="cb16-76"><a href="#cb16-76"></a></span>
+<span id="cb16-77"><a href="#cb16-77"></a><span class="fu">### Light</span></span>
+<span id="cb16-78"><a href="#cb16-78"></a></span>
+<span id="cb16-79"><a href="#cb16-79"></a>Light data were captured with <span class="in">`ActLumus`</span> devices. The exported data files sit in <span class="in">`data/case_light_sensitivity/`</span>.</span>
+<span id="cb16-80"><a href="#cb16-80"></a></span>
+<span id="cb16-83"><a href="#cb16-83"></a><span class="in">```{r}</span></span>
+<span id="cb16-84"><a href="#cb16-84"></a><span class="co">#| label: context</span></span>
+<span id="cb16-85"><a href="#cb16-85"></a><span class="co">#| fig-height: 2</span></span>
+<span id="cb16-86"><a href="#cb16-86"></a><span class="co">#| fig-width: 6</span></span>
+<span id="cb16-87"><a href="#cb16-87"></a>file <span class="ot">&lt;-</span> <span class="st">"data/case_light_sensitivity/Log_5153_20251028143545799.txt"</span></span>
+<span id="cb16-88"><a href="#cb16-88"></a>tz <span class="ot">&lt;-</span> <span class="st">"Europe/Berlin"</span></span>
+<span id="cb16-89"><a href="#cb16-89"></a>coordinates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">48.775555555556</span>, <span class="fl">9.1827777777778247</span>) <span class="co">#Stuttgart</span></span>
+<span id="cb16-90"><a href="#cb16-90"></a>data <span class="ot">&lt;-</span> import<span class="sc">$</span><span class="fu">ActLumus</span>(file, <span class="at">tz =</span> tz, <span class="at">manual.id =</span> <span class="st">"ID001"</span>) <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-91"><a href="#cb16-91"></a><span class="in">```</span></span>
+<span id="cb16-92"><a href="#cb16-92"></a></span>
+<span id="cb16-93"><a href="#cb16-93"></a><span class="ss">1. </span>As there is only one participant, we set a manual <span class="in">`Id`</span></span>
+<span id="cb16-94"><a href="#cb16-94"></a></span>
+<span id="cb16-95"><a href="#cb16-95"></a>This dataset spans about three weeks. We know that the diaries only start on 24 September 2025 - thus we remove prior data. We also test for irregular data or gaps in this trimmed dataset.</span>
+<span id="cb16-96"><a href="#cb16-96"></a></span>
+<span id="cb16-99"><a href="#cb16-99"></a><span class="in">```{r}</span></span>
+<span id="cb16-100"><a href="#cb16-100"></a><span class="co">#| label: gap checks</span></span>
+<span id="cb16-101"><a href="#cb16-101"></a>data <span class="ot">&lt;-</span> </span>
+<span id="cb16-102"><a href="#cb16-102"></a>  data <span class="sc">|&gt;</span> </span>
+<span id="cb16-103"><a href="#cb16-103"></a>  <span class="fu">filter_Date</span>(<span class="at">start =</span> <span class="st">"2025-09-24"</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-104"><a href="#cb16-104"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span>  <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-105"><a href="#cb16-105"></a>  <span class="fu">select</span>(Datetime, MEDI) </span>
+<span id="cb16-106"><a href="#cb16-106"></a>data <span class="sc">|&gt;</span> <span class="fu">has_gaps</span>()</span>
+<span id="cb16-107"><a href="#cb16-107"></a>data <span class="sc">|&gt;</span> <span class="fu">has_irregulars</span>()</span>
+<span id="cb16-108"><a href="#cb16-108"></a><span class="in">```</span></span>
 <span id="cb16-109"><a href="#cb16-109"></a></span>
-<span id="cb16-112"><a href="#cb16-112"></a><span class="in">```{r}</span></span>
-<span id="cb16-113"><a href="#cb16-113"></a><span class="co">#| label: first visualization</span></span>
-<span id="cb16-114"><a href="#cb16-114"></a><span class="co">#| fig-height: 3</span></span>
-<span id="cb16-115"><a href="#cb16-115"></a><span class="co">#| fig-width: 20</span></span>
-<span id="cb16-116"><a href="#cb16-116"></a> data<span class="sc">|&gt;</span> </span>
-<span id="cb16-117"><a href="#cb16-117"></a>  <span class="fu">aggregate_Datetime</span>(<span class="st">"15 minutes"</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-118"><a href="#cb16-118"></a>  <span class="fu">gg_days</span>(<span class="at">x.axis.format =</span> <span class="st">"%a %d/%m"</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-119"><a href="#cb16-119"></a>  <span class="fu">gg_photoperiod</span>(coordinates)</span>
-<span id="cb16-120"><a href="#cb16-120"></a><span class="in">```</span></span>
-<span id="cb16-121"><a href="#cb16-121"></a></span>
-<span id="cb16-122"><a href="#cb16-122"></a><span class="ss">1. </span>Reduce the interval by averaging over 15 minute periods</span>
-<span id="cb16-123"><a href="#cb16-123"></a><span class="ss">2. </span>Easily change the label format. Look at the help page of <span class="co">[</span><span class="ot">`?strptime`</span><span class="co">](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/strptime)</span>{target="_blank"} for the available syntax.</span>
-<span id="cb16-124"><a href="#cb16-124"></a></span>
-<span id="cb16-125"><a href="#cb16-125"></a>We can see the light intensity varies greatly. Let's look at the extremes.</span>
-<span id="cb16-126"><a href="#cb16-126"></a></span>
-<span id="cb16-129"><a href="#cb16-129"></a><span class="in">```{r}</span></span>
-<span id="cb16-130"><a href="#cb16-130"></a><span class="co">#| label: highest light exposure</span></span>
-<span id="cb16-131"><a href="#cb16-131"></a><span class="co">#| fig-height: 5</span></span>
-<span id="cb16-132"><a href="#cb16-132"></a> data<span class="sc">|&gt;</span> </span>
-<span id="cb16-133"><a href="#cb16-133"></a>  <span class="fu">aggregate_Datetime</span>(<span class="st">"5 minutes"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-134"><a href="#cb16-134"></a>  <span class="fu">add_Date_col</span>(<span class="at">group.by =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-135"><a href="#cb16-135"></a>  <span class="fu">sample_groups</span>(<span class="at">n=</span><span class="dv">3</span>, <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-136"><a href="#cb16-136"></a>                <span class="at">order.by =</span> </span>
-<span id="cb16-137"><a href="#cb16-137"></a>                  <span class="fu">duration_above_threshold</span>(MEDI, Datetime, <span class="at">threshold =</span> <span class="dv">250</span>)<span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-138"><a href="#cb16-138"></a>                  ) <span class="sc">|&gt;</span> <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-139"><a href="#cb16-139"></a>  <span class="fu">ungroup</span>(Date) <span class="sc">|&gt;</span> </span>
-<span id="cb16-140"><a href="#cb16-140"></a>  <span class="fu">gg_doubleplot</span>(<span class="at">type =</span> <span class="st">"repeat"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-141"><a href="#cb16-141"></a>  <span class="fu">gg_photoperiod</span>(coordinates) <span class="sc">+</span></span>
-<span id="cb16-142"><a href="#cb16-142"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Three days with highest time above 250 lx mel EDI"</span>)</span>
-<span id="cb16-143"><a href="#cb16-143"></a><span class="in">```</span></span>
-<span id="cb16-144"><a href="#cb16-144"></a></span>
-<span id="cb16-145"><a href="#cb16-145"></a><span class="ss">1. </span>Adding, and grouping by, the date gives us 20 groups, each covering one calender day</span>
-<span id="cb16-146"><a href="#cb16-146"></a><span class="ss">2. </span>Select the three groups with the highest duration above 250 lx mel EDI</span>
-<span id="cb16-147"><a href="#cb16-147"></a></span>
-<span id="cb16-148"><a href="#cb16-148"></a>Looking at the first half of <span class="in">`02 October 2025`</span>, we can already see that this likely a period of non-wear, or sleep - this, we have to come back to later.</span>
-<span id="cb16-149"><a href="#cb16-149"></a></span>
-<span id="cb16-152"><a href="#cb16-152"></a><span class="in">```{r}</span></span>
-<span id="cb16-153"><a href="#cb16-153"></a><span class="co">#| label: lowest light exposure</span></span>
-<span id="cb16-154"><a href="#cb16-154"></a><span class="co">#| fig-height: 5</span></span>
-<span id="cb16-155"><a href="#cb16-155"></a> data<span class="sc">|&gt;</span> </span>
-<span id="cb16-156"><a href="#cb16-156"></a>  <span class="fu">aggregate_Datetime</span>(<span class="st">"5 minutes"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-157"><a href="#cb16-157"></a>  <span class="fu">add_Date_col</span>(<span class="at">group.by =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-158"><a href="#cb16-158"></a>  <span class="fu">sample_groups</span>(<span class="at">n=</span><span class="dv">3</span>, </span>
-<span id="cb16-159"><a href="#cb16-159"></a>                <span class="at">sample =</span> <span class="st">"bottom"</span>, <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-160"><a href="#cb16-160"></a>                <span class="at">order.by =</span> </span>
-<span id="cb16-161"><a href="#cb16-161"></a>                  <span class="fu">duration_above_threshold</span>(MEDI, Datetime, <span class="at">threshold =</span> <span class="dv">250</span>)</span>
-<span id="cb16-162"><a href="#cb16-162"></a>                ) <span class="sc">|&gt;</span> </span>
-<span id="cb16-163"><a href="#cb16-163"></a>  <span class="fu">ungroup</span>(Date) <span class="sc">|&gt;</span> </span>
-<span id="cb16-164"><a href="#cb16-164"></a>  <span class="fu">gg_doubleplot</span>(<span class="at">type =</span> <span class="st">"repeat"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-165"><a href="#cb16-165"></a>  <span class="fu">gg_photoperiod</span>(coordinates) <span class="sc">+</span></span>
-<span id="cb16-166"><a href="#cb16-166"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Three days with lowest time above 250 lx mel EDI"</span>)</span>
-<span id="cb16-167"><a href="#cb16-167"></a><span class="in">```</span></span>
-<span id="cb16-168"><a href="#cb16-168"></a></span>
-<span id="cb16-169"><a href="#cb16-169"></a><span class="ss">1. </span>Select the three groups with the lowest duration above 250 lx mel EDI</span>
-<span id="cb16-170"><a href="#cb16-170"></a></span>
-<span id="cb16-171"><a href="#cb16-171"></a><span class="fu">### State data</span></span>
-<span id="cb16-172"><a href="#cb16-172"></a></span>
-<span id="cb16-173"><a href="#cb16-173"></a>We need information about sleep times. These can be found in the diaries.</span>
+<span id="cb16-110"><a href="#cb16-110"></a><span class="ss">1. </span>If we have a hard-set beginning or end time, <span class="in">`filter_Date()`</span> or <span class="in">`filter_Datetime()`</span> provide convenient cut-off functionality.</span>
+<span id="cb16-111"><a href="#cb16-111"></a></span>
+<span id="cb16-112"><a href="#cb16-112"></a><span class="ss">2. </span>As we are dealing with a single participant, we don't require grouping by <span class="in">`Id`</span>.</span>
+<span id="cb16-113"><a href="#cb16-113"></a></span>
+<span id="cb16-114"><a href="#cb16-114"></a>We can continue seeing as there are no issues with the regular time series. We start by plotting the full series</span>
+<span id="cb16-115"><a href="#cb16-115"></a></span>
+<span id="cb16-118"><a href="#cb16-118"></a><span class="in">```{r}</span></span>
+<span id="cb16-119"><a href="#cb16-119"></a><span class="co">#| label: first visualization</span></span>
+<span id="cb16-120"><a href="#cb16-120"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb16-121"><a href="#cb16-121"></a><span class="co">#| fig-width: 20</span></span>
+<span id="cb16-122"><a href="#cb16-122"></a> data<span class="sc">|&gt;</span> </span>
+<span id="cb16-123"><a href="#cb16-123"></a>  <span class="fu">aggregate_Datetime</span>(<span class="st">"15 minutes"</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-124"><a href="#cb16-124"></a>  <span class="fu">gg_days</span>(<span class="at">x.axis.format =</span> <span class="st">"%a %d/%m"</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-125"><a href="#cb16-125"></a>  <span class="fu">gg_photoperiod</span>(coordinates)</span>
+<span id="cb16-126"><a href="#cb16-126"></a><span class="in">```</span></span>
+<span id="cb16-127"><a href="#cb16-127"></a></span>
+<span id="cb16-128"><a href="#cb16-128"></a><span class="ss">1. </span>Reduce the interval by averaging over 15 minute periods</span>
+<span id="cb16-129"><a href="#cb16-129"></a><span class="ss">2. </span>Easily change the label format. Look at the help page of <span class="co">[</span><span class="ot">`?strptime`</span><span class="co">](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/strptime)</span>{target="_blank"} for the available syntax.</span>
+<span id="cb16-130"><a href="#cb16-130"></a></span>
+<span id="cb16-131"><a href="#cb16-131"></a>We can see the light intensity varies greatly. Let's look at the extremes.</span>
+<span id="cb16-132"><a href="#cb16-132"></a></span>
+<span id="cb16-135"><a href="#cb16-135"></a><span class="in">```{r}</span></span>
+<span id="cb16-136"><a href="#cb16-136"></a><span class="co">#| label: highest light exposure</span></span>
+<span id="cb16-137"><a href="#cb16-137"></a><span class="co">#| fig-height: 5</span></span>
+<span id="cb16-138"><a href="#cb16-138"></a> data<span class="sc">|&gt;</span> </span>
+<span id="cb16-139"><a href="#cb16-139"></a>  <span class="fu">aggregate_Datetime</span>(<span class="st">"5 minutes"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-140"><a href="#cb16-140"></a>  <span class="fu">add_Date_col</span>(<span class="at">group.by =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-141"><a href="#cb16-141"></a>  <span class="fu">sample_groups</span>(<span class="at">n=</span><span class="dv">3</span>, <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-142"><a href="#cb16-142"></a>                <span class="at">order.by =</span> </span>
+<span id="cb16-143"><a href="#cb16-143"></a>                  <span class="fu">duration_above_threshold</span>(MEDI, Datetime, <span class="at">threshold =</span> <span class="dv">250</span>)<span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-144"><a href="#cb16-144"></a>                  ) <span class="sc">|&gt;</span> <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-145"><a href="#cb16-145"></a>  <span class="fu">ungroup</span>(Date) <span class="sc">|&gt;</span> </span>
+<span id="cb16-146"><a href="#cb16-146"></a>  <span class="fu">gg_doubleplot</span>(<span class="at">type =</span> <span class="st">"repeat"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-147"><a href="#cb16-147"></a>  <span class="fu">gg_photoperiod</span>(coordinates) <span class="sc">+</span></span>
+<span id="cb16-148"><a href="#cb16-148"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Three days with highest time above 250 lx mel EDI"</span>)</span>
+<span id="cb16-149"><a href="#cb16-149"></a><span class="in">```</span></span>
+<span id="cb16-150"><a href="#cb16-150"></a></span>
+<span id="cb16-151"><a href="#cb16-151"></a><span class="ss">1. </span>Adding, and grouping by, the date gives us 20 groups, each covering one calender day</span>
+<span id="cb16-152"><a href="#cb16-152"></a><span class="ss">2. </span>Select the three groups with the highest duration above 250 lx mel EDI</span>
+<span id="cb16-153"><a href="#cb16-153"></a></span>
+<span id="cb16-154"><a href="#cb16-154"></a>Looking at the first half of <span class="in">`02 October 2025`</span>, we can already see that this likely a period of non-wear, or sleep - this, we have to come back to later.</span>
+<span id="cb16-155"><a href="#cb16-155"></a></span>
+<span id="cb16-158"><a href="#cb16-158"></a><span class="in">```{r}</span></span>
+<span id="cb16-159"><a href="#cb16-159"></a><span class="co">#| label: lowest light exposure</span></span>
+<span id="cb16-160"><a href="#cb16-160"></a><span class="co">#| fig-height: 5</span></span>
+<span id="cb16-161"><a href="#cb16-161"></a> data<span class="sc">|&gt;</span> </span>
+<span id="cb16-162"><a href="#cb16-162"></a>  <span class="fu">aggregate_Datetime</span>(<span class="st">"5 minutes"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-163"><a href="#cb16-163"></a>  <span class="fu">add_Date_col</span>(<span class="at">group.by =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-164"><a href="#cb16-164"></a>  <span class="fu">sample_groups</span>(<span class="at">n=</span><span class="dv">3</span>, </span>
+<span id="cb16-165"><a href="#cb16-165"></a>                <span class="at">sample =</span> <span class="st">"bottom"</span>, <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-166"><a href="#cb16-166"></a>                <span class="at">order.by =</span> </span>
+<span id="cb16-167"><a href="#cb16-167"></a>                  <span class="fu">duration_above_threshold</span>(MEDI, Datetime, <span class="at">threshold =</span> <span class="dv">250</span>)</span>
+<span id="cb16-168"><a href="#cb16-168"></a>                ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-169"><a href="#cb16-169"></a>  <span class="fu">ungroup</span>(Date) <span class="sc">|&gt;</span> </span>
+<span id="cb16-170"><a href="#cb16-170"></a>  <span class="fu">gg_doubleplot</span>(<span class="at">type =</span> <span class="st">"repeat"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-171"><a href="#cb16-171"></a>  <span class="fu">gg_photoperiod</span>(coordinates) <span class="sc">+</span></span>
+<span id="cb16-172"><a href="#cb16-172"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Three days with lowest time above 250 lx mel EDI"</span>)</span>
+<span id="cb16-173"><a href="#cb16-173"></a><span class="in">```</span></span>
 <span id="cb16-174"><a href="#cb16-174"></a></span>
-<span id="cb16-175"><a href="#cb16-175"></a>The morning diary is all about last nights sleep, how long the needed to fall asleep, wake-ups during the night, when they got up, how rested they feel and about sleep medication. See @fig-morning for an excerpt.</span>
+<span id="cb16-175"><a href="#cb16-175"></a><span class="ss">1. </span>Select the three groups with the lowest duration above 250 lx mel EDI</span>
 <span id="cb16-176"><a href="#cb16-176"></a></span>
-<span id="cb16-177"><a href="#cb16-177"></a>::: {.column-margin}</span>
-<span id="cb16-178"><a href="#cb16-178"></a><span class="al">![Excerpt from the morning diary as opened in Excel](assets/advanced/morning_protocol.png)</span>{#fig-morning}</span>
-<span id="cb16-179"><a href="#cb16-179"></a></span>
-<span id="cb16-180"><a href="#cb16-180"></a><span class="al">![Excerpt from the evening diary as opened in Excel](assets/advanced/evening_protocol.png)</span>{#fig-evening}</span>
-<span id="cb16-181"><a href="#cb16-181"></a>:::</span>
+<span id="cb16-177"><a href="#cb16-177"></a><span class="fu">### State data</span></span>
+<span id="cb16-178"><a href="#cb16-178"></a></span>
+<span id="cb16-179"><a href="#cb16-179"></a>We need information about sleep times. These can be found in the diaries.</span>
+<span id="cb16-180"><a href="#cb16-180"></a></span>
+<span id="cb16-181"><a href="#cb16-181"></a>The morning diary is all about last nights sleep, how long the needed to fall asleep, wake-ups during the night, when they got up, how rested they feel and about sleep medication. See @fig-morning for an excerpt.</span>
 <span id="cb16-182"><a href="#cb16-182"></a></span>
-<span id="cb16-183"><a href="#cb16-183"></a>The evening diary is about the prior day, how well and they feel and about their performance during the day, alcohol consumation, when they got to bed, daytime naps and self-assessments about low activity and bright days. See @fig-evening for an excerpt.</span>
-<span id="cb16-184"><a href="#cb16-184"></a></span>
-<span id="cb16-185"><a href="#cb16-185"></a>In the next step we import these data and combine them to a large table. While none of these steps contain <span class="in">`LightLogR`</span> functions, it is a crucial step to set the data up right for merging - particularly in that we assign the morning diaries to the prior day, and also add information about performance and fatigue on a given day to the prior day.</span>
-<span id="cb16-186"><a href="#cb16-186"></a></span>
-<span id="cb16-189"><a href="#cb16-189"></a><span class="in">```{r}</span></span>
-<span id="cb16-190"><a href="#cb16-190"></a><span class="co">#| label: Import daily diaries</span></span>
-<span id="cb16-191"><a href="#cb16-191"></a>state_path1 <span class="ot">&lt;-</span> <span class="st">"data/case_light_sensitivity/evening_protocol.xlsx"</span></span>
-<span id="cb16-192"><a href="#cb16-192"></a>state_path2 <span class="ot">&lt;-</span> <span class="st">"data/case_light_sensitivity/morning_protocol.xlsx"</span></span>
-<span id="cb16-193"><a href="#cb16-193"></a></span>
-<span id="cb16-194"><a href="#cb16-194"></a>state_evening <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(state_path1)</span>
-<span id="cb16-195"><a href="#cb16-195"></a>state_morning <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(state_path2)</span>
-<span id="cb16-196"><a href="#cb16-196"></a></span>
-<span id="cb16-197"><a href="#cb16-197"></a>state_evening<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">date</span>(state_evening<span class="sc">$</span>Date) <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-198"><a href="#cb16-198"></a>state_morning<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">date</span>(state_morning<span class="sc">$</span>Date <span class="sc">-</span> <span class="fu">days</span>(<span class="dv">1</span>)) <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-199"><a href="#cb16-199"></a>states <span class="ot">&lt;-</span> <span class="fu">left_join</span>(state_evening, state_morning, <span class="at">by =</span> <span class="st">"Date"</span>) <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-200"><a href="#cb16-200"></a></span>
-<span id="cb16-201"><a href="#cb16-201"></a>labels_states <span class="ot">&lt;-</span> </span>
-<span id="cb16-202"><a href="#cb16-202"></a>  <span class="fu">names</span>(states) <span class="sc">|&gt;</span> </span>
-<span id="cb16-203"><a href="#cb16-203"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"Date"</span>, <span class="st">"wellbeing.evening"</span>, <span class="st">"performance"</span>, <span class="st">"fatigue"</span>, </span>
-<span id="cb16-204"><a href="#cb16-204"></a>              <span class="st">"daysleep.duration"</span>, <span class="st">"daysleep.start"</span>, <span class="st">"alcohol"</span>, <span class="st">"bedtime"</span>, </span>
-<span id="cb16-205"><a href="#cb16-205"></a>              <span class="st">"sunny.day"</span>, <span class="st">"low.movement"</span>,</span>
-<span id="cb16-206"><a href="#cb16-206"></a>              <span class="st">"sleepquality"</span>, <span class="st">"wellbeing.morning"</span>, <span class="st">"sleepdelay"</span>, </span>
-<span id="cb16-207"><a href="#cb16-207"></a>              <span class="st">"sleepinterruptions"</span>, <span class="st">"sleepinterruptions.duration"</span>, <span class="st">"wakeup"</span>, </span>
-<span id="cb16-208"><a href="#cb16-208"></a>              <span class="st">"sleepduration"</span>, <span class="st">"outofbed"</span>, <span class="st">"medication"</span>))</span>
-<span id="cb16-209"><a href="#cb16-209"></a><span class="fu">names</span>(states) <span class="ot">&lt;-</span> <span class="fu">names</span>(labels_states)</span>
-<span id="cb16-210"><a href="#cb16-210"></a></span>
-<span id="cb16-211"><a href="#cb16-211"></a>states <span class="ot">&lt;-</span> </span>
-<span id="cb16-212"><a href="#cb16-212"></a>  states <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">performance.next =</span> <span class="fu">lead</span>(performance), <span class="co">#&lt;3&gt;</span></span>
-<span id="cb16-213"><a href="#cb16-213"></a>                   <span class="at">fatigue.next =</span> <span class="fu">lead</span>(fatigue)) <span class="co">#&lt;3&gt;</span></span>
-<span id="cb16-214"><a href="#cb16-214"></a><span class="in">```</span></span>
-<span id="cb16-215"><a href="#cb16-215"></a></span>
-<span id="cb16-216"><a href="#cb16-216"></a><span class="ss">1. </span>Store the date information of the evening diaries as is, but the morning diary will be set one day back.</span>
-<span id="cb16-217"><a href="#cb16-217"></a><span class="ss">2. </span>By joining these two diaries by their (adjusted) date, morning diary information is related to the prior day evening diary.</span>
-<span id="cb16-218"><a href="#cb16-218"></a><span class="ss">3. </span>We add the next days performance and fatigue level to all days.</span>
-<span id="cb16-219"><a href="#cb16-219"></a></span>
-<span id="cb16-220"><a href="#cb16-220"></a>The following table gives a short overview of the states. We will later get to whether a higher rating is better or worse for the individual items.</span>
+<span id="cb16-183"><a href="#cb16-183"></a>::: {.column-margin}</span>
+<span id="cb16-184"><a href="#cb16-184"></a><span class="al">![Excerpt from the morning diary as opened in Excel](assets/advanced/morning_protocol.png)</span>{#fig-morning}</span>
+<span id="cb16-185"><a href="#cb16-185"></a></span>
+<span id="cb16-186"><a href="#cb16-186"></a><span class="al">![Excerpt from the evening diary as opened in Excel](assets/advanced/evening_protocol.png)</span>{#fig-evening}</span>
+<span id="cb16-187"><a href="#cb16-187"></a>:::</span>
+<span id="cb16-188"><a href="#cb16-188"></a></span>
+<span id="cb16-189"><a href="#cb16-189"></a>The evening diary is about the prior day, how well and they feel and about their performance during the day, alcohol consumation, when they got to bed, daytime naps and self-assessments about low activity and bright days. See @fig-evening for an excerpt.</span>
+<span id="cb16-190"><a href="#cb16-190"></a></span>
+<span id="cb16-191"><a href="#cb16-191"></a>In the next step we import these data and combine them to a large table. While none of these steps contain <span class="in">`LightLogR`</span> functions, it is a crucial step to set the data up right for merging - particularly in that we assign the morning diaries to the prior day, and also add information about performance and fatigue on a given day to the prior day.</span>
+<span id="cb16-192"><a href="#cb16-192"></a></span>
+<span id="cb16-195"><a href="#cb16-195"></a><span class="in">```{r}</span></span>
+<span id="cb16-196"><a href="#cb16-196"></a><span class="co">#| label: Import daily diaries</span></span>
+<span id="cb16-197"><a href="#cb16-197"></a>state_path1 <span class="ot">&lt;-</span> <span class="st">"data/case_light_sensitivity/evening_protocol.xlsx"</span></span>
+<span id="cb16-198"><a href="#cb16-198"></a>state_path2 <span class="ot">&lt;-</span> <span class="st">"data/case_light_sensitivity/morning_protocol.xlsx"</span></span>
+<span id="cb16-199"><a href="#cb16-199"></a></span>
+<span id="cb16-200"><a href="#cb16-200"></a>state_evening <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(state_path1)</span>
+<span id="cb16-201"><a href="#cb16-201"></a>state_morning <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(state_path2)</span>
+<span id="cb16-202"><a href="#cb16-202"></a></span>
+<span id="cb16-203"><a href="#cb16-203"></a>state_evening<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">date</span>(state_evening<span class="sc">$</span>Date) <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-204"><a href="#cb16-204"></a>state_morning<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">date</span>(state_morning<span class="sc">$</span>Date <span class="sc">-</span> <span class="fu">days</span>(<span class="dv">1</span>)) <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-205"><a href="#cb16-205"></a>states <span class="ot">&lt;-</span> <span class="fu">left_join</span>(state_evening, state_morning, <span class="at">by =</span> <span class="st">"Date"</span>) <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-206"><a href="#cb16-206"></a></span>
+<span id="cb16-207"><a href="#cb16-207"></a>labels_states <span class="ot">&lt;-</span> </span>
+<span id="cb16-208"><a href="#cb16-208"></a>  <span class="fu">names</span>(states) <span class="sc">|&gt;</span> </span>
+<span id="cb16-209"><a href="#cb16-209"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(<span class="st">"Date"</span>, <span class="st">"wellbeing.evening"</span>, <span class="st">"performance"</span>, <span class="st">"fatigue"</span>, </span>
+<span id="cb16-210"><a href="#cb16-210"></a>              <span class="st">"daysleep.duration"</span>, <span class="st">"daysleep.start"</span>, <span class="st">"alcohol"</span>, <span class="st">"bedtime"</span>, </span>
+<span id="cb16-211"><a href="#cb16-211"></a>              <span class="st">"sunny.day"</span>, <span class="st">"low.movement"</span>,</span>
+<span id="cb16-212"><a href="#cb16-212"></a>              <span class="st">"sleepquality"</span>, <span class="st">"wellbeing.morning"</span>, <span class="st">"sleepdelay"</span>, </span>
+<span id="cb16-213"><a href="#cb16-213"></a>              <span class="st">"sleepinterruptions"</span>, <span class="st">"sleepinterruptions.duration"</span>, <span class="st">"wakeup"</span>, </span>
+<span id="cb16-214"><a href="#cb16-214"></a>              <span class="st">"sleepduration"</span>, <span class="st">"outofbed"</span>, <span class="st">"medication"</span>))</span>
+<span id="cb16-215"><a href="#cb16-215"></a><span class="fu">names</span>(states) <span class="ot">&lt;-</span> <span class="fu">names</span>(labels_states)</span>
+<span id="cb16-216"><a href="#cb16-216"></a></span>
+<span id="cb16-217"><a href="#cb16-217"></a>states <span class="ot">&lt;-</span> </span>
+<span id="cb16-218"><a href="#cb16-218"></a>  states <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">performance.next =</span> <span class="fu">lead</span>(performance), <span class="co">#&lt;3&gt;</span></span>
+<span id="cb16-219"><a href="#cb16-219"></a>                   <span class="at">fatigue.next =</span> <span class="fu">lead</span>(fatigue)) <span class="co">#&lt;3&gt;</span></span>
+<span id="cb16-220"><a href="#cb16-220"></a><span class="in">```</span></span>
 <span id="cb16-221"><a href="#cb16-221"></a></span>
-<span id="cb16-224"><a href="#cb16-224"></a><span class="in">```{r}</span></span>
-<span id="cb16-225"><a href="#cb16-225"></a>states <span class="sc">|&gt;</span> </span>
-<span id="cb16-226"><a href="#cb16-226"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(labels_states, <span class="st">"Performance next day"</span>, <span class="st">"Fatigue next day"</span>)) <span class="sc">|&gt;</span>  </span>
-<span id="cb16-227"><a href="#cb16-227"></a>  <span class="fu">tbl_summary</span>(<span class="at">include =</span> <span class="fu">where</span>(is.numeric))</span>
-<span id="cb16-228"><a href="#cb16-228"></a><span class="in">```</span></span>
-<span id="cb16-229"><a href="#cb16-229"></a></span>
-<span id="cb16-230"><a href="#cb16-230"></a></span>
-<span id="cb16-231"><a href="#cb16-231"></a><span class="fu">## Merging sleep data</span></span>
-<span id="cb16-232"><a href="#cb16-232"></a></span>
-<span id="cb16-233"><a href="#cb16-233"></a>Now that the diaries are prepared, we can extract sleep data from the states. The goal for the next code cell is to end with a <span class="in">`statechange`</span> variable, that has a datetime for every timepoint when a new state occurs.</span>
-<span id="cb16-234"><a href="#cb16-234"></a></span>
-<span id="cb16-237"><a href="#cb16-237"></a><span class="in">```{r}</span></span>
-<span id="cb16-238"><a href="#cb16-238"></a><span class="co">#| label: create sleep data</span></span>
-<span id="cb16-239"><a href="#cb16-239"></a>sleep_data <span class="ot">&lt;-</span></span>
-<span id="cb16-240"><a href="#cb16-240"></a>  states <span class="sc">|&gt;</span></span>
-<span id="cb16-241"><a href="#cb16-241"></a>  <span class="fu">mutate</span>(<span class="at">sleep =</span> bedtime <span class="sc">+</span> sleepdelay) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-242"><a href="#cb16-242"></a>  <span class="fu">select</span>(sleep, <span class="at">wake =</span> wakeup) <span class="sc">|&gt;</span> <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-243"><a href="#cb16-243"></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"state"</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;3&gt;</span></span>
-<span id="cb16-244"><a href="#cb16-244"></a>  <span class="fu">add_row</span>(<span class="at">state =</span> <span class="st">"wake"</span>, <span class="co">#&lt;4&gt;</span></span>
-<span id="cb16-245"><a href="#cb16-245"></a>          <span class="at">value =</span> <span class="fu">as.POSIXct</span>(<span class="st">"2025-09-24 14:00:00"</span>, <span class="at">tz =</span> <span class="st">"UTC"</span>), <span class="co">#&lt;4&gt;</span></span>
-<span id="cb16-246"><a href="#cb16-246"></a>          <span class="at">.before =</span> <span class="dv">1</span>) <span class="co">#&lt;4&gt;</span></span>
-<span id="cb16-247"><a href="#cb16-247"></a><span class="in">```</span></span>
-<span id="cb16-248"><a href="#cb16-248"></a></span>
-<span id="cb16-249"><a href="#cb16-249"></a><span class="ss">1. </span>Calculate sleep timing by adding bedtime and sleepdelay</span>
-<span id="cb16-250"><a href="#cb16-250"></a><span class="ss">2. </span>Reduce the dataset to only sleep and wake times</span>
-<span id="cb16-251"><a href="#cb16-251"></a><span class="ss">3. </span>We transform the data from wide to long format (i.e., consecutive wake-sleep statesd)</span>
-<span id="cb16-252"><a href="#cb16-252"></a><span class="ss">4. </span>We add an initial <span class="in">`wake`</span> for the first day</span>
-<span id="cb16-253"><a href="#cb16-253"></a></span>
-<span id="cb16-254"><a href="#cb16-254"></a>While we are at it, we can also create states according to the *Brown et al. (2022)* recommendations, which distinguish daytime (<span class="in">`wake`</span>), evening (<span class="in">`pre-sleep`</span>), and nighttime (<span class="in">`sleep`</span>) hours. The <span class="in">`LightLogR`</span> function <span class="in">`sleep_int2Brown()`</span> makes this conversion a breeze. By default, the evening phase is set to a length of <span class="in">`3 hours`</span>.</span>
-<span id="cb16-255"><a href="#cb16-255"></a></span>
-<span id="cb16-258"><a href="#cb16-258"></a><span class="in">```{r}</span></span>
-<span id="cb16-259"><a href="#cb16-259"></a><span class="co">#| label: create brown states</span></span>
-<span id="cb16-260"><a href="#cb16-260"></a>sleep_data <span class="ot">&lt;-</span></span>
-<span id="cb16-261"><a href="#cb16-261"></a>  sleep_data <span class="sc">|&gt;</span> </span>
-<span id="cb16-262"><a href="#cb16-262"></a>  <span class="fu">sc2interval</span>(value, state) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-263"><a href="#cb16-263"></a>  <span class="fu">sleep_int2Brown</span>(<span class="at">Brown.night =</span> <span class="st">"sleep"</span>, <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-264"><a href="#cb16-264"></a>                  <span class="at">Brown.day =</span> <span class="st">"wake"</span>, <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-265"><a href="#cb16-265"></a>                  <span class="at">Brown.evening =</span> <span class="st">"pre-sleep"</span>) <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-266"><a href="#cb16-266"></a><span class="in">```</span></span>
-<span id="cb16-267"><a href="#cb16-267"></a></span>
-<span id="cb16-268"><a href="#cb16-268"></a><span class="ss">1. </span>Convert the <span class="in">`statechanges`</span> into <span class="in">`intervals`</span>, i.e. from datetimes when a state changes to intervals where a state is considered <span class="in">`active`</span>.</span>
-<span id="cb16-269"><a href="#cb16-269"></a><span class="ss">2. </span>Add a variable (<span class="in">`State.Brown`</span> by default) containing the *Brown et al. (2022)* phases. This function automatically extends the rows to include the <span class="in">`pre-sleep`</span> phase.</span>
-<span id="cb16-270"><a href="#cb16-270"></a></span>
-<span id="cb16-271"><a href="#cb16-271"></a>Next, we combine the light dataset with the sleep data.</span>
-<span id="cb16-272"><a href="#cb16-272"></a></span>
-<span id="cb16-275"><a href="#cb16-275"></a><span class="in">```{r}</span></span>
-<span id="cb16-276"><a href="#cb16-276"></a><span class="co">#| label: combine datasets</span></span>
-<span id="cb16-277"><a href="#cb16-277"></a>data_ext <span class="ot">&lt;-</span> </span>
-<span id="cb16-278"><a href="#cb16-278"></a>data <span class="sc">|&gt;</span> </span>
-<span id="cb16-279"><a href="#cb16-279"></a>  <span class="fu">add_states</span>(sleep_data, <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-280"><a href="#cb16-280"></a>             <span class="at">start.colname =</span> Interval, <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-281"><a href="#cb16-281"></a>             <span class="at">end.colname =</span> Interval, <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-282"><a href="#cb16-282"></a>             <span class="at">force.tz =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;3&gt;</span></span>
-<span id="cb16-283"><a href="#cb16-283"></a>  <span class="fu">drop_na</span>(state) <span class="sc">|&gt;</span> <span class="co">#&lt;4&gt;</span></span>
-<span id="cb16-284"><a href="#cb16-284"></a>  <span class="fu">add_photoperiod</span>(coordinates) <span class="sc">|&gt;</span> </span>
-<span id="cb16-285"><a href="#cb16-285"></a>  <span class="fu">Brown2reference</span>(</span>
-<span id="cb16-286"><a href="#cb16-286"></a>                  <span class="at">Brown.day =</span> <span class="st">"wake"</span>,</span>
-<span id="cb16-287"><a href="#cb16-287"></a>                  <span class="at">Brown.evening =</span> <span class="st">"pre-sleep"</span>,</span>
-<span id="cb16-288"><a href="#cb16-288"></a>                  <span class="at">Brown.night =</span> <span class="st">"sleep"</span>)</span>
-<span id="cb16-289"><a href="#cb16-289"></a></span>
-<span id="cb16-290"><a href="#cb16-290"></a>data_ext <span class="sc">|&gt;</span> <span class="fu">head</span>()</span>
-<span id="cb16-291"><a href="#cb16-291"></a><span class="in">```</span></span>
-<span id="cb16-292"><a href="#cb16-292"></a></span>
-<span id="cb16-293"><a href="#cb16-293"></a><span class="ss">1. </span>Combine the two datasets</span>
-<span id="cb16-294"><a href="#cb16-294"></a><span class="ss">2. </span>Get the start and end datetimes for each state from the <span class="in">`Interval`</span> column</span>
-<span id="cb16-295"><a href="#cb16-295"></a><span class="ss">3. </span>Assures that the times from the <span class="in">`sleep_data`</span> dataset are matched up with the light data, even though the light data uses the <span class="in">`Central European Time`</span>, whereas the sleep states use the default <span class="in">`UTC`</span> time zone.</span>
-<span id="cb16-296"><a href="#cb16-296"></a><span class="ss">4. </span>Remove times that don't relate to any state</span>
-<span id="cb16-297"><a href="#cb16-297"></a></span>
-<span id="cb16-298"><a href="#cb16-298"></a><span class="fu">## Brown et al. (2022) recommendations</span></span>
-<span id="cb16-299"><a href="#cb16-299"></a></span>
-<span id="cb16-300"><a href="#cb16-300"></a>Let's visualize the newly extended dataset with regards to the *Brown et al. (2022)* states.</span>
-<span id="cb16-301"><a href="#cb16-301"></a></span>
-<span id="cb16-304"><a href="#cb16-304"></a><span class="in">```{r}</span></span>
-<span id="cb16-305"><a href="#cb16-305"></a><span class="co">#| label: visualize datasets</span></span>
-<span id="cb16-306"><a href="#cb16-306"></a><span class="co">#| fig-height: 6</span></span>
-<span id="cb16-307"><a href="#cb16-307"></a><span class="co">#| fig-width: 12</span></span>
-<span id="cb16-308"><a href="#cb16-308"></a><span class="co">#| message: false</span></span>
-<span id="cb16-309"><a href="#cb16-309"></a>color_palette <span class="ot">&lt;-</span></span>
-<span id="cb16-310"><a href="#cb16-310"></a>  <span class="fu">c</span>(</span>
-<span id="cb16-311"><a href="#cb16-311"></a>    <span class="at">wake =</span>           <span class="st">"#0073C2FF"</span>,</span>
-<span id="cb16-312"><a href="#cb16-312"></a>    <span class="st">`</span><span class="at">pre-sleep</span><span class="st">`</span> <span class="ot">=</span>    <span class="st">"#EFC000FF"</span>,</span>
-<span id="cb16-313"><a href="#cb16-313"></a>    <span class="at">sleep =</span>          <span class="st">"#868686FF"</span>,</span>
-<span id="cb16-314"><a href="#cb16-314"></a>    <span class="at">compliant =</span>      <span class="st">"#658354"</span>,</span>
-<span id="cb16-315"><a href="#cb16-315"></a>    <span class="st">`</span><span class="at">non-compliant</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"#CD534CFF"</span></span>
-<span id="cb16-316"><a href="#cb16-316"></a>  )</span>
-<span id="cb16-317"><a href="#cb16-317"></a></span>
-<span id="cb16-318"><a href="#cb16-318"></a>data_ext <span class="sc">|&gt;</span></span>
-<span id="cb16-319"><a href="#cb16-319"></a>  <span class="fu">aggregate_Datetime</span>(<span class="st">"15 mins"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-320"><a href="#cb16-320"></a>  <span class="fu">mutate</span>(<span class="at">week =</span> <span class="fu">week</span>(Datetime), <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-321"><a href="#cb16-321"></a>         <span class="at">week =</span> <span class="fu">paste0</span>(<span class="st">"week: "</span>, week), <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-322"><a href="#cb16-322"></a>         <span class="at">Reference.check =</span> </span>
-<span id="cb16-323"><a href="#cb16-323"></a>           <span class="fu">case_when</span>(Reference.check <span class="sc">~</span> <span class="st">"compliant"</span>,</span>
-<span id="cb16-324"><a href="#cb16-324"></a>                     <span class="sc">!</span>Reference.check <span class="sc">~</span> <span class="st">"non-compliant"</span>),</span>
-<span id="cb16-325"><a href="#cb16-325"></a>         <span class="at">State.Brown =</span> <span class="fu">fct_expand</span>(State.Brown, <span class="st">"compliant"</span>, <span class="st">"non-compliant"</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-326"><a href="#cb16-326"></a>                       <span class="fu">fct_relevel</span>(<span class="st">"wake"</span>) <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-327"><a href="#cb16-327"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb16-328"><a href="#cb16-328"></a>  <span class="fu">group_by</span>(week) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-329"><a href="#cb16-329"></a>  <span class="fu">gg_days</span>(<span class="at">geom =</span> <span class="st">"ribbon"</span>, <span class="co">#&lt;3&gt;</span></span>
-<span id="cb16-330"><a href="#cb16-330"></a>          <span class="at">alpha =</span> <span class="fl">0.8</span>,</span>
-<span id="cb16-331"><a href="#cb16-331"></a>          <span class="at">lwd =</span> <span class="fl">0.5</span>,</span>
-<span id="cb16-332"><a href="#cb16-332"></a>          <span class="at">aes_col =</span> State.Brown, <span class="co">#&lt;4&gt;</span></span>
-<span id="cb16-333"><a href="#cb16-333"></a>          <span class="at">aes_fill =</span> State.Brown, <span class="co">#&lt;4&gt;</span></span>
-<span id="cb16-334"><a href="#cb16-334"></a>          <span class="at">group =</span> <span class="fu">consecutive_id</span>(State.Brown), <span class="co">#&lt;4&gt;</span></span>
-<span id="cb16-335"><a href="#cb16-335"></a>          <span class="at">x.axis.limits =</span> \(x) { <span class="co">#&lt;5&gt;</span></span>
-<span id="cb16-336"><a href="#cb16-336"></a>            <span class="fu">Datetime_limits</span>(x, <span class="at">length =</span> <span class="fu">ddays</span>(<span class="dv">6</span>), <span class="at">midnight.rollover =</span> <span class="cn">TRUE</span>) <span class="co">#&lt;5&gt;</span></span>
-<span id="cb16-337"><a href="#cb16-337"></a>            } <span class="co">#&lt;5&gt;</span></span>
-<span id="cb16-338"><a href="#cb16-338"></a>          ) <span class="sc">|&gt;</span> </span>
-<span id="cb16-339"><a href="#cb16-339"></a>  <span class="fu">gg_photoperiod</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb16-340"><a href="#cb16-340"></a>  <span class="fu">gg_states</span>(Reference.check, <span class="co">#&lt;6&gt;</span></span>
-<span id="cb16-341"><a href="#cb16-341"></a>            <span class="at">aes_fill =</span> Reference.check, <span class="co">#&lt;6&gt;</span></span>
-<span id="cb16-342"><a href="#cb16-342"></a>            <span class="at">ymax =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">ymin =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="co">#&lt;7&gt;</span></span>
-<span id="cb16-343"><a href="#cb16-343"></a>            <span class="at">alpha =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb16-344"><a href="#cb16-344"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Brown et al."</span>,</span>
-<span id="cb16-345"><a href="#cb16-345"></a>       <span class="at">caption =</span> </span>
-<span id="cb16-346"><a href="#cb16-346"></a>         <span class="st">"Brown et al. (2022) recommendations are ≥ 250 lx melanopic EDI (mel EDI) during daytime (wake) hours,</span><span class="sc">\n</span><span class="st">≤ 10 lx mel EDI in the evening (pre-sleep), and ≤ 1 lx mel EDI at night (sleep)"</span>) <span class="sc">+</span></span>
-<span id="cb16-347"><a href="#cb16-347"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb16-348"><a href="#cb16-348"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> color_palette) <span class="sc">+</span></span>
-<span id="cb16-349"><a href="#cb16-349"></a>  <span class="fu">theme_sub_strip</span>(<span class="at">background =</span> <span class="fu">element_blank</span>(), <span class="co">#&lt;8&gt;</span></span>
-<span id="cb16-350"><a href="#cb16-350"></a>                  <span class="at">text.y =</span> <span class="fu">element_blank</span>()) <span class="co">#&lt;8&gt;</span></span>
-<span id="cb16-351"><a href="#cb16-351"></a><span class="in">```</span></span>
-<span id="cb16-352"><a href="#cb16-352"></a></span>
-<span id="cb16-353"><a href="#cb16-353"></a><span class="ss">1. </span>Grouping by week so that the plot is automatically sectioned into three rows</span>
-<span id="cb16-354"><a href="#cb16-354"></a><span class="ss">2. </span>The expansion of factor levels is purely so that the order in the legend is automatically kept in sensible order.</span>
-<span id="cb16-355"><a href="#cb16-355"></a><span class="ss">3. </span>Setting the geom to <span class="in">`ribbon`</span> enables a filled band with the lower band set at 0.</span>
-<span id="cb16-356"><a href="#cb16-356"></a><span class="ss">4. </span>Coloring and filling by the Brown states will only look good, if each section is kept individually. <span class="in">`consecutive_id()`</span> ensures just this.</span>
-<span id="cb16-357"><a href="#cb16-357"></a><span class="ss">5. </span>Manually setting the datetime limits ensures that each row is kept at 7 days</span>
-<span id="cb16-358"><a href="#cb16-358"></a><span class="ss">6. </span>We add a check whether the recommendations were fulfilled and color by it.</span>
-<span id="cb16-359"><a href="#cb16-359"></a><span class="ss">7. </span>Adjusting the height of the state bands ensures readability of the plot despite other color aspects.</span>
-<span id="cb16-360"><a href="#cb16-360"></a><span class="ss">8. </span>As the week grouping is just for row-setting, we are not interested in the strip and thus remove it.</span>
-<span id="cb16-361"><a href="#cb16-361"></a></span>
-<span id="cb16-362"><a href="#cb16-362"></a>We can further summarize the compliance to the recommendations in a table.</span>
-<span id="cb16-363"><a href="#cb16-363"></a></span>
-<span id="cb16-366"><a href="#cb16-366"></a><span class="in">```{r}</span></span>
-<span id="cb16-367"><a href="#cb16-367"></a>data_ext <span class="sc">|&gt;</span> </span>
-<span id="cb16-368"><a href="#cb16-368"></a>  <span class="fu">group_by</span>(State.Brown) <span class="sc">|&gt;</span> </span>
-<span id="cb16-369"><a href="#cb16-369"></a>  <span class="fu">summarize</span>(<span class="st">`</span><span class="at">Relative compliance</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(Reference.check)<span class="sc">/</span><span class="fu">n</span>(),</span>
-<span id="cb16-370"><a href="#cb16-370"></a>            <span class="st">`</span><span class="at">Relative duration</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb16-371"><a href="#cb16-371"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Relative duration</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">Relative duration</span><span class="st">`</span> <span class="sc">/</span> <span class="fu">sum</span>(<span class="st">`</span><span class="at">Relative duration</span><span class="st">`</span>),</span>
-<span id="cb16-372"><a href="#cb16-372"></a>         <span class="at">State.Brown =</span> <span class="fu">fct_relevel</span>(State.Brown, <span class="st">"wake"</span>)</span>
-<span id="cb16-373"><a href="#cb16-373"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb16-374"><a href="#cb16-374"></a>  <span class="fu">arrange</span>(State.Brown) <span class="sc">|&gt;</span> </span>
-<span id="cb16-375"><a href="#cb16-375"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb16-376"><a href="#cb16-376"></a>  <span class="fu">fmt_percent</span>(<span class="at">decimals =</span> <span class="dv">0</span>)</span>
-<span id="cb16-377"><a href="#cb16-377"></a><span class="in">```</span></span>
-<span id="cb16-378"><a href="#cb16-378"></a></span>
-<span id="cb16-379"><a href="#cb16-379"></a><span class="fu">## Calculate metrics</span></span>
-<span id="cb16-380"><a href="#cb16-380"></a></span>
-<span id="cb16-381"><a href="#cb16-381"></a>In this section, we calculate some light metrics that we can correlate with sleep quality. We calculate these metrics not by the 24-hour day, but rather by wake-sleep rhythms.</span>
-<span id="cb16-382"><a href="#cb16-382"></a></span>
-<span id="cb16-383"><a href="#cb16-383"></a><span class="fu">### Sleep-wake cycles</span></span>
+<span id="cb16-222"><a href="#cb16-222"></a><span class="ss">1. </span>Store the date information of the evening diaries as is, but the morning diary will be set one day back.</span>
+<span id="cb16-223"><a href="#cb16-223"></a><span class="ss">2. </span>By joining these two diaries by their (adjusted) date, morning diary information is related to the prior day evening diary.</span>
+<span id="cb16-224"><a href="#cb16-224"></a><span class="ss">3. </span>We add the next days performance and fatigue level to all days.</span>
+<span id="cb16-225"><a href="#cb16-225"></a></span>
+<span id="cb16-226"><a href="#cb16-226"></a>The following table gives a short overview of the states. We will later get to whether a higher rating is better or worse for the individual items.</span>
+<span id="cb16-227"><a href="#cb16-227"></a></span>
+<span id="cb16-230"><a href="#cb16-230"></a><span class="in">```{r}</span></span>
+<span id="cb16-231"><a href="#cb16-231"></a>states <span class="sc">|&gt;</span> </span>
+<span id="cb16-232"><a href="#cb16-232"></a>  <span class="fu">set_names</span>(<span class="fu">c</span>(labels_states, <span class="st">"Performance next day"</span>, <span class="st">"Fatigue next day"</span>)) <span class="sc">|&gt;</span>  </span>
+<span id="cb16-233"><a href="#cb16-233"></a>  <span class="fu">tbl_summary</span>(<span class="at">include =</span> <span class="fu">where</span>(is.numeric))</span>
+<span id="cb16-234"><a href="#cb16-234"></a><span class="in">```</span></span>
+<span id="cb16-235"><a href="#cb16-235"></a></span>
+<span id="cb16-236"><a href="#cb16-236"></a></span>
+<span id="cb16-237"><a href="#cb16-237"></a><span class="fu">## Merging sleep data</span></span>
+<span id="cb16-238"><a href="#cb16-238"></a></span>
+<span id="cb16-239"><a href="#cb16-239"></a>Now that the diaries are prepared, we can extract sleep data from the states. The goal for the next code cell is to end with a <span class="in">`statechange`</span> variable, that has a datetime for every timepoint when a new state occurs.</span>
+<span id="cb16-240"><a href="#cb16-240"></a></span>
+<span id="cb16-243"><a href="#cb16-243"></a><span class="in">```{r}</span></span>
+<span id="cb16-244"><a href="#cb16-244"></a><span class="co">#| label: create sleep data</span></span>
+<span id="cb16-245"><a href="#cb16-245"></a>sleep_data <span class="ot">&lt;-</span></span>
+<span id="cb16-246"><a href="#cb16-246"></a>  states <span class="sc">|&gt;</span></span>
+<span id="cb16-247"><a href="#cb16-247"></a>  <span class="fu">mutate</span>(<span class="at">sleep =</span> bedtime <span class="sc">+</span> sleepdelay) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-248"><a href="#cb16-248"></a>  <span class="fu">select</span>(sleep, <span class="at">wake =</span> wakeup) <span class="sc">|&gt;</span> <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-249"><a href="#cb16-249"></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"state"</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;3&gt;</span></span>
+<span id="cb16-250"><a href="#cb16-250"></a>  <span class="fu">add_row</span>(<span class="at">state =</span> <span class="st">"wake"</span>, <span class="co">#&lt;4&gt;</span></span>
+<span id="cb16-251"><a href="#cb16-251"></a>          <span class="at">value =</span> <span class="fu">as.POSIXct</span>(<span class="st">"2025-09-24 14:00:00"</span>, <span class="at">tz =</span> <span class="st">"UTC"</span>), <span class="co">#&lt;4&gt;</span></span>
+<span id="cb16-252"><a href="#cb16-252"></a>          <span class="at">.before =</span> <span class="dv">1</span>) <span class="co">#&lt;4&gt;</span></span>
+<span id="cb16-253"><a href="#cb16-253"></a><span class="in">```</span></span>
+<span id="cb16-254"><a href="#cb16-254"></a></span>
+<span id="cb16-255"><a href="#cb16-255"></a><span class="ss">1. </span>Calculate sleep timing by adding bedtime and sleepdelay</span>
+<span id="cb16-256"><a href="#cb16-256"></a><span class="ss">2. </span>Reduce the dataset to only sleep and wake times</span>
+<span id="cb16-257"><a href="#cb16-257"></a><span class="ss">3. </span>We transform the data from wide to long format (i.e., consecutive wake-sleep statesd)</span>
+<span id="cb16-258"><a href="#cb16-258"></a><span class="ss">4. </span>We add an initial <span class="in">`wake`</span> for the first day</span>
+<span id="cb16-259"><a href="#cb16-259"></a></span>
+<span id="cb16-260"><a href="#cb16-260"></a>While we are at it, we can also create states according to the *Brown et al. (2022)* recommendations, which distinguish daytime (<span class="in">`wake`</span>), evening (<span class="in">`pre-sleep`</span>), and nighttime (<span class="in">`sleep`</span>) hours. The <span class="in">`LightLogR`</span> function <span class="in">`sleep_int2Brown()`</span> makes this conversion a breeze. By default, the evening phase is set to a length of <span class="in">`3 hours`</span>.</span>
+<span id="cb16-261"><a href="#cb16-261"></a></span>
+<span id="cb16-264"><a href="#cb16-264"></a><span class="in">```{r}</span></span>
+<span id="cb16-265"><a href="#cb16-265"></a><span class="co">#| label: create brown states</span></span>
+<span id="cb16-266"><a href="#cb16-266"></a>sleep_data <span class="ot">&lt;-</span></span>
+<span id="cb16-267"><a href="#cb16-267"></a>  sleep_data <span class="sc">|&gt;</span> </span>
+<span id="cb16-268"><a href="#cb16-268"></a>  <span class="fu">sc2interval</span>(value, state) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-269"><a href="#cb16-269"></a>  <span class="fu">sleep_int2Brown</span>(<span class="at">Brown.night =</span> <span class="st">"sleep"</span>, <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-270"><a href="#cb16-270"></a>                  <span class="at">Brown.day =</span> <span class="st">"wake"</span>, <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-271"><a href="#cb16-271"></a>                  <span class="at">Brown.evening =</span> <span class="st">"pre-sleep"</span>) <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-272"><a href="#cb16-272"></a><span class="in">```</span></span>
+<span id="cb16-273"><a href="#cb16-273"></a></span>
+<span id="cb16-274"><a href="#cb16-274"></a><span class="ss">1. </span>Convert the <span class="in">`statechanges`</span> into <span class="in">`intervals`</span>, i.e. from datetimes when a state changes to intervals where a state is considered <span class="in">`active`</span>.</span>
+<span id="cb16-275"><a href="#cb16-275"></a><span class="ss">2. </span>Add a variable (<span class="in">`State.Brown`</span> by default) containing the *Brown et al. (2022)* phases. This function automatically extends the rows to include the <span class="in">`pre-sleep`</span> phase.</span>
+<span id="cb16-276"><a href="#cb16-276"></a></span>
+<span id="cb16-277"><a href="#cb16-277"></a>Next, we combine the light dataset with the sleep data.</span>
+<span id="cb16-278"><a href="#cb16-278"></a></span>
+<span id="cb16-281"><a href="#cb16-281"></a><span class="in">```{r}</span></span>
+<span id="cb16-282"><a href="#cb16-282"></a><span class="co">#| label: combine datasets</span></span>
+<span id="cb16-283"><a href="#cb16-283"></a>data_ext <span class="ot">&lt;-</span> </span>
+<span id="cb16-284"><a href="#cb16-284"></a>data <span class="sc">|&gt;</span> </span>
+<span id="cb16-285"><a href="#cb16-285"></a>  <span class="fu">add_states</span>(sleep_data, <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-286"><a href="#cb16-286"></a>             <span class="at">start.colname =</span> Interval, <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-287"><a href="#cb16-287"></a>             <span class="at">end.colname =</span> Interval, <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-288"><a href="#cb16-288"></a>             <span class="at">force.tz =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;3&gt;</span></span>
+<span id="cb16-289"><a href="#cb16-289"></a>  <span class="fu">drop_na</span>(state) <span class="sc">|&gt;</span> <span class="co">#&lt;4&gt;</span></span>
+<span id="cb16-290"><a href="#cb16-290"></a>  <span class="fu">add_photoperiod</span>(coordinates) <span class="sc">|&gt;</span> </span>
+<span id="cb16-291"><a href="#cb16-291"></a>  <span class="fu">Brown2reference</span>(</span>
+<span id="cb16-292"><a href="#cb16-292"></a>                  <span class="at">Brown.day =</span> <span class="st">"wake"</span>,</span>
+<span id="cb16-293"><a href="#cb16-293"></a>                  <span class="at">Brown.evening =</span> <span class="st">"pre-sleep"</span>,</span>
+<span id="cb16-294"><a href="#cb16-294"></a>                  <span class="at">Brown.night =</span> <span class="st">"sleep"</span>)</span>
+<span id="cb16-295"><a href="#cb16-295"></a></span>
+<span id="cb16-296"><a href="#cb16-296"></a>data_ext <span class="sc">|&gt;</span> <span class="fu">head</span>()</span>
+<span id="cb16-297"><a href="#cb16-297"></a><span class="in">```</span></span>
+<span id="cb16-298"><a href="#cb16-298"></a></span>
+<span id="cb16-299"><a href="#cb16-299"></a><span class="ss">1. </span>Combine the two datasets</span>
+<span id="cb16-300"><a href="#cb16-300"></a><span class="ss">2. </span>Get the start and end datetimes for each state from the <span class="in">`Interval`</span> column</span>
+<span id="cb16-301"><a href="#cb16-301"></a><span class="ss">3. </span>Assures that the times from the <span class="in">`sleep_data`</span> dataset are matched up with the light data, even though the light data uses the <span class="in">`Central European Time`</span>, whereas the sleep states use the default <span class="in">`UTC`</span> time zone.</span>
+<span id="cb16-302"><a href="#cb16-302"></a><span class="ss">4. </span>Remove times that don't relate to any state</span>
+<span id="cb16-303"><a href="#cb16-303"></a></span>
+<span id="cb16-304"><a href="#cb16-304"></a><span class="fu">## Brown et al. (2022) recommendations</span></span>
+<span id="cb16-305"><a href="#cb16-305"></a></span>
+<span id="cb16-306"><a href="#cb16-306"></a>Let's visualize the newly extended dataset with regards to the *Brown et al. (2022)* states.</span>
+<span id="cb16-307"><a href="#cb16-307"></a></span>
+<span id="cb16-310"><a href="#cb16-310"></a><span class="in">```{r}</span></span>
+<span id="cb16-311"><a href="#cb16-311"></a><span class="co">#| label: visualize datasets</span></span>
+<span id="cb16-312"><a href="#cb16-312"></a><span class="co">#| fig-height: 6</span></span>
+<span id="cb16-313"><a href="#cb16-313"></a><span class="co">#| fig-width: 12</span></span>
+<span id="cb16-314"><a href="#cb16-314"></a><span class="co">#| message: false</span></span>
+<span id="cb16-315"><a href="#cb16-315"></a>color_palette <span class="ot">&lt;-</span></span>
+<span id="cb16-316"><a href="#cb16-316"></a>  <span class="fu">c</span>(</span>
+<span id="cb16-317"><a href="#cb16-317"></a>    <span class="at">wake =</span>           <span class="st">"#0073C2FF"</span>,</span>
+<span id="cb16-318"><a href="#cb16-318"></a>    <span class="st">`</span><span class="at">pre-sleep</span><span class="st">`</span> <span class="ot">=</span>    <span class="st">"#EFC000FF"</span>,</span>
+<span id="cb16-319"><a href="#cb16-319"></a>    <span class="at">sleep =</span>          <span class="st">"#868686FF"</span>,</span>
+<span id="cb16-320"><a href="#cb16-320"></a>    <span class="at">compliant =</span>      <span class="st">"#658354"</span>,</span>
+<span id="cb16-321"><a href="#cb16-321"></a>    <span class="st">`</span><span class="at">non-compliant</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"#CD534CFF"</span></span>
+<span id="cb16-322"><a href="#cb16-322"></a>  )</span>
+<span id="cb16-323"><a href="#cb16-323"></a></span>
+<span id="cb16-324"><a href="#cb16-324"></a>data_ext <span class="sc">|&gt;</span></span>
+<span id="cb16-325"><a href="#cb16-325"></a>  <span class="fu">aggregate_Datetime</span>(<span class="st">"15 mins"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-326"><a href="#cb16-326"></a>  <span class="fu">mutate</span>(<span class="at">week =</span> <span class="fu">week</span>(Datetime), <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-327"><a href="#cb16-327"></a>         <span class="at">week =</span> <span class="fu">paste0</span>(<span class="st">"week: "</span>, week), <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-328"><a href="#cb16-328"></a>         <span class="at">Reference.check =</span> </span>
+<span id="cb16-329"><a href="#cb16-329"></a>           <span class="fu">case_when</span>(Reference.check <span class="sc">~</span> <span class="st">"compliant"</span>,</span>
+<span id="cb16-330"><a href="#cb16-330"></a>                     <span class="sc">!</span>Reference.check <span class="sc">~</span> <span class="st">"non-compliant"</span>),</span>
+<span id="cb16-331"><a href="#cb16-331"></a>         <span class="at">State.Brown =</span> <span class="fu">fct_expand</span>(State.Brown, <span class="st">"compliant"</span>, <span class="st">"non-compliant"</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-332"><a href="#cb16-332"></a>                       <span class="fu">fct_relevel</span>(<span class="st">"wake"</span>) <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-333"><a href="#cb16-333"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-334"><a href="#cb16-334"></a>  <span class="fu">group_by</span>(week) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-335"><a href="#cb16-335"></a>  <span class="fu">gg_days</span>(<span class="at">geom =</span> <span class="st">"ribbon"</span>, <span class="co">#&lt;3&gt;</span></span>
+<span id="cb16-336"><a href="#cb16-336"></a>          <span class="at">alpha =</span> <span class="fl">0.8</span>,</span>
+<span id="cb16-337"><a href="#cb16-337"></a>          <span class="at">lwd =</span> <span class="fl">0.5</span>,</span>
+<span id="cb16-338"><a href="#cb16-338"></a>          <span class="at">aes_col =</span> State.Brown, <span class="co">#&lt;4&gt;</span></span>
+<span id="cb16-339"><a href="#cb16-339"></a>          <span class="at">aes_fill =</span> State.Brown, <span class="co">#&lt;4&gt;</span></span>
+<span id="cb16-340"><a href="#cb16-340"></a>          <span class="at">group =</span> <span class="fu">consecutive_id</span>(State.Brown), <span class="co">#&lt;4&gt;</span></span>
+<span id="cb16-341"><a href="#cb16-341"></a>          <span class="at">x.axis.limits =</span> \(x) { <span class="co">#&lt;5&gt;</span></span>
+<span id="cb16-342"><a href="#cb16-342"></a>            <span class="fu">Datetime_limits</span>(x, <span class="at">length =</span> <span class="fu">ddays</span>(<span class="dv">6</span>), <span class="at">midnight.rollover =</span> <span class="cn">TRUE</span>) <span class="co">#&lt;5&gt;</span></span>
+<span id="cb16-343"><a href="#cb16-343"></a>            } <span class="co">#&lt;5&gt;</span></span>
+<span id="cb16-344"><a href="#cb16-344"></a>          ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-345"><a href="#cb16-345"></a>  <span class="fu">gg_photoperiod</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-346"><a href="#cb16-346"></a>  <span class="fu">gg_states</span>(Reference.check, <span class="co">#&lt;6&gt;</span></span>
+<span id="cb16-347"><a href="#cb16-347"></a>            <span class="at">aes_fill =</span> Reference.check, <span class="co">#&lt;6&gt;</span></span>
+<span id="cb16-348"><a href="#cb16-348"></a>            <span class="at">ymax =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">ymin =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="co">#&lt;7&gt;</span></span>
+<span id="cb16-349"><a href="#cb16-349"></a>            <span class="at">alpha =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb16-350"><a href="#cb16-350"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Brown et al."</span>,</span>
+<span id="cb16-351"><a href="#cb16-351"></a>       <span class="at">caption =</span> </span>
+<span id="cb16-352"><a href="#cb16-352"></a>         <span class="st">"Brown et al. (2022) recommendations are ≥ 250 lx melanopic EDI (mel EDI) during daytime (wake) hours,</span><span class="sc">\n</span><span class="st">≤ 10 lx mel EDI in the evening (pre-sleep), and ≤ 1 lx mel EDI at night (sleep)"</span>) <span class="sc">+</span></span>
+<span id="cb16-353"><a href="#cb16-353"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb16-354"><a href="#cb16-354"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> color_palette) <span class="sc">+</span></span>
+<span id="cb16-355"><a href="#cb16-355"></a>  <span class="fu">theme_sub_strip</span>(<span class="at">background =</span> <span class="fu">element_blank</span>(), <span class="co">#&lt;8&gt;</span></span>
+<span id="cb16-356"><a href="#cb16-356"></a>                  <span class="at">text.y =</span> <span class="fu">element_blank</span>()) <span class="co">#&lt;8&gt;</span></span>
+<span id="cb16-357"><a href="#cb16-357"></a><span class="in">```</span></span>
+<span id="cb16-358"><a href="#cb16-358"></a></span>
+<span id="cb16-359"><a href="#cb16-359"></a><span class="ss">1. </span>Grouping by week so that the plot is automatically sectioned into three rows</span>
+<span id="cb16-360"><a href="#cb16-360"></a><span class="ss">2. </span>The expansion of factor levels is purely so that the order in the legend is automatically kept in sensible order.</span>
+<span id="cb16-361"><a href="#cb16-361"></a><span class="ss">3. </span>Setting the geom to <span class="in">`ribbon`</span> enables a filled band with the lower band set at 0.</span>
+<span id="cb16-362"><a href="#cb16-362"></a><span class="ss">4. </span>Coloring and filling by the Brown states will only look good, if each section is kept individually. <span class="in">`consecutive_id()`</span> ensures just this.</span>
+<span id="cb16-363"><a href="#cb16-363"></a><span class="ss">5. </span>Manually setting the datetime limits ensures that each row is kept at 7 days</span>
+<span id="cb16-364"><a href="#cb16-364"></a><span class="ss">6. </span>We add a check whether the recommendations were fulfilled and color by it.</span>
+<span id="cb16-365"><a href="#cb16-365"></a><span class="ss">7. </span>Adjusting the height of the state bands ensures readability of the plot despite other color aspects.</span>
+<span id="cb16-366"><a href="#cb16-366"></a><span class="ss">8. </span>As the week grouping is just for row-setting, we are not interested in the strip and thus remove it.</span>
+<span id="cb16-367"><a href="#cb16-367"></a></span>
+<span id="cb16-368"><a href="#cb16-368"></a>We can further summarize the compliance to the recommendations in a table.</span>
+<span id="cb16-369"><a href="#cb16-369"></a></span>
+<span id="cb16-372"><a href="#cb16-372"></a><span class="in">```{r}</span></span>
+<span id="cb16-373"><a href="#cb16-373"></a>data_ext <span class="sc">|&gt;</span> </span>
+<span id="cb16-374"><a href="#cb16-374"></a>  <span class="fu">group_by</span>(State.Brown) <span class="sc">|&gt;</span> </span>
+<span id="cb16-375"><a href="#cb16-375"></a>  <span class="fu">summarize</span>(<span class="st">`</span><span class="at">Relative compliance</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(Reference.check)<span class="sc">/</span><span class="fu">n</span>(),</span>
+<span id="cb16-376"><a href="#cb16-376"></a>            <span class="st">`</span><span class="at">Relative duration</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb16-377"><a href="#cb16-377"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Relative duration</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">Relative duration</span><span class="st">`</span> <span class="sc">/</span> <span class="fu">sum</span>(<span class="st">`</span><span class="at">Relative duration</span><span class="st">`</span>),</span>
+<span id="cb16-378"><a href="#cb16-378"></a>         <span class="at">State.Brown =</span> <span class="fu">fct_relevel</span>(State.Brown, <span class="st">"wake"</span>)</span>
+<span id="cb16-379"><a href="#cb16-379"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-380"><a href="#cb16-380"></a>  <span class="fu">arrange</span>(State.Brown) <span class="sc">|&gt;</span> </span>
+<span id="cb16-381"><a href="#cb16-381"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb16-382"><a href="#cb16-382"></a>  <span class="fu">fmt_percent</span>(<span class="at">decimals =</span> <span class="dv">0</span>)</span>
+<span id="cb16-383"><a href="#cb16-383"></a><span class="in">```</span></span>
 <span id="cb16-384"><a href="#cb16-384"></a></span>
-<span id="cb16-387"><a href="#cb16-387"></a><span class="in">```{r}</span></span>
-<span id="cb16-388"><a href="#cb16-388"></a>data_sw <span class="ot">&lt;-</span></span>
-<span id="cb16-389"><a href="#cb16-389"></a>data_ext <span class="sc">|&gt;</span> </span>
-<span id="cb16-390"><a href="#cb16-390"></a>  <span class="fu">add_Date_col</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb16-391"><a href="#cb16-391"></a>  <span class="fu">number_states</span>(state, <span class="at">use.original.state =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-392"><a href="#cb16-392"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb16-393"><a href="#cb16-393"></a>    <span class="at">sleep.wake =</span> <span class="fu">sprintf</span>(<span class="st">"cycle %02.f"</span>, state.count) <span class="sc">|&gt;</span> <span class="fu">factor</span>(), <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-394"><a href="#cb16-394"></a>    <span class="at">.before =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb16-395"><a href="#cb16-395"></a>  <span class="fu">group_by</span>(sleep.wake)</span>
-<span id="cb16-396"><a href="#cb16-396"></a></span>
-<span id="cb16-397"><a href="#cb16-397"></a>data_sw <span class="sc">|&gt;</span> <span class="fu">head</span>()</span>
-<span id="cb16-398"><a href="#cb16-398"></a><span class="in">```</span></span>
-<span id="cb16-399"><a href="#cb16-399"></a></span>
-<span id="cb16-400"><a href="#cb16-400"></a><span class="ss">1. </span>Create a consecutive numbering per sleep-wake cycle. Beware if states are missing in other analyses!</span>
-<span id="cb16-401"><a href="#cb16-401"></a><span class="ss">2. </span>Format the sleep-wake cycles nicely</span>
+<span id="cb16-385"><a href="#cb16-385"></a><span class="fu">## Calculate metrics</span></span>
+<span id="cb16-386"><a href="#cb16-386"></a></span>
+<span id="cb16-387"><a href="#cb16-387"></a>In this section, we calculate some light metrics that we can correlate with sleep quality. We calculate these metrics not by the 24-hour day, but rather by wake-sleep rhythms.</span>
+<span id="cb16-388"><a href="#cb16-388"></a></span>
+<span id="cb16-389"><a href="#cb16-389"></a><span class="fu">### Sleep-wake cycles</span></span>
+<span id="cb16-390"><a href="#cb16-390"></a></span>
+<span id="cb16-393"><a href="#cb16-393"></a><span class="in">```{r}</span></span>
+<span id="cb16-394"><a href="#cb16-394"></a>data_sw <span class="ot">&lt;-</span></span>
+<span id="cb16-395"><a href="#cb16-395"></a>data_ext <span class="sc">|&gt;</span> </span>
+<span id="cb16-396"><a href="#cb16-396"></a>  <span class="fu">add_Date_col</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb16-397"><a href="#cb16-397"></a>  <span class="fu">number_states</span>(state, <span class="at">use.original.state =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span> <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-398"><a href="#cb16-398"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-399"><a href="#cb16-399"></a>    <span class="at">sleep.wake =</span> <span class="fu">sprintf</span>(<span class="st">"cycle %02.f"</span>, state.count) <span class="sc">|&gt;</span> <span class="fu">factor</span>(), <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-400"><a href="#cb16-400"></a>    <span class="at">.before =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-401"><a href="#cb16-401"></a>  <span class="fu">group_by</span>(sleep.wake)</span>
 <span id="cb16-402"><a href="#cb16-402"></a></span>
-<span id="cb16-403"><a href="#cb16-403"></a>Let's look at the sleep times as a doubleplot.</span>
-<span id="cb16-404"><a href="#cb16-404"></a></span>
-<span id="cb16-407"><a href="#cb16-407"></a><span class="in">```{r}</span></span>
-<span id="cb16-408"><a href="#cb16-408"></a>data_sw <span class="sc">|&gt;</span> </span>
-<span id="cb16-409"><a href="#cb16-409"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
-<span id="cb16-410"><a href="#cb16-410"></a>  <span class="fu">gg_heatmap</span>(state <span class="sc">==</span> <span class="st">"sleep"</span>, <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-411"><a href="#cb16-411"></a>             <span class="at">doubleplot =</span> <span class="st">"next"</span>, <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-412"><a href="#cb16-412"></a>             <span class="at">fill.remove =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="co">#&lt;3&gt;</span></span>
-<span id="cb16-413"><a href="#cb16-413"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"black"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"#00000000"</span>)) <span class="sc">+</span> <span class="co">#&lt;3&gt;</span></span>
-<span id="cb16-414"><a href="#cb16-414"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb16-415"><a href="#cb16-415"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"        Doubleplot of sleep times"</span>) <span class="sc">+</span></span>
-<span id="cb16-416"><a href="#cb16-416"></a>  <span class="fu">theme</span>(</span>
-<span id="cb16-417"><a href="#cb16-417"></a>  <span class="at">strip.background =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb16-418"><a href="#cb16-418"></a>  <span class="at">strip.text.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb16-419"><a href="#cb16-419"></a>  <span class="at">strip.placement =</span> <span class="st">"inside"</span>)</span>
-<span id="cb16-420"><a href="#cb16-420"></a><span class="in">```</span></span>
-<span id="cb16-421"><a href="#cb16-421"></a></span>
-<span id="cb16-422"><a href="#cb16-422"></a><span class="ss">1. </span>Create a logical as the main variable that is <span class="in">`TRUE`</span> when the state is <span class="in">`sleep`</span></span>
-<span id="cb16-423"><a href="#cb16-423"></a><span class="ss">2. </span>Showing the next day in the doubleplot</span>
-<span id="cb16-424"><a href="#cb16-424"></a><span class="ss">3. </span>Remove the default fill settings to provide your own</span>
-<span id="cb16-425"><a href="#cb16-425"></a></span>
-<span id="cb16-426"><a href="#cb16-426"></a>Again, we can look at the data as a table.</span>
+<span id="cb16-403"><a href="#cb16-403"></a>data_sw <span class="sc">|&gt;</span> <span class="fu">head</span>()</span>
+<span id="cb16-404"><a href="#cb16-404"></a><span class="in">```</span></span>
+<span id="cb16-405"><a href="#cb16-405"></a></span>
+<span id="cb16-406"><a href="#cb16-406"></a><span class="ss">1. </span>Create a consecutive numbering per sleep-wake cycle. Beware if states are missing in other analyses!</span>
+<span id="cb16-407"><a href="#cb16-407"></a><span class="ss">2. </span>Format the sleep-wake cycles nicely</span>
+<span id="cb16-408"><a href="#cb16-408"></a></span>
+<span id="cb16-409"><a href="#cb16-409"></a>Let's look at the sleep times as a doubleplot.</span>
+<span id="cb16-410"><a href="#cb16-410"></a></span>
+<span id="cb16-413"><a href="#cb16-413"></a><span class="in">```{r}</span></span>
+<span id="cb16-414"><a href="#cb16-414"></a>data_sw <span class="sc">|&gt;</span> </span>
+<span id="cb16-415"><a href="#cb16-415"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb16-416"><a href="#cb16-416"></a>  <span class="fu">gg_heatmap</span>(state <span class="sc">==</span> <span class="st">"sleep"</span>, <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-417"><a href="#cb16-417"></a>             <span class="at">doubleplot =</span> <span class="st">"next"</span>, <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-418"><a href="#cb16-418"></a>             <span class="at">fill.remove =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="co">#&lt;3&gt;</span></span>
+<span id="cb16-419"><a href="#cb16-419"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"TRUE"</span> <span class="ot">=</span> <span class="st">"black"</span>, <span class="st">"FALSE"</span> <span class="ot">=</span> <span class="st">"#00000000"</span>)) <span class="sc">+</span> <span class="co">#&lt;3&gt;</span></span>
+<span id="cb16-420"><a href="#cb16-420"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb16-421"><a href="#cb16-421"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"        Doubleplot of sleep times"</span>) <span class="sc">+</span></span>
+<span id="cb16-422"><a href="#cb16-422"></a>  <span class="fu">theme</span>(</span>
+<span id="cb16-423"><a href="#cb16-423"></a>  <span class="at">strip.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-424"><a href="#cb16-424"></a>  <span class="at">strip.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-425"><a href="#cb16-425"></a>  <span class="at">strip.placement =</span> <span class="st">"inside"</span>)</span>
+<span id="cb16-426"><a href="#cb16-426"></a><span class="in">```</span></span>
 <span id="cb16-427"><a href="#cb16-427"></a></span>
-<span id="cb16-430"><a href="#cb16-430"></a><span class="in">```{r}</span></span>
-<span id="cb16-431"><a href="#cb16-431"></a>data_sw <span class="sc">|&gt;</span> <span class="fu">durations</span>() <span class="sc">|&gt;</span> <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span>
-<span id="cb16-432"><a href="#cb16-432"></a><span class="in">```</span></span>
+<span id="cb16-428"><a href="#cb16-428"></a><span class="ss">1. </span>Create a logical as the main variable that is <span class="in">`TRUE`</span> when the state is <span class="in">`sleep`</span></span>
+<span id="cb16-429"><a href="#cb16-429"></a><span class="ss">2. </span>Showing the next day in the doubleplot</span>
+<span id="cb16-430"><a href="#cb16-430"></a><span class="ss">3. </span>Remove the default fill settings to provide your own</span>
+<span id="cb16-431"><a href="#cb16-431"></a></span>
+<span id="cb16-432"><a href="#cb16-432"></a>Again, we can look at the data as a table.</span>
 <span id="cb16-433"><a href="#cb16-433"></a></span>
-<span id="cb16-434"><a href="#cb16-434"></a>Based on these results, we will remove <span class="in">`cycle 01`</span> and <span class="in">`cycle 20`</span>, as they have only partial data.</span>
-<span id="cb16-435"><a href="#cb16-435"></a></span>
-<span id="cb16-438"><a href="#cb16-438"></a><span class="in">```{r}</span></span>
-<span id="cb16-439"><a href="#cb16-439"></a>data_sw <span class="ot">&lt;-</span></span>
-<span id="cb16-440"><a href="#cb16-440"></a>  data_sw <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span>sleep.wake <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"cycle 01"</span>, <span class="st">"cycle 20"</span>))</span>
-<span id="cb16-441"><a href="#cb16-441"></a><span class="in">```</span></span>
-<span id="cb16-442"><a href="#cb16-442"></a></span>
-<span id="cb16-443"><a href="#cb16-443"></a><span class="fu">### Light exposure metrics</span></span>
-<span id="cb16-444"><a href="#cb16-444"></a></span>
-<span id="cb16-445"><a href="#cb16-445"></a>For the last step, we will calculate two relevant light exposure metrics, <span class="in">`time above 250 lx mel EDI`</span> and <span class="in">`dose`</span>. and add this information to the original <span class="in">`states`</span>.</span>
-<span id="cb16-446"><a href="#cb16-446"></a></span>
-<span id="cb16-449"><a href="#cb16-449"></a><span class="in">```{r}</span></span>
-<span id="cb16-450"><a href="#cb16-450"></a>summaries_sw <span class="ot">&lt;-</span> </span>
-<span id="cb16-451"><a href="#cb16-451"></a>data_sw <span class="sc">|&gt;</span> </span>
-<span id="cb16-452"><a href="#cb16-452"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb16-453"><a href="#cb16-453"></a>    <span class="at">Date =</span> <span class="fu">min</span>(Date), <span class="co">#&lt;1&gt;</span></span>
-<span id="cb16-454"><a href="#cb16-454"></a>    <span class="fu">dose</span>(MEDI, Datetime, <span class="at">as.df =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb16-455"><a href="#cb16-455"></a>    <span class="fu">duration_above_threshold</span>(MEDI, Datetime, <span class="at">threshold =</span> <span class="dv">250</span>, <span class="at">as.df =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb16-456"><a href="#cb16-456"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb16-457"><a href="#cb16-457"></a>  <span class="fu">left_join</span>(states, <span class="at">by =</span> <span class="st">"Date"</span>) <span class="co">#&lt;2&gt;</span></span>
-<span id="cb16-458"><a href="#cb16-458"></a><span class="in">```</span></span>
-<span id="cb16-459"><a href="#cb16-459"></a></span>
-<span id="cb16-460"><a href="#cb16-460"></a><span class="ss">1. </span>This step relates the sleep cycles to the date where the wake-state starts.</span>
-<span id="cb16-461"><a href="#cb16-461"></a><span class="ss">2. </span>Adding the self-assessments to our summaries. The data (4) provides the right assignment.</span>
-<span id="cb16-462"><a href="#cb16-462"></a></span>
-<span id="cb16-463"><a href="#cb16-463"></a></span>
-<span id="cb16-464"><a href="#cb16-464"></a>We bring this information together into a comprehensive table. Variables that have no meaningful variance are removed.</span>
+<span id="cb16-436"><a href="#cb16-436"></a><span class="in">```{r}</span></span>
+<span id="cb16-437"><a href="#cb16-437"></a>data_sw <span class="sc">|&gt;</span> <span class="fu">durations</span>() <span class="sc">|&gt;</span> <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span>
+<span id="cb16-438"><a href="#cb16-438"></a><span class="in">```</span></span>
+<span id="cb16-439"><a href="#cb16-439"></a></span>
+<span id="cb16-440"><a href="#cb16-440"></a>Based on these results, we will remove <span class="in">`cycle 01`</span> and <span class="in">`cycle 20`</span>, as they have only partial data.</span>
+<span id="cb16-441"><a href="#cb16-441"></a></span>
+<span id="cb16-444"><a href="#cb16-444"></a><span class="in">```{r}</span></span>
+<span id="cb16-445"><a href="#cb16-445"></a>data_sw <span class="ot">&lt;-</span></span>
+<span id="cb16-446"><a href="#cb16-446"></a>  data_sw <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span>sleep.wake <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"cycle 01"</span>, <span class="st">"cycle 20"</span>))</span>
+<span id="cb16-447"><a href="#cb16-447"></a><span class="in">```</span></span>
+<span id="cb16-448"><a href="#cb16-448"></a></span>
+<span id="cb16-449"><a href="#cb16-449"></a><span class="fu">### Light exposure metrics</span></span>
+<span id="cb16-450"><a href="#cb16-450"></a></span>
+<span id="cb16-451"><a href="#cb16-451"></a>For the last step, we will calculate two relevant light exposure metrics, <span class="in">`time above 250 lx mel EDI`</span> and <span class="in">`dose`</span>. and add this information to the original <span class="in">`states`</span>.</span>
+<span id="cb16-452"><a href="#cb16-452"></a></span>
+<span id="cb16-455"><a href="#cb16-455"></a><span class="in">```{r}</span></span>
+<span id="cb16-456"><a href="#cb16-456"></a>summaries_sw <span class="ot">&lt;-</span> </span>
+<span id="cb16-457"><a href="#cb16-457"></a>data_sw <span class="sc">|&gt;</span> </span>
+<span id="cb16-458"><a href="#cb16-458"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb16-459"><a href="#cb16-459"></a>    <span class="at">Date =</span> <span class="fu">min</span>(Date), <span class="co">#&lt;1&gt;</span></span>
+<span id="cb16-460"><a href="#cb16-460"></a>    <span class="fu">dose</span>(MEDI, Datetime, <span class="at">as.df =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb16-461"><a href="#cb16-461"></a>    <span class="fu">duration_above_threshold</span>(MEDI, Datetime, <span class="at">threshold =</span> <span class="dv">250</span>, <span class="at">as.df =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb16-462"><a href="#cb16-462"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-463"><a href="#cb16-463"></a>  <span class="fu">left_join</span>(states, <span class="at">by =</span> <span class="st">"Date"</span>) <span class="co">#&lt;2&gt;</span></span>
+<span id="cb16-464"><a href="#cb16-464"></a><span class="in">```</span></span>
 <span id="cb16-465"><a href="#cb16-465"></a></span>
-<span id="cb16-468"><a href="#cb16-468"></a><span class="in">```{r}</span></span>
-<span id="cb16-469"><a href="#cb16-469"></a>summaries_sw <span class="sc">|&gt;</span> </span>
-<span id="cb16-470"><a href="#cb16-470"></a>  <span class="fu">select</span>(Date, sleep.wake, dose, duration_above_250,</span>
-<span id="cb16-471"><a href="#cb16-471"></a>         wellbeing.morning, sunny.day, low.movement, performance, </span>
-<span id="cb16-472"><a href="#cb16-472"></a>         fatigue, bedtime, sleepquality, sleepduration, </span>
-<span id="cb16-473"><a href="#cb16-473"></a>         sleepinterruptions, sleepinterruptions.duration) <span class="sc">|&gt;</span> </span>
-<span id="cb16-474"><a href="#cb16-474"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb16-475"><a href="#cb16-475"></a>  <span class="fu">fmt_number</span>(dose, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-476"><a href="#cb16-476"></a>  <span class="fu">fmt_duration</span>(<span class="fu">c</span>(duration_above_250, sleepduration, sleepinterruptions.duration), </span>
-<span id="cb16-477"><a href="#cb16-477"></a>               <span class="at">input_units =</span> <span class="st">"seconds"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb16-478"><a href="#cb16-478"></a>  <span class="fu">fmt_time</span>(bedtime) <span class="sc">|&gt;</span> </span>
-<span id="cb16-479"><a href="#cb16-479"></a>  <span class="fu">fmt</span>(<span class="fu">c</span>(sunny.day, low.movement), <span class="at">fns =</span> \(x) <span class="fu">ifelse</span>(x, <span class="st">"Yes"</span>, <span class="st">"No"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb16-480"><a href="#cb16-480"></a>  <span class="fu">tab_header</span>(<span class="st">"Overview of daily light exposure metrics and key questionnaire data"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb16-481"><a href="#cb16-481"></a>  <span class="fu">tab_spanner</span>(<span class="st">"Light exposure"</span>, <span class="at">columns =</span> <span class="fu">c</span>(dose, duration_above_250)) <span class="sc">|&gt;</span> </span>
-<span id="cb16-482"><a href="#cb16-482"></a>  <span class="fu">tab_spanner</span>(<span class="st">"Self-report"</span>, <span class="at">columns =</span> wellbeing.morning<span class="sc">:</span>fatigue) <span class="sc">|&gt;</span> </span>
-<span id="cb16-483"><a href="#cb16-483"></a>  <span class="fu">tab_spanner</span>(<span class="st">"Self-reported sleep"</span>, <span class="at">columns =</span> bedtime<span class="sc">:</span>sleepinterruptions.duration) <span class="sc">|&gt;</span> </span>
-<span id="cb16-484"><a href="#cb16-484"></a>  <span class="fu">cols_label</span>(<span class="at">sleep.wake =</span> <span class="st">"Sleep-wake"</span>,</span>
-<span id="cb16-485"><a href="#cb16-485"></a>             <span class="at">dose =</span> <span class="st">"Dose mel EDI (lx·h)"</span>,</span>
-<span id="cb16-486"><a href="#cb16-486"></a>             <span class="at">duration_above_250 =</span> <span class="st">"Time above 250lx mel EDI"</span>,</span>
-<span id="cb16-487"><a href="#cb16-487"></a>             <span class="at">wellbeing.morning =</span> <span class="st">"Wellbeing next morning"</span>,</span>
-<span id="cb16-488"><a href="#cb16-488"></a>             <span class="at">sunny.day =</span> <span class="st">"Sunny day"</span>,</span>
-<span id="cb16-489"><a href="#cb16-489"></a>             <span class="at">low.movement =</span> <span class="st">"Low activity"</span>,</span>
-<span id="cb16-490"><a href="#cb16-490"></a>             <span class="at">performance =</span> <span class="st">"Performance"</span>,</span>
-<span id="cb16-491"><a href="#cb16-491"></a>             <span class="at">fatigue =</span> <span class="st">"Fatigue"</span>,</span>
-<span id="cb16-492"><a href="#cb16-492"></a>             <span class="at">bedtime =</span> <span class="st">"Bedtime"</span>,</span>
-<span id="cb16-493"><a href="#cb16-493"></a>             <span class="at">sleepquality =</span> <span class="st">"Sleep quality"</span>,</span>
-<span id="cb16-494"><a href="#cb16-494"></a>             <span class="at">sleepduration =</span> <span class="st">"Sleep duration"</span>,</span>
-<span id="cb16-495"><a href="#cb16-495"></a>             <span class="at">sleepinterruptions =</span> <span class="st">"Sleep interruptions"</span>,</span>
-<span id="cb16-496"><a href="#cb16-496"></a>             <span class="at">sleepinterruptions.duration =</span> <span class="st">"Interruption duration"</span></span>
-<span id="cb16-497"><a href="#cb16-497"></a>             ) <span class="sc">|&gt;</span> </span>
-<span id="cb16-498"><a href="#cb16-498"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Higher is worse"</span>, <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">14</span>))) <span class="sc">|&gt;</span> </span>
-<span id="cb16-499"><a href="#cb16-499"></a>  <span class="fu">sub_missing</span>()</span>
-<span id="cb16-500"><a href="#cb16-500"></a><span class="in">```</span></span>
-<span id="cb16-501"><a href="#cb16-501"></a></span>
-<span id="cb16-502"><a href="#cb16-502"></a><span class="fu">## Correlations</span></span>
-<span id="cb16-503"><a href="#cb16-503"></a></span>
-<span id="cb16-504"><a href="#cb16-504"></a>To visualize simple correlations between the self-assessments and the light exposure metrics we create a helper function:</span>
-<span id="cb16-505"><a href="#cb16-505"></a></span>
-<span id="cb16-508"><a href="#cb16-508"></a><span class="in">```{r}</span></span>
-<span id="cb16-509"><a href="#cb16-509"></a>time2hour <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">/</span><span class="dv">3600</span></span>
-<span id="cb16-510"><a href="#cb16-510"></a>correlation_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(variable, label) {</span>
-<span id="cb16-511"><a href="#cb16-511"></a>  summaries_sw <span class="sc">|&gt;</span> </span>
-<span id="cb16-512"><a href="#cb16-512"></a>  <span class="co">#prepare the light exposure variables and bedtime variable:</span></span>
-<span id="cb16-513"><a href="#cb16-513"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb16-514"><a href="#cb16-514"></a>    <span class="at">bedtime =</span> hms<span class="sc">::</span><span class="fu">as_hms</span>(bedtime) <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>() <span class="sc">|&gt;</span> <span class="fu">time2hour</span>(),</span>
-<span id="cb16-515"><a href="#cb16-515"></a>    <span class="at">duration_above_250 =</span> <span class="fu">as.numeric</span>(duration_above_250),</span>
-<span id="cb16-516"><a href="#cb16-516"></a>    <span class="at">duration_above_250 =</span> </span>
-<span id="cb16-517"><a href="#cb16-517"></a>      (duration_above_250 <span class="sc">-</span> <span class="fu">min</span>(duration_above_250))<span class="sc">/</span></span>
-<span id="cb16-518"><a href="#cb16-518"></a>      (<span class="fu">max</span>(duration_above_250)<span class="sc">-</span><span class="fu">min</span>(duration_above_250))<span class="sc">*</span><span class="fu">max</span>(dose)<span class="sc">/</span><span class="dv">1000</span>,</span>
-<span id="cb16-519"><a href="#cb16-519"></a>    <span class="at">dose =</span> dose<span class="sc">/</span><span class="dv">1000</span></span>
-<span id="cb16-520"><a href="#cb16-520"></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb16-521"><a href="#cb16-521"></a>  <span class="co">#create the ggplot:</span></span>
-<span id="cb16-522"><a href="#cb16-522"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> {{ variable }})) <span class="sc">+</span></span>
-<span id="cb16-523"><a href="#cb16-523"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, </span>
-<span id="cb16-524"><a href="#cb16-524"></a>              <span class="fu">aes</span>(<span class="at">x =</span> dose), </span>
-<span id="cb16-525"><a href="#cb16-525"></a>              <span class="at">col =</span> <span class="st">"#2E6F40"</span>, </span>
-<span id="cb16-526"><a href="#cb16-526"></a>              <span class="at">fill =</span> <span class="st">"#2E6F40"</span>) <span class="sc">+</span></span>
-<span id="cb16-527"><a href="#cb16-527"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, </span>
-<span id="cb16-528"><a href="#cb16-528"></a>              <span class="fu">aes</span>(<span class="at">x =</span> duration_above_250), </span>
-<span id="cb16-529"><a href="#cb16-529"></a>              <span class="at">col =</span> <span class="st">"#990011"</span>, </span>
-<span id="cb16-530"><a href="#cb16-530"></a>              <span class="at">fill =</span> <span class="st">"#990011"</span>) <span class="sc">+</span></span>
-<span id="cb16-531"><a href="#cb16-531"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> dose), </span>
-<span id="cb16-532"><a href="#cb16-532"></a>             <span class="at">col =</span> <span class="st">"#2E6F40"</span>) <span class="sc">+</span></span>
-<span id="cb16-533"><a href="#cb16-533"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> duration_above_250), </span>
-<span id="cb16-534"><a href="#cb16-534"></a>             <span class="at">col =</span> <span class="st">"#990011"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb16-535"><a href="#cb16-535"></a>  <span class="fu">scale_x_continuous</span>(</span>
-<span id="cb16-536"><a href="#cb16-536"></a>    <span class="st">"Melanopic EDI dose (klx·h)"</span>,</span>
-<span id="cb16-537"><a href="#cb16-537"></a>    <span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(<span class="sc">~</span> (.<span class="sc">*</span><span class="dv">1000</span><span class="sc">/</span><span class="dv">70280</span><span class="sc">*</span><span class="dv">23400</span> <span class="sc">-</span> <span class="dv">5580</span>)<span class="sc">/</span><span class="dv">3600</span>, </span>
-<span id="cb16-538"><a href="#cb16-538"></a>                        <span class="at">name =</span> <span class="st">"Time above 250 lx (h)"</span>)</span>
-<span id="cb16-539"><a href="#cb16-539"></a>  ) <span class="sc">+</span></span>
-<span id="cb16-540"><a href="#cb16-540"></a>  cowplot<span class="sc">::</span><span class="fu">theme_cowplot</span>() <span class="sc">+</span></span>
-<span id="cb16-541"><a href="#cb16-541"></a>  <span class="fu">theme_sub_axis_bottom</span>(<span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#2E6F40"</span>),</span>
-<span id="cb16-542"><a href="#cb16-542"></a>                        <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#2E6F40"</span>)) <span class="sc">+</span></span>
-<span id="cb16-543"><a href="#cb16-543"></a>  <span class="fu">theme_sub_axis_top</span>(<span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#990011"</span>),</span>
-<span id="cb16-544"><a href="#cb16-544"></a>                        <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#990011"</span>)) <span class="sc">+</span></span>
-<span id="cb16-545"><a href="#cb16-545"></a>  <span class="fu">labs</span>(<span class="at">y =</span> label) </span>
-<span id="cb16-546"><a href="#cb16-546"></a>}</span>
-<span id="cb16-547"><a href="#cb16-547"></a><span class="in">```</span></span>
-<span id="cb16-548"><a href="#cb16-548"></a></span>
-<span id="cb16-549"><a href="#cb16-549"></a>This allows us to easily look at the various parameters</span>
-<span id="cb16-550"><a href="#cb16-550"></a></span>
-<span id="cb16-553"><a href="#cb16-553"></a><span class="in">```{r}</span></span>
-<span id="cb16-554"><a href="#cb16-554"></a><span class="co">#| message: false</span></span>
-<span id="cb16-555"><a href="#cb16-555"></a><span class="co">#| label: correlations</span></span>
-<span id="cb16-556"><a href="#cb16-556"></a><span class="fu">correlation_plot</span>(wellbeing.morning, </span>
-<span id="cb16-557"><a href="#cb16-557"></a>                 <span class="st">"Wellbeing on the next</span><span class="sc">\n</span><span class="st">morning (higher = better)"</span>)</span>
-<span id="cb16-558"><a href="#cb16-558"></a><span class="fu">correlation_plot</span>(sleepquality, <span class="st">"Sleep quality</span><span class="sc">\n</span><span class="st">(higher = worse"</span>)</span>
-<span id="cb16-559"><a href="#cb16-559"></a><span class="in">```</span></span>
-<span id="cb16-560"><a href="#cb16-560"></a></span>
-<span id="cb16-561"><a href="#cb16-561"></a>Try these for yourself. Could there be a meaningful relationship?</span>
-<span id="cb16-562"><a href="#cb16-562"></a></span>
-<span id="cb16-565"><a href="#cb16-565"></a><span class="in">```{r}</span></span>
-<span id="cb16-566"><a href="#cb16-566"></a><span class="co">#| eval: false</span></span>
-<span id="cb16-567"><a href="#cb16-567"></a><span class="fu">correlation_plot</span>(performance, <span class="st">"Performance during</span><span class="sc">\n</span><span class="st">the day (higher = worse)"</span>)</span>
-<span id="cb16-568"><a href="#cb16-568"></a><span class="fu">correlation_plot</span>(performance.next, </span>
-<span id="cb16-569"><a href="#cb16-569"></a>                 <span class="st">"Performance on the</span><span class="sc">\n</span><span class="st"> next day (higher = worse)"</span>)</span>
-<span id="cb16-570"><a href="#cb16-570"></a><span class="fu">correlation_plot</span>(sleepduration<span class="sc">/</span><span class="dv">3600</span>, <span class="st">"Sleep duration (h)"</span>)</span>
-<span id="cb16-571"><a href="#cb16-571"></a><span class="fu">correlation_plot</span>(fatigue, <span class="st">"Fatigue during the day</span><span class="sc">\n</span><span class="st">(higher = worse)"</span>)</span>
-<span id="cb16-572"><a href="#cb16-572"></a><span class="fu">correlation_plot</span>(fatigue.next, <span class="st">"Fatigue on the next day</span><span class="sc">\n</span><span class="st">(higher = worse)"</span>)</span>
-<span id="cb16-573"><a href="#cb16-573"></a><span class="fu">correlation_plot</span>(sleepinterruptions, <span class="st">"Sleep interruptions"</span>)</span>
-<span id="cb16-574"><a href="#cb16-574"></a><span class="fu">correlation_plot</span>(sunny.day, <span class="st">"Self-assessed sunny day"</span>)</span>
-<span id="cb16-575"><a href="#cb16-575"></a><span class="fu">correlation_plot</span>(low.movement, <span class="st">"Self-assessed low activity"</span>)</span>
-<span id="cb16-576"><a href="#cb16-576"></a><span class="in">```</span></span>
-<span id="cb16-577"><a href="#cb16-577"></a></span>
-<span id="cb16-578"><a href="#cb16-578"></a>{{&lt; include _conclusion.qmd &gt;}}</span>
+<span id="cb16-466"><a href="#cb16-466"></a><span class="ss">1. </span>This step relates the sleep cycles to the date where the wake-state starts.</span>
+<span id="cb16-467"><a href="#cb16-467"></a><span class="ss">2. </span>Adding the self-assessments to our summaries. The data (4) provides the right assignment.</span>
+<span id="cb16-468"><a href="#cb16-468"></a></span>
+<span id="cb16-469"><a href="#cb16-469"></a></span>
+<span id="cb16-470"><a href="#cb16-470"></a>We bring this information together into a comprehensive table. Variables that have no meaningful variance are removed.</span>
+<span id="cb16-471"><a href="#cb16-471"></a></span>
+<span id="cb16-474"><a href="#cb16-474"></a><span class="in">```{r}</span></span>
+<span id="cb16-475"><a href="#cb16-475"></a>summaries_sw <span class="sc">|&gt;</span> </span>
+<span id="cb16-476"><a href="#cb16-476"></a>  <span class="fu">select</span>(Date, sleep.wake, dose, duration_above_250,</span>
+<span id="cb16-477"><a href="#cb16-477"></a>         wellbeing.morning, sunny.day, low.movement, performance, </span>
+<span id="cb16-478"><a href="#cb16-478"></a>         fatigue, bedtime, sleepquality, sleepduration, </span>
+<span id="cb16-479"><a href="#cb16-479"></a>         sleepinterruptions, sleepinterruptions.duration) <span class="sc">|&gt;</span> </span>
+<span id="cb16-480"><a href="#cb16-480"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb16-481"><a href="#cb16-481"></a>  <span class="fu">fmt_number</span>(dose, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-482"><a href="#cb16-482"></a>  <span class="fu">fmt_duration</span>(<span class="fu">c</span>(duration_above_250, sleepduration, sleepinterruptions.duration), </span>
+<span id="cb16-483"><a href="#cb16-483"></a>               <span class="at">input_units =</span> <span class="st">"seconds"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-484"><a href="#cb16-484"></a>  <span class="fu">fmt_time</span>(bedtime) <span class="sc">|&gt;</span> </span>
+<span id="cb16-485"><a href="#cb16-485"></a>  <span class="fu">fmt</span>(<span class="fu">c</span>(sunny.day, low.movement), <span class="at">fns =</span> \(x) <span class="fu">ifelse</span>(x, <span class="st">"Yes"</span>, <span class="st">"No"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb16-486"><a href="#cb16-486"></a>  <span class="fu">tab_header</span>(<span class="st">"Overview of daily light exposure metrics and key questionnaire data"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-487"><a href="#cb16-487"></a>  <span class="fu">tab_spanner</span>(<span class="st">"Light exposure"</span>, <span class="at">columns =</span> <span class="fu">c</span>(dose, duration_above_250)) <span class="sc">|&gt;</span> </span>
+<span id="cb16-488"><a href="#cb16-488"></a>  <span class="fu">tab_spanner</span>(<span class="st">"Self-report"</span>, <span class="at">columns =</span> wellbeing.morning<span class="sc">:</span>fatigue) <span class="sc">|&gt;</span> </span>
+<span id="cb16-489"><a href="#cb16-489"></a>  <span class="fu">tab_spanner</span>(<span class="st">"Self-reported sleep"</span>, <span class="at">columns =</span> bedtime<span class="sc">:</span>sleepinterruptions.duration) <span class="sc">|&gt;</span> </span>
+<span id="cb16-490"><a href="#cb16-490"></a>  <span class="fu">cols_label</span>(<span class="at">sleep.wake =</span> <span class="st">"Sleep-wake"</span>,</span>
+<span id="cb16-491"><a href="#cb16-491"></a>             <span class="at">dose =</span> <span class="st">"Dose mel EDI (lx·h)"</span>,</span>
+<span id="cb16-492"><a href="#cb16-492"></a>             <span class="at">duration_above_250 =</span> <span class="st">"Time above 250lx mel EDI"</span>,</span>
+<span id="cb16-493"><a href="#cb16-493"></a>             <span class="at">wellbeing.morning =</span> <span class="st">"Wellbeing next morning"</span>,</span>
+<span id="cb16-494"><a href="#cb16-494"></a>             <span class="at">sunny.day =</span> <span class="st">"Sunny day"</span>,</span>
+<span id="cb16-495"><a href="#cb16-495"></a>             <span class="at">low.movement =</span> <span class="st">"Low activity"</span>,</span>
+<span id="cb16-496"><a href="#cb16-496"></a>             <span class="at">performance =</span> <span class="st">"Performance"</span>,</span>
+<span id="cb16-497"><a href="#cb16-497"></a>             <span class="at">fatigue =</span> <span class="st">"Fatigue"</span>,</span>
+<span id="cb16-498"><a href="#cb16-498"></a>             <span class="at">bedtime =</span> <span class="st">"Bedtime"</span>,</span>
+<span id="cb16-499"><a href="#cb16-499"></a>             <span class="at">sleepquality =</span> <span class="st">"Sleep quality"</span>,</span>
+<span id="cb16-500"><a href="#cb16-500"></a>             <span class="at">sleepduration =</span> <span class="st">"Sleep duration"</span>,</span>
+<span id="cb16-501"><a href="#cb16-501"></a>             <span class="at">sleepinterruptions =</span> <span class="st">"Sleep interruptions"</span>,</span>
+<span id="cb16-502"><a href="#cb16-502"></a>             <span class="at">sleepinterruptions.duration =</span> <span class="st">"Interruption duration"</span></span>
+<span id="cb16-503"><a href="#cb16-503"></a>             ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-504"><a href="#cb16-504"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Higher is worse"</span>, <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">14</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb16-505"><a href="#cb16-505"></a>  <span class="fu">sub_missing</span>()</span>
+<span id="cb16-506"><a href="#cb16-506"></a><span class="in">```</span></span>
+<span id="cb16-507"><a href="#cb16-507"></a></span>
+<span id="cb16-508"><a href="#cb16-508"></a><span class="fu">## Correlations</span></span>
+<span id="cb16-509"><a href="#cb16-509"></a></span>
+<span id="cb16-510"><a href="#cb16-510"></a>To visualize simple correlations between the self-assessments and the light exposure metrics we create a helper function:</span>
+<span id="cb16-511"><a href="#cb16-511"></a></span>
+<span id="cb16-514"><a href="#cb16-514"></a><span class="in">```{r}</span></span>
+<span id="cb16-515"><a href="#cb16-515"></a>time2hour <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x<span class="sc">/</span><span class="dv">3600</span></span>
+<span id="cb16-516"><a href="#cb16-516"></a>correlation_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(variable, label) {</span>
+<span id="cb16-517"><a href="#cb16-517"></a>  summaries_sw <span class="sc">|&gt;</span> </span>
+<span id="cb16-518"><a href="#cb16-518"></a>  <span class="co">#prepare the light exposure variables and bedtime variable:</span></span>
+<span id="cb16-519"><a href="#cb16-519"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-520"><a href="#cb16-520"></a>    <span class="at">bedtime =</span> hms<span class="sc">::</span><span class="fu">as_hms</span>(bedtime) <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>() <span class="sc">|&gt;</span> <span class="fu">time2hour</span>(),</span>
+<span id="cb16-521"><a href="#cb16-521"></a>    <span class="at">duration_above_250 =</span> <span class="fu">as.numeric</span>(duration_above_250),</span>
+<span id="cb16-522"><a href="#cb16-522"></a>    <span class="at">duration_above_250 =</span> </span>
+<span id="cb16-523"><a href="#cb16-523"></a>      (duration_above_250 <span class="sc">-</span> <span class="fu">min</span>(duration_above_250))<span class="sc">/</span></span>
+<span id="cb16-524"><a href="#cb16-524"></a>      (<span class="fu">max</span>(duration_above_250)<span class="sc">-</span><span class="fu">min</span>(duration_above_250))<span class="sc">*</span><span class="fu">max</span>(dose)<span class="sc">/</span><span class="dv">1000</span>,</span>
+<span id="cb16-525"><a href="#cb16-525"></a>    <span class="at">dose =</span> dose<span class="sc">/</span><span class="dv">1000</span></span>
+<span id="cb16-526"><a href="#cb16-526"></a>         ) <span class="sc">|&gt;</span> </span>
+<span id="cb16-527"><a href="#cb16-527"></a>  <span class="co">#create the ggplot:</span></span>
+<span id="cb16-528"><a href="#cb16-528"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> {{ variable }})) <span class="sc">+</span></span>
+<span id="cb16-529"><a href="#cb16-529"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, </span>
+<span id="cb16-530"><a href="#cb16-530"></a>              <span class="fu">aes</span>(<span class="at">x =</span> dose), </span>
+<span id="cb16-531"><a href="#cb16-531"></a>              <span class="at">col =</span> <span class="st">"#2E6F40"</span>, </span>
+<span id="cb16-532"><a href="#cb16-532"></a>              <span class="at">fill =</span> <span class="st">"#2E6F40"</span>) <span class="sc">+</span></span>
+<span id="cb16-533"><a href="#cb16-533"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, </span>
+<span id="cb16-534"><a href="#cb16-534"></a>              <span class="fu">aes</span>(<span class="at">x =</span> duration_above_250), </span>
+<span id="cb16-535"><a href="#cb16-535"></a>              <span class="at">col =</span> <span class="st">"#990011"</span>, </span>
+<span id="cb16-536"><a href="#cb16-536"></a>              <span class="at">fill =</span> <span class="st">"#990011"</span>) <span class="sc">+</span></span>
+<span id="cb16-537"><a href="#cb16-537"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> dose), </span>
+<span id="cb16-538"><a href="#cb16-538"></a>             <span class="at">col =</span> <span class="st">"#2E6F40"</span>) <span class="sc">+</span></span>
+<span id="cb16-539"><a href="#cb16-539"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> duration_above_250), </span>
+<span id="cb16-540"><a href="#cb16-540"></a>             <span class="at">col =</span> <span class="st">"#990011"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb16-541"><a href="#cb16-541"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb16-542"><a href="#cb16-542"></a>    <span class="st">"Melanopic EDI dose (klx·h)"</span>,</span>
+<span id="cb16-543"><a href="#cb16-543"></a>    <span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(<span class="sc">~</span> (.<span class="sc">*</span><span class="dv">1000</span><span class="sc">/</span><span class="dv">70280</span><span class="sc">*</span><span class="dv">23400</span> <span class="sc">-</span> <span class="dv">5580</span>)<span class="sc">/</span><span class="dv">3600</span>, </span>
+<span id="cb16-544"><a href="#cb16-544"></a>                        <span class="at">name =</span> <span class="st">"Time above 250 lx (h)"</span>)</span>
+<span id="cb16-545"><a href="#cb16-545"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-546"><a href="#cb16-546"></a>  cowplot<span class="sc">::</span><span class="fu">theme_cowplot</span>() <span class="sc">+</span></span>
+<span id="cb16-547"><a href="#cb16-547"></a>  <span class="fu">theme_sub_axis_bottom</span>(<span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#2E6F40"</span>),</span>
+<span id="cb16-548"><a href="#cb16-548"></a>                        <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#2E6F40"</span>)) <span class="sc">+</span></span>
+<span id="cb16-549"><a href="#cb16-549"></a>  <span class="fu">theme_sub_axis_top</span>(<span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#990011"</span>),</span>
+<span id="cb16-550"><a href="#cb16-550"></a>                        <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"#990011"</span>)) <span class="sc">+</span></span>
+<span id="cb16-551"><a href="#cb16-551"></a>  <span class="fu">labs</span>(<span class="at">y =</span> label) </span>
+<span id="cb16-552"><a href="#cb16-552"></a>}</span>
+<span id="cb16-553"><a href="#cb16-553"></a><span class="in">```</span></span>
+<span id="cb16-554"><a href="#cb16-554"></a></span>
+<span id="cb16-555"><a href="#cb16-555"></a>This allows us to easily look at the various parameters</span>
+<span id="cb16-556"><a href="#cb16-556"></a></span>
+<span id="cb16-559"><a href="#cb16-559"></a><span class="in">```{r}</span></span>
+<span id="cb16-560"><a href="#cb16-560"></a><span class="co">#| message: false</span></span>
+<span id="cb16-561"><a href="#cb16-561"></a><span class="co">#| label: correlations</span></span>
+<span id="cb16-562"><a href="#cb16-562"></a><span class="fu">correlation_plot</span>(wellbeing.morning, </span>
+<span id="cb16-563"><a href="#cb16-563"></a>                 <span class="st">"Wellbeing on the next</span><span class="sc">\n</span><span class="st">morning (higher = better)"</span>)</span>
+<span id="cb16-564"><a href="#cb16-564"></a><span class="fu">correlation_plot</span>(sleepquality, <span class="st">"Sleep quality</span><span class="sc">\n</span><span class="st">(higher = worse"</span>)</span>
+<span id="cb16-565"><a href="#cb16-565"></a><span class="in">```</span></span>
+<span id="cb16-566"><a href="#cb16-566"></a></span>
+<span id="cb16-567"><a href="#cb16-567"></a>Try these for yourself. Could there be a meaningful relationship?</span>
+<span id="cb16-568"><a href="#cb16-568"></a></span>
+<span id="cb16-571"><a href="#cb16-571"></a><span class="in">```{r}</span></span>
+<span id="cb16-572"><a href="#cb16-572"></a><span class="co">#| eval: false</span></span>
+<span id="cb16-573"><a href="#cb16-573"></a><span class="fu">correlation_plot</span>(performance, <span class="st">"Performance during</span><span class="sc">\n</span><span class="st">the day (higher = worse)"</span>)</span>
+<span id="cb16-574"><a href="#cb16-574"></a><span class="fu">correlation_plot</span>(performance.next, </span>
+<span id="cb16-575"><a href="#cb16-575"></a>                 <span class="st">"Performance on the</span><span class="sc">\n</span><span class="st"> next day (higher = worse)"</span>)</span>
+<span id="cb16-576"><a href="#cb16-576"></a><span class="fu">correlation_plot</span>(sleepduration<span class="sc">/</span><span class="dv">3600</span>, <span class="st">"Sleep duration (h)"</span>)</span>
+<span id="cb16-577"><a href="#cb16-577"></a><span class="fu">correlation_plot</span>(fatigue, <span class="st">"Fatigue during the day</span><span class="sc">\n</span><span class="st">(higher = worse)"</span>)</span>
+<span id="cb16-578"><a href="#cb16-578"></a><span class="fu">correlation_plot</span>(fatigue.next, <span class="st">"Fatigue on the next day</span><span class="sc">\n</span><span class="st">(higher = worse)"</span>)</span>
+<span id="cb16-579"><a href="#cb16-579"></a><span class="fu">correlation_plot</span>(sleepinterruptions, <span class="st">"Sleep interruptions"</span>)</span>
+<span id="cb16-580"><a href="#cb16-580"></a><span class="fu">correlation_plot</span>(sunny.day, <span class="st">"Self-assessed sunny day"</span>)</span>
+<span id="cb16-581"><a href="#cb16-581"></a><span class="fu">correlation_plot</span>(low.movement, <span class="st">"Self-assessed low activity"</span>)</span>
+<span id="cb16-582"><a href="#cb16-582"></a><span class="in">```</span></span>
+<span id="cb16-583"><a href="#cb16-583"></a></span>
+<span id="cb16-584"><a href="#cb16-584"></a>{{&lt; include _conclusion.qmd &gt;}}</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
