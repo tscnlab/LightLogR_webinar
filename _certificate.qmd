@@ -32,7 +32,7 @@ params:
 // Decorative frame and ribbon
 #place(rect(width: 100%, height: 100%, stroke: border, radius: 18pt))
 #place(
-  align(center + top),
+  align: center + top,
   polygon(
     points: ((0pt,0pt),(60pt,34pt),(120pt,0pt)),
     fill: gradient.linear(
@@ -42,7 +42,7 @@ params:
   )
 )
 #place(
-  align(right + top),
+  align: right + top,
   box(
     fill: primary,
     inset: 12pt,
