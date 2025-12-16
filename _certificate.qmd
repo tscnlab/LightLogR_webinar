@@ -1,0 +1,195 @@
+---
+title: "LightLogR Course Certificate"
+format:
+  typst:
+    page-size: a4-landscape
+    margin: 1.5cm
+    colorlinks: false
+    title: false
+params:
+  participant_name: "Dr. Alex Example"
+  completion_date: "2025-10-07"
+  level: "beginner"
+  use_case: "Therapy lamps"
+  use_case_focus: "Merging protocol logs with wearable data and reporting illuminance dose summaries"
+---
+
+```{=typst}
+// Page + palette
+#set page(
+  paper: "a4-landscape",
+  margin: 1.5cm,
+  fill: luma(98%),
+)
+#let primary = rgb("2a3950")
+#let accent = rgb("2b9cb5")
+#let border = stroke(
+  paint: primary,
+  thickness: 3pt,
+  dash: "12pt 6pt",
+)
+
+// Decorative frame and ribbon
+#place(rect(width: 100%, height: 100%, stroke: border, radius: 18pt))
+#place(
+  align(center + top),
+  polygon(
+    points: ((0pt,0pt),(60pt,34pt),(120pt,0pt)),
+    fill: gradient.linear(
+      colors: (accent, rgb("72c6d9")),
+      direction: (0pt,48pt),
+    ),
+  )
+)
+#place(
+  align(right + top),
+  box(
+    fill: primary,
+    inset: 12pt,
+    radius: 8pt,
+    text(fill: white, weight: "bold", size: 12pt, "Open & Reproducible"),
+  )
+)
+
+// Header row with banner + logotype
+#stack(
+  dir: ltr,
+  spacing: 12pt,
+  image("assets/LLR_Tutorial_Banner.png", width: 50%),
+  box(
+    width: 45%,
+    fill: white,
+    radius: 10pt,
+    stroke: stroke(paint: accent, thickness: 1.5pt),
+    inset: 14pt,
+    column[
+      text(size: 10pt, fill: primary, weight: "medium", "Open and reproducible analysis of light exposure and visual experience data"),
+      text(size: 20pt, fill: primary, weight: "bold", "Certificate of Completion"),
+      text(size: 11pt, fill: accent, weight: "regular", "Awarded by the LightLogR course team"),
+    ],
+  ),
+)
+
+#v(18pt)
+
+// Recipient block
+#box(
+  width: 100%,
+  fill: white,
+  radius: 12pt,
+  stroke: stroke(paint: primary, thickness: 1.5pt),
+  inset: 18pt,
+  column[
+    text(size: 12pt, fill: primary, weight: "medium", "This is to certify that"),
+    text(size: 30pt, weight: "bold", fill: primary, tracking: 0.5pt, "{{< param participant_name >}}"),
+    v(6pt),
+    text(size: 12pt, fill: primary, "successfully completed the LightLogR webinar series"),
+    text(size: 12pt, fill: primary, "on {{< param completion_date >}}."),
+    v(10pt),
+    grid(
+      columns: (1fr, 1fr),
+      gutter: 12pt,
+      box(
+        fill: rgb("f0fbff"),
+        radius: 8pt,
+        inset: 12pt,
+        column[
+          text(size: 11pt, fill: primary, weight: "medium", "Course track"),
+          text(size: 14pt, weight: "bold", fill: accent, capitalize("{{< param level >}}")),
+          text(size: 10pt, fill: primary, "Beginner covers the full LightLogR workflow; Advanced focuses on applied use cases."),
+        ],
+      ),
+      box(
+        fill: rgb("f5f7ff"),
+        radius: 8pt,
+        inset: 12pt,
+        column[
+          text(size: 11pt, fill: primary, weight: "medium", "Use case focus"),
+          text(size: 14pt, weight: "bold", fill: accent, "{{< param use_case >}}"),
+          text(size: 10pt, fill: primary, "{{< param use_case_focus >}}"),
+        ],
+      ),
+    ),
+  ],
+)
+
+#v(16pt)
+
+// Learning outcomes
+#box(
+  width: 100%,
+  fill: white,
+  radius: 12pt,
+  stroke: stroke(paint: accent, thickness: 1.25pt),
+  inset: 16pt,
+  column[
+    text(size: 13pt, weight: "bold", fill: primary, "Learning outcomes"),
+    v(6pt),
+    list(
+      marker: "•",
+      spacing: 8pt,
+      text(size: 11pt, fill: primary, "Walk through the LightLogR workflow: import → (pre-)processing → visualisation → metrics."),
+      text(size: 11pt, fill: primary, "Sense-check data quickly with tidy, reproducible steps and overview plots."),
+      text(size: 11pt, fill: primary, "Handle common issues (gaps, irregular sampling, zero inflation) with principled defaults."),
+      text(size: 11pt, fill: primary, "Add photoperiod information and derive interpretable summaries."),
+    ),
+  ],
+)
+
+#v(14pt)
+
+// Signatures row
+#grid(
+  columns: (1fr, 1fr, 1fr),
+  gutter: 16pt,
+  box(
+    fill: white,
+    radius: 8pt,
+    inset: 10pt,
+    column[
+      text(size: 11pt, fill: primary, weight: "medium", "Course leads"),
+      text(size: 12pt, weight: "bold", fill: primary, "Johannes Zauner"),
+      text(size: 10pt, fill: primary, "Technical University of Munich & Max Planck Institute for Biological Cybernetics"),
+    ],
+  ),
+  box(
+    fill: white,
+    radius: 8pt,
+    inset: 10pt,
+    column[
+      text(size: 11pt, fill: primary, weight: "medium", "Course leads"),
+      text(size: 12pt, weight: "bold", fill: primary, "Manuel Spitschan"),
+      text(size: 10pt, fill: primary, "Technical University of Munich & Max Planck Institute for Biological Cybernetics"),
+    ],
+  ),
+  box(
+    fill: rgb("f0fbff"),
+    radius: 8pt,
+    inset: 10pt,
+    column[
+      text(size: 11pt, fill: primary, weight: "medium", "Verification"),
+      text(size: 12pt, weight: "bold", fill: accent, "LightLogR Webinar Series"),
+      text(size: 10pt, fill: primary, "https://tscnlab.github.io/LightLogR_webinar"),
+    ],
+  ),
+)
+```
+
+::: {.callout-note title="Preview" collapse="true"}
+To test-drive the certificate with the defaults above, run:
+
+```bash
+quarto render _certificate.qmd --to typst-pdf
+```
+
+Replace `params` to personalise the PDF:
+
+```bash
+quarto render _certificate.qmd --to typst-pdf \
+  -P participant_name="Ada Lovelace" \
+  -P completion_date="2025-10-07" \
+  -P level="advanced" \
+  -P use_case="A Day in Daylight" \
+  -P use_case_focus="Analysis across devices, time zones, and participant metadata"
+```
+:::
