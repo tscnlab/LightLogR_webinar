@@ -40,7 +40,8 @@ params:
         (0%, accent),
         (100%, rgb("72c6d9")),
       ),
-      direction: (0pt,48pt),
+      start: (0pt, 0pt),
+      end: (0pt, 48pt),
     ),
   )
 )
