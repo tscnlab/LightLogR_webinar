@@ -36,7 +36,10 @@ params:
   polygon(
     points: ((0pt,0pt),(60pt,34pt),(120pt,0pt)),
     fill: gradient.linear(
-      colors: (accent, rgb("72c6d9")),
+      stops: (
+        (0%, accent),
+        (100%, rgb("72c6d9")),
+      ),
       direction: (0pt,48pt),
     ),
   )
