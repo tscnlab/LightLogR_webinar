@@ -1,0 +1,22 @@
+---
+title: "LightLogR Webinar Certificate"
+format:
+  typst:
+    template: certificate.typ
+    page-width: 297mm
+    page-height: 210mm
+    margin: 20mm
+    include-in-header: []
+    fontsize: 12pt
+    colorlinks: true
+params:
+  name: "Alex Participant"
+  date: "2025-01-31"
+  level: "beginner" # beginner or advanced
+  use_case: "A Day in Daylight"
+  use_case_detail: "Global cohort across time zones"
+---
+
+This document renders a one-page completion certificate using Typst. Set the
+parameters to personalize the recipient name, completion date, course level,
+and (for advanced) the use case focus.
