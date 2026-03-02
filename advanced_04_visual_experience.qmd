@@ -22,7 +22,7 @@ static <- "advanced_04_visual_experience.qmd"
 
 ## Preface
 
-Wearable devices can capture more besides illuminance or melanopic EDI. They can capture many aspects of the visual environment that, from an observer's perspective, form the visual experience. In this use case we focus on a multimodal dataset, captured by the `VEET` device [^1]. It simultaneously captures from different sensors to collect **light** (ambient light sensor `ALS`), **viewing distance** (time of flight `TOF`), **spectral information** (spectral light channels, `PHO`), and **motion and orientation** (inertial measurements `IMU`). The data we are looking at do not come from a specific experiment, but are pilot data captured by an individual participant. The example is adapted from the online tutorial by [Zauner et al. (2025)](https://tscnlab.github.io/ZaunerEtAl_JVis_2025/){target="_blank"}.
+Wearable devices can capture more besides illuminance or melanopic EDI. They can capture many aspects of the visual environment that, from an observer's perspective, form the visual experience. In this use case we focus on a multimodal dataset, captured by the `VEET` device [^1]. It simultaneously captures from different sensors to collect **light** (ambient light sensor `ALS`), **viewing distance** (time of flight `TOF`), **spectral information** (spectral light channels, `PHO`), and **motion and orientation** (inertial measurements `IMU`). The data we are looking at do not come from a specific experiment, but are pilot data captured by an individual participant. The example is adapted from the online tutorial by [Zauner et al. (2025)](https://tscnlab.github.io/ZaunerEtAl_JVis_2026/){target="_blank"}.
 
 [^1]: https://projectveet.com
 

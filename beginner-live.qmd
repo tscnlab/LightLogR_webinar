@@ -424,7 +424,7 @@ dataset_red |>
 
 While beyond the scope of this tutorial, there are many research disciplines that work with **visual experience** data, which covers many different domains: *Light*, *Spectrum*, *Distance*, *Spatial resolution*, ....
 
-If you are interested in those domains, we recommend [our tutorial](https://tscnlab.github.io/ZaunerEtAl_JVis_2025/) specifically for the more comprehensive but also more complex datasets in the visual experience domains.
+If you are interested in those domains, we recommend [our tutorial](https://tscnlab.github.io/ZaunerEtAl_JVis_2026/) specifically for the more comprehensive but also more complex datasets in the visual experience domains.
 
 ## Validation
 
