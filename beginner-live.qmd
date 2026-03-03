@@ -477,9 +477,7 @@ If the study follows a fixed‑length protocol, you can enforce a maximum observ
 #| fig-width: 5
 #| warning: false
 dataset |> 
-filter(
-  Datetime > (max(Datetime) - days(7))
-  ) |> 
+  filter_Datetime(length = "7 days", length_from_start = FALSE) |> 
   gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)
 ```
 
@@ -803,7 +801,7 @@ dataset |>
   number_states(photoperiod.state) |> 
   #group by Id, day and nights, and also the numbers:
   group_by(photoperiod.state, photoperiod.state.count, .add = TRUE) |> 
-  #calculate the brightest hour in each day and each night:
+  #calculate the time above threshold in each day and each night:
   summarize(
     duration_above_threshold(MEDI, Datetime, threshold = 250, as.df = TRUE),
     .groups = "drop_last") |> 
@@ -811,7 +809,7 @@ dataset |>
   summarize_numeric(prefix = "")
 ```
 
-This yields the average brightest 1‑hour period for each participant, separately for day and night. Notably, the participant with the highest daytime brightness also shows the lowest nighttime brightness, and vice versa.
+This yields the average time above 250 lx melanopic EDI for each participant, separately for day and night.
 
 ## Distribution of light exposure
 

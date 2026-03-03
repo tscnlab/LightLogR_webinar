@@ -437,9 +437,7 @@ If the study follows a fixed‑length protocol, you can enforce a maximum observ
 #| fig-width: 5
 #| warning: false
 dataset |> 
-filter(
-  Datetime > (max(Datetime) - days(7))
-  ) |> 
+filter_Datetime(length = "7 days", length_from_start = FALSE) |> 
   gg_gaps(group.by.days = TRUE, show.irregulars = TRUE)
 ```
 
