@@ -17,7 +17,7 @@ website:
         href: assets/Online_course_series_2025-26.pdf
         target: "_blank"
       - text: "Register"
-        href: https://tum-conf.zoom.us/webinar/register/WN_xGoHi1i_Sz2flC6-qGcLoQ#/registration
+        href: https://eu02web.zoom-x.de/meeting/register/HVvnEunVTLWr3ei7dwCfZg
         target: "_blank"
       - text: "Recordings"
         href: recordings.qmd
