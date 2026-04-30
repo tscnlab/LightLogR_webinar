@@ -4,8 +4,8 @@ project:
   
 website:
   title: "LightLogR Webinar"
-  repo-url: https://github.com/tscnlab/LightLogR_webinar
-  issue-url: https://github.com/tscnlab/LightLogR_webinar/issues
+  repo-url: "https://github.com/tscnlab/LightLogR_webinar"
+  issue-url: "https://github.com/tscnlab/LightLogR_webinar/issues"
   repo-actions: [edit, issue]
   page-navigation: true
   bread-crumbs: true
