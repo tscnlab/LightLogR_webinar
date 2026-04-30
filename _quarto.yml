@@ -9,6 +9,14 @@ website:
   repo-actions: [edit, issue]
   page-navigation: true
   bread-crumbs: true
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "<strong>Final advanced session – 6 May 2026</strong> 
+  <a href='https://eu02web.zoom.us/meeting/register/HVvnEunVTLWr3ei7dwCfZg#/registration' target='_blank'> → Register here</a><br>
+  Covering use cases 3 and 4: multi-modal analysis and intervention comparison.<br>"
+    type: primary
+    position: below-navbar
   navbar:
     left:
       - text: Home
