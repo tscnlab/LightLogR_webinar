@@ -20,4 +20,12 @@ toc: false
 
 ### Use case #2: Case light sensitivity
 
+{{< video https://www.youtube.com/watch?v=zOQBD9TdqME >}}
+
+### Use case #3: Light intervention
+
 {{< video https://www.youtube.com/watch?v=mrFrXQCGnPY >}}
+
+### Use case #4: Modalities beyond light - Spectrum
+
+{{< video https://www.youtube.com/watch?v=EybBC0KDM1Q >}}
