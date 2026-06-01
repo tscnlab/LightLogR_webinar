@@ -32,6 +32,10 @@ Build open, reproducible analyses of wearable light exposure and visual experien
 [Beginner (live)](beginner-live.qmd){.btn .btn-primary}
 [Beginner (static)](beginner.qmd){.btn .btn-secondary}
 
+A special introduction to data analysis for the [MeLiDos field study](https://github.com/MeLiDosProject) was prepared for the *Tropical light exposure & health seminar*, hosted by the *University of Costa Rica (UCR)*:
+
+[Tropical light exposure & health (live)](tropical_light_exposure_health-live.qmd){.btn .btn-primary}
+[Tropical light exposure & health (static)](tropical_light_exposure_health.qmd){.btn .btn-secondary}
 
 ### Advanced
 

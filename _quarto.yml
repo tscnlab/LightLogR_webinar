@@ -38,6 +38,11 @@ website:
           href: beginner-live.qmd
         - text: Beginner (static)
           href: beginner.qmd
+        - text: ---
+        - text: Tropical light exposure & health (live)
+          href: tropical_light_exposure_health-live.qmd
+        - text: Tropical light exposure & health (static)
+          href: tropical_light_exposure_health.qmd
       - text: Advanced
         menu:
         - text: A Day in Daylight 
