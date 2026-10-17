@@ -1,0 +1,89 @@
+{
+  "toggles": [
+    {
+      "viewport": "desktop",
+      "toggle": 1,
+      "selected": "16"
+    },
+    {
+      "viewport": "desktop",
+      "toggle": 2,
+      "selected": "16"
+    },
+    {
+      "viewport": "desktop",
+      "toggle": 3,
+      "selected": "16"
+    },
+    {
+      "viewport": "desktop",
+      "toggle": 4,
+      "selected": "16"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "toggle": 1,
+      "selected": "16"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "toggle": 2,
+      "selected": "16"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "toggle": 3,
+      "selected": "16"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "toggle": 4,
+      "selected": "16"
+    },
+    {
+      "viewport": {
+        "width": 1100,
+        "height": 500
+      },
+      "toggle": 1,
+      "selected": "16"
+    },
+    {
+      "viewport": {
+        "width": 1100,
+        "height": 500
+      },
+      "toggle": 2,
+      "selected": "16"
+    },
+    {
+      "viewport": {
+        "width": 1100,
+        "height": 500
+      },
+      "toggle": 3,
+      "selected": "16"
+    },
+    {
+      "viewport": {
+        "width": 1100,
+        "height": 500
+      },
+      "toggle": 4,
+      "selected": "16"
+    }
+  ],
+  "userScrollChapter": "14"
+}

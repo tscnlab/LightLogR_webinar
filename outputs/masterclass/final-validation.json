@@ -13,6 +13,12 @@
   "analytical_check": "All 14 cells and analytical invariants passed; see verification.txt",
   "documentation_links": "37 LightLogR links explicitly target _blank, including links hosted on the same GitHub Pages hostname",
   "final_source_sha256": "ab55b4c93259a9f9314ea9ec52822297a647a41f87e2bd9082c1f27da447f7f7",
-  "final_html_sha256": "4531d8c8bb803089b0370395606e9887fa7a6c04c4ff79328468672d6a10559b",
-  "obsolete_materials": "Separate revealjs slides, webR tutorial, local companion, run-of-show, dedicated scripts, assets, data and caches removed; temporary backup retained outside repository"
+  "final_html_sha256": "b4467498273dc723a7d467fe67ce55f0eeba214b71d509790e8488e157688ebc",
+  "obsolete_materials": "Separate revealjs slides, webR tutorial, local companion, run-of-show, dedicated scripts, assets, data and caches removed; temporary backup retained outside repository",
+  "navigation_fix": "Selected chapter survives 12 view toggles across desktop, 390x844 and 1100x500 viewports; ordinary scrolling still updates the indicator",
+  "navigation_qa": {
+    "unchanged_files": 93,
+    "server_pid": 79148,
+    "server_stopped": true
+  }
 }

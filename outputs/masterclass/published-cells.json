@@ -1,0 +1,66 @@
+{
+  "commit": "86e1538",
+  "url": "https://tscnlab.github.io/LightLogR_webinar/sleep-europe-masterclass.html",
+  "cells": [
+    {
+      "cell": 1,
+      "status": "R 4.6.0; LightLogR 0.10.6; glcdp 1.1.0"
+    },
+    {
+      "cell": 2,
+      "status": "Imported six preview rows"
+    },
+    {
+      "cell": 3,
+      "status": "Output visible"
+    },
+    {
+      "cell": 4,
+      "status": "Output visible"
+    },
+    {
+      "cell": 5,
+      "status": "Output visible"
+    },
+    {
+      "cell": 6,
+      "status": "Both plots rendered"
+    },
+    {
+      "cell": 7,
+      "status": "Daily gt table rendered"
+    },
+    {
+      "cell": 8,
+      "status": "Pinned package opened and metadata displayed"
+    },
+    {
+      "cell": 9,
+      "status": "Chest placement, time zone, epoch and MEDI units displayed"
+    },
+    {
+      "cell": 10,
+      "status": "Light stream loaded; durations and preview displayed"
+    },
+    {
+      "cell": 11,
+      "status": "Diary timestamps and date displayed"
+    },
+    {
+      "cell": 12,
+      "status": "State intervals display wake and sleep"
+    },
+    {
+      "cell": 13,
+      "status": "Merged state plot rendered"
+    },
+    {
+      "cell": 14,
+      "status": "Cycle gt table rendered"
+    }
+  ],
+  "externalDocumentationLinks": 37,
+  "explorerLoaded": true,
+  "courseViewPreservesTable": true,
+  "consoleErrors": []
+}
