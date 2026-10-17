@@ -1,5 +1,4 @@
 webROjs = {
-  const { WebR, ChannelType } = window._exercise_ojs_runtime.WebR;
   const {
     WebREvaluator,
     WebREnvironmentManager,
@@ -32,6 +31,12 @@ webROjs = {
   // webR supplemental data and options
   const dataContent = document.querySelector(`script[type=\"webr-data\"]`).textContent;
   const data = JSON.parse(b64Decode(dataContent));
+
+  // Preserve the bundled client for the extension's default engine. An explicit
+  // engine override needs its matching client (0.5 and 0.6 responses differ).
+  const { WebR, ChannelType } = data.options.baseUrl === "https://webr.r-wasm.org/v0.5.4/"
+    ? window._exercise_ojs_runtime.WebR
+    : await import(`${data.options.baseUrl}webr.mjs`);
 
   // Grab list of resources to be downloaded
   const filesContent = document.querySelector(`script[type=\"vfs-file\"]`).textContent;

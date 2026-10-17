@@ -1,0 +1,116 @@
+Command: Rscript --vanilla scripts/prepare_masterclass_glc.R
+Repository: tscnlab/melidos-iztech-glc-dataset
+Commit: abc456bdb418e6250b9c973813a190dc062c6e76
+Dataset: MELIDOS_IZTECH_S011
+Archive: /Users/zauner/Documents/Arbeit/12-TUM/LightLogR/LightLogR_webinar/data/masterclass/melidos-iztech-teaching.zip
+MD5: 96e21bacabb0f25ff29ca4442211c998
+Metadata and schemas are unchanged; complete chest-light, sleep-diary, and wear-log files are included.
+# A tibble: 18 × 6
+   path                                                        
+   <chr>                                                       
+ 1 datapackage.json                                            
+ 2 data/study.json                                             
+ 3 data/participants.csv                                       
+ 4 data/participant_characteristics.csv                        
+ 5 data/datasets.json                                          
+ 6 data/devices.json                                           
+ 7 data/device_datasheets.json                                 
+ 8 schemas/3.0.2/glc-dp-profile.json                           
+ 9 json-entity-resource.json                                   
+10 schemas/3.0.2/study.schema.json                             
+11 schemas/3.0.2/participants.schema.json                      
+12 schemas/3.0.2/participant_characteristics.schema.json       
+13 schemas/3.0.2/dataset.schema.json                           
+14 schemas/3.0.2/device.schema.json                            
+15 schemas/3.0.2/device_datasheet.schema.json                  
+16 data/files/longitudinal-reports/IZTECH_S011_sleepdiaries.csv
+17 data/files/longitudinal-reports/IZTECH_S011_wearlog.csv     
+18 data/files/sensor/IZTECH_S011_light_chest.csv               
+   destination                                                                  
+   <chr>                                                                        
+ 1 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+ 2 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+ 3 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+ 4 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+ 5 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+ 6 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+ 7 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+ 8 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+ 9 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+10 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+11 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+12 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+13 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+14 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+15 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+16 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+17 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+18 /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/Rtmp8beX9l/mastercl…
+   storage    bytes
+   <chr>      <dbl>
+ 1 git         1584
+ 2 git         6027
+ 3 git          527
+ 4 git        58031
+ 5 git      3889952
+ 6 git         8355
+ 7 git         9131
+ 8 git        11438
+ 9 git          765
+10 git         6498
+11 git         1079
+12 git         1457
+13 git        46572
+14 git         3952
+15 git        13062
+16 git         1484
+17 git          900
+18 git     11074633
+   sha256                                                           lfs_oid
+   <chr>                                                            <chr>  
+ 1 510d088be4ecf312c2e6415d66238573db9b9961103f66e153af2bdad289b8d3 <NA>   
+ 2 0ce9053a9995ea55b5cda5c88b2cbca6be567e2a1e8ff406599790070c42a78c <NA>   
+ 3 70454866300faec3f8034595ad96c817b534255708d83ef4c5fe60f8d3bec35a <NA>   
+ 4 c018f6aff2db386567d6048a903cef7caac390373979be9289766afb385a1714 <NA>   
+ 5 00f1d9ee457ff9b3e7c4837a8a0c63bab25622312ada3b0ede995df4ff716a30 <NA>   
+ 6 8798c9e3f81cbc4cc9ef5a011cd7059e9aa6a490743ee4b5f8ac5bc6d41b0858 <NA>   
+ 7 e4a6b0674815dc45050f81c809402d96eb2cf25bde115452bd22ad96e9600d28 <NA>   
+ 8 4b6bf0557575c7a2d8622b01c1d1eacba11b1419e2ffac2fac8c41330efd79de <NA>   
+ 9 c89c1023c5a9d62cbf15ee762ad94ab18aa72df984080947f6816265e1e783ba <NA>   
+10 f1e7196b1458de5ba7678423fa97da8a08d62d6bad3c7caecfc093faa78efe06 <NA>   
+11 e7192bd483a4e2e9ce4fb1a0bedad551335cda287e389da333132509a7e318a6 <NA>   
+12 2535117d5c9daef19194242404c0e727b3e0927affa54872f88568ebee995b1f <NA>   
+13 7c17e4df6495bcb0fb020e7494889c3f234f9e305b8b73a0db0b37711fd6f854 <NA>   
+14 ea149188482c5b2d3c2595227b459764b82db6102539cd5e9d8865ea154f7bfa <NA>   
+15 44d54895d43683a778fb4d94e0e7339618fe5b5e5c415f77847b02a4739e55b2 <NA>   
+16 2d5aca5a11130629c6cdf12b7fc5024e5e7cf56fc9fadb8e395338d08b553a40 <NA>   
+17 bc0868f845bc7d953cfd38d4f79e8ccfdc4c59b57e2d62a6917bc9bd8bccd9b7 <NA>   
+18 61f6bc2e10f516d6e22f8b21e77972a0aece2521dd7015bf718d99668060e4ef <NA>   
+
+R version 4.6.1 (2026-06-24)
+Platform: aarch64-apple-darwin23
+Running under: macOS Golden Gate 27.0.1
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] C.UTF-8/C.UTF-8/C.UTF-8/C/C.UTF-8/C.UTF-8
+
+time zone: Europe/Berlin
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] glcdp_1.1.0
+
+loaded via a namespace (and not attached):
+ [1] digest_0.6.39    utf8_1.2.6       R6_2.6.1         tidyselect_1.2.1
+ [5] magrittr_2.0.5   glue_1.8.1       tibble_3.3.1     pkgconfig_2.0.3 
+ [9] generics_0.1.4   dplyr_1.2.1      lifecycle_1.0.5  cli_3.6.6       
+[13] vctrs_0.7.3      compiler_4.6.1   tools_4.6.1      curl_7.1.0      
+[17] pillar_1.11.1    httr2_1.3.0      otel_0.2.0       rlang_1.3.0     
+[21] jsonlite_2.0.0  

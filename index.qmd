@@ -37,6 +37,12 @@ A special introduction to data analysis for the [MeLiDos field study](https://gi
 [Tropical light exposure & health (live)](tropical_light_exposure_health-live.qmd){.btn .btn-primary}
 [Tropical light exposure & health (static)](tropical_light_exposure_health.qmd){.btn .btn-secondary}
 
+#### Sleep Europe 2026: Masterclass personal light exposure
+
+A beginner workshop on reproducible light-exposure analysis: import, clean, visualize, and calculate metrics with LightLogR, then explore a Global Light Commons package and combine its light and sleep-diary data. Presentation and hands-on exercises share the same page and browser R session.
+
+[Open the Sleep Europe 2026 masterclass](sleep-europe-masterclass.qmd){.btn .btn-primary}
+
 ### Advanced
 
 The advanced course takes *use cases*, extracted from real-world examples, to highlight advanced analysis techniques. Each use case contains a short summary on the example and on the focus points as a *Preface*.
@@ -70,7 +76,6 @@ Analysis challenges: multimodal data, reconstructing light spectra, analysing li
 
 [Advanced (live)](advanced_04_visual_experience-live.qmd){.btn .btn-primary}
 [Advanced (static)](advanced_04_visual_experience.qmd){.btn .btn-secondary}
-
 
 ## What you’ll do
 

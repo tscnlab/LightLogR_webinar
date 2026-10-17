@@ -9,6 +9,7 @@ This repository holds the teaching materials for the course **Open and reproduci
 ## What is in this course?
 
 - **Beginner track** – introduces the LightLogR workflow and tidy R practices using a self-contained dataset. Both live (webR) and static scripts are available: [`beginner-live.qmd`](beginner-live.qmd) and [`beginner.qmd`](beginner.qmd).
+- **Sleep Europe 2026 masterclass**: a beginner workshop with presentation and editable webR exercises on [one page](https://tscnlab.github.io/LightLogR_webinar/sleep-europe-masterclass.html). The source is [`sleep-europe-masterclass.qmd`](sleep-europe-masterclass.qmd); it replaces the earlier separate masterclass slides and tutorial.
 - **Advanced track** – four use cases with real-world constraints (many participants, sensitivity to light, therapy lamps, multimodal visual experience). Each use case has live and static variants (e.g., [`advanced_01_a_day_in_daylight-live.qmd`](advanced_01_a_day_in_daylight-live.qmd) and [`advanced_01_a_day_in_daylight.qmd`](advanced_01_a_day_in_daylight.qmd)).
 - **Recordings and overview** – see [`recordings.qmd`](recordings.qmd) and the landing page [`index.qmd`](index.qmd) for summaries, requirements, and links to flyers/registration.
 - **Helper scripts** – reusable code for figures and tables in [`scripts/`](scripts/).
@@ -25,7 +26,7 @@ This repository holds the teaching materials for the course **Open and reproduci
 The static Quarto files run on a local R installation and render the full analysis pipeline end-to-end.
 
 1. **Clone or download** this repository and open it in RStudio (optional) via `LightLogR_Webinar.Rproj`.
-2. **Restore the exact package versions** recorded in `renv.lock` (tested with R 4.5.0):
+2. **Restore the exact package versions** recorded in `renv.lock`, using the R version recorded there:
    ```r
    install.packages("renv")
    renv::restore()
@@ -42,6 +43,10 @@ The static Quarto files run on a local R installation and render the full analys
 ## Live (webR) versions
 
 Files ending in `-live.qmd` are configured for webR. They are pre-rendered on the website and can be opened locally as references, but the interactive R runtime is available only through the hosted pages.
+
+The Sleep Europe masterclass also uses webR. To refresh its downloadable R script and saved examples, run `Rscript --vanilla scripts/check_sleep_europe_masterclass.R` from the project root with the packages recorded in [`outputs/masterclass/verification.txt`](outputs/masterclass/verification.txt). An optional `MASTERCLASS_R_LIBRARY` selects a separate installed package library. The checker executes the 14 page cells and checks timestamps, state joins, missingness, metric units, and coverage. Its tested environment is recorded separately from the existing course lockfile.
+
+Render the masterclass with `quarto render sleep-europe-masterclass.qmd`. Commit its frozen results and rendered `docs/` output with the source: GitHub Pages serves `main:/docs`. The browser uses webR 0.6.0 and downloads packages from the configured repositories; Cell 1 records the versions actually loaded.
 
 ## Data and citation
 

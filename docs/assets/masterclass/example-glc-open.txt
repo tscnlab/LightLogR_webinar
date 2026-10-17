@@ -1,0 +1,14 @@
+<GLC data package>
+Source: /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/RtmpfkZu3D/masterclass-glc
+Schema: 3.0.2
+Registry revision: verified
+[1] "abc456bdb418e6250b9c973813a190dc062c6e76"
+# A tibble: 5 × 3
+  dataset_id          timezone        file_group_count
+  <chr>               <chr>                      <int>
+1 MELIDOS_IZTECH_S001 Europe/Istanbul               19
+2 MELIDOS_IZTECH_S002 Europe/Istanbul               19
+3 MELIDOS_IZTECH_S003 Europe/Istanbul               19
+4 MELIDOS_IZTECH_S004 Europe/Istanbul               21
+5 MELIDOS_IZTECH_S005 Europe/Istanbul               19
+Elapsed seconds: 0.132

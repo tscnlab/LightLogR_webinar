@@ -1,0 +1,40 @@
+Illustrative concept figures; input values defined in scripts/prepare_masterclass_visuals.R
+Observed minutes: 6
+Expected minutes: 8
+Minutes at or above 250 lx: 3
+Dose lx h: 22.5
+# A tibble: 3 × 5
+  start   end  prep Date   label                 
+  <dbl> <dbl> <dbl> <chr>  <chr>                 
+1     7    33    25 14 Apr Date = 14 Apr  ·  26 h
+2    33    56    49 15 Apr Date = 15 Apr  ·  23 h
+3    56    79    73 16 Apr Date = 16 Apr  ·  23 h
+R version 4.6.1 (2026-06-24)
+Platform: aarch64-apple-darwin23
+Running under: macOS Golden Gate 27.0.1
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] C.UTF-8/C.UTF-8/C.UTF-8/C/C.UTF-8/C.UTF-8
+
+time zone: Europe/Berlin
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] ggplot2_4.0.3    dplyr_1.2.1      LightLogR_0.10.6
+
+loaded via a namespace (and not attached):
+ [1] vctrs_0.7.3        cli_3.6.6          rlang_1.3.0        purrr_1.2.2       
+ [5] generics_0.1.4     textshaping_1.0.1  S7_0.2.2           labeling_0.4.3    
+ [9] glue_1.8.1         ragg_1.5.0         hms_1.1.3          scales_1.4.0      
+[13] grid_4.6.1         tibble_3.3.1       lifecycle_1.0.5    compiler_4.6.1    
+[17] RColorBrewer_1.1-3 timechange_0.3.0   pkgconfig_2.0.3    tidyr_1.3.2       
+[21] systemfonts_1.3.1  farver_2.1.2       R6_2.6.1           utf8_1.2.6        
+[25] tidyselect_1.2.1   pillar_1.11.1      magrittr_2.0.5     tools_4.6.1       
+[29] withr_3.0.2        gtable_0.3.6       lubridate_1.9.4   

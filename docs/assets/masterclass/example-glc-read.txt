@@ -1,0 +1,21 @@
+# A tibble: 1 × 4
+# Groups:   Id [1]
+  Id          difftime       n group.indices
+  <chr>       <Duration> <int>         <int>
+1 IZTECH_S011 10s        69119             1
+# A tibble: 1 × 4
+# Groups:   Id [1]
+  Id          duration             missing              total                
+  <chr>       <Duration>           <Duration>           <Duration>           
+1 IZTECH_S011 588300s (~6.81 days) 102900s (~1.19 days) 691200s (~1.14 weeks)
+# A tibble: 6 × 3
+# Groups:   Id [1]
+  Id          Datetime             MEDI
+  <chr>       <dttm>              <dbl>
+1 IZTECH_S011 2025-04-14 15:00:06  154.
+2 IZTECH_S011 2025-04-14 15:00:16  194.
+3 IZTECH_S011 2025-04-14 15:00:26  159.
+4 IZTECH_S011 2025-04-14 15:00:36  165.
+5 IZTECH_S011 2025-04-14 15:00:46  176.
+6 IZTECH_S011 2025-04-14 15:00:56  175.
+Elapsed seconds: 2.748

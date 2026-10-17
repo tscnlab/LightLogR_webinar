@@ -1,0 +1,206 @@
+[
+  {
+    "url": "https://tscnlab.github.io/LightLogR/",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "9e747f6f1317d65758e57a7dcc84b96eca840c4451208d80366d79ae456ce256"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/Day.html#data-aggregation",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "2815508fe00287a58d141f354ec311669cf82d5667f0093d009a65afbdcae683"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/Import.html#finding-and-handling-gaps-and-irregular-data",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "6d529d48350afd99ca5e94402f23546fe539bd95721a85e31ec7cf3b04efd0f6"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/Import.html#importing-data",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "6d529d48350afd99ca5e94402f23546fe539bd95721a85e31ec7cf3b04efd0f6"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/Metrics.html#brightest-10-hours-of-the-day-l10",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "ffa7ddabee0c03abd2c453bdf26ba87959fc5bc0f61c8093897cbeb154687c39"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/Metrics.html#grouping",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "ffa7ddabee0c03abd2c453bdf26ba87959fc5bc0f61c8093897cbeb154687c39"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/Metrics.html#time-above-threshold-tat",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "ffa7ddabee0c03abd2c453bdf26ba87959fc5bc0f61c8093897cbeb154687c39"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/Visualizations.html#gg_gaps",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "8c24cbcd6cf65332b074992c61ce3a5d56d62444ea82cb6510f262d8b7f0e04c"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/Visualizations.html#gg_overview",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "8c24cbcd6cf65332b074992c61ce3a5d56d62444ea82cb6510f262d8b7f0e04c"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/Visualizations.html#with-gg_days",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "8c24cbcd6cf65332b074992c61ce3a5d56d62444ea82cb6510f262d8b7f0e04c"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/photoperiod.html#differences-in-solar-depression-angle",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "6e91af9052fcb99f989d8bcb671ea307687d22da479ad8f2306bbfd7e99c95ae"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/states.html#creating-states",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "516de215cd925e814357b8c01dab90d99cc90bf1163d564eefca2fa53ef28eb7"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/states.html#example-sleepwake-data",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "516de215cd925e814357b8c01dab90d99cc90bf1163d564eefca2fa53ef28eb7"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/articles/states.html#principles",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "516de215cd925e814357b8c01dab90d99cc90bf1163d564eefca2fa53ef28eb7"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/add_Date_col.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "01f83649b0bb55241c78fbfc6468249e395168b9e1644173b2dfa36d7e42df75"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/add_states.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "469983484e4dfa62808e5b94a864e1c4d1e43fdd393d52127187bc7d448d3ca2"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/aggregate_Datetime.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "be2848e64b4f27afccd0da90007539394119f0c5b26448129d5d1868e3a5344a"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/bright_dark_period.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "761f74fc7fa4c7e9857af8cce3e56addaa6aa56246edc79c0bb77eea85717d0b"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/count_difftime.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "90c1e969f64f21c3fc5cd6994f58b2ccd5cce459700da0f10a3fd7343249933d"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/dose.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "e236d6ba00c9eeceacb9c1e3c07d38e614445d924fcf673c6e81b519ec203186"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/duration_above_threshold.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "8bb736cb6c1a1d6fd0254363d51069f55e2378c102d48e6e62d1517a39c3a991"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/durations.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "a6cb6fc01ae9435951f7e3debbae8797602302f4bd4c658d5fd1b35ee56bfeb1"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/filter_Datetime.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "467ff46530b0be4b41abc66bbcc48df77fb7508a21d07d80b0f9cdaaef4e3382"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/gap_finder.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "9707e6f75a74b98bc76e53b653a23b37171247d7fba0db08e431a5e046cb88ce"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/gap_handler.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "7fbe2a25f0a04280dda46cd64fd0d6a7fc3c80ee58489f7c735888773ddaf08d"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/gg_days.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "79ca691d13907c4c82720d1234c577402b7639e5d1efb474e82e842284b20016"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/gg_gaps.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "e0e285c49dce1d9a32a2a28bdad0c54d34f7967bb6b8c21dd4ea9b828b62e2ef"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/gg_overview.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "14f19143fa806ece6814801e839119423bc9c5df69d47273a6592539e0cef2c7"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/gg_photoperiod.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "550646b16156012ab7aeca488de2694be3fd8136b64d11e6c25d7de57d0e778c"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/gg_states.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "762be1e7ac52a113fe7d6c9b8328d82199faeff2004dea8eefad4c1701c3231e"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/import_Dataset.html#details",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "71d5c733d8df85df86b1b967e05e1327cfac6688f73052b6242565fd9b724e1a"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/import_Dataset.html#devices",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "71d5c733d8df85df86b1b967e05e1327cfac6688f73052b6242565fd9b724e1a"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/sc2interval.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "a679cb10ae91fbe88cfba14511d3f53df63f6e1548706f905929acfade61ec23"
+  },
+  {
+    "url": "https://tscnlab.github.io/LightLogR/reference/summary_table.html",
+    "status": 200,
+    "anchor_exists": true,
+    "sha256": "a71a15f96e56d5d3d526a847dd5ba3935dd9d54f52150a5eafc1689dc92e1df9"
+  }
+]

@@ -39,6 +39,9 @@ website:
         - text: Beginner (static)
           href: beginner.qmd
         - text: ---
+        - text: Sleep Europe 2026 Masterclass
+          href: sleep-europe-masterclass.qmd
+        - text: ---
         - text: Tropical light exposure & health (live)
           href: tropical_light_exposure_health-live.qmd
         - text: Tropical light exposure & health (static)

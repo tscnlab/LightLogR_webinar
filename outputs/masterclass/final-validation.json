@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-17T12:40:31.213488+00:00",
+  "unchanged_files": 93,
+  "changed_files": [],
+  "desktop": "final-desktop.png",
+  "mobile": "final-mobile.png",
+  "visual_verdict": "Pass: coverage explanation, responsive layout, chapter navigation, and renamed sleep state",
+  "server": {
+    "pid": 77509,
+    "url": "http://127.0.0.1:8768/sleep-europe-masterclass.html",
+    "stopped": true
+  },
+  "analytical_check": "All 14 cells and analytical invariants passed; see verification.txt",
+  "documentation_links": "37 LightLogR links explicitly target _blank, including links hosted on the same GitHub Pages hostname",
+  "final_source_sha256": "ab55b4c93259a9f9314ea9ec52822297a647a41f87e2bd9082c1f27da447f7f7",
+  "final_html_sha256": "4531d8c8bb803089b0370395606e9887fa7a6c04c4ff79328468672d6a10559b",
+  "obsolete_materials": "Separate revealjs slides, webR tutorial, local companion, run-of-show, dedicated scripts, assets, data and caches removed; temporary backup retained outside repository"
+}

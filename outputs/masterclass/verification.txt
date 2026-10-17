@@ -1,0 +1,209 @@
+Command: Rscript --vanilla scripts/check_sleep_europe_masterclass.R
+Checked: 2026-10-17 12:38:14 UTC
+Source: sleep-europe-masterclass.qmd
+Input: /private/tmp/sleep-europe-masterclass/library/LightLogR/extdata/205_actlumus_Log_1020_20230904101707532.txt.zip
+Input MD5: 200c8faf088211c36ae5c96e4403007e
+GLC repository: tscnlab/melidos-iztech-glc-dataset
+GLC commit: abc456bdb418e6250b9c973813a190dc062c6e76
+GLC archive: data/masterclass/melidos-iztech-teaching.zip
+GLC archive MD5: 96e21bacabb0f25ff29ca4442211c998
+GLC file: data/files/sensor/IZTECH_S011_light_chest.csv
+GLC sleep diary: data/files/longitudinal-reports/IZTECH_S011_sleepdiaries.csv
+GLC wear log: data/files/longitudinal-reports/IZTECH_S011_wearlog.csv
+
+mc-setup
+[1] "R version 4.6.1 (2026-06-24)"
+            package version
+LightLogR LightLogR  0.10.6
+glcdp         glcdp   1.1.0
+dplyr         dplyr   1.2.1
+tidyr         tidyr   1.3.2
+ggplot2     ggplot2   4.0.3
+gt               gt   1.3.0
+Elapsed seconds: 0.313
+
+mc-import
+
+Successfully read in 61'016 observations across 1 Ids from 1 ActLumus-file(s).
+Timezone set is Europe/Berlin.
+
+First Observation: 2023-08-28 08:47:54
+Last Observation: 2023-09-04 10:17:04
+Timespan: 7.1 days
+
+Observation intervals: 
+  Id    interval.time     n pct  
+1 P1    10s           61015 100% 
+# A tibble: 6 × 3
+# Groups:   Id [1]
+  Id    Datetime             MEDI
+  <fct> <dttm>              <dbl>
+1 P1    2023-08-28 08:47:54  0.77
+2 P1    2023-08-28 08:48:04  2.33
+3 P1    2023-08-28 08:48:14  5.63
+4 P1    2023-08-28 08:48:24  6.03
+5 P1    2023-08-28 08:48:34  5.86
+6 P1    2023-08-28 08:48:44  6.04
+Elapsed seconds: 0.744
+
+mc-inspect
+# A tibble: 1 × 4
+# Groups:   Id [1]
+  Id    difftime       n group.indices
+  <fct> <Duration> <int>         <int>
+1 P1    10s        61015             1
+# A tibble: 4 × 4
+  name                mean   min   max
+  <chr>              <dbl> <dbl> <dbl>
+1 Participants        1    NA    NA   
+2 Participant-days    8     8     8   
+3 Days ≥80% complete  6     6     6   
+4 Missing/Irregular   0.12  0.12  0.12
+Elapsed seconds: 0.384
+
+mc-window
+# A tibble: 2 × 4
+# Groups:   Id [1]
+  Id    difftime             n group.indices
+  <fct> <Duration>       <int>         <int>
+1 P1    10s              16918             1
+2 P1    3610s (~1 hours)     1             1
+Elapsed seconds: 0.184
+
+mc-clean
+# A tibble: 1 × 4
+# Groups:   Id [1]
+  Id    duration             missing          total            
+  <fct> <Duration>           <Duration>       <Duration>       
+1 P1    169200s (~1.96 days) 3600s (~1 hours) 172800s (~2 days)
+Elapsed seconds: 0.173
+
+mc-plot
+Elapsed seconds: 0.565
+
+mc-metrics
+Formatted table rendered to example-daily.html 
+Elapsed seconds: 0.161
+
+mc-glc-open
+<GLC data package>
+Source: /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/RtmpfkZu3D/masterclass-glc
+Schema: 3.0.2
+Registry revision: verified
+[1] "abc456bdb418e6250b9c973813a190dc062c6e76"
+# A tibble: 5 × 3
+  dataset_id          timezone        file_group_count
+  <chr>               <chr>                      <int>
+1 MELIDOS_IZTECH_S001 Europe/Istanbul               19
+2 MELIDOS_IZTECH_S002 Europe/Istanbul               19
+3 MELIDOS_IZTECH_S003 Europe/Istanbul               19
+4 MELIDOS_IZTECH_S004 Europe/Istanbul               21
+5 MELIDOS_IZTECH_S005 Europe/Istanbul               19
+Elapsed seconds: 0.132
+
+mc-glc-inspect
+# A tibble: 1 × 6
+  file_group_id          device_location timezone        data_state
+  <chr>                  <chr>           <chr>           <chr>     
+1 MELIDOS_IZTECH_S011:17 chest           Europe/Istanbul processed 
+  temporal_value temporal_unit
+           <dbl> <chr>        
+1             10 second       
+# A tibble: 1 × 4
+  name  label                                     unit  term         
+  <chr> <chr>                                     <chr> <chr>        
+1 MEDI  Melanopic equivalent daylight illuminance lx    melanopic_edi
+Elapsed seconds: 0.0169999999999999
+
+mc-glc-read
+# A tibble: 1 × 4
+# Groups:   Id [1]
+  Id          difftime       n group.indices
+  <chr>       <Duration> <int>         <int>
+1 IZTECH_S011 10s        69119             1
+# A tibble: 1 × 4
+# Groups:   Id [1]
+  Id          duration             missing              total                
+  <chr>       <Duration>           <Duration>           <Duration>           
+1 IZTECH_S011 588300s (~6.81 days) 102900s (~1.19 days) 691200s (~1.14 weeks)
+# A tibble: 6 × 3
+# Groups:   Id [1]
+  Id          Datetime             MEDI
+  <chr>       <dttm>              <dbl>
+1 IZTECH_S011 2025-04-14 15:00:06  154.
+2 IZTECH_S011 2025-04-14 15:00:16  194.
+3 IZTECH_S011 2025-04-14 15:00:26  159.
+4 IZTECH_S011 2025-04-14 15:00:36  165.
+5 IZTECH_S011 2025-04-14 15:00:46  176.
+6 IZTECH_S011 2025-04-14 15:00:56  175.
+Elapsed seconds: 2.748
+
+mc-sleep-diary
+# A tibble: 4 × 4
+  Id          sleepprep           wake                Date      
+  <chr>       <dttm>              <dttm>              <date>    
+1 IZTECH_S011 2025-04-14 01:30:00 2025-04-14 07:45:00 2025-04-14
+2 IZTECH_S011 2025-04-15 02:00:00 2025-04-15 08:00:00 2025-04-15
+3 IZTECH_S011 2025-04-16 01:00:00 2025-04-16 08:00:00 2025-04-16
+4 IZTECH_S011 2025-04-17 02:00:00 2025-04-17 08:10:00 2025-04-17
+Elapsed seconds: 1.917
+
+mc-sleep-cycles
+# A tibble: 4 × 4
+# Groups:   Id [1]
+  Id          Date       State Interval                                        
+  <chr>       <date>     <chr> <Interval>                                      
+1 IZTECH_S011 2025-04-14 wake  2025-04-14 07:45:00 +03--2025-04-15 02:00:00 +03
+2 IZTECH_S011 2025-04-14 sleep 2025-04-15 02:00:00 +03--2025-04-15 08:00:00 +03
+3 IZTECH_S011 2025-04-15 wake  2025-04-15 08:00:00 +03--2025-04-16 01:00:00 +03
+4 IZTECH_S011 2025-04-15 sleep 2025-04-16 01:00:00 +03--2025-04-16 08:00:00 +03
+Elapsed seconds: 0.0139999999999993
+
+mc-sleep-join
+Elapsed seconds: 2.143
+
+mc-sleep-metrics
+Formatted table rendered to example-sleep-metrics.html 
+Elapsed seconds: 0.204000000000001
+
+All analytical invariants, boundary joins, all-missing guards, and threshold-edit checks passed.
+
+R version 4.6.1 (2026-06-24)
+Platform: aarch64-apple-darwin23
+Running under: macOS Golden Gate 27.0.1
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] C.UTF-8/C.UTF-8/C.UTF-8/C/C.UTF-8/C.UTF-8
+
+time zone: Europe/Berlin
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] gt_1.3.0         glcdp_1.1.0      ggplot2_4.0.3    tidyr_1.3.2     
+[5] dplyr_1.2.1      LightLogR_0.10.6
+
+loaded via a namespace (and not attached):
+ [1] gtable_0.3.6       xfun_0.60          tzdb_0.5.0         vctrs_0.7.3       
+ [5] tools_4.6.1        generics_0.1.4     curl_7.1.0         parallel_4.6.1    
+ [9] tibble_3.3.1       proxy_0.4-29       pkgconfig_2.0.3    KernSmooth_2.23-26
+[13] RColorBrewer_1.1-3 S7_0.2.2           lifecycle_1.0.5    compiler_4.6.1    
+[17] farver_2.1.2       stringr_1.6.0      suntools_1.1.0     ggsci_3.2.0       
+[21] litedown_0.7       htmltools_0.5.9    class_7.3-23       sass_0.4.10       
+[25] pillar_1.11.1      crayon_1.5.3       classInt_0.4-11    commonmark_2.0.0  
+[29] tidyselect_1.2.1   digest_0.6.39      stringi_1.8.7      sf_1.1-2          
+[33] purrr_1.2.2        cowplot_1.2.0      fastmap_1.2.0      grid_4.6.1        
+[37] cli_3.6.6          magrittr_2.0.5     utf8_1.2.6         e1071_1.7-17      
+[41] readr_2.2.0        withr_3.0.2        scales_1.4.0       warp_0.2.3        
+[45] bit64_4.8.2        lubridate_1.9.4    timechange_0.3.0   slider_0.3.3      
+[49] bit_4.6.0          otel_0.2.0         ggtext_0.2.0       hms_1.1.3         
+[53] V8_8.2.0           markdown_2.0       rlang_1.3.0        gridtext_0.1.5    
+[57] Rcpp_1.1.1-1.1     glue_1.8.1         juicyjuice_0.1.0   DBI_1.3.0         
+[61] xml2_1.6.0         jsonlite_2.0.0     vroom_1.7.1        R6_2.6.1          
+[65] fs_2.1.0           units_0.8-7       
