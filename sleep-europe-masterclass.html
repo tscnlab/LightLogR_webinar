@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Johannes Zauner">
+<meta name="description" content="One interactive workshop: reproducible light-exposure analysis with LightLogR and Global Light Commons.">
+
+<title>Sleep Europe 2026: Masterclass personal light exposure – LightLogR Webinar</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-a2b4bbde9dea897e3c0dd6635f8e8caa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="assets/masterclass/masterclass.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">LightLogR Webinar</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./assets/Online_course_series_2025-26.pdf" target="_blank"> 
+<span class="menu-text">Course flyer</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://eu02web.zoom-x.de/meeting/register/HVvnEunVTLWr3ei7dwCfZg" target="_blank"> 
+<span class="menu-text">Register</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./recordings.html"> 
+<span class="menu-text">Recordings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./assets/2025.10.07_LightLogR.pdf" target="_blank"> 
+<span class="menu-text">Slides</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-beginner" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Beginner</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-beginner">    
+        <li>
+    <a class="dropdown-item" href="./beginner-live.html">
+ <span class="dropdown-text">Beginner (live)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./beginner.html">
+ <span class="dropdown-text">Beginner (static)</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./sleep-europe-masterclass.html">
+ <span class="dropdown-text">Sleep Europe 2026 Masterclass</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./tropical_light_exposure_health-live.html">
+ <span class="dropdown-text">Tropical light exposure &amp; health (live)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tropical_light_exposure_health.html">
+ <span class="dropdown-text">Tropical light exposure &amp; health (static)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-advanced" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Advanced</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-advanced">    
+        <li class="dropdown-header">A Day in Daylight</li>
+        <li>
+    <a class="dropdown-item" href="./advanced_01_a_day_in_daylight-live.html">
+ <span class="dropdown-text">live</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_01_a_day_in_daylight.html">
+ <span class="dropdown-text">static</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Case of high light sensitivity</li>
+        <li>
+    <a class="dropdown-item" href="./advanced_02_case_light_sensitivity-live.html">
+ <span class="dropdown-text">live</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_02_case_light_sensitivity.html">
+ <span class="dropdown-text">static</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Therapy lamps</li>
+        <li>
+    <a class="dropdown-item" href="./advanced_03_light_therapy-live.html">
+ <span class="dropdown-text">live</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_03_light_therapy.html">
+ <span class="dropdown-text">static</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Visual experience: beyond light</li>
+        <li>
+    <a class="dropdown-item" href="./advanced_04_visual_experience-live.html">
+ <span class="dropdown-text">live</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_04_visual_experience.html">
+ <span class="dropdown-text">static</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About / Funding</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./license.html"> 
+<span class="menu-text">License</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tscnlab/LightLogR_webinar"> <i class="bi bi-github" role="img" aria-label="Quarto GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sleep Europe 2026: Masterclass personal light exposure</h1>
+</div>
+
+<div>
+  <div class="description">
+    One interactive workshop: reproducible light-exposure analysis with LightLogR and Global Light Commons.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta column-page">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Johannes Zauner </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<nav class="mc-toolbar" aria-label="Masterclass controls">
+  <a class="mc-wordmark" href="#welcome"><img class="mc-mark" src="assets/masterclass/lightlogr-logo.png" alt="LightLogR" width="27" height="27"> Sleep Europe 2026 <span>MASTERCLASS PERSONAL LIGHT EXPOSURE</span></a>
+  <div class="mc-navigation">
+    <label class="visually-hidden" for="mc-jump">Workshop chapter</label>
+    <select id="mc-jump" aria-label="Workshop chapter"></select>
+    <button id="mc-prev" type="button" aria-label="Previous chapter">←</button>
+    <button id="mc-next" type="button" aria-label="Next chapter">→</button>
+  </div>
+  <button id="mc-present" type="button" aria-pressed="false">Present</button>
+</nav>
+<div class="mc-progress" aria-hidden="true"><span id="mc-progress-fill"></span></div>
+<div id="mc-announcement" class="visually-hidden" role="status" aria-live="polite"></div>
+<div class="mc-page">
+<div id="welcome" class="mc-step" data-short="Start here">
+<div class="mc-hero">
+<div class="mc-hero-copy">
+<p><span class="mc-eyebrow">Sleep Europe 2026 · Masterclass personal light exposure</span></p>
+<section id="from-light-data-to-a-reproducible-result" class="level2">
+<h2 class="anchored" data-anchor-id="from-light-data-to-a-reproducible-result">From light data to a reproducible result</h2>
+<div class="mc-lead">
+<p>Make the decisions visible. Run the analysis. Keep the context with the data.</p>
+</div>
+<p>One page to present, experiment, and revisit. We will import a wearable recording with <strong>LightLogR</strong>, make a defensible summary, and combine light and sleep-diary data from a <strong>Global Light Commons</strong> package with <strong>glcdp</strong>.</p>
+<p><a href="#reproducibility" class="mc-primary-link">Start the workshop ↓</a> <a href="scripts/sleep-europe-masterclass.R" class="mc-secondary-link" download="sleep-europe-masterclass.R">Download the R script</a></p>
+<div class="mc-byline">
+<p><strong>Johannes Zauner</strong> · Technical University of Munich</p>
+<p>Beginner level · Browser + internet · No R installation needed</p>
+</div>
+</section>
+</div>
+<div class="mc-route" aria-label="Workshop route: raw recording, explicit decisions, interpretable result, reusable data package.">
+  <div class="mc-route-label">THE ROUTE</div>
+  <div class="mc-route-stop"><span>01</span><div><strong>A recording</strong><small>What did the sensor measure?</small></div></div>
+  <div class="mc-route-line"></div>
+  <div class="mc-route-stop"><span>02</span><div><strong>A decision trail</strong><small>What did we change, and why?</small></div></div>
+  <div class="mc-route-line"></div>
+  <div class="mc-route-stop"><span>03</span><div><strong>A result with context</strong><small>What does the number describe?</small></div></div>
+  <div class="mc-route-line"></div>
+  <div class="mc-route-stop"><span>04</span><div><strong>A reusable package</strong><small>Could someone else start here?</small></div></div>
+</div>
+</div>
+<div class="mc-orientation">
+<p><strong>Follow along:</strong> work down the page and run the numbered cells in order. <strong>Present:</strong> use the button above to show one chapter at a time. Switching views keeps your code, results, and R objects in this tab. Code changes require rerunning that cell and any later cells that use its results.</p>
+</div>
+</div>
+<div id="reproducibility" class="mc-step" data-short="01 · Reproducibility">
+<p><span class="mc-eyebrow">01 / PRINCIPLE</span></p>
+<section id="a-result-is-more-than-a-number" class="level2">
+<h2 class="anchored" data-anchor-id="a-result-is-more-than-a-number">A result is more than a number</h2>
+<div class="mc-lead">
+<p>“Two hours above a light threshold” is incomplete until we know whose data, which light quantity, which hours, and which processing decisions.</p>
+</div>
+<div class="mc-four-up">
+<div class="mc-principle">
+<p><span class="mc-number">01</span></p>
+<section id="keep-the-input" class="level3">
+<h3 class="anchored" data-anchor-id="keep-the-input">Keep the input</h3>
+<p>Preserve the original recording. Record its source and version. Make a new object for each meaningful transformation.</p>
+</section>
+</div>
+<div class="mc-principle">
+<p><span class="mc-number">02</span></p>
+<section id="state-the-decisions" class="level3">
+<h3 class="anchored" data-anchor-id="state-the-decisions">State the decisions</h3>
+<p>Declare the time zone, analysis window, sampling interval, missing-data rules, and threshold in code.</p>
+</section>
+</div>
+<div class="mc-principle">
+<p><span class="mc-number">03</span></p>
+<section id="show-the-denominator" class="level3">
+<h3 class="anchored" data-anchor-id="show-the-denominator">Show the denominator</h3>
+<p>Report how much time was observed alongside the exposure metric. An unobserved hour is not an hour in darkness.</p>
+</section>
+</div>
+<div class="mc-principle">
+<p><span class="mc-number">04</span></p>
+<section id="carry-the-context" class="level3">
+<h3 class="anchored" data-anchor-id="carry-the-context">Carry the context</h3>
+<p>Keep units, sensor placement, preprocessing, and provenance connected to the measurements.</p>
+</section>
+</div>
+</div>
+<div class="mc-discuss">
+<p><strong>Discuss:</strong> If two scripts return the same number, does that guarantee they answer the same question?</p>
+</div>
+<details class="mc-notes">
+<summary>
+Teaching notes &amp; answer
+</summary>
+Reproducibility means being able to rerun a specified workflow with the specified inputs and environment. It does not establish that the measurement, analysis choice, or interpretation is valid. Ask for one example of a hidden decision before moving on.
+</details>
+</section>
+</div>
+<div id="ready" class="mc-step" data-short="02 · Start R">
+<p><span class="mc-eyebrow">02 / GET READY</span></p>
+<section id="your-browser-is-the-r-session" class="level2">
+<h2 class="anchored" data-anchor-id="your-browser-is-the-r-session">Your browser is the R session</h2>
+<div class="mc-split">
+<div class="mc-explain">
+<p>Wait for <strong>Run Code</strong> to become available, then run the cell. The first load downloads R and the packages; it can take a little while.</p>
+<p>The cells share objects. Work from top to bottom. Each browser has its own session, so the presenter and attendees can try different settings.</p>
+<p><strong>Keep this tab open.</strong> Reloading starts a new R session and discards your edits. Copy edited code before leaving; the script download contains the original workshop code.</p>
+<div class="mc-task">
+<p><strong>First action:</strong> Run the cell and find the R and LightLogR versions in your output.</p>
+</div>
+</div>
+<div class="mc-lab">
+<p><span class="mc-cell-label">CELL 1 · SOFTWARE CONTEXT</span></p>
+<div class="cell">
+<div>
+<div id="webr-1" class="exercise-cell">
+
+</div>
+<script type="webr-1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtc2V0dXAifSwiY29kZSI6ImxpYnJhcnkoTGlnaHRMb2dSKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KGdsY2RwKVxubGlicmFyeShndClcblxuUi52ZXJzaW9uLnN0cmluZ1xuZGF0YS5mcmFtZShcbiAgcGFja2FnZSA9IGMoXCJMaWdodExvZ1JcIiwgXCJnbGNkcFwiLCBcImRwbHlyXCIsIFwidGlkeXJcIiwgXCJnZ3Bsb3QyXCIsIFwiZ3RcIiksXG4gIHZlcnNpb24gPSBzYXBwbHkoYyhcIkxpZ2h0TG9nUlwiLCBcImdsY2RwXCIsIFwiZHBseXJcIiwgXCJ0aWR5clwiLCBcImdncGxvdDJcIiwgXCJndFwiKSxcbiAgICAgICAgICAgICAgICAgICBmdW5jdGlvbih4KSBhcy5jaGFyYWN0ZXIocGFja2FnZVZlcnNpb24oeCkpKVxuKSJ9
+</script>
+</div>
+</div>
+</div>
+</div>
+<details class="mc-notes">
+<summary>
+If a cell does not run
+</summary>
+Let the package-loading indicator finish. If an object is missing, rerun the preceding cells in order. If startup fails, reload the page and start from Cell 1. The saved example outputs below remain available for following the discussion. For local R, download the script and the teaching ZIP into the same directory, install the packages listed in Cell 1, and run the script from that directory. Keep <code>sessionInfo()</code> with your results.
+</details>
+</section>
+</div>
+<div id="import" class="mc-step" data-short="03 · Import">
+<p><span class="mc-eyebrow">03 / LIGHTLOGR</span></p>
+<section id="import-once-preserve-the-source" class="level2">
+<h2 class="anchored" data-anchor-id="import-once-preserve-the-source">Import once, preserve the source</h2>
+<div class="mc-split">
+<div class="mc-explain">
+<p>We use an ActLumus recording bundled with LightLogR, collected in Tübingen. The importer translates a device export into columns that the analysis functions understand.</p>
+<p><code>Datetime</code> is interpreted in <strong>Europe/Berlin</strong>. <code>MEDI</code> is melanopic equivalent daylight illuminance, in <strong>lux</strong>. It describes light weighted for melanopsin using a daylight reference; it is not interchangeable with ordinary photopic illuminance.</p>
+<p>We keep the three columns needed for this exercise in <code>raw</code> and leave that object intact afterward. The source file retains the other channels. <code>Id = "P1"</code> is a teaching label, not a new participant record.</p>
+<p>The importer prints a summary of the recording. <code>auto.plot = FALSE</code> leaves plotting to the next step.</p>
+<div class="mc-task">
+<p><strong>Look for:</strong> an identifier, a timestamp, and a light quantity with a known unit.</p>
+</div>
+<div class="mc-references">
+<p><strong>Function:</strong> <a href="https://tscnlab.github.io/LightLogR/reference/import_Dataset.html#details" target="_blank" rel="noopener noreferrer">Importer arguments</a></p>
+<p><strong>Tutorial:</strong> <a href="https://tscnlab.github.io/LightLogR/articles/Import.html#importing-data" target="_blank" rel="noopener noreferrer">Importing files and reading the overview</a></p>
+</div>
+</div>
+<div class="mc-lab">
+<p><span class="mc-cell-label">CELL 2 · DEVICE FILE → TIDY DATA</span></p>
+<div class="cell" data-timelimit="90">
+<div>
+<div id="webr-2" class="exercise-cell">
+
+</div>
+<script type="webr-2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtaW1wb3J0IiwidGltZWxpbWl0Ijo5MH0sImNvZGUiOiJmaWxlbmFtZSA8LSBzeXN0ZW0uZmlsZShcbiAgXCJleHRkYXRhLzIwNV9hY3RsdW11c19Mb2dfMTAyMF8yMDIzMDkwNDEwMTcwNzUzMi50eHQuemlwXCIsXG4gIHBhY2thZ2UgPSBcIkxpZ2h0TG9nUlwiXG4pXG5cbnR6IDwtIFwiRXVyb3BlL0JlcmxpblwiXG5cbnJhdyA8LSBpbXBvcnQkQWN0THVtdXMoXG4gIGZpbGVuYW1lLFxuICB0eiA9IHR6LFxuICBtYW51YWwuaWQgPSBcIlAxXCIsXG4gIGF1dG8ucGxvdCA9IEZBTFNFXG4pIHw+IHNlbGVjdChJZCwgRGF0ZXRpbWUsIE1FREkpXG5cbnJhdyB8PiBoZWFkKDYpIn0=
+</script>
+</div>
+</div>
+</div>
+</div>
+<details class="mc-notes">
+<summary>
+Supported devices and import formats
+</summary>
+<p>LightLogR 0.10.6 provides the following importer names. Use <code>import$ActLumus()</code> for this example; choose the importer that matches your own device export. You can check the list in your R session with <code>supported_devices()</code>.</p>
+<div class="mc-device-list">
+<ul>
+<li><code>Actiwatch_Spectrum</code></li>
+<li><code>ActLumus</code></li>
+<li><code>ActTrust</code></li>
+<li><code>Circadian_Eye</code></li>
+<li><code>Clouclip</code></li>
+<li><code>DeLux</code></li>
+<li><code>GENEActiv_GGIR</code></li>
+<li><code>Kronowise</code></li>
+<li><code>LiDo</code></li>
+<li><code>LightWatcher</code></li>
+<li><code>LIMO</code></li>
+<li><code>LYS</code></li>
+<li><code>MiEye</code></li>
+<li><code>MotionWatch8</code></li>
+<li><code>nanoLambda</code></li>
+<li><code>OcuWEAR</code></li>
+<li><code>Speccy</code></li>
+<li><code>SpectraWear</code></li>
+<li><code>VEET</code></li>
+</ul>
+</div>
+<p>See <a href="https://tscnlab.github.io/LightLogR/reference/import_Dataset.html#devices" target="_blank" rel="noopener noreferrer">Devices in the importer reference</a> for device-specific details and import requirements.</p>
+</details>
+</section>
+</div>
+<div id="inspect" class="mc-step" data-short="04 · Inspect">
+<p><span class="mc-eyebrow">04 / LIGHTLOGR</span></p>
+<section id="inspect-before-you-clean" class="level2">
+<h2 class="anchored" data-anchor-id="inspect-before-you-clean">Inspect before you clean</h2>
+<div class="mc-split">
+<div class="mc-explain">
+<p>A plot helps us see the recording, while these checks describe its time axis and coverage.</p>
+<p><a href="https://tscnlab.github.io/LightLogR/reference/count_difftime.html" target="_blank" rel="noopener noreferrer"><code>count_difftime()</code></a> lists sampling intervals. <a href="https://tscnlab.github.io/LightLogR/reference/gap_finder.html" target="_blank" rel="noopener noreferrer"><code>gap_finder()</code></a> reports missing timestamps. <a href="https://tscnlab.github.io/LightLogR/reference/gg_overview.html" target="_blank" rel="noopener noreferrer"><code>gg_overview()</code></a> plots the recording span, and <a href="https://tscnlab.github.io/LightLogR/reference/summary_table.html" target="_blank" rel="noopener noreferrer"><code>summary_overview()</code></a> summarizes participants, days, and missingness.</p>
+<p>Look for the regular ten-second interval, which supports our later one-minute aggregation. Try the two checks in the comment for a simple <code>TRUE</code> or <code>FALSE</code> answer about gaps and irregular sampling.</p>
+<p><strong>Read the defaults:</strong> The summary uses full local calendar days, including unrecorded time at the edges. “Days ≥80% complete” is its default completeness category. It does not remove rows from <code>raw</code> or choose our analysis window.</p>
+<p><strong>Scope:</strong> this is a processing demonstration. A low light value alone does not establish non-wear, and we have not validated the participant’s wear or sleep state here.</p>
+<div class="mc-references">
+<p><strong>Illustrated tutorial:</strong> <a href="https://tscnlab.github.io/LightLogR/articles/Visualizations.html#gg_overview" target="_blank" rel="noopener noreferrer">Reading an overview and its gaps</a></p>
+</div>
+</div>
+<div class="mc-lab">
+<p><span class="mc-cell-label">CELL 3 · TIME AXIS + VALUES</span></p>
+<div class="cell">
+<div>
+<div id="webr-3" class="exercise-cell">
+
+</div>
+<script type="webr-3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjIuMywiZmlnLXdpZHRoIjo3LCJsYWJlbCI6Im1jLWluc3BlY3QifSwiY29kZSI6InJhdyB8PiBjb3VudF9kaWZmdGltZSgpXG5yYXcgfD4gZ2FwX2ZpbmRlcigpICMgdHJ5IGFsc286IGhhc19nYXBzKHJhdykgb3IgaGFzX2lycmVndWxhcnMocmF3KVxucmF3IHw+IGdnX292ZXJ2aWV3KClcbnJhdyB8PiBzdW1tYXJ5X292ZXJ2aWV3KCkifQ==
+</script>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div id="window" class="mc-step" data-short="05 · Define the window">
+<p><span class="mc-eyebrow">05 / LIGHTLOGR</span></p>
+<section id="make-missing-time-explicitly-visible" class="level2">
+<h2 class="anchored" data-anchor-id="make-missing-time-explicitly-visible">Make missing time explicitly visible</h2>
+<div class="mc-concept-scroll" tabindex="0" role="region" aria-label="Gap handling illustration; scroll horizontally on small screens">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/masterclass/concept-gaps.png" class="mc-concept-image img-fluid figure-img"></p>
+<figcaption>Schematic of missing rows before gap handling and explicit NA values afterward. A recorded zero stays zero in both rows.</figcaption>
+</figure>
+</div>
+</div>
+<p><span class="mc-concept-hint">Scroll the illustration sideways to see the full time window.</span></p>
+<div class="mc-figure-note">
+<p>Schematic with one observation per minute. Dashed red boxes mark absent rows. Restoring the clock creates <code>NA</code>, not an estimate of the missing light.</p>
+</div>
+<div class="mc-split">
+<div class="mc-explain">
+<p><code>filter_Date()</code> selects two local calendar days from 29 August: midnight at the start is included, and midnight after the second day is excluded. It uses the time zone stored in <code>Datetime</code>.</p>
+<p>For this exercise, we deliberately remove the first day’s noon hour from a <strong>working copy</strong>. The gap is simulated; it is not an observed device failure or a non-wear classification.</p>
+<div class="mc-task">
+<p><strong>Predict first:</strong> What should happen to the observed hours? Should the missing hour count as zero lux?</p>
+</div>
+<p>Leave <code>simulate_gap &lt;- TRUE</code> for the first pass. At the end, change it to <code>FALSE</code> and rerun Cells 4–7 to compare.</p>
+<p>The gap table, interval counts, and overview show the same missing hour in three ways. <code>filter_out()</code> removes rows that meet both conditions.</p>
+<div class="mc-references">
+<p><strong>Functions:</strong> <a href="https://tscnlab.github.io/LightLogR/reference/filter_Datetime.html" target="_blank" rel="noopener noreferrer"><code>filter_Date()</code></a> · <a href="https://tscnlab.github.io/LightLogR/reference/gap_finder.html" target="_blank" rel="noopener noreferrer"><code>gap_finder()</code></a></p>
+<p><strong>Illustrated tutorial:</strong> <a href="https://tscnlab.github.io/LightLogR/articles/Import.html#finding-and-handling-gaps-and-irregular-data" target="_blank" rel="noopener noreferrer">Finding gaps and irregular data</a></p>
+</div>
+</div>
+<div class="mc-lab">
+<p><span class="mc-cell-label">CELL 4 · EXPLICIT WINDOW + TEACHING GAP</span></p>
+<div class="cell">
+<div>
+<div id="webr-4" class="exercise-cell">
+
+</div>
+<script type="webr-4-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjIuMywiZmlnLXdpZHRoIjo3LCJsYWJlbCI6Im1jLXdpbmRvdyJ9LCJjb2RlIjoic2ltdWxhdGVfZ2FwIDwtIFRSVUVcblxuc2VsZWN0ZWQgPC0gcmF3IHw+IGZpbHRlcl9EYXRlKHN0YXJ0ID0gXCIyMDIzLTA4LTI5XCIsIGxlbmd0aCA9IFwiMiBkYXlzXCIpXG5cbnByYWN0aWNlIDwtIHNlbGVjdGVkXG5pZiAoc2ltdWxhdGVfZ2FwKSB7XG4gIHByYWN0aWNlIDwtIHNlbGVjdGVkIHw+XG4gICAgZmlsdGVyX291dChEYXRldGltZSA+PSBhcy5QT1NJWGN0KFwiMjAyMy0wOC0yOSAxMjowMFwiLCB0eiA9IHR6KSxcbiAgICAgICAgICAgICAgIERhdGV0aW1lIDwgIGFzLlBPU0lYY3QoXCIyMDIzLTA4LTI5IDEzOjAwXCIsIHR6ID0gdHopKVxufVxuXG5nYXBfZmluZGVyKHByYWN0aWNlKVxuY291bnRfZGlmZnRpbWUocHJhY3RpY2UpXG5nZ19vdmVydmlldyhwcmFjdGljZSkifQ==
+</script>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div id="clean" class="mc-step" data-short="06 · Clean &amp; regularize">
+<p><span class="mc-eyebrow">06 / LIGHTLOGR</span></p>
+<section id="keep-missing-time-in-the-table" class="level2">
+<h2 class="anchored" data-anchor-id="keep-missing-time-in-the-table">Keep missing time in the table</h2>
+<div class="mc-split">
+<div class="mc-explain">
+<p>Two visible decisions prepare the working copy: average each complete minute, and add absent minutes back as <code>NA</code>.</p>
+<p>Each minute must contain all <strong>six ten-second observations</strong>. A minute containing a missing value also stays missing because <code>mean()</code> does not remove <code>NA</code> here.</p>
+<p><code>gap_handler()</code> infers the one-minute interval from the aggregated timestamps and restores the regular time grid. It does <strong>not</strong> fill in light exposure. The resulting quantity is a <strong>one-minute mean</strong>; the metrics will describe that resolution. The overview now has no absent timestamps, while <code>durations()</code> still counts the missing light values.</p>
+<div class="mc-task">
+<p><strong>Check:</strong> With the simulated gap, the output should contain 60 missing minutes and two full days of expected timestamps.</p>
+</div>
+<div class="mc-references">
+<p><strong>Functions:</strong> <a href="https://tscnlab.github.io/LightLogR/reference/aggregate_Datetime.html" target="_blank" rel="noopener noreferrer"><code>aggregate_Datetime()</code></a> · <a href="https://tscnlab.github.io/LightLogR/reference/gap_handler.html" target="_blank" rel="noopener noreferrer"><code>gap_handler()</code></a> · <a href="https://tscnlab.github.io/LightLogR/reference/durations.html" target="_blank" rel="noopener noreferrer"><code>durations()</code></a></p>
+<p><strong>Visual comparison:</strong> <a href="https://tscnlab.github.io/LightLogR/articles/Day.html#data-aggregation" target="_blank" rel="noopener noreferrer">From unaggregated data to one-hour averages</a>. Switch between the tabs to see how aggregation changes the trace.</p>
+</div>
+</div>
+<div class="mc-lab">
+<p><span class="mc-cell-label">CELL 5 · EXPLICIT CLEANING RULES</span></p>
+<div class="cell">
+<div>
+<div id="webr-5" class="exercise-cell">
+
+</div>
+<script type="webr-5-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjIuMywiZmlnLXdpZHRoIjo3LCJsYWJlbCI6Im1jLWNsZWFuIn0sImNvZGUiOiJjbGVhbiA8LSBwcmFjdGljZSB8PlxuICBhZ2dyZWdhdGVfRGF0ZXRpbWUoXG4gICAgdW5pdCA9IFwiMSBtaW5cIiwgdHlwZSA9IFwiZmxvb3JcIixcbiAgICBNRURJID0gaWYgKG4oKSA9PSA2TCkgbWVhbihNRURJKSBlbHNlIE5BX3JlYWxfXG4gICkgfD5cbiAgZ2FwX2hhbmRsZXIoZnVsbC5kYXlzID0gVFJVRSlcblxuY2xlYW4gfD4gZHVyYXRpb25zKE1FREksIHNob3cubWlzc2luZyA9IFRSVUUpXG5nZ19vdmVydmlldyhjbGVhbikgIyBubyBtb3JlIGltcGxpY2l0bHkgbWlzc2luZyBkYXRhIn0=
+</script>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div id="visualize" class="mc-step" data-short="07 · Visualize">
+<p><span class="mc-eyebrow">07 / LIGHTLOGR</span></p>
+<section id="read-the-pattern-then-the-context" class="level2">
+<h2 class="anchored" data-anchor-id="read-the-pattern-then-the-context">Read the pattern, then the context</h2>
+<p>The first plot shows one-minute means on LightLogR’s default symmetric logarithmic scale. The shaded night is calculated from Tübingen’s coordinates, with <code>solarDep = 0</code> marking sunrise and sunset. It adds astronomical context, not a measurement of outdoor light or sleep. The second plot, <code>gg_gaps()</code>, highlights missing light in red even though the timestamps are now complete.</p>
+<p><span class="mc-cell-label">CELL 6 · LIGHT TRACE + ASTRONOMICAL NIGHT</span></p>
+<div class="cell">
+<div>
+<div id="webr-6" class="exercise-cell">
+
+</div>
+<script type="webr-6-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjMuNiwiZmlnLXdpZHRoIjoxMCwibGFiZWwiOiJtYy1wbG90In0sImNvZGUiOiJjbGVhbiB8PlxuICBnZ19kYXlzKCkgfD5cbiAgZ2dfcGhvdG9wZXJpb2QoY29vcmRpbmF0ZXMgPSBjKDQ4LjUyLCA5LjA2KSwgc29sYXJEZXAgPSAwKSArXG4gIGxhYnModGl0bGUgPSBcIlR3byBkYXlzIG9mIHJlY29yZGVkIGxpZ2h0IGV4cG9zdXJlXCIsXG4gICAgICAgc3VidGl0bGUgPSBcIk9uZS1taW51dGUgbWVhbnM7IG1pc3NpbmcgbWludXRlcyByZW1haW4gTkFcIilcblxuY2xlYW4gfD4gZ2dfZ2FwcygpIn0=
+</script>
+</div>
+</div>
+<div class="mc-discuss">
+<p><strong>Read the plot:</strong> Find the deliberate gap. Can this plot tell us whether the sensor was worn? What additional information would help?</p>
+</div>
+<div class="mc-references">
+<p><strong>Functions:</strong> <a href="https://tscnlab.github.io/LightLogR/reference/gg_days.html" target="_blank" rel="noopener noreferrer"><code>gg_days()</code></a> · <a href="https://tscnlab.github.io/LightLogR/reference/gg_gaps.html" target="_blank" rel="noopener noreferrer"><code>gg_gaps()</code></a> · <a href="https://tscnlab.github.io/LightLogR/reference/gg_photoperiod.html" target="_blank" rel="noopener noreferrer"><code>gg_photoperiod()</code></a></p>
+<p><strong>Illustrated tutorials:</strong> <a href="https://tscnlab.github.io/LightLogR/articles/Visualizations.html#gg_gaps" target="_blank" rel="noopener noreferrer">Gap and irregularity plots</a> · <a href="https://tscnlab.github.io/LightLogR/articles/photoperiod.html#differences-in-solar-depression-angle" target="_blank" rel="noopener noreferrer">How the solar depression angle changes the shading</a></p>
+</div>
+<details class="mc-notes">
+<summary>
+Saved example plot · default settings
+</summary>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/masterclass/example-timeline.png" class="img-fluid figure-img"></p>
+<figcaption>Two local calendar days of one-minute mean melanopic EDI, with astronomical night shading and a deliberate missing hour at noon on the first day.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/masterclass/example-gaps.png" class="img-fluid figure-img"></p>
+<figcaption>The same two days with the simulated missing hour highlighted in red by gg_gaps().</figcaption>
+</figure>
+</div>
+<p>This saved R output is a reference for the default code. It does not update when you edit a live cell.</p>
+</details>
+</section>
+</div>
+<div id="metrics" class="mc-step" data-short="08 · Calculate a metric">
+<p><span class="mc-eyebrow">08 / LIGHTLOGR</span></p>
+<section id="put-the-exposure-beside-its-denominator" class="level2">
+<h2 class="anchored" data-anchor-id="put-the-exposure-beside-its-denominator">Put the exposure beside its denominator</h2>
+<div class="mc-concept-scroll" tabindex="0" role="region" aria-label="Metric illustration; scroll horizontally on small screens">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/masterclass/concept-metrics.png" class="mc-concept-image img-fluid figure-img"></p>
+<figcaption>Schematic of one-minute observations relative to a threshold, separating qualifying time, observed time, and expected time.</figcaption>
+</figure>
+</div>
+</div>
+<p><span class="mc-concept-hint">Scroll the illustration sideways to see the full time window.</span></p>
+<div class="mc-figure-note">
+<p>Illustrative data, calculated with <code>duration_above_threshold()</code>, <code>dose()</code>, and <code>durations()</code>. Missing minutes contribute to expected time, but not to observed duration or dose.</p>
+</div>
+<p>We ask: <strong>How much light was observed, how long did it reach a chosen threshold, and when was the brightest ten-hour window?</strong> <code>add_Date_col(group.by = TRUE)</code> adds the local date to the participant grouping. We report a mean, median, threshold duration, brightest-period mean and timing, plus coverage. <code>as.df = TRUE</code> gives each metric’s outputs their own columns; <code>gt()</code> formats the result as a table.</p>
+<p><span class="mc-cell-label">CELL 7 · ONE ROW PER PARTICIPANT × DAY</span></p>
+<div class="cell">
+<div>
+<div id="webr-7" class="exercise-cell">
+
+</div>
+<script type="webr-7-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtbWV0cmljcyJ9LCJjb2RlIjoidGhyZXNob2xkX2x4IDwtIDI1MFxuYnJpZ2h0ZXN0X2R1cmF0aW9uIDwtIFwiMTAgaG91cnNcIlxuXG5kYXlfZGF0YSA8LSBjbGVhbiB8PiBhZGRfRGF0ZV9jb2woZ3JvdXAuYnkgPSBUUlVFKVxuY292ZXJhZ2UgPC0gZGF5X2RhdGEgfD5cbiAgZHVyYXRpb25zKE1FREksIHNob3cubWlzc2luZyA9IFRSVUUpXG5zdG9waWZub3QoYWxsKGNvdmVyYWdlJGR1cmF0aW9uID4gMCkpICMgZWFjaCBkYXkgbmVlZHMgb2JzZXJ2ZWQgbGlnaHRcblxuZGFpbHkgPC0gY2xlYW4gfD5cbiAgYWRkX0RhdGVfY29sKGdyb3VwLmJ5ID0gVFJVRSkgfD5cbiAgc3VtbWFyaXNlKFxuICAgIG1lYW5fTUVESSA9IG1lYW4oTUVESSwgbmEucm0gPSBUUlVFKSxcbiAgICBtZWRpYW5fTUVESSA9IG1lZGlhbihNRURJLCBuYS5ybSA9IFRSVUUpLFxuICAgIGR1cmF0aW9uX2Fib3ZlX3RocmVzaG9sZChNRURJLCBEYXRldGltZSwgdGhyZXNob2xkID0gdGhyZXNob2xkX2x4LFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuYS5ybSA9IFRSVUUsIGFzLmRmID0gVFJVRSksXG4gICAgYnJpZ2h0X2RhcmtfcGVyaW9kKE1FREksIERhdGV0aW1lLCBwZXJpb2QgPSBcImJyaWdodGVzdFwiLFxuICAgICAgICAgICAgICAgICAgICAgICB0aW1lc3BhbiA9IGJyaWdodGVzdF9kdXJhdGlvbiwgbmEucm0gPSBUUlVFLCBhcy5kZiA9IFRSVUUpLFxuICAgIC5ncm91cHMgPSBcImRyb3BcIlxuICApIHw+XG4gIGxlZnRfam9pbihjb3ZlcmFnZSwgYnkgPSBjKFwiSWRcIiwgXCJEYXRlXCIpKSB8PlxuICBzZWxlY3QoSWQsIERhdGUsIGV4cGVjdGVkX2ggPSB0b3RhbCwgb2JzZXJ2ZWRfaCA9IGR1cmF0aW9uLCBtZWFuX01FREksIG1lZGlhbl9NRURJLCA1OjkpIHw+XG4gIG11dGF0ZShhY3Jvc3MoYyhleHBlY3RlZF9oLCBvYnNlcnZlZF9oKSwgfiBhcy5udW1lcmljKC54KSAvIDM2MDApLFxuICAgICAgICAgY292ZXJhZ2VfcGN0ID0gMTAwICogKG9ic2VydmVkX2ggLyBleHBlY3RlZF9oKSwgLmFmdGVyID0gb2JzZXJ2ZWRfaClcblxuZGFpbHkgfD4gZ3QoKSB8PiBmbXRfbnVtYmVyKDU6NykifQ==
+</script>
+</div>
+</div>
+<p><span class="mc-table-hint">Scroll the table sideways to see the timing columns.</span></p>
+<div class="mc-two-up">
+<div class="mc-task">
+<p><strong>Try it:</strong> Change <code>250</code> to <code>100</code> and rerun Cell 7. The threshold duration and its column name can change; coverage, the mean, median, and brightest-period result should stay the same.</p>
+</div>
+<div class="mc-interpret">
+<p><strong>Interpret it:</strong> <code>above</code> includes the threshold in LightLogR. Expected and observed time are numeric hours; the threshold duration keeps its duration unit. Means and medians are in lux of melanopic EDI. The threshold is an exercise parameter, not a clinical target.</p>
+</div>
+</div>
+<div class="mc-interpret">
+<p><strong>A ten-hour window can contain less than ten observed hours:</strong> With <code>na.rm = TRUE</code>, <code>bright_dark_period()</code> compares the available values in each window. In our default example, the first day’s selected ten-hour window contains only nine observed hours. Its mean is not a fully observed ten-hour mean. Restore the simulated hour and compare; for a study, specify acceptable window coverage before comparing brightest periods.</p>
+</div>
+<details class="mc-notes">
+<summary>
+Saved example result &amp; discussion
+</summary>
+<div id="esddaprubu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
+<thead style="border-style: none;">
+<tr class="gt_col_headings" style="border-style: none; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Id" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: center;" bgcolor="#FFFFFF" valign="bottom" align="center">
+Id
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Date" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+Date
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="expected_h" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+expected_h
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="observed_h" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+observed_h
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="coverage_pct" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+coverage_pct
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="mean_MEDI" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+mean_MEDI
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="median_MEDI" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+median_MEDI
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="duration_above_250" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: center;" bgcolor="#FFFFFF" valign="bottom" align="center">
+duration_above_250
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="brightest_10h_mean" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+brightest_10h_mean
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="brightest_10h_midpoint" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+brightest_10h_midpoint
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="brightest_10h_onset" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+brightest_10h_onset
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="brightest_10h_offset" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+brightest_10h_offset
+</th>
+</tr>
+</thead>
+<tbody class="gt_table_body" style="border-style: none; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
+<tr style="border-style: none;">
+<td headers="Id" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+P1
+</td>
+<td headers="Date" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2023-08-29
+</td>
+<td headers="expected_h" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+24
+</td>
+<td headers="observed_h" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+23
+</td>
+<td headers="coverage_pct" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+95.83
+</td>
+<td headers="mean_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+91.45
+</td>
+<td headers="median_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+8.27
+</td>
+<td headers="duration_above_250" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+5700s (~1.58 hours)
+</td>
+<td headers="brightest_10h_mean" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+225.1747
+</td>
+<td headers="brightest_10h_midpoint" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2023-08-29 14:26:00
+</td>
+<td headers="brightest_10h_onset" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2023-08-29 09:27:00
+</td>
+<td headers="brightest_10h_offset" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2023-08-29 19:26:00
+</td>
+</tr>
+<tr style="border-style: none;">
+<td headers="Id" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+P1
+</td>
+<td headers="Date" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2023-08-30
+</td>
+<td headers="expected_h" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+24
+</td>
+<td headers="observed_h" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+24
+</td>
+<td headers="coverage_pct" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+100.00
+</td>
+<td headers="mean_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+93.78
+</td>
+<td headers="median_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+13.09
+</td>
+<td headers="duration_above_250" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+10380s (~2.88 hours)
+</td>
+<td headers="brightest_10h_mean" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+209.1258
+</td>
+<td headers="brightest_10h_midpoint" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2023-08-30 14:56:00
+</td>
+<td headers="brightest_10h_onset" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2023-08-30 09:57:00
+</td>
+<td headers="brightest_10h_offset" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2023-08-30 19:56:00
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These are saved results for <code>simulate_gap = TRUE</code> and <code>threshold_lx = 250</code>. Restore the missing hour by rerunning Cells 4–7 with <code>simulate_gap = FALSE</code>. Compare the denominator as well as the metric. A sleep–wake cycle would be a different analysis unit and would require suitable sleep timing data. Day length must come from the time grid, especially across daylight-saving transitions.</p>
+<p>The brightest-period <code>onset</code>, <code>midpoint</code>, and <code>offset</code> columns are local timestamps. <code>offset</code> is the last sample in the selected window, not an exclusive interval end. The code stops if a day has no observed light, rather than returning a misleading zero threshold duration.</p>
+</details>
+<div class="mc-references">
+<p><strong>Functions:</strong> <a href="https://tscnlab.github.io/LightLogR/reference/add_Date_col.html" target="_blank" rel="noopener noreferrer"><code>add_Date_col()</code></a> · <a href="https://tscnlab.github.io/LightLogR/reference/duration_above_threshold.html" target="_blank" rel="noopener noreferrer"><code>duration_above_threshold()</code></a> · <a href="https://tscnlab.github.io/LightLogR/reference/bright_dark_period.html" target="_blank" rel="noopener noreferrer"><code>bright_dark_period()</code></a></p>
+<p><strong>Worked tutorials:</strong> <a href="https://tscnlab.github.io/LightLogR/articles/Metrics.html#time-above-threshold-tat" target="_blank" rel="noopener noreferrer">Time above threshold</a> · <a href="https://tscnlab.github.io/LightLogR/articles/Metrics.html#brightest-10-hours-of-the-day-l10" target="_blank" rel="noopener noreferrer">Brightest periods and illustrated midnight looping</a> · <a href="https://tscnlab.github.io/LightLogR/articles/Metrics.html#grouping" target="_blank" rel="noopener noreferrer">How grouping changes the result</a></p>
+</div>
+</section>
+</div>
+<div id="glc-context" class="mc-step" data-short="09 · Why a data package?">
+<p><span class="mc-eyebrow">09 / GLOBAL LIGHT COMMONS</span></p>
+<p><img src="assets/masterclass/glc-logo.png" class="mc-glc-logo" alt="Global Light Commons"></p>
+<section id="a-csv-cannot-carry-the-whole-study" class="level2">
+<h2 class="anchored" data-anchor-id="a-csv-cannot-carry-the-whole-study">A CSV cannot carry the whole study</h2>
+<div class="mc-lead">
+<p>Reusing data starts with understanding what the columns and recordings mean.</p>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Package structure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Live GLC Explorer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="mc-package-diagram">
+<div class="mc-package-core">
+<p><strong>GLC data package</strong></p>
+<p>A descriptor connects measurements to their metadata and schemas.</p>
+</div>
+<div class="mc-package-details">
+<p><strong>Study &amp; participant</strong> · Who, where, and under what protocol?</p>
+<p><strong>Device &amp; placement</strong> · What sensor, worn in which position?</p>
+<p><strong>File &amp; time</strong> · Which recording, time zone, and sampling interval?</p>
+<p><strong>Variable &amp; unit</strong> · What quantity, encoding, and preprocessing?</p>
+</div>
+</div>
+<p><strong>Global Light Commons (GLC)</strong> provides infrastructure for sharing light-exposure data and their context. <strong>glc-dp</strong> describes the data-package structure; <strong><code>glcdp</code></strong> is the R package we use to open, inspect, and read it. <strong>LightLogR</strong> then supplies analysis and visualization functions.</p>
+<div class="mc-discuss">
+<p><strong>The handoff:</strong> Can we discover the meaning of <code>MEDI</code> and the sensor’s placement before reading a measurement file?</p>
+</div>
+<details class="mc-notes">
+<summary>
+What package validation means
+</summary>
+Schema and registry checks concern a declared package revision. They do not establish sensor calibration, wear validity, or the validity of a downstream scientific claim. A reproducible import is one part of a defensible analysis.
+</details>
+<p><a href="https://tscnlab.github.io/glc-dp-r/" target="_blank" rel="noopener noreferrer">glcdp documentation</a> · <a href="https://registry.globallightcommons.org/" target="_blank" rel="noopener noreferrer">GLC registry</a></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Explore the registry here. Select <strong>MeLiDos IZTECH</strong>, inspect its chest-light and sleep-diary file groups, and look for the time zone, units, and generated R code. The Explorer shows the current registry; the R exercise below uses a fixed revision.</p>
+<div class="mc-explorer">
+  <iframe src="https://tscnlab-glc-dp-r.share.connect.posit.cloud/" title="Global Light Commons data explorer on Posit Connect Cloud" loading="lazy" referrerpolicy="no-referrer" allow="fullscreen"></iframe>
+</div>
+<p><a href="https://tscnlab-glc-dp-r.share.connect.posit.cloud/" class="mc-secondary-link" target="_blank" rel="noopener noreferrer">Open the GLC Explorer in a new tab ↗</a></p>
+<div class="mc-figure-note">
+<p>The hosted app may take a moment to start. Use the new-tab link if the embedded view does not connect.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div id="glc-open" class="mc-step" data-short="10 · Open an existing package">
+<p><span class="mc-eyebrow">10 / GLC + GLCDP</span></p>
+<section id="open-a-fixed-revision" class="level2">
+<h2 class="anchored" data-anchor-id="open-a-fixed-revision">Open a fixed revision</h2>
+<div class="mc-split">
+<div class="mc-explain">
+<p>We switch to the openly available <strong>MeLiDos IZTECH</strong> package. This is a second dataset, separate from the LightLogR sample above.</p>
+<p>The repository identifies the package. The commit identifies its exact revision. We use a <strong>teaching download of that existing package</strong>, containing the unchanged metadata, schemas, and complete chest-light, sleep-diary, and wear-log files for one participant. Its download manifest records the source and revision.</p>
+<p><code>glc_open()</code> opens this downloaded package inside the browser. For discovery, <code>glc_packages()</code> lists the online registry; <code>glc_open(repository)</code> normally resolves the latest passing revision. The teaching copy avoids each attendee making separate registry requests.</p>
+<div class="mc-task">
+<p><strong>Check the output:</strong> Which schema version is declared? Does the manifest’s commit match the one we selected?</p>
+</div>
+</div>
+<div class="mc-lab">
+<p><span class="mc-cell-label">CELL 8 · REPOSITORY + IMMUTABLE REVISION</span></p>
+<div class="cell" data-timelimit="90">
+<div>
+<div id="webr-8" class="exercise-cell">
+
+</div>
+<script type="webr-8-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtZ2xjLW9wZW4iLCJ0aW1lbGltaXQiOjkwfSwiY29kZSI6InJlcG9zaXRvcnkgPC0gXCJ0c2NubGFiL21lbGlkb3MtaXp0ZWNoLWdsYy1kYXRhc2V0XCJcbnJldmlzaW9uIDwtIFwiYWJjNDU2YmRiNDE4ZTYyNTBiOWM5NzM4MTNhMTkwZGMwNjJjNmU3NlwiXG5cbmFyY2hpdmUgPC0gXCJkYXRhL21hc3RlcmNsYXNzL21lbGlkb3MtaXp0ZWNoLXRlYWNoaW5nLnppcFwiXG5pZiAoIWZpbGUuZXhpc3RzKGFyY2hpdmUpKSBhcmNoaXZlIDwtIFwibWVsaWRvcy1penRlY2gtdGVhY2hpbmcuemlwXCJcbnBhY2thZ2VfZGlyIDwtIGZpbGUucGF0aCh0ZW1wZGlyKCksIFwibWFzdGVyY2xhc3MtZ2xjXCIpXG51bnppcChhcmNoaXZlLCBleGRpciA9IHBhY2thZ2VfZGlyKVxucGFja2FnZSA8LSBnbGNfb3BlbihwYWNrYWdlX2RpcilcbnN0b3BpZm5vdChwYWNrYWdlJGNvbW1pdCA9PSByZXZpc2lvbilcbnBhY2thZ2VcbnBhY2thZ2UkY29tbWl0XG5cbmdsY19kYXRhc2V0cyhwYWNrYWdlKSB8PlxuICBzZWxlY3QoZGF0YXNldF9pZCwgdGltZXpvbmUsIGZpbGVfZ3JvdXBfY291bnQpIHw+XG4gIGhlYWQoNSkifQ==
+</script>
+</div>
+</div>
+</div>
+</div>
+<details class="mc-notes">
+<summary>
+Saved package inspection &amp; the remote R equivalent
+</summary>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;GLC data package&gt;
+Source: /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/RtmpfkZu3D/masterclass-glc
+Schema: 3.0.2
+Registry revision: verified
+[1] "abc456bdb418e6250b9c973813a190dc062c6e76"
+# A tibble: 5 × 3
+  dataset_id          timezone        file_group_count
+  &lt;chr&gt;               &lt;chr&gt;                      &lt;int&gt;
+1 MELIDOS_IZTECH_S001 Europe/Istanbul               19
+2 MELIDOS_IZTECH_S002 Europe/Istanbul               19
+3 MELIDOS_IZTECH_S003 Europe/Istanbul               19
+4 MELIDOS_IZTECH_S004 Europe/Istanbul               21
+5 MELIDOS_IZTECH_S005 Europe/Istanbul               19
+Elapsed seconds: 0.132</code></pre>
+</div>
+</div>
+<p>This output was saved from the teaching download. Its “Registry revision: verified” status comes from the download manifest; opening the local copy does not query the registry again. The full metadata inventory is retained, but only the selected participant’s chest-light, sleep-diary, and wear-log files are included. <code>glc_files(package)</code> distinguishes locally available files from the other referenced recordings.</p>
+<p>In a local R session with internet access, open the original remote package directly with <code>glc_open(repository, ref = revision)</code>. The browser example uses the downloaded copy because the direct HTTP transport is not reliable in every browser environment.</p>
+</details>
+</section>
+</div>
+<div id="glc-inspect" class="mc-step" data-short="11 · Explore the metadata">
+<p><span class="mc-eyebrow">11 / GLC + GLCDP</span></p>
+<section id="choose-a-stream-by-its-meaning" class="level2">
+<h2 class="anchored" data-anchor-id="choose-a-stream-by-its-meaning">Choose a stream by its meaning</h2>
+<div class="mc-split">
+<div class="mc-explain">
+<p>A dataset can contain several file groups: different devices, positions, modalities, or processing states. Here we select one <strong>chest</strong> recording and inspect its contract.</p>
+<p>The file-group key <code>MELIDOS_IZTECH_S011:17</code> identifies this stream. Its metadata declare <strong>Europe/Istanbul</strong>, a <strong>10-second</strong> interval, and <strong>processed</strong> data.</p>
+<p>Participant <strong>IZTECH_S011</strong> has eight consecutive sleep-diary entries, no reported <code>site_leave</code>, and some reported off-body time during wake. This keeps the example manageable while still showing why the wear log matters.</p>
+<p>The variable inventory identifies <code>MEDI</code> as melanopic EDI in <code>lx</code>. This is why a package is more useful than guessing from a filename.</p>
+<div class="mc-task">
+<p><strong>Explore:</strong> Remove <code>primary = TRUE</code> from <code>glc_variables()</code> to see the full variable inventory. Which extra fields describe the recording and its context?</p>
+</div>
+</div>
+<div class="mc-lab">
+<p><span class="mc-cell-label">CELL 9 · FILE GROUP + VARIABLE CONTRACT</span></p>
+<div class="cell" data-timelimit="90">
+<div>
+<div id="webr-9" class="exercise-cell">
+
+</div>
+<script type="webr-9-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtZ2xjLWluc3BlY3QiLCJ0aW1lbGltaXQiOjkwfSwiY29kZSI6ImRhdGFzZXRfaWQgPC0gXCJNRUxJRE9TX0laVEVDSF9TMDExXCJcbnN0cmVhbV9pZCA8LSBcIk1FTElET1NfSVpURUNIX1MwMTE6MTdcIlxuXG5nbGNfZmlsZXMocGFja2FnZSwgZGF0YXNldF9pZCA9IGRhdGFzZXRfaWQsIGZpbGVfZ3JvdXAgPSBzdHJlYW1faWQpIHw+XG4gIHNlbGVjdChmaWxlX2dyb3VwX2lkLCBkZXZpY2VfbG9jYXRpb24sIHRpbWV6b25lLCBkYXRhX3N0YXRlLFxuICAgICAgICAgdGVtcG9yYWxfdmFsdWUsIHRlbXBvcmFsX3VuaXQpIHw+XG4gIHByaW50KHdpZHRoID0gSW5mKVxuXG5nbGNfdmFyaWFibGVzKHBhY2thZ2UsIGZpbGVfZ3JvdXAgPSBzdHJlYW1faWQsIHByaW1hcnkgPSBUUlVFKSB8PlxuICBzZWxlY3QobmFtZSwgbGFiZWwsIHVuaXQsIHRlcm0pIn0=
+</script>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div id="glc-read" class="mc-step" data-short="12 · Read the light stream">
+<p><span class="mc-eyebrow">12 / GLC + GLCDP</span></p>
+<section id="from-the-package-back-to-an-r-table" class="level2">
+<h2 class="anchored" data-anchor-id="from-the-package-back-to-an-r-table">From the package back to an R table</h2>
+<p><code>glc_read()</code> uses the declared structure to parse a selected file. <code>glc_collect()</code> returns a table using LightLogR conventions. We now read the <strong>complete selected chest-light stream</strong> so it can support sleep–wake analysis. A partial-package notice is expected because we downloaded only three selected files.</p>
+<p><span class="mc-cell-label">CELL 10 · READ → COLLECT → INSPECT</span></p>
+<div class="cell" data-timelimit="90">
+<div>
+<div id="webr-10" class="exercise-cell">
+
+</div>
+<script type="webr-10-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtZ2xjLXJlYWQiLCJ0aW1lbGltaXQiOjkwfSwiY29kZSI6ImxpZ2h0X2NvbGxlY3Rpb24gPC0gZ2xjX3JlYWQoXG4gIHBhY2thZ2UsIGRhdGFzZXRfaWQgPSBkYXRhc2V0X2lkLCBmaWxlX2dyb3VwID0gc3RyZWFtX2lkLFxuICB2YXJpYWJsZXMgPSBcIk1FRElcIlxuKVxuZ2xjX2xpZ2h0IDwtIGdsY19jb2xsZWN0KGxpZ2h0X2NvbGxlY3Rpb24pIHw+XG4gIHVuZ3JvdXAoKSB8PlxuICB0cmFuc211dGUoSWQgPSBwYXJ0aWNpcGFudF9JZCwgRGF0ZXRpbWUsIE1FREkpIHw+XG4gIGdyb3VwX2J5KElkKSB8PlxuICBhcnJhbmdlKElkLCBEYXRldGltZSlcblxuY291bnRfZGlmZnRpbWUoZ2xjX2xpZ2h0KVxuZ2xjX2xpZ2h0IHw+IGR1cmF0aW9ucyhNRURJLCBzaG93Lm1pc3NpbmcgPSBUUlVFKVxuXG5nbGNfbGlnaHQgfD4gZmlsdGVyKCFpcy5uYShNRURJKSkgfD4gaGVhZCg2KSJ9
+</script>
+</div>
+</div>
+<div class="mc-two-up">
+<div class="mc-interpret">
+<p><strong>Read the table:</strong> We show the first observed rows without changing <code>glc_light</code>. We assign the participant identifier to <code>Id</code> on import, so the same key connects light, diary, and wear-log data throughout the example.</p>
+</div>
+<div class="mc-task">
+<p><strong>Before an analysis:</strong> The complete stream has a regular ten-second grid with explicit <code>NA</code> values. Next we will attach diary states and reported off-body intervals before calculating cycle metrics.</p>
+</div>
+</div>
+<details class="mc-notes">
+<summary>
+Transfer size, provenance, and saved preview
+</summary>
+<p>The teaching ZIP is about 1.8 MB; it contains the complete selected light CSV (about 11.1 MB uncompressed), the small sleep-diary and wear-log CSVs, package metadata, schemas, and the provenance manifest. It is downloaded with the page’s R resources. No measurement rows or metadata values were changed for this copy. For a quick inspection of another file, <code>n_max</code> limits rows parsed, not download size.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+# Groups:   Id [1]
+  Id          difftime       n group.indices
+  &lt;chr&gt;       &lt;Duration&gt; &lt;int&gt;         &lt;int&gt;
+1 IZTECH_S011 10s        69119             1
+# A tibble: 1 × 4
+# Groups:   Id [1]
+  Id          duration             missing              total                
+  &lt;chr&gt;       &lt;Duration&gt;           &lt;Duration&gt;           &lt;Duration&gt;           
+1 IZTECH_S011 588300s (~6.81 days) 102900s (~1.19 days) 691200s (~1.14 weeks)
+# A tibble: 6 × 3
+# Groups:   Id [1]
+  Id          Datetime             MEDI
+  &lt;chr&gt;       &lt;dttm&gt;              &lt;dbl&gt;
+1 IZTECH_S011 2025-04-14 15:00:06  154.
+2 IZTECH_S011 2025-04-14 15:00:16  194.
+3 IZTECH_S011 2025-04-14 15:00:26  159.
+4 IZTECH_S011 2025-04-14 15:00:36  165.
+5 IZTECH_S011 2025-04-14 15:00:46  176.
+6 IZTECH_S011 2025-04-14 15:00:56  175.
+Elapsed seconds: 2.748</code></pre>
+</div>
+</div>
+<p><a href="https://github.com/tscnlab/melidos-iztech-glc-dataset/tree/abc456bdb418e6250b9c973813a190dc062c6e76" target="_blank" rel="noopener noreferrer">Inspect the pinned source package</a> · <a href="https://tscnlab.github.io/glc-dp-r/reference/glc_read.html" target="_blank" rel="noopener noreferrer">Import documentation</a></p>
+</details>
+</section>
+</div>
+<div id="sleep-diary" class="mc-step" data-short="13 · Load the sleep diary">
+<p><span class="mc-eyebrow">13 / SLEEP–WAKE ANALYSIS</span></p>
+<section id="add-the-participants-night" class="level2">
+<h2 class="anchored" data-anchor-id="add-the-participants-night">Add the participant’s night</h2>
+<div class="mc-split">
+<div class="mc-explain">
+<p>The same package contains a morning sleep diary. We read reported <strong>preparation for sleep</strong> (<code>sleepprep</code>) and <strong>final awakening</strong> (<code>wake</code>), using the participant identifier as <code>Id</code>.</p>
+<p>These fields are text in the source file, so we explicitly parse them in <strong>Europe/Istanbul</strong>, the time zone declared for both the diary and light stream.</p>
+<div class="mc-task">
+<p><strong>Read the diary:</strong> Does <code>sleepprep</code> fall before or after midnight? Is preparation for sleep the same event as falling asleep?</p>
+</div>
+<p>The interval from <code>sleepprep</code> to final awakening is a <strong>sleep opportunity</strong>, which can include time falling asleep and intervening awakenings. The file has no separate date column, so <code>Date</code> comes from the diary’s reported awakening. We will carry that date into the light data as the cycle label.</p>
+<div class="mc-references">
+<p><strong>Tutorial:</strong> <a href="https://tscnlab.github.io/LightLogR/articles/states.html#example-sleepwake-data" target="_blank" rel="noopener noreferrer">Importing sleep/wake diary data</a>. Here the diary comes from GLC; the same idea of preserving event times applies.</p>
+</div>
+</div>
+<div class="mc-lab">
+<p><span class="mc-cell-label">CELL 11 · DIARY → LOCAL DATETIMES</span></p>
+<div class="cell" data-timelimit="90">
+<div>
+<div id="webr-11" class="exercise-cell">
+
+</div>
+<script type="webr-11-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtc2xlZXAtZGlhcnkiLCJ0aW1lbGltaXQiOjkwfSwiY29kZSI6ImRpYXJ5IDwtIGdsY19yZWFkKFxuICBwYWNrYWdlLCBkYXRhc2V0X2lkID0gZGF0YXNldF9pZCxcbiAgZmlsZV9ncm91cCA9IFwiTUVMSURPU19JWlRFQ0hfUzAxMToxNFwiLFxuICB2YXJpYWJsZXMgPSBjKFwic2xlZXBwcmVwXCIsIFwid2FrZVwiKVxuKSB8PlxuICBnbGNfY29sbGVjdCgpIHw+XG4gIHVuZ3JvdXAoKSB8PlxuICB0cmFuc211dGUoSWQgPSBwYXJ0aWNpcGFudF9JZCxcbiAgICBzbGVlcHByZXAgPSBhcy5QT1NJWGN0KHNsZWVwcHJlcCwgdHogPSBcIkV1cm9wZS9Jc3RhbmJ1bFwiKSxcbiAgICB3YWtlID0gYXMuUE9TSVhjdCh3YWtlLCB0eiA9IFwiRXVyb3BlL0lzdGFuYnVsXCIpLFxuICAgIERhdGUgPSBhcy5EYXRlKHdha2UsIHR6ID0gXCJFdXJvcGUvSXN0YW5idWxcIikpIHw+XG4gIGFycmFuZ2UoSWQsIHdha2UpXG5cbmRpYXJ5IHw+IGhlYWQoNCkifQ==
+</script>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div id="sleep-cycles" class="mc-step" data-short="14 · Define a cycle">
+<p><span class="mc-eyebrow">14 / SLEEP–WAKE ANALYSIS</span></p>
+<section id="follow-the-person-across-midnight" class="level2">
+<h2 class="anchored" data-anchor-id="follow-the-person-across-midnight">Follow the person across midnight</h2>
+<div class="mc-concept-scroll" tabindex="0" role="region" aria-label="Calendar time and sleep–wake time across four illustrative days">
+<p><img src="assets/masterclass/concept-sleep-cycles.png" class="mc-concept-image" alt="Four local calendar days begin at midnight. Three sleep–wake cycles begin at successive awakenings, at 07:00, 09:00, and 08:00. Each cycle contains waking time and the following sleep opportunity, crosses midnight, and keeps the date of its starting awakening. The time-since-awakening scale resets at each wake event."></p>
+</div>
+<p class="mc-concept-hint">
+Scroll the schematic sideways to compare both time scales.
+</p>
+<p>Rename <code>sleepprep</code> to <code>sleep</code> for the state label, keeping the reported time unchanged. Here, <code>sleep</code> still denotes a sleep opportunity, not confirmed sleep onset. <code>pivot_longer()</code> turns the two diary columns into a chronological list of state changes. Keep <code>Date</code> on each <strong>wake</strong> event and fill it forward through the following <code>sleep</code> event. <code>sc2interval()</code> then connects consecutive events. Both parts of a wake-to-wake cycle share the awakening’s date, even after midnight.</p>
+<p><span class="mc-cell-label">CELL 12 · DIARY EVENTS → INTERVALS WITH A CYCLE DATE</span></p>
+<div class="cell">
+<div>
+<div id="webr-12" class="exercise-cell">
+
+</div>
+<script type="webr-12-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtc2xlZXAtY3ljbGVzIn0sImNvZGUiOiJjeWNsZXMgPC0gZGlhcnkgfD5cbiAgcmVuYW1lKHNsZWVwID0gc2xlZXBwcmVwKSB8PlxuICBwaXZvdF9sb25nZXIoYyhzbGVlcCwgd2FrZSksXG4gICAgbmFtZXNfdG8gPSBcIlN0YXRlXCIsIHZhbHVlc190byA9IFwiRGF0ZXRpbWVcIikgfD5cbiAgYXJyYW5nZShJZCwgRGF0ZXRpbWUpIHw+XG4gIGdyb3VwX2J5KElkKSB8PlxuICBtdXRhdGUoRGF0ZSA9IGlmX2Vsc2UoU3RhdGUgPT0gXCJ3YWtlXCIsIERhdGUsIGFzLkRhdGUoTkEpKSkgfD5cbiAgZmlsbChEYXRlKSB8PlxuICBzYzJpbnRlcnZhbChEYXRldGltZSwgU3RhdGUsIGZ1bGwgPSBGQUxTRSkgfD5cbiAgZmlsdGVyKCFpcy5uYShEYXRlKSlcblxuY3ljbGVzIHw+IGhlYWQoNCkifQ==
+</script>
+</div>
+</div>
+<div class="mc-interpret">
+<p><strong>Keep the boundaries:</strong> Eight consecutive diary entries give seven complete wake-to-wake cycles, each with a <code>wake</code> and a <code>sleep</code> interval. <code>full = FALSE</code> stops at the last reported event. The first sleep opportunity has no preceding awakening in the diary, so its missing cycle date keeps it out of this analysis. Resolve missing diary nights before applying this pattern to another participant.</p>
+</div>
+<div class="mc-references">
+<p><strong>Function:</strong> <a href="https://tscnlab.github.io/LightLogR/reference/sc2interval.html" target="_blank" rel="noopener noreferrer"><code>sc2interval()</code></a></p>
+<p><strong>Tutorials:</strong> <a href="https://tscnlab.github.io/LightLogR/articles/states.html#principles" target="_blank" rel="noopener noreferrer">State changes and intervals</a> · <a href="./advanced_02_case_light_sensitivity-live.html#merging-sleep-data" target="_blank" rel="noopener noreferrer">Pivoting diary events in the advanced course</a></p>
+</div>
+</section>
+</div>
+<div id="sleep-join" class="mc-step" data-short="15 · Merge on the clock">
+<p><span class="mc-eyebrow">15 / SLEEP–WAKE ANALYSIS</span></p>
+<section id="attach-states-keep-the-timestamps" class="level2">
+<h2 class="anchored" data-anchor-id="attach-states-keep-the-timestamps">Attach states, keep the timestamps</h2>
+<p><code>add_states()</code> matches intervals to light timestamps within the grouped participant. We use <strong>inclusive starts and exclusive ends</strong>, <code>[)</code>, so a boundary belongs to one cycle. The wear log also identifies reported off-body periods: <code>off</code> and bedside <code>sleep</code> events. We mask those measurements with <code>NA</code>, preserving the clock and original values.</p>
+<p><span class="mc-cell-label">CELL 13 · LIGHT + DIARY + WEAR LOG</span></p>
+<div class="cell" data-timelimit="90">
+<div>
+<div id="webr-13" class="exercise-cell">
+
+</div>
+<script type="webr-13-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjQuNSwiZmlnLXdpZHRoIjoxNCwibGFiZWwiOiJtYy1zbGVlcC1qb2luIiwidGltZWxpbWl0Ijo5MH0sImNvZGUiOiJ3ZWFyIDwtIGdsY19yZWFkKHBhY2thZ2UsIGRhdGFzZXRfaWQgPSBkYXRhc2V0X2lkLFxuICBmaWxlX2dyb3VwID0gXCJNRUxJRE9TX0laVEVDSF9TMDExOjE1XCIsXG4gIHZhcmlhYmxlcyA9IGMoXCJzdGFydFwiLCBcImVuZFwiLCBcInN0YXRlXCIpKSB8PlxuICBnbGNfY29sbGVjdCgpIHw+XG4gIHVuZ3JvdXAoKSB8PlxuICB0cmFuc211dGUoSWQgPSBwYXJ0aWNpcGFudF9JZCxcbiAgICBzdGFydCA9IGFzLlBPU0lYY3Qoc3RhcnQsIHR6ID0gXCJFdXJvcGUvSXN0YW5idWxcIiksXG4gICAgZW5kID0gYXMuUE9TSVhjdChlbmQsIHR6ID0gXCJFdXJvcGUvSXN0YW5idWxcIiksIHdlYXJfc3RhdGUgPSBzdGF0ZSlcblxuY3ljbGVfbGlnaHQgPC0gZ2xjX2xpZ2h0IHw+XG4gIGdyb3VwX2J5KElkKSB8PlxuICBhZGRfc3RhdGVzKGN5Y2xlcyxcbiAgICBzdGFydC5jb2xuYW1lID0gSW50ZXJ2YWwsIGVuZC5jb2xuYW1lID0gSW50ZXJ2YWwsIGJvdW5kcyA9IFwiWylcIikgfD5cbiAgYWRkX3N0YXRlcyh3ZWFyLCBib3VuZHMgPSBcIlspXCIpIHw+XG4gIGZpbHRlcighaXMubmEoRGF0ZSkpIHw+XG4gIG11dGF0ZShNRURJX3JlY29yZGVkID0gTUVESSxcbiAgICBNRURJID0gcmVwbGFjZShNRURJLCB3ZWFyX3N0YXRlICVpbiUgYyhcIm9mZlwiLCBcInNsZWVwXCIpLCBOQV9yZWFsXykpXG5cbmN5Y2xlX2xpZ2h0IHw+XG4gIGdnX2RheXMoKSB8PlxuICBnZ19zdGF0ZXMoU3RhdGUsIGFlc19maWxsID0gU3RhdGUpICtcbiAgbGFicyhmaWxsID0gXCJEaWFyeSBzdGF0ZVwiLCBzdWJ0aXRsZSA9IFwiUmVwb3J0ZWQgb2ZmLWJvZHkgbGlnaHQgdmFsdWVzIGFyZSBtYXNrZWRcIikifQ==
+</script>
+</div>
+</div>
+<div class="mc-interpret">
+<p><strong>Interpret the mask:</strong> Missing wear-log entries do not prove wear. The protocol places the sensor on a bedside surface during sleep, so nighttime sensor values would describe that location. We summarize waking light in the next step and make no claim about personal exposure during sleep.</p>
+</div>
+<div class="mc-references">
+<p><strong>Functions:</strong> <a href="https://tscnlab.github.io/LightLogR/reference/add_states.html" target="_blank" rel="noopener noreferrer"><code>add_states()</code></a> · <a href="https://tscnlab.github.io/LightLogR/reference/gg_states.html" target="_blank" rel="noopener noreferrer"><code>gg_states()</code></a></p>
+<p><strong>Illustrated tutorials:</strong> <a href="https://tscnlab.github.io/LightLogR/articles/states.html#principles" target="_blank" rel="noopener noreferrer">Adding interval states</a> · <a href="https://tscnlab.github.io/LightLogR/articles/Visualizations.html#with-gg_days" target="_blank" rel="noopener noreferrer">Sleep/wake shading over a light trace</a></p>
+</div>
+<details class="mc-notes">
+<summary>
+Saved state plot · default settings
+</summary>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/masterclass/example-sleep-states.png" class="img-fluid figure-img"></p>
+<figcaption>Light time series with diary-defined waking and sleep-opportunity intervals. Reported off-body intervals and missing light values appear as gaps.</figcaption>
+</figure>
+</div>
+</details>
+</section>
+</div>
+<div id="sleep-metrics" class="mc-step" data-short="16 · Metrics per cycle">
+<p><span class="mc-eyebrow">16 / SLEEP–WAKE ANALYSIS</span></p>
+<section id="summarize-waking-light-by-diary-date" class="level2">
+<h2 class="anchored" data-anchor-id="summarize-waking-light-by-diary-date">Summarize waking light by diary date</h2>
+<p>Use the <code>Date</code> brought over from the diary to group the light data. As in Cell 7, we calculate summaries with <code>summarise()</code>, join coverage, and format the table with <code>gt()</code>. One row describes the <strong>observed waking light within one cycle</strong>, after masking reported off-body periods.</p>
+<p><code>dose()</code> adds melanopic EDI × hours across observed epochs. <code>duration_above_threshold()</code> counts observed ten-second epochs at or above the threshold. Neither fills in unobserved exposure.</p>
+<div class="mc-references">
+<p><strong>Functions:</strong> <a href="https://tscnlab.github.io/LightLogR/reference/durations.html" target="_blank" rel="noopener noreferrer"><code>durations()</code></a> · <a href="https://tscnlab.github.io/LightLogR/reference/dose.html" target="_blank" rel="noopener noreferrer"><code>dose()</code></a></p>
+<p><strong>Tutorial:</strong> <a href="https://tscnlab.github.io/LightLogR/articles/states.html#creating-states" target="_blank" rel="noopener noreferrer">Summarizing exposure within states</a></p>
+</div>
+<p><span class="mc-cell-label">CELL 14 · ONE ROW PER PARTICIPANT × DIARY DATE</span></p>
+<div class="cell">
+<div>
+<div id="webr-14" class="exercise-cell">
+
+</div>
+<script type="webr-14-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtc2xlZXAtbWV0cmljcyJ9LCJjb2RlIjoiY3ljbGVfdGhyZXNob2xkX2x4IDwtIDI1MFxud2FraW5nIDwtIGN5Y2xlX2xpZ2h0IHw+XG4gIGZpbHRlcihTdGF0ZSA9PSBcIndha2VcIikgfD5cbiAgZ3JvdXBfYnkoSWQsIERhdGUpXG5cbndha2VfY292ZXJhZ2UgPC0gd2FraW5nIHw+XG4gIGR1cmF0aW9ucyhNRURJLCBzaG93Lm1pc3NpbmcgPSBUUlVFKVxuc3RvcGlmbm90KGFsbCh3YWtlX2NvdmVyYWdlJGR1cmF0aW9uID4gMCkpXG5cbmN5Y2xlX21ldHJpY3MgPC0gd2FraW5nIHw+XG4gIHN1bW1hcmlzZShcbiAgICBtZWFuX01FREkgPSBtZWFuKE1FREksIG5hLnJtID0gVFJVRSksXG4gICAgbWVkaWFuX01FREkgPSBtZWRpYW4oTUVESSwgbmEucm0gPSBUUlVFKSxcbiAgICBkb3NlX2x4X2ggPSBkb3NlKE1FREksIERhdGV0aW1lLCBlcG9jaCA9IFwiMTAgc2VjXCIsIG5hLnJtID0gVFJVRSksXG4gICAgZHVyYXRpb25fYWJvdmVfdGhyZXNob2xkKE1FREksIERhdGV0aW1lLCB0aHJlc2hvbGQgPSBjeWNsZV90aHJlc2hvbGRfbHgsXG4gICAgICBlcG9jaCA9IFwiMTAgc2VjXCIsIG5hLnJtID0gVFJVRSwgYXMuZGYgPSBUUlVFKSxcbiAgICAuZ3JvdXBzID0gXCJkcm9wXCIpIHw+XG4gIGxlZnRfam9pbih3YWtlX2NvdmVyYWdlLCBieSA9IGMoXCJJZFwiLCBcIkRhdGVcIikpIHw+XG4gIHNlbGVjdChJZCwgRGF0ZSwgZXhwZWN0ZWRfaCA9IHRvdGFsLCBvYnNlcnZlZF9oID0gZHVyYXRpb24sXG4gICAgbWVhbl9NRURJLCBtZWRpYW5fTUVESSwgZG9zZV9seF9oLCBzdGFydHNfd2l0aChcImR1cmF0aW9uX2Fib3ZlX1wiKSkgfD5cbiAgbXV0YXRlKGNvdmVyYWdlX3BjdCA9IDEwMCAqIG9ic2VydmVkX2ggLyBleHBlY3RlZF9oLCAuYWZ0ZXIgPSBvYnNlcnZlZF9oKVxuXG5jeWNsZV9tZXRyaWNzIHw+IGd0KCkgfD4gZm10X251bWJlcig1OjgpIn0=
+</script>
+</div>
+</div>
+<div class="mc-two-up">
+<div class="mc-task">
+<p><strong>Try it:</strong> Change <code>cycle_threshold_lx</code> and rerun Cell 14. Which quantity changes? Mean, median, dose, and coverage should stay the same.</p>
+</div>
+<div class="mc-interpret">
+<p><strong>Read the denominator:</strong> Expected waking time comes from the complete time grid, not a fixed 24 hours. Low coverage means the metric describes only part of that waking interval. Coverage after masking is not a measure of confirmed wear.</p>
+</div>
+</div>
+<p><strong>Why is coverage below 100%?</strong> In this example, we mask reported non-wear during wake, including off-body time in bed before the diary’s sleep interval. The first cycle also includes missing light before recording began. In other recordings, rejected implausible sensor values, recording gaps, device failures, or other exclusions can also reduce coverage.</p>
+<details class="mc-notes">
+<summary>
+Saved result &amp; limits of this small example
+</summary>
+<div id="bgvmjblydx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
+<thead style="border-style: none;">
+<tr class="gt_col_headings" style="border-style: none; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Id" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: left;" bgcolor="#FFFFFF" valign="bottom" align="left">
+Id
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Date" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+Date
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="expected_h" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: center;" bgcolor="#FFFFFF" valign="bottom" align="center">
+expected_h
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="observed_h" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: center;" bgcolor="#FFFFFF" valign="bottom" align="center">
+observed_h
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="coverage_pct" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+coverage_pct
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="mean_MEDI" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+mean_MEDI
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="median_MEDI" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+median_MEDI
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="dose_lx_h" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" bgcolor="#FFFFFF" valign="bottom" align="right">
+dose_lx_h
+</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="duration_above_250" style="border-style: none; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: center;" bgcolor="#FFFFFF" valign="bottom" align="center">
+duration_above_250
+</th>
+</tr>
+</thead>
+<tbody class="gt_table_body" style="border-style: none; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
+<tr style="border-style: none;">
+<td headers="Id" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">
+IZTECH_S011
+</td>
+<td headers="Date" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2025-04-14
+</td>
+<td headers="expected_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+65700s (~18.25 hours)
+</td>
+<td headers="observed_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+39540s (~10.98 hours)
+</td>
+<td headers="coverage_pct" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+60.18
+</td>
+<td headers="mean_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+211.87
+</td>
+<td headers="median_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+46.25
+</td>
+<td headers="dose_lx_h" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2,326.99
+</td>
+<td headers="duration_above_250" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+3990s (~1.11 hours)
+</td>
+</tr>
+<tr style="border-style: none;">
+<td headers="Id" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">
+IZTECH_S011
+</td>
+<td headers="Date" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2025-04-15
+</td>
+<td headers="expected_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+61200s (~17 hours)
+</td>
+<td headers="observed_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+57600s (~16 hours)
+</td>
+<td headers="coverage_pct" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+94.12
+</td>
+<td headers="mean_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+757.86
+</td>
+<td headers="median_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+109.20
+</td>
+<td headers="dose_lx_h" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+12,125.73
+</td>
+<td headers="duration_above_250" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+20870s (~5.8 hours)
+</td>
+</tr>
+<tr style="border-style: none;">
+<td headers="Id" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">
+IZTECH_S011
+</td>
+<td headers="Date" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2025-04-16
+</td>
+<td headers="expected_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+64800s (~18 hours)
+</td>
+<td headers="observed_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+59460s (~16.52 hours)
+</td>
+<td headers="coverage_pct" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+91.76
+</td>
+<td headers="mean_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+488.04
+</td>
+<td headers="median_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+98.77
+</td>
+<td headers="dose_lx_h" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+8,060.88
+</td>
+<td headers="duration_above_250" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+16740s (~4.65 hours)
+</td>
+</tr>
+<tr style="border-style: none;">
+<td headers="Id" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">
+IZTECH_S011
+</td>
+<td headers="Date" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2025-04-17
+</td>
+<td headers="expected_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+62400s (~17.33 hours)
+</td>
+<td headers="observed_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+61380s (~17.05 hours)
+</td>
+<td headers="coverage_pct" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+98.37
+</td>
+<td headers="mean_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+784.60
+</td>
+<td headers="median_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+151.76
+</td>
+<td headers="dose_lx_h" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+13,377.50
+</td>
+<td headers="duration_above_250" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+26020s (~7.23 hours)
+</td>
+</tr>
+<tr style="border-style: none;">
+<td headers="Id" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">
+IZTECH_S011
+</td>
+<td headers="Date" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2025-04-18
+</td>
+<td headers="expected_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+64800s (~18 hours)
+</td>
+<td headers="observed_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+61380s (~17.05 hours)
+</td>
+<td headers="coverage_pct" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+94.72
+</td>
+<td headers="mean_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+564.24
+</td>
+<td headers="median_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+57.91
+</td>
+<td headers="dose_lx_h" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+9,620.25
+</td>
+<td headers="duration_above_250" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+18200s (~5.06 hours)
+</td>
+</tr>
+<tr style="border-style: none;">
+<td headers="Id" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">
+IZTECH_S011
+</td>
+<td headers="Date" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2025-04-19
+</td>
+<td headers="expected_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+65700s (~18.25 hours)
+</td>
+<td headers="observed_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+62220s (~17.28 hours)
+</td>
+<td headers="coverage_pct" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+94.70
+</td>
+<td headers="mean_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+478.33
+</td>
+<td headers="median_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+61.69
+</td>
+<td headers="dose_lx_h" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+8,267.15
+</td>
+<td headers="duration_above_250" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+8300s (~2.31 hours)
+</td>
+</tr>
+<tr style="border-style: none;">
+<td headers="Id" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">
+IZTECH_S011
+</td>
+<td headers="Date" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+2025-04-20
+</td>
+<td headers="expected_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+55800s (~15.5 hours)
+</td>
+<td headers="observed_h" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+54120s (~15.03 hours)
+</td>
+<td headers="coverage_pct" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+96.99
+</td>
+<td headers="mean_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+370.94
+</td>
+<td headers="median_MEDI" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+42.97
+</td>
+<td headers="dose_lx_h" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">
+5,576.40
+</td>
+<td headers="duration_above_250" class="gt_row gt_center" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: center;" valign="middle" align="center">
+4560s (~1.27 hours)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The first cycle includes missing light before recording began. We retain it to make the denominator visible. No minimum coverage cutoff is imposed in this demonstration; the code stops if a waking interval has no observed values. For a study, prespecify a coverage rule and handle uncertain wear, naps, and missing diary entries. <code>sleepprep</code> marks preparation for sleep, not confirmed sleep onset, and these descriptive summaries do not establish a relationship between light and sleep quality.</p>
+<p>The <a href="./advanced_02_case_light_sensitivity-live.html#sleep-wake-cycles" target="_blank" rel="noopener noreferrer">advanced case of high light sensitivity</a> develops the cycle-based idea further. This beginner example uses explicit diary boundaries, a single stream, and descriptive metrics.</p>
+</details>
+</section>
+</div>
+<div id="takeaway" class="mc-step" data-short="17 · Take it with you">
+<p><span class="mc-eyebrow">17 / CLOSE</span></p>
+<section id="leave-a-trail-that-another-researcher-can-follow" class="level2">
+<h2 class="anchored" data-anchor-id="leave-a-trail-that-another-researcher-can-follow">Leave a trail that another researcher can follow</h2>
+<div class="mc-lead">
+<p>An input, explicit decisions, executable code, and a result whose scope is clear.</p>
+</div>
+<div class="mc-three-up">
+<section id="preserve" class="level3 mc-principle">
+<h3 class="anchored" data-anchor-id="preserve">Preserve</h3>
+<p>Keep the original file and the package revision. Save the script and software versions together.</p>
+</section>
+<section id="explain" class="level3 mc-principle">
+<h3 class="anchored" data-anchor-id="explain">Explain</h3>
+<p>Name the quantity, unit, time zone, analysis unit, missingness rule, and denominator.</p>
+</section>
+<section id="reconnect" class="level3 mc-principle">
+<h3 class="anchored" data-anchor-id="reconnect">Reconnect</h3>
+<p>Carry the study, participant, device, and file context into the interpretation.</p>
+</section>
+</div>
+<div class="mc-discuss">
+<p><strong>Debrief:</strong> Which decision in today’s workflow would most change what you can claim from the result?</p>
+</div>
+<p><a href="scripts/sleep-europe-masterclass.R" class="mc-primary-link" download="sleep-europe-masterclass.R">Download the complete workshop script</a> <a href="data/masterclass/melidos-iztech-teaching.zip" class="mc-secondary-link" download="melidos-iztech-teaching.zip">Download the teaching package</a> <a href="./beginner-live.html" class="mc-secondary-link" target="_blank" rel="noopener noreferrer">Continue with the beginner course</a></p>
+<details class="mc-notes">
+<summary>
+Sources, software, and next steps
+</summary>
+<ul>
+<li><a href="https://tscnlab.github.io/LightLogR/" target="_blank" rel="noopener noreferrer">LightLogR reference and tutorials</a>: import, gap handling, visualization, and exposure metrics. The first example uses the bundled ActLumus export named in Cell 2.</li>
+<li><a href="https://tscnlab.github.io/glc-dp-r/" target="_blank" rel="noopener noreferrer">glcdp reference and tutorials</a>: opening and inspecting packages and importing declared data.</li>
+<li><a href="https://github.com/tscnlab/melidos-iztech-glc-dataset/tree/abc456bdb418e6250b9c973813a190dc062c6e76" target="_blank" rel="noopener noreferrer">MeLiDos IZTECH source package at the teaching revision</a>: dataset, study, device, protocol, and data provenance.</li>
+<li>Didikoglu, A., Akgun, S. G., Aydin, S. N., Kayar, Z., Zauner, J., &amp; Spitschan, M. (2025). <a href="https://doi.org/10.5281/zenodo.16568109" target="_blank" rel="noopener noreferrer"><em>Personal light exposure dataset for Izmir, Türkiye</em></a>. Reused under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. The teaching download selects one participant’s chest-light, sleep-diary, and wear-log files and retains the package metadata; the original license and README are included.</li>
+<li><a href="https://r-wasm.github.io/quarto-live/" target="_blank" rel="noopener noreferrer">Quarto Live</a> and <a href="https://docs.r-wasm.org/webr/latest/" target="_blank" rel="noopener noreferrer">webR</a>: the browser runtime used by this page.</li>
+</ul>
+<p>The browser engine is fixed at webR 0.6.0. R packages are downloaded from the configured repositories, so their available versions can change. Record the versions printed in Cell 1 and run <code>sessionInfo()</code> when saving an analysis. The repository’s existing lockfile describes its earlier local course environment; it does not lock this browser session. For a research project, preserve a tested package environment along with the input files and script.</p>
+</details>
+</section>
+</div>
+</div>
+
+
+<script type="webr-data">
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC42LjAvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsIkxpZ2h0TG9nUiIsImRwbHlyIiwidGlkeXIiLCJnZ3Bsb3QyIiwiZ2xjZHAiLCJndCJdLCJyZXBvcyI6WyJodHRwczovL3RzY25sYWIuci11bml2ZXJzZS5kZXYiXX0sInJlbmRlcl9kZiI6ImRlZmF1bHQifQ==
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xNCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTQ7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0xNCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzE0ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTQtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xNC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xNCA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTQsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xMyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTM7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0xMyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzEzID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTMtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xMyA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTMsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xMiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTI7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0xMiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzEyID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTItY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTIsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xMSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTE7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0xMSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzExID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTEtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xMSA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xMCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTA7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0xMCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzEwID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTAtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xMC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xMCA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTAsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC05IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV85O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItOSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzkgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici05LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItOS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV85ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl85LCB7fSk7XG4ifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtOCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfODtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTgiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl84ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItOC1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTgtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfOCA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfOCwge30pO1xuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTciLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzc7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici03IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfNyA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTctY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici03LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzcgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzcsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC02IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV82O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItNiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzYgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici02LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV82ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl82LCB7fSk7XG4ifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtNSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfNTtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl81ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItNS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTUtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfNSA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfNSwge30pO1xuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTQiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzQ7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici00IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfNCA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTQtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici00LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzQgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzQsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItMyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8zID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8zLCB7fSk7XG4ifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtMiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMjtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTItY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMiwge30pO1xuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzE7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0xIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMSA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTEtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xLWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzEgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ3ZWJST2pzID0ge1xuICBjb25zdCB7XG4gICAgV2ViUkV2YWx1YXRvcixcbiAgICBXZWJSRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoXG4gIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHN0YXR1c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1zdGF0dXNcIik7XG4gIGNvbnN0IGluZGljYXRvckNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGluZGljYXRvckNvbnRhaW5lci5jbGFzc0xpc3QucmVtb3ZlKFwiZC1ub25lXCIpO1xuXG4gIGxldCBzdGF0dXNUZXh0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKVxuICBzdGF0dXNUZXh0LmNsYXNzTGlzdCA9IFwiZXhlcmNpc2UtbG9hZGluZy1kZXRhaWxzXCI7XG4gIHN0YXR1c1RleHQgPSBzdGF0dXNDb250YWluZXIuYXBwZW5kQ2hpbGQoc3RhdHVzVGV4dCk7XG4gIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5pdGlhbGlzZWA7XG5cbiAgLy8gSG9pc3QgaW5kaWNhdG9yIG91dCBmcm9tIGZpbmFsIHNsaWRlIHdoZW4gcnVubmluZyB1bmRlciByZXZlYWxcbiAgY29uc3QgcmV2ZWFsU3RhdHVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgLmV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpZiAocmV2ZWFsU3RhdHVzKSB7XG4gICAgcmV2ZWFsU3RhdHVzLnJlbW92ZSgpO1xuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsID4gLnNsaWRlc1wiKS5hcHBlbmRDaGlsZChyZXZlYWxTdGF0dXMpO1xuICB9XG5cbiAgLy8gTWFrZSBhbnkgcmV2ZWFsIHNsaWRlcyB3aXRoIGxpdmUgY2VsbHMgc2Nyb2xsYWJsZVxuICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnJldmVhbCAuZXhlcmNpc2UtY2VsbFwiKS5mb3JFYWNoKChlbCkgPT4ge1xuICAgIGVsLmNsb3Nlc3QoJ3NlY3Rpb24uc2xpZGUnKS5jbGFzc0xpc3QuYWRkKFwic2Nyb2xsYWJsZVwiKTtcbiAgfSlcblxuICAvLyB3ZWJSIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIFByZXNlcnZlIHRoZSBidW5kbGVkIGNsaWVudCBmb3IgdGhlIGV4dGVuc2lvbidzIGRlZmF1bHQgZW5naW5lLiBBbiBleHBsaWNpdFxuICAvLyBlbmdpbmUgb3ZlcnJpZGUgbmVlZHMgaXRzIG1hdGNoaW5nIGNsaWVudCAoMC41IGFuZCAwLjYgcmVzcG9uc2VzIGRpZmZlcikuXG4gIGNvbnN0IHsgV2ViUiwgQ2hhbm5lbFR5cGUgfSA9IGRhdGEub3B0aW9ucy5iYXNlVXJsID09PSBcImh0dHBzOi8vd2Vici5yLXdhc20ub3JnL3YwLjUuNC9cIlxuICAgID8gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZS5XZWJSXG4gICAgOiBhd2FpdCBpbXBvcnQoYCR7ZGF0YS5vcHRpb25zLmJhc2VVcmx9d2Vici5tanNgKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICAvLyBVc2UgUG9zdE1lc3NhZ2UgY2hhbm5lbCBmb3IgYXN5bmMgY29tbXVuaWNhdGlvblxuICAvLyBXZSBkbyBub3QgZXhwZWN0IHRvIHRha2UgbmVzdGVkIHByb21wdCBpbnB1dCBpbiBRdWFydG8gTGl2ZSBjZWxsc1xuICBkYXRhLm9wdGlvbnMuY2hhbm5lbFR5cGUgPSBDaGFubmVsVHlwZS5Qb3N0TWVzc2FnZTtcblxuICAvLyBJbml0aWFsaXNlIHdlYlIgYW5kIHNldHVwIGZvciBSIGNvZGUgZXZhbHVhdGlvblxuICBsZXQgd2ViUlByb21pc2UgPSAoYXN5bmMgKHdlYlIpID0+IHtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHdlYlJgO1xuICAgIGF3YWl0IHdlYlIuaW5pdCgpO1xuXG4gICAgLy8gSW5zdGFsbCBwcm92aWRlZCBsaXN0IG9mIHBhY2thZ2VzXG4gICAgLy8gRW5zdXJlIHdlYlIgZGVmYXVsdCByZXBvIGlzIGluY2x1ZGVkXG4gICAgZGF0YS5wYWNrYWdlcy5yZXBvcy5wdXNoKFwiaHR0cHM6Ly9yZXBvLnItd2FzbS5vcmdcIilcbiAgICBhd2FpdCBkYXRhLnBhY2thZ2VzLnBrZ3MubWFwKChwa2cpID0+ICgpID0+IHtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcGFja2FnZTogJHtwa2d9YDtcbiAgICAgIHJldHVybiB3ZWJSLmV2YWxSVm9pZChgXG4gICAgICAgIHdlYnI6Omluc3RhbGwocGtnLCByZXBvcyA9IHJlcG9zKVxuICAgICAgICBsaWJyYXJ5KHBrZywgY2hhcmFjdGVyLm9ubHkgPSBUUlVFKVxuICAgICAgYCwgeyBlbnY6IHtcbiAgICAgICAgcGtnOiBwa2csXG4gICAgICAgIHJlcG9zOiBkYXRhLnBhY2thZ2VzLnJlcG9zLFxuICAgICAgfX0pO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgLy8gRG93bmxvYWQgYW5kIGluc3RhbGwgcmVzb3VyY2VzXG4gICAgYXdhaXQgZmlsZXMubWFwKChmaWxlKSA9PiBhc3luYyAoKSA9PiB7XG4gICAgICBjb25zdCBuYW1lID0gZmlsZS5zdWJzdHJpbmcoZmlsZS5sYXN0SW5kZXhPZignLycpICsgMSk7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHJlc291cmNlOiAke25hbWV9YDtcbiAgICAgIGNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goZmlsZSk7XG4gICAgICBpZiAoIXJlc3BvbnNlLm9rKSB7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgQ2FuJ3QgZG93bmxvYWQgXFxgJHtmaWxlfVxcYC4gRXJyb3IgJHtyZXNwb25zZS5zdGF0dXN9OiBcIiR7cmVzcG9uc2Uuc3RhdHVzVGV4dH1cIi5gKTtcbiAgICAgIH1cbiAgICAgIGNvbnN0IGRhdGEgPSBhd2FpdCByZXNwb25zZS5hcnJheUJ1ZmZlcigpO1xuXG4gICAgICAvLyBTdG9yZSBVUkxzIGluIHRoZSBjd2Qgd2l0aG91dCBhbnkgc3ViZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgaWYgKGZpbGUuaW5jbHVkZXMoXCI6Ly9cIikpIHtcbiAgICAgICAgZmlsZSA9IG5hbWU7XG4gICAgICB9XG5cbiAgICAgIC8vIENvbGxhcHNlIGhpZ2hlciBkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBmaWxlID0gY29sbGFwc2VQYXRoKGZpbGUpO1xuXG4gICAgICAvLyBDcmVhdGUgZGlyZWN0b3J5IHRyZWUsIGlnbm9yaW5nIFwiZGlyZWN0b3J5IGV4aXN0c1wiIFZGUyBlcnJvcnNcbiAgICAgIGNvbnN0IHBhcnRzID0gZmlsZS5zcGxpdCgnLycpLnNsaWNlKDAsIC0xKTtcbiAgICAgIGxldCBwYXRoID0gJyc7XG4gICAgICB3aGlsZSAocGFydHMubGVuZ3RoID4gMCkge1xuICAgICAgICBwYXRoICs9IHBhcnRzLnNoaWZ0KCkgKyAnLyc7XG4gICAgICAgIGNvbnN0IGFuYWx5c2lzID0gYXdhaXQgd2ViUi5GUy5hbmFseXplUGF0aChwYXRoKTtcbiAgICAgICAgaWYgKCFhbmFseXNpcy5leGlzdHMpIHtcbiAgICAgICAgICB0cnkge1xuICAgICAgICAgICAgYXdhaXQgd2ViUi5GUy5ta2RpcihwYXRoKTtcbiAgICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYEZpbGVzeXN0ZW0gRXJyb3I6IFwiJHtlLm1lc3NhZ2V9XCIuYCk7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICB9XG5cbiAgICAgIC8vIFdyaXRlIHRoaXMgZmlsZSB0byB0aGUgVkZTXG4gICAgICByZXR1cm4gYXdhaXQgd2ViUi5GUy53cml0ZUZpbGUoZmlsZSwgbmV3IFVpbnQ4QXJyYXkoZGF0YSkpO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbnN0YWxsaW5nIHdlYlIgc2hpbXNgO1xuICAgIGF3YWl0IHdlYlIuZXZhbFJWb2lkKGB3ZWJyOjpzaGltX2luc3RhbGwoKWApO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBXZWJSIGVudmlyb25tZW50IHNldHVwYDtcbiAgICBhd2FpdCBzZXR1cFIod2ViUiwgZGF0YSk7XG5cbiAgICBzdGF0dXNUZXh0LnJlbW92ZSgpO1xuICAgIGlmIChzdGF0dXNDb250YWluZXIuY2hpbGRyZW4ubGVuZ3RoID09IDApIHtcbiAgICAgIHN0YXR1c0NvbnRhaW5lci5wYXJlbnROb2RlLnJlbW92ZSgpO1xuICAgIH1cbiAgICByZXR1cm4gd2ViUjtcbiAgfSkobmV3IFdlYlIoZGF0YS5vcHRpb25zKSk7XG5cbiAgLy8gS2VlcCB0cmFjayBvZiBpbml0aWFsIE9KUyBibG9jayByZW5kZXJcbiAgY29uc3QgcmVuZGVyZWRPanMgPSB7fTtcblxuICBjb25zdCBwcm9jZXNzID0gYXN5bmMgKGNvbnRleHQsIGlucHV0cykgPT4ge1xuICAgIGNvbnN0IHdlYlIgPSBhd2FpdCB3ZWJSUHJvbWlzZTtcbiAgICBjb25zdCBldmFsdWF0b3IgPSBuZXcgV2ViUkV2YWx1YXRvcih3ZWJSLCBjb250ZXh0KVxuICAgIGF3YWl0IGV2YWx1YXRvci5wcm9jZXNzKGlucHV0cyk7XG4gICAgcmV0dXJuIGV2YWx1YXRvci5jb250YWluZXI7XG4gIH1cblxuICByZXR1cm4ge1xuICAgIHByb2Nlc3MsXG4gICAgd2ViUlByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gIH07XG59XG4ifV19
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+WyJkYXRhL21hc3RlcmNsYXNzL21lbGlkb3MtaXp0ZWNoLXRlYWNoaW5nLnppcCJd
+</script>
+
+</main> <!-- /main -->
+<script src="assets/masterclass/masterclass.js?v=20261016" defer=""></script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/tscnlab\.github\.io\/LightLogR_webinar\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/tscnlab/LightLogR_webinar/edit/main/sleep-europe-masterclass.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tscnlab/LightLogR_webinar/issues" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
