@@ -11,6 +11,7 @@
 
   let current = Math.max(0, steps.findIndex(step => `#${step.id}` === location.hash));
   let presenting = new URL(location.href).searchParams.get("present") === "1";
+  let trackUserScroll = true;
   const toolbar = document.querySelector(".mc-toolbar");
   const courseHeader = document.getElementById("quarto-header");
 
@@ -58,8 +59,14 @@
     current = Math.max(0, Math.min(steps.length - 1, index));
     renderMode();
     if (save) saveLocation();
-    steps[current].scrollIntoView({ block: "start", behavior: "instant" });
+    scrollToCurrent();
     announcement.textContent = `Chapter ${current + 1} of ${steps.length}: ${steps[current].dataset.short}`;
+  }
+
+  function scrollToCurrent() {
+    // Layout changes while switching views must not override a chosen chapter.
+    trackUserScroll = false;
+    steps[current].scrollIntoView({ block: "start", behavior: "instant" });
   }
 
   previous.addEventListener("click", () => go(current - 1));
@@ -69,7 +76,7 @@
     presenting = !presenting;
     renderMode();
     saveLocation();
-    steps[current].scrollIntoView({ block: "start", behavior: "instant" });
+    scrollToCurrent();
     announcement.textContent = presenting ? "Presentation view. Use the chapter controls or left and right arrow keys outside code editors." : "Course view. All chapters are visible.";
   });
 
@@ -98,12 +105,22 @@
   window.addEventListener("popstate", restoreLocation);
   window.addEventListener("hashchange", restoreLocation);
 
+  // Resume automatic chapter tracking when the reader scrolls or moves focus.
+  ["wheel", "touchstart", "pointerdown", "keydown"].forEach(type => {
+    window.addEventListener(type, () => { trackUserScroll = true; },
+      { capture: true, passive: true });
+  });
+
   let scrollPending = false;
   window.addEventListener("scroll", () => {
     updateChromeOffsets();
-    if (presenting || scrollPending) return;
+    if (presenting || scrollPending || !trackUserScroll) return;
     scrollPending = true;
     requestAnimationFrame(() => {
+      if (presenting || !trackUserScroll) {
+        scrollPending = false;
+        return;
+      }
       const target = Math.min(innerHeight * .3, 230);
       let closest = 0;
       steps.forEach((step, index) => {
