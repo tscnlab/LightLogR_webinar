@@ -51,7 +51,7 @@ execute:
 ::: {.mc-hero-copy}
 [Sleep Europe 2026 · Masterclass personal light exposure]{.mc-eyebrow}
 
-## From light data to a reproducible result
+## From wearable data to a reproducible result
 
 ::: {.mc-lead}
 Make the decisions visible. Run the analysis. Keep the context with the data.

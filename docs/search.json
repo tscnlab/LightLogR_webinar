@@ -952,11 +952,11 @@
     "text": "Sleep Europe 2026 MASTERCLASS PERSONAL LIGHT EXPOSURE\n  \n    Workshop chapter\n    \n    ←\n    →\n  \n  Present"
   },
   {
-    "objectID": "sleep-europe-masterclass.html#from-light-data-to-a-reproducible-result",
-    "href": "sleep-europe-masterclass.html#from-light-data-to-a-reproducible-result",
+    "objectID": "sleep-europe-masterclass.html#from-wearable-data-to-a-reproducible-result",
+    "href": "sleep-europe-masterclass.html#from-wearable-data-to-a-reproducible-result",
     "title": "Sleep Europe 2026: Masterclass personal light exposure",
-    "section": "From light data to a reproducible result",
-    "text": "From light data to a reproducible result\n\nMake the decisions visible. Run the analysis. Keep the context with the data.\n\nOne page to present, experiment, and revisit. We will import a wearable recording with LightLogR, make a defensible summary, and combine light and sleep-diary data from a Global Light Commons package with glcdp.\nStart the workshop ↓ Download the R script\n\nJohannes Zauner · Technical University of Munich\nBeginner level · Browser + internet · No R installation needed"
+    "section": "From wearable data to a reproducible result",
+    "text": "From wearable data to a reproducible result\n\nMake the decisions visible. Run the analysis. Keep the context with the data.\n\nOne page to present, experiment, and revisit. We will import a wearable recording with LightLogR, make a defensible summary, and combine light and sleep-diary data from a Global Light Commons package with glcdp.\nStart the workshop ↓ Download the R script\n\nJohannes Zauner · Technical University of Munich\nBeginner level · Browser + internet · No R installation needed"
   },
   {
     "objectID": "sleep-europe-masterclass.html#a-result-is-more-than-a-number",
