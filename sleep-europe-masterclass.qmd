@@ -476,8 +476,7 @@ coverage <- day_data |>
   durations(MEDI, show.missing = TRUE)
 stopifnot(all(coverage$duration > 0)) # each day needs observed light
 
-daily <- clean |>
-  add_Date_col(group.by = TRUE) |>
+daily <- day_data |>
   summarise(
     mean_MEDI = mean(MEDI, na.rm = TRUE),
     median_MEDI = median(MEDI, na.rm = TRUE),
@@ -489,8 +488,7 @@ daily <- clean |>
   ) |>
   left_join(coverage, by = c("Id", "Date")) |>
   select(Id, Date, expected_h = total, observed_h = duration, mean_MEDI, median_MEDI, 5:9) |>
-  mutate(across(c(expected_h, observed_h), ~ as.numeric(.x) / 3600),
-         coverage_pct = 100 * (observed_h / expected_h), .after = observed_h)
+  mutate(coverage_pct = 100 * (observed_h / expected_h), .after = observed_h)
 
 daily |> gt() |> fmt_number(5:7)
 ```
@@ -502,7 +500,7 @@ daily |> gt() |> fmt_number(5:7)
 **Try it:** Change `250` to `100` and rerun Cell 7. The threshold duration and its column name can change; coverage, the mean, median, and brightest-period result should stay the same.
 :::
 ::: {.mc-interpret}
-**Interpret it:** `above` includes the threshold in LightLogR. Expected and observed time are numeric hours; the threshold duration keeps its duration unit. Means and medians are in lux of melanopic EDI. The threshold is an exercise parameter, not a clinical target.
+**Interpret it:** `above` includes the threshold in LightLogR. Expected time, observed time, and threshold duration keep their duration units. Means and medians are in lux of melanopic EDI. The threshold is an exercise parameter, not a clinical target.
 :::
 :::
 
@@ -574,7 +572,7 @@ A descriptor connects measurements to their metadata and schemas.
 Schema and registry checks concern a declared package revision. They do not establish sensor calibration, wear validity, or the validity of a downstream scientific claim. A reproducible import is one part of a defensible analysis.
 </details>
 
-[glcdp documentation](https://tscnlab.github.io/glc-dp-r/){target="_blank" rel="noopener noreferrer"} · [GLC registry](https://registry.globallightcommons.org/){target="_blank" rel="noopener noreferrer"}
+[GLC documentation](https://docs.globallightcommons.org/){target="_blank" rel="noopener noreferrer"} · [glcdp documentation](https://tscnlab.github.io/glc-dp-r/){target="_blank" rel="noopener noreferrer"} · [GLC registry](https://registry.globallightcommons.org/){target="_blank" rel="noopener noreferrer"}
 
 ### Live GLC Explorer
 

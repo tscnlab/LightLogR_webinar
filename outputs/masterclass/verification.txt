@@ -1,5 +1,5 @@
 Command: Rscript --vanilla scripts/check_sleep_europe_masterclass.R
-Checked: 2026-10-17 12:38:14 UTC
+Checked: 2026-10-19 10:03:11 UTC
 Source: sleep-europe-masterclass.qmd
 Input: /private/tmp/sleep-europe-masterclass/library/LightLogR/extdata/205_actlumus_Log_1020_20230904101707532.txt.zip
 Input MD5: 200c8faf088211c36ae5c96e4403007e
@@ -20,7 +20,7 @@ dplyr         dplyr   1.2.1
 tidyr         tidyr   1.3.2
 ggplot2     ggplot2   4.0.3
 gt               gt   1.3.0
-Elapsed seconds: 0.313
+Elapsed seconds: 0.415
 
 mc-import
 
@@ -44,7 +44,7 @@ Observation intervals:
 4 P1    2023-08-28 08:48:24  6.03
 5 P1    2023-08-28 08:48:34  5.86
 6 P1    2023-08-28 08:48:44  6.04
-Elapsed seconds: 0.744
+Elapsed seconds: 0.834
 
 mc-inspect
 # A tibble: 1 × 4
@@ -59,7 +59,7 @@ mc-inspect
 2 Participant-days    8     8     8   
 3 Days ≥80% complete  6     6     6   
 4 Missing/Irregular   0.12  0.12  0.12
-Elapsed seconds: 0.384
+Elapsed seconds: 0.386
 
 mc-window
 # A tibble: 2 × 4
@@ -68,7 +68,7 @@ mc-window
   <fct> <Duration>       <int>         <int>
 1 P1    10s              16918             1
 2 P1    3610s (~1 hours)     1             1
-Elapsed seconds: 0.184
+Elapsed seconds: 0.189
 
 mc-clean
 # A tibble: 1 × 4
@@ -76,18 +76,18 @@ mc-clean
   Id    duration             missing          total            
   <fct> <Duration>           <Duration>       <Duration>       
 1 P1    169200s (~1.96 days) 3600s (~1 hours) 172800s (~2 days)
-Elapsed seconds: 0.173
+Elapsed seconds: 0.166
 
 mc-plot
-Elapsed seconds: 0.565
+Elapsed seconds: 0.611
 
 mc-metrics
 Formatted table rendered to example-daily.html 
-Elapsed seconds: 0.161
+Elapsed seconds: 0.229
 
 mc-glc-open
 <GLC data package>
-Source: /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/RtmpfkZu3D/masterclass-glc
+Source: /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/RtmpYVlLzg/masterclass-glc
 Schema: 3.0.2
 Registry revision: verified
 [1] "abc456bdb418e6250b9c973813a190dc062c6e76"
@@ -99,7 +99,7 @@ Registry revision: verified
 3 MELIDOS_IZTECH_S003 Europe/Istanbul               19
 4 MELIDOS_IZTECH_S004 Europe/Istanbul               21
 5 MELIDOS_IZTECH_S005 Europe/Istanbul               19
-Elapsed seconds: 0.132
+Elapsed seconds: 0.13
 
 mc-glc-inspect
 # A tibble: 1 × 6
@@ -113,7 +113,7 @@ mc-glc-inspect
   name  label                                     unit  term         
   <chr> <chr>                                     <chr> <chr>        
 1 MEDI  Melanopic equivalent daylight illuminance lx    melanopic_edi
-Elapsed seconds: 0.0169999999999999
+Elapsed seconds: 0.016
 
 mc-glc-read
 # A tibble: 1 × 4
@@ -136,7 +136,7 @@ mc-glc-read
 4 IZTECH_S011 2025-04-14 15:00:36  165.
 5 IZTECH_S011 2025-04-14 15:00:46  176.
 6 IZTECH_S011 2025-04-14 15:00:56  175.
-Elapsed seconds: 2.748
+Elapsed seconds: 2.619
 
 mc-sleep-diary
 # A tibble: 4 × 4
@@ -146,7 +146,7 @@ mc-sleep-diary
 2 IZTECH_S011 2025-04-15 02:00:00 2025-04-15 08:00:00 2025-04-15
 3 IZTECH_S011 2025-04-16 01:00:00 2025-04-16 08:00:00 2025-04-16
 4 IZTECH_S011 2025-04-17 02:00:00 2025-04-17 08:10:00 2025-04-17
-Elapsed seconds: 1.917
+Elapsed seconds: 1.747
 
 mc-sleep-cycles
 # A tibble: 4 × 4
@@ -157,14 +157,14 @@ mc-sleep-cycles
 2 IZTECH_S011 2025-04-14 sleep 2025-04-15 02:00:00 +03--2025-04-15 08:00:00 +03
 3 IZTECH_S011 2025-04-15 wake  2025-04-15 08:00:00 +03--2025-04-16 01:00:00 +03
 4 IZTECH_S011 2025-04-15 sleep 2025-04-16 01:00:00 +03--2025-04-16 08:00:00 +03
-Elapsed seconds: 0.0139999999999993
+Elapsed seconds: 0.0120000000000005
 
 mc-sleep-join
-Elapsed seconds: 2.143
+Elapsed seconds: 2.062
 
 mc-sleep-metrics
 Formatted table rendered to example-sleep-metrics.html 
-Elapsed seconds: 0.204000000000001
+Elapsed seconds: 0.199999999999999
 
 All analytical invariants, boundary joins, all-missing guards, and threshold-edit checks passed.
 
