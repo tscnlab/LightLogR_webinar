@@ -79,10 +79,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261019-glc-route">
 
 
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="assets/masterclass/masterclass.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -790,18 +790,19 @@ P1
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Package structure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Live GLC Explorer</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="mc-package-diagram">
-<div class="mc-package-core">
-<p><strong>GLC data package</strong></p>
-<p>A descriptor connects measurements to their metadata and schemas.</p>
+<div class="mc-route-scroll" tabindex="0" role="region" aria-label="Five-step GLC workflow; scroll horizontally on small screens">
+  <div class="mc-route mc-route-horizontal">
+    <div class="mc-route-label">THE ROUTE</div>
+    <ol class="mc-route-stops" role="list">
+      <li class="mc-route-stop"><span aria-hidden="true">01</span><div><strong>Data package</strong><small>Which package and revision?</small></div></li>
+      <li class="mc-route-stop"><span aria-hidden="true">02</span><div><strong>Package metadata</strong><small>Who, where, and under what protocol?</small></div></li>
+      <li class="mc-route-stop"><span aria-hidden="true">03</span><div><strong>File metadata</strong><small>Which sensor, placement, time zone, and units?</small></div></li>
+      <li class="mc-route-stop"><span aria-hidden="true">04</span><div><strong>Files to Tables</strong><small>Read and collect the selected data</small></div></li>
+      <li class="mc-route-stop"><span aria-hidden="true">05</span><div><strong>Add context</strong><small>Join sleep diaries and wear logs</small></div></li>
+    </ol>
+  </div>
 </div>
-<div class="mc-package-details">
-<p><strong>Study &amp; participant</strong> · Who, where, and under what protocol?</p>
-<p><strong>Device &amp; placement</strong> · What sensor, worn in which position?</p>
-<p><strong>File &amp; time</strong> · Which recording, time zone, and sampling interval?</p>
-<p><strong>Variable &amp; unit</strong> · What quantity, encoding, and preprocessing?</p>
-</div>
-</div>
+<p class="mc-route-hint">Scroll sideways to follow all five steps</p>
 <p><strong>Global Light Commons (GLC)</strong> provides infrastructure for sharing light-exposure data and their context. <strong>glc-dp</strong> describes the data-package structure; <strong><code>glcdp</code></strong> is the R package we use to open, inspect, and read it. <strong>LightLogR</strong> then supplies analysis and visualization functions.</p>
 <div class="mc-discuss">
 <p><strong>The handoff:</strong> Can we discover the meaning of <code>MEDI</code> and the sensor’s placement before reading a measurement file?</p>
@@ -924,7 +925,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtZ2xjLWluc3BlY3QiLCJ0
 
 </div>
 <script type="webr-10-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtZ2xjLXJlYWQiLCJ0aW1lbGltaXQiOjkwfSwiY29kZSI6ImxpZ2h0X2NvbGxlY3Rpb24gPC0gZ2xjX3JlYWQoXG4gIHBhY2thZ2UsIGRhdGFzZXRfaWQgPSBkYXRhc2V0X2lkLCBmaWxlX2dyb3VwID0gc3RyZWFtX2lkLFxuICB2YXJpYWJsZXMgPSBcIk1FRElcIlxuKVxuZ2xjX2xpZ2h0IDwtIGdsY19jb2xsZWN0KGxpZ2h0X2NvbGxlY3Rpb24pIHw+XG4gIHVuZ3JvdXAoKSB8PlxuICB0cmFuc211dGUoSWQgPSBwYXJ0aWNpcGFudF9JZCwgRGF0ZXRpbWUsIE1FREkpIHw+XG4gIGdyb3VwX2J5KElkKSB8PlxuICBhcnJhbmdlKElkLCBEYXRldGltZSlcblxuY291bnRfZGlmZnRpbWUoZ2xjX2xpZ2h0KVxuZ2xjX2xpZ2h0IHw+IGR1cmF0aW9ucyhNRURJLCBzaG93Lm1pc3NpbmcgPSBUUlVFKVxuXG5nbGNfbGlnaHQgfD4gZmlsdGVyKCFpcy5uYShNRURJKSkgfD4gaGVhZCg2KSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtZ2xjLXJlYWQiLCJ0aW1lbGltaXQiOjkwfSwiY29kZSI6ImxpZ2h0X2NvbGxlY3Rpb24gPC0gZ2xjX3JlYWQoXG4gIHBhY2thZ2UsIGRhdGFzZXRfaWQgPSBkYXRhc2V0X2lkLCBmaWxlX2dyb3VwID0gc3RyZWFtX2lkLFxuICB2YXJpYWJsZXMgPSBcIk1FRElcIlxuKVxuZ2xjX2xpZ2h0IDwtIGdsY19jb2xsZWN0KGxpZ2h0X2NvbGxlY3Rpb24pIHw+XG4gIHVuZ3JvdXAoKSB8PlxuICB0cmFuc211dGUoSWQgPSBwYXJ0aWNpcGFudF9JZCwgRGF0ZXRpbWUsIE1FREkpIHw+XG4gIGdyb3VwX2J5KElkKSB8PlxuICBhcnJhbmdlKElkLCBEYXRldGltZSlcblxuZ2xjX2xpZ2h0IHw+IGNvdW50X2RpZmZ0aW1lKClcbmdsY19saWdodCB8PiBkdXJhdGlvbnMoTUVESSwgc2hvdy5taXNzaW5nID0gVFJVRSlcblxuZ2xjX2xpZ2h0IHw+IGZpbHRlcighaXMubmEoTUVESSkpIHw+IGhlYWQoNikifQ==
 </script>
 </div>
 </div>

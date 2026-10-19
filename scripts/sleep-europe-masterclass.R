@@ -143,7 +143,7 @@ glc_light <- glc_collect(light_collection) |>
   group_by(Id) |>
   arrange(Id, Datetime)
 
-count_difftime(glc_light)
+glc_light |> count_difftime()
 glc_light |> durations(MEDI, show.missing = TRUE)
 
 glc_light |> filter(!is.na(MEDI)) |> head(6)
