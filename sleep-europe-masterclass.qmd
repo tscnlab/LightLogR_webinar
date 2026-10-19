@@ -916,13 +916,13 @@ cycle_metrics <- waking |>
   summarise(
     mean_MEDI = mean(MEDI, na.rm = TRUE),
     median_MEDI = median(MEDI, na.rm = TRUE),
-    dose_lx_h = dose(MEDI, Datetime, epoch = "10 sec", na.rm = TRUE),
+    dose(MEDI, Datetime, epoch = "10 sec", na.rm = TRUE, as.df = TRUE),
     duration_above_threshold(MEDI, Datetime, threshold = cycle_threshold_lx,
       epoch = "10 sec", na.rm = TRUE, as.df = TRUE),
     .groups = "drop") |>
   left_join(wake_coverage, by = c("Id", "Date")) |>
   select(Id, Date, expected_h = total, observed_h = duration,
-    mean_MEDI, median_MEDI, dose_lx_h, starts_with("duration_above_")) |>
+    mean_MEDI, median_MEDI, dose_lx_h = dose, starts_with("duration_above_")) |>
   mutate(coverage_pct = 100 * observed_h / expected_h, .after = observed_h)
 
 cycle_metrics |> gt() |> fmt_number(5:8)
