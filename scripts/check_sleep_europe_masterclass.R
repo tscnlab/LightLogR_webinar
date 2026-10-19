@@ -81,11 +81,16 @@ with(environment, {
             all(selected$Datetime < as.POSIXct("2023-08-31", tz = tz)))
   stopifnot(nrow(clean) == 2880L, sum(is.na(clean$MEDI)) == 60L)
   stopifnot(all(as.numeric(diff(clean$Datetime), units = "secs") == 60))
-  stopifnot(all(daily$expected_h == 24), identical(daily$observed_h, c(23, 24)))
+  stopifnot(inherits(daily$expected_h, "Duration"),
+            inherits(daily$observed_h, "Duration"),
+            all(as.numeric(daily$expected_h) / 3600 == 24),
+            identical(as.numeric(daily$observed_h) / 3600, c(23, 24)),
+            is.numeric(daily$coverage_pct),
+            isTRUE(all.equal(daily$coverage_pct, c(100 * 23 / 24, 100))))
   stopifnot(identical(group_vars(day_data), c("Id", "Date")))
   threshold_col <- paste0("duration_above_", threshold_lx)
   threshold_h <- as.numeric(daily[[threshold_col]]) / 3600
-  stopifnot(all(threshold_h <= daily$observed_h))
+  stopifnot(all(threshold_h <= as.numeric(daily$observed_h) / 3600))
   direct_hours <- clean |>
     dplyr::group_by(Id, day = as.Date(Datetime, tz = tz)) |>
     dplyr::summarise(hours = sum(MEDI >= threshold_lx, na.rm = TRUE) / 60,
@@ -183,7 +188,7 @@ for (label in c("mc-window", "mc-clean", "mc-metrics")) {
   # Evaluate the exact expressions without auto-printing plots or gt tables.
   for (expression in parse(text = code)) invisible(eval(expression, envir = test_environment))
 }
-stopifnot(all(test_environment$daily$observed_h == 24),
+stopifnot(all(as.numeric(test_environment$daily$observed_h) / 3600 == 24),
           all(test_environment$daily$coverage_pct == 100),
           !anyNA(test_environment$clean$MEDI))
 test_environment <- list2env(as.list(environment), parent = globalenv())

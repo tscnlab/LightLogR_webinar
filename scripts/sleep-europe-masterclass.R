@@ -87,8 +87,7 @@ coverage <- day_data |>
   durations(MEDI, show.missing = TRUE)
 stopifnot(all(coverage$duration > 0)) # each day needs observed light
 
-daily <- clean |>
-  add_Date_col(group.by = TRUE) |>
+daily <- day_data |>
   summarise(
     mean_MEDI = mean(MEDI, na.rm = TRUE),
     median_MEDI = median(MEDI, na.rm = TRUE),
@@ -100,8 +99,7 @@ daily <- clean |>
   ) |>
   left_join(coverage, by = c("Id", "Date")) |>
   select(Id, Date, expected_h = total, observed_h = duration, mean_MEDI, median_MEDI, 5:9) |>
-  mutate(across(c(expected_h, observed_h), ~ as.numeric(.x) / 3600),
-         coverage_pct = 100 * (observed_h / expected_h), .after = observed_h)
+  mutate(coverage_pct = 100 * (observed_h / expected_h), .after = observed_h)
 
 daily |> gt() |> fmt_number(5:7)
 
