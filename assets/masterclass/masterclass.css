@@ -32,6 +32,10 @@ main.content { padding-top: 0; margin-bottom: 0; }
 .mc-hero { display: grid; grid-template-columns: 1.45fr 1fr; gap: 65px; align-items: center; }
 .mc-hero h2 { font-size: clamp(2.9rem, 5.2vw, 4.7rem); line-height: 1.02; font-weight: 650; letter-spacing: -.045em; margin-bottom: 1.7rem; }
 .mc-hero .mc-lead { font-size: 1.35rem; margin-bottom: 1.2rem; }
+.mc-hero-visuals { display: grid; gap: 24px; min-width: 0; align-content: center; }
+.mc-hero-visuals a { display: block; border-radius: 10px; cursor: zoom-in; }
+.mc-hero-visuals img { display: block; width: 100%; height: auto; }
+.mc-hero-visuals .mc-lightlogr-overview { width: min(100%, 420px); margin: 0 auto; }
 .mc-byline { font-size: .82rem; color: var(--mc-muted); border-top: 1px solid var(--mc-line); padding-top: 1.2rem; margin-top: 1.8rem; }
 .mc-byline p { margin: 0 0 .5rem; }
 .mc-primary-link { display: inline-block; background: var(--mc-teal); color: white !important; text-decoration: none; padding: .8rem 1.1rem; border-radius: 5px; margin: .5rem .7rem .4rem 0; font-weight: 600; font-size: .88rem; }
