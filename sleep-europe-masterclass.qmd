@@ -6,7 +6,7 @@ format:
   live-html:
     css: styles.css
     include-in-header:
-      text: '<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261019-opening-images">'
+      text: '<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261019-glc-frame">'
     include-after-body: includes/masterclass-controls.html
     toc: false
     code-fold: false
@@ -76,8 +76,8 @@ Beginner level · Browser + internet · No R installation needed
   <a class="mc-lightlogr-overview" href="assets/masterclass/lightlogr-overview.png" target="_blank" rel="noopener noreferrer" title="Open the LightLogR overview at full size">
     <img src="assets/masterclass/lightlogr-overview.png" width="896" height="804" alt="LightLogR overview: import, validation, processing, metrics and visualisations, metadata, unit tests, documentation, and web tools">
   </a>
-  <a href="assets/masterclass/glc-overview.png" target="_blank" rel="noopener noreferrer" title="Open the Global Light Commons overview at full size">
-    <img src="assets/masterclass/glc-overview.png" width="1234" height="498" alt="Global Light Commons connects harmonization, analysis, and a dataset registry to standardized datasets, comparable metrics, and discoverable data for meta-analyses">
+  <a class="mc-glc-overview" href="assets/masterclass/glc-overview.png?v=20261019-glc-frame" target="_blank" rel="noopener noreferrer" title="Open the Global Light Commons overview at full size">
+    <img src="assets/masterclass/glc-overview.png?v=20261019-glc-frame" width="1900" height="836" alt="Global Light Commons connects harmonization, analysis, and a dataset registry to standardized datasets, comparable metrics, and discoverable data for meta-analyses">
   </a>
 </div>
 ```
