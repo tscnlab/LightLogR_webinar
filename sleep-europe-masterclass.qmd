@@ -547,6 +547,8 @@ Reusing data starts with understanding what the columns and recordings mean.
 
 ### Package structure
 
+A **data package** links measurement files to metadata and schemas that describe their structure, units, and study context.
+
 ```{=html}
 <div class="mc-route-scroll" tabindex="0" role="region" aria-label="Five-step GLC workflow; scroll horizontally on small screens">
   <div class="mc-route mc-route-horizontal">
