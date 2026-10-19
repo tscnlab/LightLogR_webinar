@@ -4,7 +4,9 @@ description: "One interactive workshop: reproducible light-exposure analysis wit
 author: "Johannes Zauner"
 format:
   live-html:
-    css: [styles.css, assets/masterclass/masterclass.css]
+    css: styles.css
+    include-in-header:
+      text: '<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261019-glc-route">'
     include-after-body: includes/masterclass-controls.html
     toc: false
     code-fold: false
@@ -545,22 +547,21 @@ Reusing data starts with understanding what the columns and recordings mean.
 
 ### Package structure
 
-::: {.mc-package-diagram}
-::: {.mc-package-core}
-**GLC data package**
-
-A descriptor connects measurements to their metadata and schemas.
-:::
-::: {.mc-package-details}
-**Study & participant** · Who, where, and under what protocol?
-
-**Device & placement** · What sensor, worn in which position?
-
-**File & time** · Which recording, time zone, and sampling interval?
-
-**Variable & unit** · What quantity, encoding, and preprocessing?
-:::
-:::
+```{=html}
+<div class="mc-route-scroll" tabindex="0" role="region" aria-label="Five-step GLC workflow; scroll horizontally on small screens">
+  <div class="mc-route mc-route-horizontal">
+    <div class="mc-route-label">THE ROUTE</div>
+    <ol class="mc-route-stops" role="list">
+      <li class="mc-route-stop"><span aria-hidden="true">01</span><div><strong>Data package</strong><small>Which package and revision?</small></div></li>
+      <li class="mc-route-stop"><span aria-hidden="true">02</span><div><strong>Package metadata</strong><small>Who, where, and under what protocol?</small></div></li>
+      <li class="mc-route-stop"><span aria-hidden="true">03</span><div><strong>File metadata</strong><small>Which sensor, placement, time zone, and units?</small></div></li>
+      <li class="mc-route-stop"><span aria-hidden="true">04</span><div><strong>Files to Tables</strong><small>Read and collect the selected data</small></div></li>
+      <li class="mc-route-stop"><span aria-hidden="true">05</span><div><strong>Add context</strong><small>Join sleep diaries and wear logs</small></div></li>
+    </ol>
+  </div>
+</div>
+<p class="mc-route-hint">Scroll sideways to follow all five steps</p>
+```
 
 **Global Light Commons (GLC)** provides infrastructure for sharing light-exposure data and their context. **glc-dp** describes the data-package structure; **`glcdp`** is the R package we use to open, inspect, and read it. **LightLogR** then supplies analysis and visualization functions.
 
@@ -712,7 +713,7 @@ glc_light <- glc_collect(light_collection) |>
   group_by(Id) |>
   arrange(Id, Datetime)
 
-count_difftime(glc_light)
+glc_light |> count_difftime()
 glc_light |> durations(MEDI, show.missing = TRUE)
 
 glc_light |> filter(!is.na(MEDI)) |> head(6)
