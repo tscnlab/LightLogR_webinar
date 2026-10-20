@@ -94,46 +94,46 @@ Beginner level · Browser + internet · No R installation needed
 ## Document the data and analysis steps
 
 ::: {.mc-lead}
-“Two hours above a light threshold” is incomplete until we know whose data, which light quantity, which hours, and which processing decisions.
+A reproducible analysis lets someone else run your code with the same data and software, and understand the choices behind the result.
 :::
 
 ::: {.mc-four-up}
 ::: {.mc-principle}
 [01]{.mc-number}
 
-### Keep the input
+### Keep the original data
 
-Preserve the original recording. Record its source and version. Make a new object for each meaningful transformation.
+Keep the original recording unchanged. Record its source and version, and save cleaned data separately.
 :::
 ::: {.mc-principle}
 [02]{.mc-number}
 
-### State the decisions
+### Record your analysis choices
 
-Declare the time zone, analysis window, sampling interval, missing-data rules, and threshold in code.
+Write the time zone, time window, sampling interval, cleaning rules, and thresholds into the code.
 :::
 ::: {.mc-principle}
 [03]{.mc-number}
 
-### Show the denominator
+### Report how much data you used
 
-Report how much time was observed alongside the exposure metric. An unobserved hour is not an hour in darkness.
+Report observed and missing time alongside each result. Make clear how much of the day your measurements cover.
 :::
 ::: {.mc-principle}
 [04]{.mc-number}
 
-### Carry the context
+### Describe what was measured
 
-Keep units, sensor placement, preprocessing, and provenance connected to the measurements.
+Record the light quantity, units, and where the sensor was worn. Keep study and device information with the recording.
 :::
 :::
 
 ::: {.mc-discuss}
-**Discuss:** If two scripts return the same number, does that guarantee they answer the same question?
+**Discuss:** Two people each have two recorded hours above a light threshold. One has four hours of data, the other a full day. Can we compare their daily exposure?
 :::
 
-<details class="mc-notes"><summary>Teaching notes &amp; answer</summary>
-Reproducibility means being able to rerun a specified workflow with the specified inputs and environment. It does not establish that the measurement, analysis choice, or interpretation is valid. Ask for one example of a hidden decision before moving on.
+<details class="mc-notes"><summary>Discussion notes</summary>
+Check coverage before comparing the results. Four hours of recording leaves most of the day unobserved, so it cannot support the same statement about daily exposure as a full-day recording. Also check that the light quantity, threshold, sensor placement, and processing rules are comparable. Reproducing a number shows that the steps can be repeated; it does not show that the measurement or analysis choices were appropriate.
 </details>
 :::
 
