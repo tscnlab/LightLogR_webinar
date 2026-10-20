@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261019-glc-frame">
+<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261020-feedback">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -272,8 +272,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="mc-hero">
 <div class="mc-hero-copy">
 <p><span class="mc-eyebrow">Sleep Europe 2026 · Masterclass personal light exposure</span></p>
-<section id="from-wearable-data-to-a-reproducible-result" class="level2">
-<h2 class="anchored" data-anchor-id="from-wearable-data-to-a-reproducible-result">From wearable data to a reproducible result</h2>
+<section id="reproducible-analysis-of-wearable-data" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-analysis-of-wearable-data">Reproducible analysis of wearable data</h2>
 <div class="mc-lead">
 <p>Make the decisions visible. Run the analysis. Keep the context with the data.</p>
 </div>
@@ -300,8 +300,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="reproducibility" class="mc-step" data-short="01 · Reproducibility">
 <p><span class="mc-eyebrow">01 / PRINCIPLE</span></p>
-<section id="a-result-is-more-than-a-number" class="level2">
-<h2 class="anchored" data-anchor-id="a-result-is-more-than-a-number">A result is more than a number</h2>
+<section id="document-the-data-and-analysis-steps" class="level2">
+<h2 class="anchored" data-anchor-id="document-the-data-and-analysis-steps">Document the data and analysis steps</h2>
 <div class="mc-lead">
 <p>“Two hours above a light threshold” is incomplete until we know whose data, which light quantity, which hours, and which processing decisions.</p>
 </div>
@@ -348,8 +348,8 @@ Reproducibility means being able to rerun a specified workflow with the specifie
 </div>
 <div id="ready" class="mc-step" data-short="02 · Start R">
 <p><span class="mc-eyebrow">02 / GET READY</span></p>
-<section id="your-browser-is-the-r-session" class="level2">
-<h2 class="anchored" data-anchor-id="your-browser-is-the-r-session">Your browser is the R session</h2>
+<section id="run-r-in-your-browser" class="level2">
+<h2 class="anchored" data-anchor-id="run-r-in-your-browser">Run R in your browser</h2>
 <div class="mc-split">
 <div class="mc-explain">
 <p>Wait for <strong>Run Code</strong> to become available, then run the cell. The first load downloads R and the packages; it can take a little while.</p>
@@ -383,8 +383,8 @@ Let the package-loading indicator finish. If an object is missing, rerun the pre
 </div>
 <div id="import" class="mc-step" data-short="03 · Import">
 <p><span class="mc-eyebrow">03 / LIGHTLOGR</span></p>
-<section id="import-once-preserve-the-source" class="level2">
-<h2 class="anchored" data-anchor-id="import-once-preserve-the-source">Import once, preserve the source</h2>
+<section id="import-a-light-recording" class="level2">
+<h2 class="anchored" data-anchor-id="import-a-light-recording">Import a light recording</h2>
 <div class="mc-split">
 <div class="mc-explain">
 <p>We use an ActLumus recording bundled with LightLogR, collected in Tübingen. The importer translates a device export into columns that the analysis functions understand.</p>
@@ -447,8 +447,8 @@ Supported devices and import formats
 </div>
 <div id="inspect" class="mc-step" data-short="04 · Inspect">
 <p><span class="mc-eyebrow">04 / LIGHTLOGR</span></p>
-<section id="inspect-before-you-clean" class="level2">
-<h2 class="anchored" data-anchor-id="inspect-before-you-clean">Inspect before you clean</h2>
+<section id="check-timestamps-values-and-gaps" class="level2">
+<h2 class="anchored" data-anchor-id="check-timestamps-values-and-gaps">Check timestamps, values, and gaps</h2>
 <div class="mc-split">
 <div class="mc-explain">
 <p>A plot helps us see the recording, while these checks describe its time axis and coverage.</p>
@@ -478,8 +478,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjIuMywiZmlnLXdpZHRo
 </div>
 <div id="window" class="mc-step" data-short="05 · Define the window">
 <p><span class="mc-eyebrow">05 / LIGHTLOGR</span></p>
-<section id="make-missing-time-explicitly-visible" class="level2">
-<h2 class="anchored" data-anchor-id="make-missing-time-explicitly-visible">Make missing time explicitly visible</h2>
+<section id="select-a-time-window-and-identify-gaps" class="level2">
+<h2 class="anchored" data-anchor-id="select-a-time-window-and-identify-gaps">Select a time window and identify gaps</h2>
 <div class="mc-concept-scroll" tabindex="0" role="region" aria-label="Gap handling illustration; scroll horizontally on small screens">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -524,8 +524,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjIuMywiZmlnLXdpZHRo
 </div>
 <div id="clean" class="mc-step" data-short="06 · Clean &amp; regularize">
 <p><span class="mc-eyebrow">06 / LIGHTLOGR</span></p>
-<section id="keep-missing-time-in-the-table" class="level2">
-<h2 class="anchored" data-anchor-id="keep-missing-time-in-the-table">Keep missing time in the table</h2>
+<section id="calculate-minute-averages-and-mark-missing-data" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-minute-averages-and-mark-missing-data">Calculate minute averages and mark missing data</h2>
 <div class="mc-split">
 <div class="mc-explain">
 <p>Two visible decisions prepare the working copy: average each complete minute, and add absent minutes back as <code>NA</code>.</p>
@@ -557,8 +557,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImZpZy1oZWlnaHQiOjIuMywiZmlnLXdpZHRo
 </div>
 <div id="visualize" class="mc-step" data-short="07 · Visualize">
 <p><span class="mc-eyebrow">07 / LIGHTLOGR</span></p>
-<section id="read-the-pattern-then-the-context" class="level2">
-<h2 class="anchored" data-anchor-id="read-the-pattern-then-the-context">Read the pattern, then the context</h2>
+<section id="plot-light-exposure-and-missing-data" class="level2">
+<h2 class="anchored" data-anchor-id="plot-light-exposure-and-missing-data">Plot light exposure and missing data</h2>
 <p>The first plot shows one-minute means on LightLogR’s default symmetric logarithmic scale. The shaded night is calculated from Tübingen’s coordinates, with <code>solarDep = 0</code> marking sunrise and sunset. It adds astronomical context, not a measurement of outdoor light or sleep. The second plot, <code>gg_gaps()</code>, highlights missing light in red even though the timestamps are now complete.</p>
 <p><span class="mc-cell-label">CELL 6 · LIGHT TRACE + ASTRONOMICAL NIGHT</span></p>
 <div class="cell">
@@ -600,8 +600,8 @@ Saved example plot · default settings
 </div>
 <div id="metrics" class="mc-step" data-short="08 · Calculate a metric">
 <p><span class="mc-eyebrow">08 / LIGHTLOGR</span></p>
-<section id="put-the-exposure-beside-its-denominator" class="level2">
-<h2 class="anchored" data-anchor-id="put-the-exposure-beside-its-denominator">Put the exposure beside its denominator</h2>
+<section id="calculate-daily-metrics-and-report-data-coverage" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-daily-metrics-and-report-data-coverage">Calculate daily metrics and report data coverage</h2>
 <div class="mc-concept-scroll" tabindex="0" role="region" aria-label="Metric illustration; scroll horizontally on small screens">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -776,8 +776,8 @@ P1
 <div id="glc-context" class="mc-step" data-short="09 · Why a data package?">
 <p><span class="mc-eyebrow">09 / GLOBAL LIGHT COMMONS</span></p>
 <p><img src="assets/masterclass/glc-logo.png" class="mc-glc-logo" alt="Global Light Commons"></p>
-<section id="a-csv-cannot-carry-the-whole-study" class="level2">
-<h2 class="anchored" data-anchor-id="a-csv-cannot-carry-the-whole-study">A CSV cannot carry the whole study</h2>
+<section id="understand-glc-data-packages" class="level2">
+<h2 class="anchored" data-anchor-id="understand-glc-data-packages">Understand GLC data packages</h2>
 <div class="mc-lead">
 <p>Reusing data starts with understanding what the columns and recordings mean.</p>
 </div>
@@ -827,8 +827,8 @@ Schema and registry checks concern a declared package revision. They do not esta
 </div>
 <div id="glc-open" class="mc-step" data-short="10 · Open an existing package">
 <p><span class="mc-eyebrow">10 / GLC + GLCDP</span></p>
-<section id="open-a-fixed-revision" class="level2">
-<h2 class="anchored" data-anchor-id="open-a-fixed-revision">Open a fixed revision</h2>
+<section id="open-a-specific-version-of-a-data-package" class="level2">
+<h2 class="anchored" data-anchor-id="open-a-specific-version-of-a-data-package">Open a specific version of a data package</h2>
 <div class="mc-split">
 <div class="mc-explain">
 <p>We switch to the openly available <strong>MeLiDos IZTECH</strong> package. This is a second dataset, separate from the LightLogR sample above.</p>
@@ -881,8 +881,8 @@ Elapsed seconds: 0.132</code></pre>
 </div>
 <div id="glc-inspect" class="mc-step" data-short="11 · Explore the metadata">
 <p><span class="mc-eyebrow">11 / GLC + GLCDP</span></p>
-<section id="choose-a-stream-by-its-meaning" class="level2">
-<h2 class="anchored" data-anchor-id="choose-a-stream-by-its-meaning">Choose a stream by its meaning</h2>
+<section id="check-the-metadata-and-choose-a-recording" class="level2">
+<h2 class="anchored" data-anchor-id="check-the-metadata-and-choose-a-recording">Check the metadata and choose a recording</h2>
 <div class="mc-split">
 <div class="mc-explain">
 <p>A dataset can contain several file groups: different devices, positions, modalities, or processing states. Here we select one <strong>chest</strong> recording and inspect its contract.</p>
@@ -911,8 +911,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtZ2xjLWluc3BlY3QiLCJ0
 </div>
 <div id="glc-read" class="mc-step" data-short="12 · Read the light stream">
 <p><span class="mc-eyebrow">12 / GLC + GLCDP</span></p>
-<section id="from-the-package-back-to-an-r-table" class="level2">
-<h2 class="anchored" data-anchor-id="from-the-package-back-to-an-r-table">From the package back to an R table</h2>
+<section id="load-the-light-data" class="level2">
+<h2 class="anchored" data-anchor-id="load-the-light-data">Load the light data</h2>
 <p><code>glc_read()</code> uses the declared structure to parse a selected file. <code>glc_collect()</code> returns a table using LightLogR conventions. We now read the <strong>complete selected chest-light stream</strong> so it can support sleep–wake analysis. A partial-package notice is expected because we downloaded only three selected files.</p>
 <p><span class="mc-cell-label">CELL 10 · READ → COLLECT → INSPECT</span></p>
 <div class="cell" data-timelimit="90">
@@ -969,8 +969,8 @@ Elapsed seconds: 2.748</code></pre>
 </div>
 <div id="sleep-diary" class="mc-step" data-short="13 · Load the sleep diary">
 <p><span class="mc-eyebrow">13 / SLEEP–WAKE ANALYSIS</span></p>
-<section id="add-the-participants-night" class="level2">
-<h2 class="anchored" data-anchor-id="add-the-participants-night">Add the participant’s night</h2>
+<section id="load-the-sleep-diary" class="level2">
+<h2 class="anchored" data-anchor-id="load-the-sleep-diary">Load the sleep diary</h2>
 <div class="mc-split">
 <div class="mc-explain">
 <p>The same package contains a morning sleep diary. We read reported <strong>preparation for sleep</strong> (<code>sleepprep</code>) and <strong>final awakening</strong> (<code>wake</code>), using the participant identifier as <code>Id</code>.</p>
@@ -1001,8 +1001,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtc2xlZXAtZGlhcnkiLCJ0
 </div>
 <div id="sleep-cycles" class="mc-step" data-short="14 · Define a cycle">
 <p><span class="mc-eyebrow">14 / SLEEP–WAKE ANALYSIS</span></p>
-<section id="follow-the-person-across-midnight" class="level2">
-<h2 class="anchored" data-anchor-id="follow-the-person-across-midnight">Follow the person across midnight</h2>
+<section id="define-sleepwake-cycles-from-the-diary" class="level2">
+<h2 class="anchored" data-anchor-id="define-sleepwake-cycles-from-the-diary">Define sleep–wake cycles from the diary</h2>
 <div class="mc-concept-scroll" tabindex="0" role="region" aria-label="Calendar time and sleep–wake time across four illustrative days">
 <p><img src="assets/masterclass/concept-sleep-cycles.png" class="mc-concept-image" alt="Four local calendar days begin at midnight. Three sleep–wake cycles begin at successive awakenings, at 07:00, 09:00, and 08:00. Each cycle contains waking time and the following sleep opportunity, crosses midnight, and keeps the date of its starting awakening. The time-since-awakening scale resets at each wake event."></p>
 </div>
@@ -1032,8 +1032,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImxhYmVsIjoibWMtc2xlZXAtY3ljbGVzIn0s
 </div>
 <div id="sleep-join" class="mc-step" data-short="15 · Merge on the clock">
 <p><span class="mc-eyebrow">15 / SLEEP–WAKE ANALYSIS</span></p>
-<section id="attach-states-keep-the-timestamps" class="level2">
-<h2 class="anchored" data-anchor-id="attach-states-keep-the-timestamps">Attach states, keep the timestamps</h2>
+<section id="combine-light-sleep-and-wear-data" class="level2">
+<h2 class="anchored" data-anchor-id="combine-light-sleep-and-wear-data">Combine light, sleep, and wear data</h2>
 <p><code>add_states()</code> matches intervals to light timestamps within the grouped participant. We use <strong>inclusive starts and exclusive ends</strong>, <code>[)</code>, so a boundary belongs to one cycle. The wear log also identifies reported off-body periods: <code>off</code> and bedside <code>sleep</code> events. We mask those measurements with <code>NA</code>, preserving the clock and original values.</p>
 <p><span class="mc-cell-label">CELL 13 · LIGHT + DIARY + WEAR LOG</span></p>
 <div class="cell" data-timelimit="90">
@@ -1068,8 +1068,8 @@ Saved state plot · default settings
 </div>
 <div id="sleep-metrics" class="mc-step" data-short="16 · Metrics per cycle">
 <p><span class="mc-eyebrow">16 / SLEEP–WAKE ANALYSIS</span></p>
-<section id="summarize-waking-light-by-diary-date" class="level2">
-<h2 class="anchored" data-anchor-id="summarize-waking-light-by-diary-date">Summarize waking light by diary date</h2>
+<section id="calculate-light-metrics-for-each-waking-period" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-light-metrics-for-each-waking-period">Calculate light metrics for each waking period</h2>
 <p>Use the <code>Date</code> brought over from the diary to group the light data. As in Cell 7, we calculate summaries with <code>summarise()</code>, join coverage, and format the table with <code>gt()</code>. One row describes the <strong>observed waking light within one cycle</strong>, after masking reported off-body periods.</p>
 <p><code>dose()</code> adds melanopic EDI × hours across observed epochs. <code>duration_above_threshold()</code> counts observed ten-second epochs at or above the threshold. Neither fills in unobserved exposure.</p>
 <div class="mc-references">
@@ -1347,8 +1347,8 @@ IZTECH_S011
 </div>
 <div id="takeaway" class="mc-step" data-short="17 · Take it with you">
 <p><span class="mc-eyebrow">17 / CLOSE</span></p>
-<section id="leave-a-trail-that-another-researcher-can-follow" class="level2">
-<h2 class="anchored" data-anchor-id="leave-a-trail-that-another-researcher-can-follow">Leave a trail that another researcher can follow</h2>
+<section id="save-the-code-data-and-analysis-decisions" class="level2">
+<h2 class="anchored" data-anchor-id="save-the-code-data-and-analysis-decisions">Save the code, data, and analysis decisions</h2>
 <div class="mc-lead">
 <p>An input, explicit decisions, executable code, and a result whose scope is clear.</p>
 </div>
@@ -1383,6 +1383,39 @@ Sources, software, and next steps
 </ul>
 <p>The browser engine is fixed at webR 0.6.0. R packages are downloaded from the configured repositories, so their available versions can change. Record the versions printed in Cell 1 and run <code>sessionInfo()</code> when saving an analysis. The repository’s existing lockfile describes its earlier local course environment; it does not lock this browser session. For a research project, preserve a tested package environment along with the input files and script.</p>
 </details>
+</section>
+</div>
+<div id="feedback" class="mc-step" data-short="18 · Share your work">
+<p><span class="mc-eyebrow">18 / SHARE YOUR WORK</span></p>
+<section id="share-your-code-data-and-thoughts" class="level2">
+<h2 class="anchored" data-anchor-id="share-your-code-data-and-thoughts">Share your code, data, and thoughts</h2>
+<div class="mc-feedback-layout">
+<div class="mc-feedback-copy">
+<section id="share-your-code" class="level3">
+<h3 class="anchored" data-anchor-id="share-your-code">Share your code</h3>
+<p>Put your analysis scripts online. Use standardized tools such as <a href="https://tscnlab.github.io/LightLogR/" target="_blank" rel="noopener noreferrer">LightLogR</a>, and include the software versions and instructions needed to rerun them.</p>
+</section>
+<section id="share-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="share-your-data">Share your data</h3>
+<p>Work towards shareable measurement data. Use <a href="https://docs.globallightcommons.org/" target="_blank" rel="noopener noreferrer">Global Light Commons (GLC)</a> to keep measurements, metadata, and study context together in a data package.</p>
+</section>
+<section id="share-your-thoughts" class="level3">
+<h3 class="anchored" data-anchor-id="share-your-thoughts">Share your thoughts</h3>
+<p>Tell us what worked, what was unclear, and what you need next in our feedback survey.</p>
+<p><a href="https://tally.so/r/kbaD6j" class="mc-primary-link" target="_blank" rel="noopener noreferrer">Open the feedback survey</a></p>
+<p><a href="https://tally.so/r/kbaD6j" class="mc-feedback-url" target="_blank" rel="noopener noreferrer">tally.so/r/kbaD6j</a></p>
+<div class="mc-source">
+<p>About four minutes. Every feedback question is optional, and the form does not ask for your name or email. After submitting, you can sign up separately for updates or collaboration opportunities.</p>
+</div>
+<p><span class="mc-source">Open until 21 October 2026, 16:30 CEST.</span></p>
+</section>
+</div>
+<div class="mc-feedback-code">
+<a href="https://tally.so/r/kbaD6j" target="_blank" rel="noopener noreferrer" aria-label="Open the masterclass feedback survey">
+  <img src="assets/masterclass/feedback-qr.svg" alt="QR code for the masterclass feedback survey at tally.so/r/kbaD6j" width="410" height="410">
+</a>
+</div>
+</div>
 </section>
 </div>
 </div>

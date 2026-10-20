@@ -6,7 +6,7 @@ format:
   live-html:
     css: styles.css
     include-in-header:
-      text: '<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261019-glc-frame">'
+      text: '<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261020-feedback">'
     include-after-body: includes/masterclass-controls.html
     toc: false
     code-fold: false
@@ -53,7 +53,7 @@ execute:
 ::: {.mc-hero-copy}
 [Sleep Europe 2026 · Masterclass personal light exposure]{.mc-eyebrow}
 
-## From wearable data to a reproducible result
+## Reproducible analysis of wearable data
 
 ::: {.mc-lead}
 Make the decisions visible. Run the analysis. Keep the context with the data.
@@ -91,7 +91,7 @@ Beginner level · Browser + internet · No R installation needed
 ::: {#reproducibility .mc-step data-short="01 · Reproducibility"}
 [01 / PRINCIPLE]{.mc-eyebrow}
 
-## A result is more than a number
+## Document the data and analysis steps
 
 ::: {.mc-lead}
 “Two hours above a light threshold” is incomplete until we know whose data, which light quantity, which hours, and which processing decisions.
@@ -140,7 +140,7 @@ Reproducibility means being able to rerun a specified workflow with the specifie
 ::: {#ready .mc-step data-short="02 · Start R"}
 [02 / GET READY]{.mc-eyebrow}
 
-## Your browser is the R session
+## Run R in your browser
 
 ::: {.mc-split}
 ::: {.mc-explain}
@@ -184,7 +184,7 @@ Let the package-loading indicator finish. If an object is missing, rerun the pre
 ::: {#import .mc-step data-short="03 · Import"}
 [03 / LIGHTLOGR]{.mc-eyebrow}
 
-## Import once, preserve the source
+## Import a light recording
 
 ::: {.mc-split}
 ::: {.mc-explain}
@@ -265,7 +265,7 @@ See [Devices in the importer reference](https://tscnlab.github.io/LightLogR/refe
 ::: {#inspect .mc-step data-short="04 · Inspect"}
 [04 / LIGHTLOGR]{.mc-eyebrow}
 
-## Inspect before you clean
+## Check timestamps, values, and gaps
 
 ::: {.mc-split}
 ::: {.mc-explain}
@@ -302,7 +302,7 @@ raw |> summary_overview()
 ::: {#window .mc-step data-short="05 · Define the window"}
 [05 / LIGHTLOGR]{.mc-eyebrow}
 
-## Make missing time explicitly visible
+## Select a time window and identify gaps
 
 ::: {.mc-concept-scroll tabindex="0" role="region" aria-label="Gap handling illustration; scroll horizontally on small screens"}
 ![Schematic of missing rows before gap handling and explicit NA values afterward. A recorded zero stays zero in both rows.](assets/masterclass/concept-gaps.png){.mc-concept-image}
@@ -363,7 +363,7 @@ gg_overview(practice)
 ::: {#clean .mc-step data-short="06 · Clean & regularize"}
 [06 / LIGHTLOGR]{.mc-eyebrow}
 
-## Keep missing time in the table
+## Calculate minute averages and mark missing data
 
 ::: {.mc-split}
 ::: {.mc-explain}
@@ -407,7 +407,7 @@ gg_overview(clean) # no more implicitly missing data
 ::: {#visualize .mc-step data-short="07 · Visualize"}
 [07 / LIGHTLOGR]{.mc-eyebrow}
 
-## Read the pattern, then the context
+## Plot light exposure and missing data
 
 The first plot shows one-minute means on LightLogR's default symmetric logarithmic scale. The shaded night is calculated from Tübingen's coordinates, with `solarDep = 0` marking sunrise and sunset. It adds astronomical context, not a measurement of outdoor light or sleep. The second plot, `gg_gaps()`, highlights missing light in red even though the timestamps are now complete.
 
@@ -450,7 +450,7 @@ This saved R output is a reference for the default code. It does not update when
 ::: {#metrics .mc-step data-short="08 · Calculate a metric"}
 [08 / LIGHTLOGR]{.mc-eyebrow}
 
-## Put the exposure beside its denominator
+## Calculate daily metrics and report data coverage
 
 ::: {.mc-concept-scroll tabindex="0" role="region" aria-label="Metric illustration; scroll horizontally on small screens"}
 ![Schematic of one-minute observations relative to a threshold, separating qualifying time, observed time, and expected time.](assets/masterclass/concept-metrics.png){.mc-concept-image}
@@ -535,7 +535,7 @@ The brightest-period `onset`, `midpoint`, and `offset` columns are local timesta
 
 <img src="assets/masterclass/glc-logo.png" class="mc-glc-logo" alt="Global Light Commons">
 
-## A CSV cannot carry the whole study
+## Understand GLC data packages
 
 ::: {.mc-lead}
 Reusing data starts with understanding what the columns and recordings mean.
@@ -598,7 +598,7 @@ The hosted app may take a moment to start. Use the new-tab link if the embedded 
 ::: {#glc-open .mc-step data-short="10 · Open an existing package"}
 [10 / GLC + GLCDP]{.mc-eyebrow}
 
-## Open a fixed revision
+## Open a specific version of a data package
 
 ::: {.mc-split}
 ::: {.mc-explain}
@@ -654,7 +654,7 @@ In a local R session with internet access, open the original remote package dire
 ::: {#glc-inspect .mc-step data-short="11 · Explore the metadata"}
 [11 / GLC + GLCDP]{.mc-eyebrow}
 
-## Choose a stream by its meaning
+## Check the metadata and choose a recording
 
 ::: {.mc-split}
 ::: {.mc-explain}
@@ -694,7 +694,7 @@ glc_variables(package, file_group = stream_id, primary = TRUE) |>
 ::: {#glc-read .mc-step data-short="12 · Read the light stream"}
 [12 / GLC + GLCDP]{.mc-eyebrow}
 
-## From the package back to an R table
+## Load the light data
 
 `glc_read()` uses the declared structure to parse a selected file. `glc_collect()` returns a table using LightLogR conventions. We now read the **complete selected chest-light stream** so it can support sleep–wake analysis. A partial-package notice is expected because we downloaded only three selected files.
 
@@ -745,7 +745,7 @@ cat(readLines("assets/masterclass/example-glc-read.txt"), sep = "\n")
 ::: {#sleep-diary .mc-step data-short="13 · Load the sleep diary"}
 [13 / SLEEP–WAKE ANALYSIS]{.mc-eyebrow}
 
-## Add the participant's night
+## Load the sleep diary
 
 ::: {.mc-split}
 ::: {.mc-explain}
@@ -791,7 +791,7 @@ diary |> head(4)
 ::: {#sleep-cycles .mc-step data-short="14 · Define a cycle"}
 [14 / SLEEP–WAKE ANALYSIS]{.mc-eyebrow}
 
-## Follow the person across midnight
+## Define sleep–wake cycles from the diary
 
 ::: {.mc-concept-scroll tabindex="0" role="region" aria-label="Calendar time and sleep–wake time across four illustrative days"}
 <img src="assets/masterclass/concept-sleep-cycles.png" class="mc-concept-image" alt="Four local calendar days begin at midnight. Three sleep–wake cycles begin at successive awakenings, at 07:00, 09:00, and 08:00. Each cycle contains waking time and the following sleep opportunity, crosses midnight, and keeps the date of its starting awakening. The time-since-awakening scale resets at each wake event.">
@@ -832,7 +832,7 @@ cycles |> head(4)
 ::: {#sleep-join .mc-step data-short="15 · Merge on the clock"}
 [15 / SLEEP–WAKE ANALYSIS]{.mc-eyebrow}
 
-## Attach states, keep the timestamps
+## Combine light, sleep, and wear data
 
 `add_states()` matches intervals to light timestamps within the grouped participant. We use **inclusive starts and exclusive ends**, `[)`, so a boundary belongs to one cycle. The wear log also identifies reported off-body periods: `off` and bedside `sleep` events. We mask those measurements with `NA`, preserving the clock and original values.
 
@@ -887,7 +887,7 @@ cycle_light |>
 ::: {#sleep-metrics .mc-step data-short="16 · Metrics per cycle"}
 [16 / SLEEP–WAKE ANALYSIS]{.mc-eyebrow}
 
-## Summarize waking light by diary date
+## Calculate light metrics for each waking period
 
 Use the `Date` brought over from the diary to group the light data. As in Cell 7, we calculate summaries with `summarise()`, join coverage, and format the table with `gt()`. One row describes the **observed waking light within one cycle**, after masking reported off-body periods.
 
@@ -957,7 +957,7 @@ The [advanced case of high light sensitivity](advanced_02_case_light_sensitivity
 ::: {#takeaway .mc-step data-short="17 · Take it with you"}
 [17 / CLOSE]{.mc-eyebrow}
 
-## Leave a trail that another researcher can follow
+## Save the code, data, and analysis decisions
 
 ::: {.mc-lead}
 An input, explicit decisions, executable code, and a result whose scope is clear.
@@ -1000,6 +1000,46 @@ Carry the study, participant, device, and file context into the interpretation.
 The browser engine is fixed at webR 0.6.0. R packages are downloaded from the configured repositories, so their available versions can change. Record the versions printed in Cell 1 and run `sessionInfo()` when saving an analysis. The repository's existing lockfile describes its earlier local course environment; it does not lock this browser session. For a research project, preserve a tested package environment along with the input files and script.
 
 </details>
+:::
+
+::: {#feedback .mc-step data-short="18 · Share your work"}
+[18 / SHARE YOUR WORK]{.mc-eyebrow}
+
+## Share your code, data, and thoughts
+
+::: {.mc-feedback-layout}
+::: {.mc-feedback-copy}
+### Share your code
+
+Put your analysis scripts online. Use standardized tools such as [LightLogR](https://tscnlab.github.io/LightLogR/){target="_blank" rel="noopener noreferrer"}, and include the software versions and instructions needed to rerun them.
+
+### Share your data
+
+Work towards shareable measurement data. Use [Global Light Commons (GLC)](https://docs.globallightcommons.org/){target="_blank" rel="noopener noreferrer"} to keep measurements, metadata, and study context together in a data package.
+
+### Share your thoughts
+
+Tell us what worked, what was unclear, and what you need next in our feedback survey.
+
+[Open the feedback survey](https://tally.so/r/kbaD6j){.mc-primary-link target="_blank" rel="noopener noreferrer"}
+
+[tally.so/r/kbaD6j](https://tally.so/r/kbaD6j){.mc-feedback-url target="_blank" rel="noopener noreferrer"}
+
+::: {.mc-source}
+About four minutes. Every feedback question is optional, and the form does not ask for your name or email. After submitting, you can sign up separately for updates or collaboration opportunities.
+:::
+
+[Open until 21 October 2026, 16:30 CEST.]{.mc-source}
+:::
+
+::: {.mc-feedback-code}
+```{=html}
+<a href="https://tally.so/r/kbaD6j" target="_blank" rel="noopener noreferrer" aria-label="Open the masterclass feedback survey">
+  <img src="assets/masterclass/feedback-qr.svg" alt="QR code for the masterclass feedback survey at tally.so/r/kbaD6j" width="410" height="410">
+</a>
+```
+:::
+:::
 :::
 
 :::
