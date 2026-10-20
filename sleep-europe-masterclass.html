@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a2b4bbde9dea897e3c0dd6635f8e8caa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b01e035398771d60968909d3721ee3cd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -306,46 +306,46 @@ ul.task-list li input[type="checkbox"] {
 <section id="document-the-data-and-analysis-steps" class="level2">
 <h2 class="anchored" data-anchor-id="document-the-data-and-analysis-steps">Document the data and analysis steps</h2>
 <div class="mc-lead">
-<p>“Two hours above a light threshold” is incomplete until we know whose data, which light quantity, which hours, and which processing decisions.</p>
+<p>A reproducible analysis lets someone else run your code with the same data and software, and understand the choices behind the result.</p>
 </div>
 <div class="mc-four-up">
 <div class="mc-principle">
 <p><span class="mc-number">01</span></p>
-<section id="keep-the-input" class="level3">
-<h3 class="anchored" data-anchor-id="keep-the-input">Keep the input</h3>
-<p>Preserve the original recording. Record its source and version. Make a new object for each meaningful transformation.</p>
+<section id="keep-the-original-data" class="level3">
+<h3 class="anchored" data-anchor-id="keep-the-original-data">Keep the original data</h3>
+<p>Keep the original recording unchanged. Record its source and version, and save cleaned data separately.</p>
 </section>
 </div>
 <div class="mc-principle">
 <p><span class="mc-number">02</span></p>
-<section id="state-the-decisions" class="level3">
-<h3 class="anchored" data-anchor-id="state-the-decisions">State the decisions</h3>
-<p>Declare the time zone, analysis window, sampling interval, missing-data rules, and threshold in code.</p>
+<section id="record-your-analysis-choices" class="level3">
+<h3 class="anchored" data-anchor-id="record-your-analysis-choices">Record your analysis choices</h3>
+<p>Write the time zone, time window, sampling interval, cleaning rules, and thresholds into the code.</p>
 </section>
 </div>
 <div class="mc-principle">
 <p><span class="mc-number">03</span></p>
-<section id="show-the-denominator" class="level3">
-<h3 class="anchored" data-anchor-id="show-the-denominator">Show the denominator</h3>
-<p>Report how much time was observed alongside the exposure metric. An unobserved hour is not an hour in darkness.</p>
+<section id="report-how-much-data-you-used" class="level3">
+<h3 class="anchored" data-anchor-id="report-how-much-data-you-used">Report how much data you used</h3>
+<p>Report observed and missing time alongside each result. Make clear how much of the day your measurements cover.</p>
 </section>
 </div>
 <div class="mc-principle">
 <p><span class="mc-number">04</span></p>
-<section id="carry-the-context" class="level3">
-<h3 class="anchored" data-anchor-id="carry-the-context">Carry the context</h3>
-<p>Keep units, sensor placement, preprocessing, and provenance connected to the measurements.</p>
+<section id="describe-what-was-measured" class="level3">
+<h3 class="anchored" data-anchor-id="describe-what-was-measured">Describe what was measured</h3>
+<p>Record the light quantity, units, and where the sensor was worn. Keep study and device information with the recording.</p>
 </section>
 </div>
 </div>
 <div class="mc-discuss">
-<p><strong>Discuss:</strong> If two scripts return the same number, does that guarantee they answer the same question?</p>
+<p><strong>Discuss:</strong> Two people each have two recorded hours above a light threshold. One has four hours of data, the other a full day. Can we compare their daily exposure?</p>
 </div>
 <details class="mc-notes">
 <summary>
-Teaching notes &amp; answer
+Discussion notes
 </summary>
-Reproducibility means being able to rerun a specified workflow with the specified inputs and environment. It does not establish that the measurement, analysis choice, or interpretation is valid. Ask for one example of a hidden decision before moving on.
+Check coverage before comparing the results. Four hours of recording leaves most of the day unobserved, so it cannot support the same statement about daily exposure as a full-day recording. Also check that the light quantity, threshold, sensor placement, and processing rules are comparable. Reproducing a number shows that the steps can be repeated; it does not show that the measurement or analysis choices were appropriate.
 </details>
 </section>
 </div>
