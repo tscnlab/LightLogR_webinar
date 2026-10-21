@@ -982,7 +982,7 @@ Label the light quantity and units. State whether the result describes a calenda
 :::
 
 ::: {.mc-discuss}
-**Before you finish:** Save your edited code, results, and software versions. The download below contains the original workshop script.
+The script download below contains the original workshop code.
 :::
 
 [Download the complete workshop script](scripts/sleep-europe-masterclass.R){.mc-primary-link download="sleep-europe-masterclass.R"}
@@ -1033,8 +1033,6 @@ Get in touch with questions, feedback, or ideas for collaboration. Tell us what 
 :::
 
 [Get in touch](mailto:johannes.zauner@tum.de){.mc-primary-link}
-
-[johannes.zauner@tum.de]{.mc-source}
 :::
 :::
 :::
