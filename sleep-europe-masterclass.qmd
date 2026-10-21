@@ -6,7 +6,7 @@ format:
   live-html:
     css: styles.css
     include-in-header:
-      text: '<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261021-contact">'
+      text: '<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261021-unit-logo">'
     include-after-body: includes/masterclass-controls.html
     toc: false
     code-fold: false
@@ -1028,11 +1028,14 @@ Get in touch with questions, feedback, or ideas for collaboration. Tell us what 
 ::: {.mc-resource-links}
 - [Global Light Commons](https://globallightcommons.org){target="_blank" rel="noopener noreferrer"}
 - [LightLogR documentation](https://tscnlab.github.io/LightLogR/){target="_blank" rel="noopener noreferrer"}
-- [TSCN Lab](https://tscnlab.org){target="_blank" rel="noopener noreferrer"}
 - [More course tutorials](https://tscnlab.github.io/LightLogR_webinar/){target="_blank" rel="noopener noreferrer"}
 :::
 
 [Get in touch](mailto:johannes.zauner@tum.de){.mc-primary-link}
+
+```{=html}
+<a class="mc-unit-link" href="https://tscnlab.org/" target="_blank" rel="noopener noreferrer"><img src="assets/masterclass/tscn-unit-logo.webp" alt="Translational Sensory and Circadian Neuroscience Unit"></a>
+```
 :::
 :::
 :::
