@@ -6,7 +6,7 @@ format:
   live-html:
     css: styles.css
     include-in-header:
-      text: '<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261020-feedback">'
+      text: '<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261021-contact">'
     include-after-body: includes/masterclass-controls.html
     toc: false
     code-fold: false
@@ -960,29 +960,29 @@ The [advanced case of high light sensitivity](advanced_02_case_light_sensitivity
 ## Save the code, data, and analysis decisions
 
 ::: {.mc-lead}
-An input, explicit decisions, executable code, and a result whose scope is clear.
+Keep the files, code, and explanations needed to rerun your analysis.
 :::
 
 ::: {.mc-three-up}
 ::: {.mc-principle}
-### Preserve
+### Save the files and software versions
 
-Keep the original file and the package revision. Save the script and software versions together.
+Keep the original data, the exact GLC package revision, your analysis script, and the software versions together.
 :::
 ::: {.mc-principle}
-### Explain
+### Record what you changed
 
-Name the quantity, unit, time zone, analysis unit, missingness rule, and denominator.
+Document the time zone, selected dates, aggregation, and how you handled missing or non-wear data in the script.
 :::
 ::: {.mc-principle}
-### Reconnect
+### Explain each result
 
-Carry the study, participant, device, and file context into the interpretation.
+Label the light quantity and units. State whether the result describes a calendar day or a waking period, and report the observed and missing time.
 :::
 :::
 
 ::: {.mc-discuss}
-**Debrief:** Which decision in today's workflow would most change what you can claim from the result?
+**Before you finish:** Save your edited code, results, and software versions. The download below contains the original workshop script.
 :::
 
 [Download the complete workshop script](scripts/sleep-europe-masterclass.R){.mc-primary-link download="sleep-europe-masterclass.R"}
@@ -1007,37 +1007,34 @@ The browser engine is fixed at webR 0.6.0. R packages are downloaded from the co
 
 ## Share your code, data, and thoughts
 
-::: {.mc-feedback-layout}
-::: {.mc-feedback-copy}
+::: {.mc-sharing-layout}
+::: {.mc-sharing-copy}
 ### Share your code
 
 Put your analysis scripts online. Use standardized tools such as [LightLogR](https://tscnlab.github.io/LightLogR/){target="_blank" rel="noopener noreferrer"}, and include the software versions and instructions needed to rerun them.
 
 ### Share your data
 
-Work towards shareable measurement data. Use [Global Light Commons (GLC)](https://docs.globallightcommons.org/){target="_blank" rel="noopener noreferrer"} to keep measurements, metadata, and study context together in a data package.
+Work towards shareable measurement data. Use [Global Light Commons (GLC)](https://globallightcommons.org){target="_blank" rel="noopener noreferrer"} to keep measurements, metadata, and study context together in a data package.
 
 ### Share your thoughts
 
-Tell us what worked, what was unclear, and what you need next in our feedback survey.
-
-[Open the feedback survey](https://tally.so/r/kbaD6j){.mc-primary-link target="_blank" rel="noopener noreferrer"}
-
-[tally.so/r/kbaD6j](https://tally.so/r/kbaD6j){.mc-feedback-url target="_blank" rel="noopener noreferrer"}
-
-::: {.mc-source}
-About four minutes. Every feedback question is optional, and the form does not ask for your name or email. After submitting, you can sign up separately for updates or collaboration opportunities.
+Get in touch with questions, feedback, or ideas for collaboration. Tell us what worked, what was unclear, and what you would like to try next.
 :::
 
-[Open until 21 October 2026, 16:30 CEST.]{.mc-source}
+::: {.mc-contact-panel}
+### Browse & get in touch
+
+::: {.mc-resource-links}
+- [Global Light Commons](https://globallightcommons.org){target="_blank" rel="noopener noreferrer"}
+- [LightLogR documentation](https://tscnlab.github.io/LightLogR/){target="_blank" rel="noopener noreferrer"}
+- [TSCN Lab](https://tscnlab.org){target="_blank" rel="noopener noreferrer"}
+- [More course tutorials](https://tscnlab.github.io/LightLogR_webinar/){target="_blank" rel="noopener noreferrer"}
 :::
 
-::: {.mc-feedback-code}
-```{=html}
-<a href="https://tally.so/r/kbaD6j" target="_blank" rel="noopener noreferrer" aria-label="Open the masterclass feedback survey">
-  <img src="assets/masterclass/feedback-qr.svg" alt="QR code for the masterclass feedback survey at tally.so/r/kbaD6j" width="410" height="410">
-</a>
-```
+[Get in touch](mailto:johannes.zauner@tum.de){.mc-primary-link}
+
+[johannes.zauner@tum.de]{.mc-source}
 :::
 :::
 :::

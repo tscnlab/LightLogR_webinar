@@ -106,12 +106,13 @@ main.content { padding-top: 0; margin-bottom: 0; }
 .mc-package-details p { padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--mc-line); font-size: .95rem; }
 .mc-package-details p:last-child { padding: 0; margin: 0; border: 0; }
 .mc-source { font-size: .85rem; }
-.mc-feedback-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(260px, .85fr); gap: 48px; align-items: center; margin-top: 2rem; }
-.mc-feedback-copy { max-width: 650px; }
-.mc-feedback-url { font-size: 1.3rem; font-weight: 650; color: var(--mc-teal); }
-.mc-feedback-code { justify-self: center; width: min(100%, 410px); }
-.mc-feedback-code img { display: block; width: 100%; height: auto; background: white; }
-.mc-feedback-code a:focus-visible { display: block; outline: 3px solid var(--mc-teal); outline-offset: 5px; }
+.mc-sharing-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .85fr); gap: 48px; align-items: start; margin-top: 2rem; }
+.mc-sharing-copy { max-width: 650px; }
+.mc-contact-panel { padding: 28px; border: 1px solid var(--mc-line); border-radius: 10px; background: white; }
+.mc-resource-links ul { list-style: none; padding: 0; margin: 1.2rem 0 1rem; }
+.mc-resource-links li { margin: 0; border-bottom: 1px solid var(--mc-line); }
+.mc-resource-links a { display: block; padding: .75rem 0; font-weight: 600; }
+.mc-contact-panel > p:last-child { margin-bottom: 0; overflow-wrap: anywhere; }
 .mc-references { margin: 1.25rem 0; padding-top: .8rem; border-top: 1px solid var(--mc-line); font-size: .85rem; line-height: 1.55; color: var(--mc-muted); }
 .mc-references p { margin: 0 0 .45rem; }
 .mc-references p:last-child { margin-bottom: 0; }
@@ -174,7 +175,7 @@ main.content { padding-top: 0; margin-bottom: 0; }
   .mc-toolbar #mc-present { margin-left: auto; }
   .mc-page { padding: 0 20px; }
   .mc-step { padding: 38px 0; }
-  .mc-hero, .mc-split, .mc-two-up, .mc-three-up, .mc-package-diagram, .mc-feedback-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .mc-hero, .mc-split, .mc-two-up, .mc-three-up, .mc-package-diagram, .mc-sharing-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .mc-hero h2 { font-size: 3.1rem; }
   .mc-hero { gap: 32px; }
   .mc-lead { font-size: 1.2rem; }
