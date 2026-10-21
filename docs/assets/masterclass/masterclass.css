@@ -98,6 +98,14 @@ main.content { padding-top: 0; margin-bottom: 0; }
 .mc-notes[open] { padding-bottom: .5rem; }
 .mc-notes pre { overflow-x: auto; background: #fff; padding: 1rem; font-size: .8rem; }
 .mc-notes .cell-output pre { max-height: 400px; }
+.mc-optional { border-top: 0; }
+.mc-optional > summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 1.3rem; border: 2px solid var(--mc-teal); border-radius: 8px; background: var(--mc-teal); color: white; font-size: 1.15rem; line-height: 1.4; font-weight: 700; list-style: none; }
+.mc-optional > summary::-webkit-details-marker { display: none; }
+.mc-optional > summary::after { content: "+"; flex-shrink: 0; font-size: 1.6rem; line-height: 1; font-weight: 400; }
+.mc-optional > summary:hover { background: #0d5144; border-color: #0d5144; }
+.mc-optional > summary:focus-visible { outline: 3px solid var(--mc-ink); outline-offset: 3px; }
+.mc-optional[open] > summary { margin-bottom: 1rem; }
+.mc-optional[open] > summary::after { content: "−"; }
 .mc-package-diagram { display: grid; grid-template-columns: .8fr 1.5fr; margin: 2rem 0; border: 1px solid #adbbb3; border-radius: 9px; overflow: hidden; }
 .mc-package-core { background: var(--mc-ink); padding: 32px; color: white; font-size: 1rem; display: flex; flex-direction: column; justify-content: center; }
 .mc-package-core strong { font-size: 1.6rem; letter-spacing: -.03em; }

@@ -6,7 +6,7 @@ format:
   live-html:
     css: styles.css
     include-in-header:
-      text: '<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261021-unit-logo">'
+      text: '<link rel="stylesheet" href="assets/masterclass/masterclass.css?v=20261021-optional-button">'
     include-after-body: includes/masterclass-controls.html
     toc: false
     code-fold: false
@@ -867,7 +867,7 @@ cycle_light |>
   labs(fill = "Diary state", subtitle = "Reported off-body light values are masked")
 ```
 
-<details class="mc-notes"><summary>Optional: compare recorded and retained light</summary>
+<details class="mc-notes mc-optional"><summary>Optional: compare recorded and retained light</summary>
 
 Run Cell 13 first. Compare time with recorded and retained light for each diary state over the same cycles. The table keeps LightLogR's duration units. The plot shows recorded light in red, retained light in black, and the wear log below the sleep–wake shading.
 
