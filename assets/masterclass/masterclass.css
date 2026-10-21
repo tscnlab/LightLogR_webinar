@@ -113,6 +113,8 @@ main.content { padding-top: 0; margin-bottom: 0; }
 .mc-resource-links li { margin: 0; border-bottom: 1px solid var(--mc-line); }
 .mc-resource-links a { display: block; padding: .75rem 0; font-weight: 600; }
 .mc-contact-panel > p:last-child { margin-bottom: 0; overflow-wrap: anywhere; }
+.mc-unit-link { display: block; width: min(100%, 360px); margin: 1.5rem auto 0; }
+.mc-unit-link img { display: block; width: 100%; height: auto; }
 .mc-references { margin: 1.25rem 0; padding-top: .8rem; border-top: 1px solid var(--mc-line); font-size: .85rem; line-height: 1.55; color: var(--mc-muted); }
 .mc-references p { margin: 0 0 .45rem; }
 .mc-references p:last-child { margin-bottom: 0; }
