@@ -202,6 +202,20 @@ cycle_light |>
   gg_states(State, aes_fill = State) +
   labs(fill = "Diary state", subtitle = "Reported off-body light values are masked")
 
+# mc-sleep-compare
+state_data <- cycle_light |> group_by(State)
+state_data |> durations(MEDI_recorded) |> rename(recorded_h = duration) |>
+  left_join(state_data |> durations(MEDI) |> rename(retained_h = duration), by = "State")
+
+cycle_light |>
+  gg_days(MEDI_recorded, col = "red", linewidth = 0.1) |>
+  gg_states(wear_state, aes_fill = paste("Wear log:", wear_state),
+            ymax = -0.1, alpha = 1) |>
+  gg_states(State, aes_fill = State, ymin = 0) +
+  geom_line(aes(y = MEDI)) +
+  labs(fill = "State", subtitle = "Red: recorded light; black: after masking",
+       caption = "Background: sleep diary. Bottom band: reported off-body periods.")
+
 # mc-sleep-metrics
 cycle_threshold_lx <- 250
 waking <- cycle_light |>
