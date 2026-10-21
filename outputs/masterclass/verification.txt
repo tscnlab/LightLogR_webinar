@@ -1,7 +1,8 @@
 Command: Rscript --vanilla scripts/check_sleep_europe_masterclass.R
-Checked: 2026-10-19 10:03:11 UTC
+Wrapper command: RENV_CONFIG_AUTOLOADER_ENABLED=false Rscript --vanilla /private/tmp/masterclass-cell13b-verify.R (isolated copy; downloadable script checked against the project)
+Checked: 2026-10-21 08:58:18 UTC
 Source: sleep-europe-masterclass.qmd
-Input: /private/tmp/sleep-europe-masterclass/library/LightLogR/extdata/205_actlumus_Log_1020_20230904101707532.txt.zip
+Input: /Users/zauner/Library/R/arm64/4.6/library/LightLogR/extdata/205_actlumus_Log_1020_20230904101707532.txt.zip
 Input MD5: 200c8faf088211c36ae5c96e4403007e
 GLC repository: tscnlab/melidos-iztech-glc-dataset
 GLC commit: abc456bdb418e6250b9c973813a190dc062c6e76
@@ -14,18 +15,19 @@ GLC wear log: data/files/longitudinal-reports/IZTECH_S011_wearlog.csv
 mc-setup
 [1] "R version 4.6.1 (2026-06-24)"
             package version
-LightLogR LightLogR  0.10.6
-glcdp         glcdp   1.1.0
+LightLogR LightLogR  0.10.3
+glcdp         glcdp   1.0.0
 dplyr         dplyr   1.2.1
 tidyr         tidyr   1.3.2
 ggplot2     ggplot2   4.0.3
 gt               gt   1.3.0
-Elapsed seconds: 0.415
+Elapsed seconds: 0.305
 
 mc-import
 
 Successfully read in 61'016 observations across 1 Ids from 1 ActLumus-file(s).
 Timezone set is Europe/Berlin.
+The system timezone is Europe/Amsterdam. Please correct if necessary!
 
 First Observation: 2023-08-28 08:47:54
 Last Observation: 2023-09-04 10:17:04
@@ -44,7 +46,7 @@ Observation intervals:
 4 P1    2023-08-28 08:48:24  6.03
 5 P1    2023-08-28 08:48:34  5.86
 6 P1    2023-08-28 08:48:44  6.04
-Elapsed seconds: 0.834
+Elapsed seconds: 0.713
 
 mc-inspect
 # A tibble: 1 × 4
@@ -59,7 +61,7 @@ mc-inspect
 2 Participant-days    8     8     8   
 3 Days ≥80% complete  6     6     6   
 4 Missing/Irregular   0.12  0.12  0.12
-Elapsed seconds: 0.386
+Elapsed seconds: 0.364
 
 mc-window
 # A tibble: 2 × 4
@@ -68,7 +70,7 @@ mc-window
   <fct> <Duration>       <int>         <int>
 1 P1    10s              16918             1
 2 P1    3610s (~1 hours)     1             1
-Elapsed seconds: 0.189
+Elapsed seconds: 0.182
 
 mc-clean
 # A tibble: 1 × 4
@@ -76,18 +78,18 @@ mc-clean
   Id    duration             missing          total            
   <fct> <Duration>           <Duration>       <Duration>       
 1 P1    169200s (~1.96 days) 3600s (~1 hours) 172800s (~2 days)
-Elapsed seconds: 0.166
+Elapsed seconds: 0.162
 
 mc-plot
-Elapsed seconds: 0.611
+Elapsed seconds: 0.511
 
 mc-metrics
 Formatted table rendered to example-daily.html 
-Elapsed seconds: 0.229
+Elapsed seconds: 0.166
 
 mc-glc-open
 <GLC data package>
-Source: /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/RtmpYVlLzg/masterclass-glc
+Source: /private/var/folders/9p/326_k3kx43qbn_cyl1rqfhb00000gn/T/RtmpsDHUfG/masterclass-glc
 Schema: 3.0.2
 Registry revision: verified
 [1] "abc456bdb418e6250b9c973813a190dc062c6e76"
@@ -99,7 +101,7 @@ Registry revision: verified
 3 MELIDOS_IZTECH_S003 Europe/Istanbul               19
 4 MELIDOS_IZTECH_S004 Europe/Istanbul               21
 5 MELIDOS_IZTECH_S005 Europe/Istanbul               19
-Elapsed seconds: 0.13
+Elapsed seconds: 0.121
 
 mc-glc-inspect
 # A tibble: 1 × 6
@@ -113,7 +115,7 @@ mc-glc-inspect
   name  label                                     unit  term         
   <chr> <chr>                                     <chr> <chr>        
 1 MEDI  Melanopic equivalent daylight illuminance lx    melanopic_edi
-Elapsed seconds: 0.016
+Elapsed seconds: 0.0169999999999999
 
 mc-glc-read
 # A tibble: 1 × 4
@@ -136,7 +138,7 @@ mc-glc-read
 4 IZTECH_S011 2025-04-14 15:00:36  165.
 5 IZTECH_S011 2025-04-14 15:00:46  176.
 6 IZTECH_S011 2025-04-14 15:00:56  175.
-Elapsed seconds: 2.619
+Elapsed seconds: 2.451
 
 mc-sleep-diary
 # A tibble: 4 × 4
@@ -146,7 +148,7 @@ mc-sleep-diary
 2 IZTECH_S011 2025-04-15 02:00:00 2025-04-15 08:00:00 2025-04-15
 3 IZTECH_S011 2025-04-16 01:00:00 2025-04-16 08:00:00 2025-04-16
 4 IZTECH_S011 2025-04-17 02:00:00 2025-04-17 08:10:00 2025-04-17
-Elapsed seconds: 1.747
+Elapsed seconds: 1.696
 
 mc-sleep-cycles
 # A tibble: 4 × 4
@@ -157,14 +159,24 @@ mc-sleep-cycles
 2 IZTECH_S011 2025-04-14 sleep 2025-04-15 02:00:00 +03--2025-04-15 08:00:00 +03
 3 IZTECH_S011 2025-04-15 wake  2025-04-15 08:00:00 +03--2025-04-16 01:00:00 +03
 4 IZTECH_S011 2025-04-15 sleep 2025-04-16 01:00:00 +03--2025-04-16 08:00:00 +03
-Elapsed seconds: 0.0120000000000005
+Elapsed seconds: 0.0110000000000001
 
 mc-sleep-join
-Elapsed seconds: 2.062
+Elapsed seconds: 1.973
+
+mc-sleep-compare
+# A tibble: 2 × 3
+# Groups:   State [2]
+  State recorded_h           retained_h
+  <chr> <Duration>           <Duration>
+1 sleep 166200s (~1.92 days) 9540s (~2.65 hours)
+2 wake  414300s (~4.8 days)  395700s (~4.58 days)
+Plot built successfully
+Elapsed seconds: 0.273
 
 mc-sleep-metrics
 Formatted table rendered to example-sleep-metrics.html 
-Elapsed seconds: 0.199999999999999
+Elapsed seconds: 0.180999999999999
 
 All analytical invariants, boundary joins, all-missing guards, and threshold-edit checks passed.
 
@@ -179,15 +191,15 @@ LAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dy
 locale:
 [1] C.UTF-8/C.UTF-8/C.UTF-8/C/C.UTF-8/C.UTF-8
 
-time zone: Europe/Berlin
+time zone: Europe/Amsterdam
 tzcode source: internal
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] gt_1.3.0         glcdp_1.1.0      ggplot2_4.0.3    tidyr_1.3.2     
-[5] dplyr_1.2.1      LightLogR_0.10.6
+[1] gt_1.3.0         glcdp_1.0.0      ggplot2_4.0.3    tidyr_1.3.2
+[5] dplyr_1.2.1      LightLogR_0.10.3
 
 loaded via a namespace (and not attached):
  [1] gtable_0.3.6       xfun_0.60          tzdb_0.5.0         vctrs_0.7.3       

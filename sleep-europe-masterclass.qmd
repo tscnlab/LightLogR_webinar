@@ -867,6 +867,33 @@ cycle_light |>
   labs(fill = "Diary state", subtitle = "Reported off-body light values are masked")
 ```
 
+<details class="mc-notes"><summary>Optional: compare recorded and retained light</summary>
+
+Run Cell 13 first. Compare time with recorded and retained light for each diary state over the same cycles. The table keeps LightLogR's duration units. The plot shows recorded light in red, retained light in black, and the wear log below the sleep–wake shading.
+
+[CELL 13B · RECORDED + RETAINED LIGHT]{.mc-cell-label}
+
+```{webr}
+#| label: mc-sleep-compare
+#| timelimit: 90
+#| fig-width: 14
+#| fig-height: 4.5
+state_data <- cycle_light |> group_by(State)
+state_data |> durations(MEDI_recorded) |> rename(recorded_h = duration) |>
+  left_join(state_data |> durations(MEDI) |> rename(retained_h = duration), by = "State")
+
+cycle_light |>
+  gg_days(MEDI_recorded, col = "red", linewidth = 0.1) |>
+  gg_states(wear_state, aes_fill = paste("Wear log:", wear_state),
+            ymax = -0.1, alpha = 1) |>
+  gg_states(State, aes_fill = State, ymin = 0) +
+  geom_line(aes(y = MEDI)) +
+  labs(fill = "State", subtitle = "Red: recorded light; black: after masking",
+       caption = "Background: sleep diary. Bottom band: reported off-body periods.")
+```
+
+</details>
+
 ::: {.mc-interpret}
 **Interpret the mask:** Missing wear-log entries do not prove wear. The protocol places the sensor on a bedside surface during sleep, so nighttime sensor values would describe that location. We summarize waking light in the next step and make no claim about personal exposure during sleep.
 :::

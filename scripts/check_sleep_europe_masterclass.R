@@ -14,7 +14,7 @@ cells <- lapply(starts, function(start) {
   label <- sub("^#\\| label: *", "", grep("^#\\| label:", body, value = TRUE))
   list(label = label, code = body[!grepl("^#\\|", body)])
 })
-stopifnot(length(cells) == 14L, !anyDuplicated(vapply(cells, `[[`, "", "label")))
+stopifnot(length(cells) == 15L, !anyDuplicated(vapply(cells, `[[`, "", "label")))
 
 dir.create("assets/masterclass", recursive = TRUE, showWarnings = FALSE)
 dir.create("outputs/masterclass", recursive = TRUE, showWarnings = FALSE)
@@ -56,6 +56,9 @@ for (cell in cells) {
           table_file <- if (cell$label == "mc-sleep-metrics") "example-sleep-metrics.html" else "example-daily.html"
           writeLines(html, file.path("assets/masterclass", table_file))
           cat("Formatted table rendered to", table_file, "\n")
+        } else if (result$visible && inherits(result$value, "ggplot") && !is_plot) {
+          ggplot2::ggplot_build(result$value)
+          cat("Plot built successfully\n")
         } else if (result$visible) print(result$value)
       }
     })
@@ -246,4 +249,4 @@ log <- c(
   "All analytical invariants, boundary joins, all-missing guards, and threshold-edit checks passed.", "", capture.output(sessionInfo())
 )
 writeLines(log, "outputs/masterclass/verification.txt")
-message("All fourteen live cells and analytical invariants passed.")
+message("All ", length(cells), " live cells and analytical invariants passed.")
